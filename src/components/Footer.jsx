@@ -96,7 +96,7 @@ const Footer = () => {
                         <div className="container">
                             <div className="flex flex-wrap justify-center gap-x-[30px] gap-y-4 lg:justify-between">
                                 <Link href="/">
-                                    <img src="assets/img/logo-white.svg" alt="Faraan" width="121" height="24" />
+                                    <img src="assets/img/logo-white.png" alt="Faraan" width="121" height="24" />
                                 </Link>
 
                                 <div className="text-white">
