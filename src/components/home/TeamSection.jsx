@@ -4,11 +4,11 @@ const teamData = [
     {
         name: 'Muaaz Kasbati',
         role: 'CEO & Founder',
-        image: '/assets/img/images/th-1/team-img-1.jpg',
-        socialLinks: { 'twitter': 'http://www.twitter.com/' },
-        'facebook': 'http://www.facebook.com/',
-        'instagram': 'http://www.instagram.com/',
-        'linkedin': 'http://www.linkedin.com/',
+        image: '/assets/img/new/image-ceo.jpg',
+        socialLinks: { 'twitter': 'http://www.twitter.com/muaazkasbati' },
+        'facebook': 'https://www.facebook.com/muaazkasbati',
+        'instagram': 'https://www.instagram.com/muaazkasbati',
+        'linkedin': 'https://www.linkedin.com/in/muaazkasbati',
     },
     // {
     //     name: 'Ayesha Kasbati',
@@ -80,6 +80,7 @@ const TeamSection = () => {
                                         height="300"
                                         loading="lazy"
                                         className="h-full w-full object-cover transition-all duration-300 group-hover/team-item:scale-110"
+                                    style={{maxHeight:"300px", objectFit:"cover"}}
                                     />
                                     <div className="absolute top-full flex w-full justify-center gap-3 transition-all duration-300 group-hover/team-item:-translate-y-14">
                                         <a
