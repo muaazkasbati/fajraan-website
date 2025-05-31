@@ -85,7 +85,7 @@ const PortfolioSection = () => {
                                             <div className="w-[calc(100%-48px)] absolute bottom-0 flex flex-col items-start gap-x-10 gap-y-8 p-6 sm:flex-row sm:items-center">
                                                 <div className="max-w-[380px] flex-1 text-colorButteryWhite">
                                                     <a
-                                                        href="portfolio-details.html"
+                                                        // href="portfolio-details.html"
                                                         className="mb-[10px] block font-syne text-2xl font-bold leading-[1.4] group-hover:text-colorLightLime md:text-3xl"
                                                     >
                                                         {slide.title}
@@ -95,7 +95,7 @@ const PortfolioSection = () => {
                                                     </p>
                                                 </div>
                                                 <a
-                                                    href="portfolio-details.html"
+                                                    // href="portfolio-details.html"
                                                     className="relative inline-flex items-start justify-center overflow-hidden"
                                                 >
                                                     <img

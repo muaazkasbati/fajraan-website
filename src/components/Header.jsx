@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Header = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
 
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+    const closeMenu = () => setMenuOpen(false);
     return (
         <>
             <header className="section-header site-header is-black fixed top-0 z-30 w-full py-6">
@@ -17,14 +20,19 @@ const Header = () => {
                             </Link>
 
                             <div className="menu-block-wrapper">
-                                <div className="menu-overlay"></div>
-                                <nav className="menu-block" id="append-menu-header">
+                                {menuOpen && (
+                                    <div
+                                        className="menu-overlay fixed inset-0 bg-black/60 z-10"
+                                        onClick={closeMenu}
+                                    />
+                                )}
+                                <nav className={`menu-block ${menuOpen ? "active" :""}`} id="append-menu-header">
                                     <div className="mobile-menu-head">
                                         <div className="go-back">
                                             <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="12" height="7" />
                                         </div>
                                         <div className="current-menu-title"></div>
-                                        <div className="mobile-menu-close">&times;</div>
+                                        <div onClick={closeMenu} className="mobile-menu-close">&times;</div>
                                     </div>
                                     <ul className="site-menu-main">
                                         {/* <li className="nav-item nav-item-has-children">
@@ -62,16 +70,16 @@ const Header = () => {
                                         </ul>
                                     </li> */}
                                         <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <a href="/" className="nav-link-item">Home</a>
+                                            <Link href="/" className="nav-link-item">Home</Link>
                                         </li>
                                         <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <a href="#about" className="nav-link-item">About Us</a>
+                                            <Link href="#about" className="nav-link-item">About Us</Link>
                                         </li>
                                         <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <a href="#services" className="nav-link-item">Services</a>
+                                            <Link href="#services" className="nav-link-item">Services</Link>
                                         </li>
                                         <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <a href="#portfolio" className="nav-link-item">Portfolio</a>
+                                            <Link href="#portfolio" className="nav-link-item">Portfolio</Link>
                                         </li>
                                         {/* <li className="nav-item nav-item-has-children">
                                         <a href="#" className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">Pages
@@ -187,7 +195,7 @@ const Header = () => {
                                     </li> */}
 
                                         <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <a href="#contact" className="nav-link-item">Contact Us</a>
+                                            <Link href="#contact" className="nav-link-item">Contact Us</Link>
                                         </li>
                                     </ul>
                                 </nav>
@@ -196,11 +204,20 @@ const Header = () => {
                         <div className="flex items-center gap-x-6">
                             <a href="#contact" className="btn-primary relative hidden px-[30px] py-[10px] sm:inline-flex">Contact Us</a>
 
-                            <div className="block lg:hidden">
+                            {/* <div className="block lg:hidden">
                                 <button id="openBtn" className="hamburger-menu mobile-menu-trigger">
                                     <span className="bg-white before:bg-white after:bg-white"></span>
                                 </button>
-                            </div>
+                            </div> */}
+                            <div className="block lg:hidden">
+                            <button
+                                id="openBtn"
+                                className="hamburger-menu mobile-menu-trigger "
+                                onClick={toggleMenu}
+                            >
+                                <span className="bg-white before:bg-white after:bg-white"></span>
+                            </button>
+                        </div>
                         </div>
                     </div>
                 </div>
