@@ -35,10 +35,10 @@ const Footer = () => {
                                     <div className="grid grid-cols-[1fr_auto] items-center">
                                         <div>
                                             <ul className="mt-12 flex flex-col gap-y-3">
-                                                <li>
+{/*                                                 <li>
                                                     <span className="block font-syne text-[21px] font-bold leading-[1.42] text-colorLightLime">Give us a WhatsApp call:</span>
                                                     <a href="https://wa.me/966598473216" target="_blank" rel="noopener noreferrer" className="text-[21px] leading-[1.42] text-colorButteryWhite">+966 59 847 3216</a>
-                                                </li>
+                                                </li> */}
                                                 <li>
                                                     <span className="block font-syne text-[21px] font-bold leading-[1.42] text-colorLightLime">Send us an email:
                                                     </span>
