@@ -12,12 +12,12 @@ const Header = () => {
             <header className="section-header site-header is-black fixed top-0 z-30 w-full py-6">
                 <div className="container">
                     <div className="flex items-center justify-between">
+                        <Link href="/" className="h-auto w-auto">
+                            <img src="/assets/img/logo-white.png" alt="Fajraan" width="200"
+                            // height="24" 
+                            />
+                        </Link>
                         <div className="flex items-center gap-x-10">
-                            <Link href="/" className="h-auto w-auto">
-                                <img src="/assets/img/logo-white.png" alt="Fajraan" width="200"
-                                // height="24" 
-                                />
-                            </Link>
 
                             <div className="menu-block-wrapper">
                                 {menuOpen && (
@@ -26,7 +26,7 @@ const Header = () => {
                                         onClick={closeMenu}
                                     />
                                 )}
-                                <nav className={`menu-block ${menuOpen ? "active" :""}`} id="append-menu-header">
+                                <nav className={`menu-block ${menuOpen ? "active" : ""}`} id="append-menu-header">
                                     <div className="mobile-menu-head">
                                         <div className="go-back">
                                             <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="12" height="7" />
@@ -73,13 +73,13 @@ const Header = () => {
                                             <Link href="/" className="nav-link-item">Home</Link>
                                         </li>
                                         <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <Link href="#about" className="nav-link-item">About Us</Link>
+                                            <Link href="/about" className="nav-link-item">About Us</Link>
                                         </li>
                                         <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <Link href="#services" className="nav-link-item">Services</Link>
+                                            <Link href="/services" className="nav-link-item">Services</Link>
                                         </li>
                                         <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <Link href="#portfolio" className="nav-link-item">Portfolio</Link>
+                                            <Link href="/#portfolio" className="nav-link-item">Portfolio</Link>
                                         </li>
                                         {/* <li className="nav-item nav-item-has-children">
                                         <a href="#" className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">Pages
@@ -195,7 +195,7 @@ const Header = () => {
                                     </li> */}
 
                                         <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <Link href="#contact" className="nav-link-item">Contact Us</Link>
+                                            <Link href="/contact" className="nav-link-item">Contact Us</Link>
                                         </li>
                                     </ul>
                                 </nav>
@@ -210,14 +210,14 @@ const Header = () => {
                                 </button>
                             </div> */}
                             <div className="block lg:hidden">
-                            <button
-                                id="openBtn"
-                                className="hamburger-menu mobile-menu-trigger "
-                                onClick={toggleMenu}
-                            >
-                                <span className="bg-white before:bg-white after:bg-white"></span>
-                            </button>
-                        </div>
+                                <button
+                                    id="openBtn"
+                                    className="hamburger-menu mobile-menu-trigger "
+                                    onClick={toggleMenu}
+                                >
+                                    <span className="bg-white before:bg-white after:bg-white"></span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
