@@ -4,11 +4,11 @@ const HeroSection = () => {
     return (
         <>
             <section className="section-hero">
-                <div className="bg-black">
+                <div className="bg-gradient-to-b from-[#092a54] via-[#092a54] to-[#00839f]">
                     <div className="pb-20 pt-[150px] lg:pb-[100px] lg:pt-[196px] xl:pb-[130px]">
                         <div className="container">
                             <div className="relative z-10 grid grid-cols-1 items-center justify-center gap-x-[90px] gap-y-16 lg:grid-cols-[1fr_minmax(0,0.6fr)]">
-                                <div className="text-center text-colorButteryWhite lg:text-start">
+                                <div className="text-center text-white lg:text-start">
                                     <h1>
                                         A {" "}
                                         <span className="inline-flex items-center gap-5">
@@ -20,14 +20,15 @@ const HeroSection = () => {
                                                 height="70"
                                                 className="w-12 md:w-14 lg:w-auto h-auto"
                                             />
-                                        </span>
+                                        </span> {" "}
                                         Tech Solutions Partner
                                     </h1>
                                     <p className="mb-10 mt-6 text-lg leading-[1.4] md:mb-14 lg:text-[21px]">
-                                        Fajraan Tech is your trusted partner in custom web, mobile, and desktop app development.
-                                        We deliver innovative solutions tailored for businesses across Saudi Arabia, UAE, Bahrain, and beyond —
-                                        blending cutting-edge design, development, and marketing strategies.
+                                        Fajraan Tech is your trusted partner for end-to-end digital solutions.
+                                        We specialize in custom web, mobile, and desktop applications while delivering creative design, powerful development, and result-driven marketing strategies.
+                                        Serving businesses across Saudi Arabia, UAE, Bahrain, and beyond — we help brands innovate, scale, and thrive in the digital era.
                                     </p>
+
 
                                     <div className="mb-[50px] flex flex-wrap items-center justify-center gap-4 lg:justify-start">
                                         <div className="flex -space-x-3">
@@ -74,14 +75,14 @@ const HeroSection = () => {
                                     </a>
                                 </div>
 
-                                <div className="mx-auto inline-block max-w-[495px] overflow-hidden rounded-[25px] bg-colorButteryWhite p-[5px] lg:mx-0">
+                                <div className="mx-auto inline-block max-w-[495px] overflow-hidden rounded-[25px] bg-white p-[5px] lg:mx-0">
                                     <img
                                         src="assets/img/new/image-hero.jpeg"
                                         alt="hero-img"
                                         width="485"
                                         height="540"
                                         className="h-full w-full rounded-[20px] object-cover"
-                                        style={{minHeight:"540px", objectFit:"cover"}}
+                                        style={{ minHeight: "540px", objectFit: "cover" }}
                                     />
                                 </div>
 

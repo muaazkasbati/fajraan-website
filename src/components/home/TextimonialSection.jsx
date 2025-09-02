@@ -1,63 +1,62 @@
 import React from 'react'
 
 const testimonials = [
-    {
-        rating: 5,
-        title: "Exceptional Support and Delivery",
-        content:
-            "Muaaz and his team delivered our web app ahead of schedule with excellent code quality and clear communication. Their professionalism made the whole process seamless.",
-        user: {
-            name: "Omar Al-Farsi",
-            role: "Startup Founder",
-        },
-        avatar: "assets/img/images/th-1/testimonial-user-img-1.png",
+  {
+    rating: 5,
+    title: "Exceptional Support and Delivery",
+    content:
+      "Fajraan Tech delivered our web app ahead of schedule with excellent code quality and clear communication. Their professionalism made the whole process seamless.",
+    user: {
+      name: "Omar Al-Farsi",
+      role: "Startup Founder",
     },
-    {
-        rating: 5,
-        title: "Highly Skilled Developer",
-        content:
-            "Working with Muaaz brought our ideas to life with clean, scalable code. The custom web applications he built exceeded our expectations in both performance and design.",
-        user: {
-            name: "Layla Hassan",
-            role: "Product Manager",
-        },
-        avatar: "assets/img/images/th-1/testimonial-user-img-2.png",
+    avatar: "/assets/img/images/th-1/testimonial-user-img-1.png",
+  },
+  {
+    rating: 5,
+    title: "Highly Skilled Team",
+    content:
+      "Working with Fajraan Tech brought our ideas to life with clean, scalable code. The custom web applications they built exceeded our expectations in both performance and design.",
+    user: {
+      name: "Layla Hassan",
+      role: "Product Manager",
     },
-    {
-        rating: 5,
-        title: "Reliable and Innovative",
-        content:
-            "Muaaz consistently demonstrated deep technical expertise and innovative solutions, making complex development challenges look easy. Highly recommended for MERN projects.",
-        user: {
-            name: "Faisal Al-Mansoori",
-            role: "Tech Lead",
-        },
-        avatar: "assets/img/images/th-1/testimonial-user-img-3.png",
+    avatar: "/assets/img/images/th-1/testimonial-user-img-2.png",
+  },
+  {
+    rating: 5,
+    title: "Reliable and Innovative",
+    content:
+      "The Fajraan Tech team consistently demonstrated deep technical expertise and innovative solutions, making complex development challenges look easy. Highly recommended for MERN projects.",
+    user: {
+      name: "Faisal Al-Mansoori",
+      role: "Tech Lead",
     },
-    {
-        rating: 5,
-        title: "Transformative Development Experience",
-        content:
-            "Our collaboration with Muaaz transformed our product vision into a fully functional platform. His attention to detail and fast turnaround times were impressive.",
-        user: {
-            name: "Noura Al-Sayed",
-            role: "CEO",
-        },
-        avatar: "assets/img/images/th-1/testimonial-user-img-4.png",
+    avatar: "/assets/img/images/th-1/testimonial-user-img-3.png",
+  },
+  {
+    rating: 5,
+    title: "Transformative Development Experience",
+    content:
+      "Our collaboration with Fajraan Tech transformed our product vision into a fully functional platform. Their attention to detail and fast turnaround times were impressive.",
+    user: {
+      name: "Noura Al-Sayed",
+      role: "CEO",
     },
+    avatar: "/assets/img/images/th-1/testimonial-user-img-4.png",
+  },
 ];
+
 
 const StarIcon = () => (
     <img
-        src="assets/img/icons/icon-black-star.svg"
+        src="/assets/img/icons/icon-black-star.svg"
         alt="star"
         width="37"
         height="35"
     />
 );
 const TextimonialSection = () => {
-
-
     return (
         <>
             <section className="section-testimonial bg-white">
@@ -68,9 +67,9 @@ const TextimonialSection = () => {
                                 Clients are always satisfied with
                                 <span>
                                     {" "}
-                                    us
+                                    us {" "}
                                     <img
-                                        src="assets/img/elemnts/shape-light-lime-5-arms-star.svg"
+                                        src="/assets/img/elemnts/shape-light-lime-5-arms-star.svg"
                                         alt="shape-light-lime-5-arms-star"
                                         width="74"
                                         height="70"

@@ -4,29 +4,11 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link
-          rel="stylesheet"
-          href="assets/fonts/webfonts/inter/stylesheet.css"
-        />
-        <link
-          rel="stylesheet"
-          href="assets/fonts/webfonts/syne/stylesheet.css"
-        />
-
-        {/* <!-- Vendor CSS --> */}
-        <link
-          rel="stylesheet"
-          href="assets/css/vendors/swiper-bundle.min.css"
-        />
-        <link rel="stylesheet" href="assets/css/vendors/jos.css" />
-        <link rel="stylesheet" href="assets/css/vendors/menu.css" />
-
-        {/* <!-- Custom CSS --> */}
-        <link rel="stylesheet" href="assets/css/custom.css" />
-        {/* <!-- Development css --> */}
-        <link rel="stylesheet" href="assets/css/style.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"></link>
+        <link rel="stylesheet" href="/assets/css/menu.css" />
+        <link rel="stylesheet" href="/assets/css/style.css" />
       </Head>
-      <body className="antialiased">
+      <body className="">
         <Main />
         <NextScript />
       </body>

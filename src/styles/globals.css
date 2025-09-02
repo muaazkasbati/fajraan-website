@@ -1,3 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #19bec9;
+  --color-secondary: #092a54;
+}
+
+
+:root {
+  --red: #c90002;
+  --light-red: #e04444;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
 .horizontal-slide-from-right-to-left {
   animation: horizontal-slide-from-right-to-left linear 10s infinite;
 }
@@ -29,6 +50,7 @@
 .animation-duration-2s {
   animation-duration: 2s;
 }
+
 .animation-duration-5s {
   animation-duration: 5s;
 }
@@ -48,10 +70,12 @@
 .rotate-full {
   animation: rotate-full 10s linear infinite;
 }
+
 @keyframes rotate-full {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -75,7 +99,7 @@
   position: absolute;
   background-size: cover;
   background-color: transparent;
-  background-image: url(../img/icons/icon-white-slider-drug-arrow.svg);
+  background-image: url(/assets/img/icons/icon-white-slider-drug-arrow.svg);
 }
 
 .testimonial-custom-pagination .swiper-pagination-bullet {
@@ -92,3 +116,28 @@
 .offcanvas-body {
   transition: transform 0.3s ease;
 }
+
+
+/* .rush-driver-font {
+  font-family: 'Rush Driver', sans-serif !important;
+}
+
+.inter-font {
+  font-family: "Inter", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Racing Engine', sans-serif;
+}
+
+.racing-engine-font {
+  font-family: 'Racing Engine', sans-serif;
+}
+
+.stroke-only {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+} */

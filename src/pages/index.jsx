@@ -15,19 +15,19 @@ import { useEffect } from "react";
 
 export default function Home() {
   const router = useRouter()
-  useEffect(() => {
-    const handleScroll = () => {
-      const id = router.asPath.split('#')[1]; // Get the ID from the URL
-      if (id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const id = router.asPath.split('#')[1]; // Get the ID from the URL
+  //     if (id) {
+  //       const element = document.getElementById(id);
+  //       if (element) {
+  //         element.scrollIntoView({ behavior: 'smooth' });
+  //       }
+  //     }
+  //   };
 
-    handleScroll();
-  }, [router.asPath]);
+  //   handleScroll();
+  // }, [router.asPath]);
   return (
     <>
       <Head>
@@ -60,7 +60,7 @@ export default function Home() {
           <div className="horizontal-line bg-[#e6e6e6]"></div>
           <TextimonialSection />
           <TextSliderSection />
-{/*           <TeamSection /> */}
+          <TeamSection />
         </main>
         <Footer />
       </div>

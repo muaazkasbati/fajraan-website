@@ -5,7 +5,7 @@ const TextSliderSection = () => {
     return (
         <>
             <div className="section-text-slider">
-                <div className="bg-black py-5">
+                <div className="bg-secondary py-5">
                     <div className="horizontal-slide-from-right-to-left flex items-center gap-x-6">
                         {Array.from({ length: repeatCount }).map((_, i) => (
                             <React.Fragment key={i}>

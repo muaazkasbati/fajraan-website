@@ -26,16 +26,16 @@ const PortfolioSection = () => {
     return (
         <>
             <section className="section-portfolio" id='portfolio'>
-                <div className="bg-black">
+                <div className="bg-primary">
                     <div className="section-space">
                         <div className="container">
                             <div className="section-block mx-auto mb-10 max-w-[650px] text-center md:mb-[60px] xl:mb-20 xl:max-w-[856px]">
-                                <h2 className="jos text-colorButteryWhite">
+                                <h2 className="jos text-secondary">
                                     Bringing ideas to life through{" "}
                                     <span>
                                         digital design{" "}
                                         <img
-                                            src="assets/img/elemnts/shape-light-lime-5-arms-star.svg"
+                                            src="assets/img/elemnts/shape-light-lime-5-arms-star-2.svg"
                                             alt="creative star"
                                             width="74"
                                             height="70"
@@ -73,7 +73,7 @@ const PortfolioSection = () => {
                             >
                                 {slides.map((slide, index) => (
                                     <SwiperSlide key={index}>
-                                        <div className="group relative overflow-hidden rounded-[20px] border-[5px] border-colorButteryWhite">
+                                        <div className="group relative overflow-hidden rounded-[20px] border-[5px] border-white">
                                             <img
                                                 src={slide.img}
                                                 alt={slide.title}
@@ -82,8 +82,8 @@ const PortfolioSection = () => {
                                                 style={{minHeight:"390px", objectFit:"cover"}}
                                                 className="h-full w-full object-cover transition-all duration-300 group-hover:scale-110"
                                             />
-                                            <div className="w-[calc(100%-48px)] absolute bottom-0 flex flex-col items-start gap-x-10 gap-y-8 p-6 sm:flex-row sm:items-center">
-                                                <div className="max-w-[380px] flex-1 text-colorButteryWhite">
+                                            <div className="w-full bg-gradient-to-b from-transparent to-secondary z-10 absolute bottom-0 flex flex-col items-start gap-x-10 gap-y-8 p-6 sm:flex-row sm:items-center">
+                                                <div className="max-w-[380px] flex-1 text-white">
                                                     <a
                                                         // href="portfolio-details.html"
                                                         className="mb-[10px] block font-syne text-2xl font-bold leading-[1.4] group-hover:text-colorLightLime md:text-3xl"
