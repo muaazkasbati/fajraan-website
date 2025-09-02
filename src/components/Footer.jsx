@@ -35,8 +35,9 @@ const Footer = () => {
                                     <div className="grid grid-cols-[1fr_auto] items-center">
                                         <div>
                                             <ul className="mt-12 flex flex-col gap-y-3">
-                                                <li>
+                                                 <li>
                                                     <span className="block font-syne text-[21px] font-bold leading-[1.42] text-colorLightLime">Give us a WhatsApp call:</span>
+
                                                     <a href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer" className="text-[21px] leading-[1.42] text-white">+971 54 225 9592</a>
                                                 </li>
                                                 <li>
