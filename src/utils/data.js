@@ -40,29 +40,30 @@ export const slides = [
 
 export const accordionData = [
   {
-    title: "01/ Discovery & Requirements",
+    title: "01/ Discovery & Strategy",
     content:
-      "We begin with a deep dive into your business goals, target users, and project requirements. This sets a strong foundation for what we're about to build.",
+      "Every project begins with understanding your vision. We analyze your business goals, target audience, and industry landscape to define a clear digital strategy tailored to your needs.",
   },
   {
     title: "02/ Design & Architecture",
     content:
-      "We create wireframes or use your Figma designs and turn them into responsive, intuitive interfaces. Simultaneously, we design the backend architecture for scalability and speed.",
+      "Our team crafts wireframes, prototypes, or adapts your Figma designs into intuitive, responsive interfaces. At the same time, we architect a scalable and secure backend foundation.",
   },
   {
     title: "03/ Development & Integration",
     content:
-      "Using the MERN stack and cloud tools like Firebase or Cloudinary, we code clean, modular, and fully integrated features. From APIs to admin dashboards — everything works together seamlessly.",
+      "Leveraging the MERN stack and modern cloud technologies, we build robust, modular applications. From APIs to dashboards and third-party integrations — everything works seamlessly together.",
   },
   {
-    title: "04/ Testing & Feedback",
+    title: "04/ Quality Assurance & Feedback",
     content:
-      "We rigorously test the application across devices and gather your feedback iteratively. Performance, security, and UI consistency are triple-checked.",
+      "We perform thorough testing across devices, browsers, and use cases. Security, performance, and design consistency are refined based on iterative feedback to ensure excellence.",
   },
   {
-    title: "05/ Launch & Handoff",
+    title: "05/ Launch & Growth Support",
     content:
-      "After final QA, we deploy your project using modern CI/CD workflows. You get full access, training if needed, and post-launch support options.",
+      "Once approved, we launch with optimized CI/CD workflows for smooth deployment. You receive full access, onboarding support, and scalable growth options to keep your business moving forward.",
   },
 ];
+
 

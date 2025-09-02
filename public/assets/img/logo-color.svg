@@ -84,7 +84,7 @@
     </linearGradient>
     <linearGradient id="linear-gradient-4" x1="159.04" y1="16.89" x2="7.97" y2="70.33" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#18b1d0"/>
-      <stop offset="1" stop-color="#19c8c3"/>
+      <stop offset="1" stop-color="#19bec9"/>
     </linearGradient>
     <linearGradient id="linear-gradient-5" x1="168.63" y1="44.01" x2="17.56" y2="97.44" xlink:href="#linear-gradient-4"/>
     <linearGradient id="linear-gradient-6" x1="505.13" y1="166.14" x2="99.21" y2="91.72" xlink:href="#linear-gradient-4"/>

@@ -1,0 +1,687 @@
+[
+    {
+        "icon": "th-1-service-icon-1.svg",
+        "title": "Web Development",
+        "slug": "web-development",
+        "seoTitle": "Web Development Services | Custom Websites & Web Apps - Fajraan Tech",
+        "seoDescription": "Fajraan Tech offers expert web development services including custom web applications, e-commerce stores, WordPress websites, landing pages, API integration, and performance optimization.",
+        "seoKeywords": [
+            "web development",
+            "custom web applications",
+            "ecommerce website",
+            "wordpress development",
+            "landing page design",
+            "api integration",
+            "website optimization",
+            "Fajraan Tech"
+        ],
+        "category": "Development",
+        "description": "Professional web development services to build high-performing, scalable, and user-friendly websites tailored to your business needs.",
+        "subServices": [
+            {
+                "title": "Custom Web Applications",
+                "description": "Tailored web applications built to meet your specific business requirements with scalability and performance in mind.",
+                "icon": "/assets/img/icons/icon-web-app.svg"
+            },
+            {
+                "title": "WordPress Website Development",
+                "description": "Custom WordPress websites designed for ease of use, SEO optimization, and seamless content management.",
+                "icon": "/assets/img/icons/icon-wordpress.svg"
+            },
+            {
+                "title": "Shopify & E-commerce Store Development",
+                "description": "Fully functional e-commerce stores with secure payment gateways and user-friendly shopping experiences.",
+                "icon": "/assets/img/icons/icon-ecommerce.svg"
+            },
+            {
+                "title": "Landing Page Design & Development",
+                "description": "High-converting landing pages optimized for lead generation and marketing campaigns.",
+                "icon": "/assets/img/icons/icon-landing-page.svg"
+            },
+            {
+                "title": "API Integration & Backend Development",
+                "description": "Robust backend systems with seamless API integrations for enhanced functionality and connectivity.",
+                "icon": "/assets/img/icons/icon-api.svg"
+            },
+            {
+                "title": "Web App Performance Optimization",
+                "description": "Optimizing web applications for speed, scalability, and a smooth user experience.",
+                "icon": "/assets/img/icons/icon-performance.svg"
+            }
+        ],
+        "content": {
+            "breadcrumb": "Web Development Service",
+            "hero": {
+                "image": "/assets/img/new/web-development-service-img.jpg",
+                "title": "Web Development for",
+                "highlight": "modern",
+                "subtitle": "business solutions",
+                "description": [
+                    "Web development is the backbone of your online presence, ensuring your business is accessible, fast, and scalable across devices.",
+                    "At Fajraan Tech, we specialize in building responsive, secure, and high-performing websites tailored to your business goals."
+                ]
+            },
+            "sections": [
+                {
+                    "title": "1/ Frontend Development:",
+                    "points": [
+                        "We create pixel-perfect, responsive, and user-friendly interfaces using React.js, Next.js, and Tailwind CSS.",
+                        "Our focus is on performance, accessibility, and delivering a seamless experience for your customers.",
+                        "Key aspects include layouts, animations, cross-browser compatibility, and mobile-first design."
+                    ]
+                },
+                {
+                    "title": "2/ Backend Development:",
+                    "points": [
+                        "We build robust, secure, and scalable backend systems with Node.js, Express.js, and modern APIs.",
+                        "Our team ensures smooth integration with databases, third-party tools, and custom business logic.",
+                        "Key aspects include API development, authentication, data management, and security."
+                    ]
+                }
+            ],
+            "approach": {
+                "title": "Our Approach",
+                "description": "We follow a proven methodology to deliver web development projects that are fast, reliable, and business-focused:",
+                "steps": [
+                    {
+                        "icon": "/assets/img/icons/icon-black-search.svg",
+                        "title": "Discovery & Planning:",
+                        "points": [
+                            "Understanding your business requirements, target audience, and technical needs to define project goals."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-edit.svg",
+                        "title": "Design & Development:",
+                        "points": [
+                            "Crafting responsive UI/UX and coding backend logic with a focus on scalability, security, and performance."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-rocket.svg",
+                        "title": "Launch & Growth:",
+                        "points": [
+                            "Deploying your website, monitoring performance, and providing ongoing support with iterative improvements."
+                        ]
+                    }
+                ],
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img.jpg"
+            }
+        }
+    },
+    {
+        "icon": "th-1-service-icon-2.svg",
+        "title": "Mobile & Desktop Applications",
+        "slug": "mobile-desktop-applications",
+        "seoTitle": "Mobile & Desktop App Development | Custom Apps - Fajraan Tech",
+        "seoDescription": "Fajraan Tech delivers high-performance mobile and desktop applications with seamless user experiences for iOS, Android, Windows, macOS, and Linux.",
+        "seoKeywords": [
+            "mobile app development",
+            "desktop app development",
+            "cross-platform apps",
+            "flutter development",
+            "react native development",
+            "app ui ux design",
+            "Fajraan Tech"
+        ],
+        "category": "Development",
+        "description": "High-performance mobile and desktop apps designed for seamless user experiences.",
+        "subServices": [
+            {
+                "title": "iOS & Android App Development (Native & Cross-Platform)",
+                "description": "Building native and cross-platform mobile apps for iOS and Android with optimal performance.",
+                "icon": "/assets/img/icons/icon-mobile-app.svg"
+            },
+            {
+                "title": "Flutter & React Native Development",
+                "description": "Cross-platform app development using Flutter and React Native for cost-effective solutions.",
+                "icon": "/assets/img/icons/icon-flutter-react.svg"
+            },
+            {
+                "title": "Desktop Application Development (Windows/macOS/Linux)",
+                "description": "Custom desktop applications tailored for Windows, macOS, and Linux environments.",
+                "icon": "/assets/img/icons/icon-desktop-app.svg"
+            },
+            {
+                "title": "App UI/UX Design",
+                "description": "Creating intuitive and visually appealing UI/UX designs for mobile and desktop apps.",
+                "icon": "/assets/img/icons/icon-ui-ux.svg"
+            }
+        ],
+        "content": {
+            "breadcrumb": "Mobile & Desktop Application Development",
+            "hero": {
+                "image": "/assets/img/new/mobile-desktop-application-development-service.jpg",
+                "title": "Mobile & Desktop Apps for",
+                "highlight": "seamless",
+                "subtitle": "user experiences",
+                "description": [
+                    "Our mobile and desktop app development services create intuitive, high-performing applications tailored to your business needs.",
+                    "At Fajraan Tech, we focus on delivering cross-platform solutions that work flawlessly across devices and operating systems."
+                ]
+            },
+            "sections": [
+                {
+                    "title": "1/ Mobile App Development:",
+                    "points": [
+                        "We develop native and cross-platform apps using Flutter, React Native, and native SDKs for iOS and Android.",
+                        "Our apps prioritize performance, intuitive design, and seamless integration with backend systems.",
+                        "Key aspects include responsive UI, push notifications, and offline functionality."
+                    ]
+                },
+                {
+                    "title": "2/ Desktop App Development:",
+                    "points": [
+                        "We build robust desktop applications for Windows, macOS, and Linux using modern frameworks.",
+                        "Our solutions ensure compatibility, performance, and integration with enterprise systems.",
+                        "Key aspects include user-friendly interfaces, system resource optimization, and security."
+                    ]
+                }
+            ],
+            "approach": {
+                "title": "Our Approach",
+                "description": "We follow a structured process to deliver mobile and desktop apps that align with your business objectives:",
+                "steps": [
+                    {
+                        "icon": "/assets/img/icons/icon-black-search.svg",
+                        "title": "Discovery & Planning:",
+                        "points": [
+                            "Analyzing your business needs, user requirements, and technical specifications to define app goals."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-edit.svg",
+                        "title": "Design & Development:",
+                        "points": [
+                            "Creating intuitive UI/UX designs and coding robust app logic for performance and scalability."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-rocket.svg",
+                        "title": "Launch & Support:",
+                        "points": [
+                            "Deploying your app, testing functionality, and providing ongoing maintenance and updates."
+                        ]
+                    }
+                ],
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-mobile.jpg"
+            }
+        }
+    },
+    {
+        "icon": "th-1-service-icon-3.svg",
+        "title": "Design Services",
+        "slug": "design-services",
+        "seoTitle": "UI/UX & Graphic Design Services | Branding & Prototyping - Fajraan Tech",
+        "seoDescription": "Fajraan Tech offers creative UI/UX and graphic design services, including wireframing, prototyping, branding, and print design for digital and physical assets.",
+        "seoKeywords": [
+            "ui ux design",
+            "graphic design",
+            "branding",
+            "wireframing",
+            "prototyping",
+            "logo design",
+            "print design",
+            "Fajraan Tech"
+        ],
+        "category": "Design",
+        "description": "Creative and user-focused design solutions for digital and print.",
+        "subServices": [
+            {
+                "title": "UI/UX Design for Web & Mobile",
+                "description": "Designing intuitive and visually appealing interfaces for web and mobile applications.",
+                "icon": "/assets/img/icons/icon-ui-ux.svg"
+            },
+            {
+                "title": "User Experience (UX) Strategy",
+                "description": "Crafting UX strategies based on user research and behavior analysis.",
+                "icon": "/assets/img/icons/icon-ux-strategy.svg"
+            },
+            {
+                "title": "Wireframing & Prototyping",
+                "description": "Creating wireframes and interactive prototypes to visualize design concepts.",
+                "icon": "/assets/img/icons/icon-wireframe.svg"
+            },
+            {
+                "title": "Storyboard Design",
+                "description": "Developing storyboards to map out user journeys and interactions.",
+                "icon": "/assets/img/icons/icon-storyboard.svg"
+            },
+            {
+                "title": "Interactive Prototypes",
+                "description": "Building clickable prototypes to test and refine user experiences.",
+                "icon": "/assets/img/icons/icon-prototype.svg"
+            },
+            {
+                "title": "Logo & Brand Identity Design",
+                "description": "Creating memorable logos and cohesive brand identities.",
+                "icon": "/assets/img/icons/icon-logo.svg"
+            },
+            {
+                "title": "Company Profile Design",
+                "description": "Designing professional company profiles for business presentations.",
+                "icon": "/assets/img/icons/icon-profile.svg"
+            },
+            {
+                "title": "Business Card & Stationery Design",
+                "description": "Crafting professional business cards and stationery for brand consistency.",
+                "icon": "/assets/img/icons/icon-stationery.svg"
+            },
+            {
+                "title": "Brochure & Flyer Design",
+                "description": "Designing engaging brochures and flyers for marketing and promotions.",
+                "icon": "/assets/img/icons/icon-brochure.svg"
+            },
+            {
+                "title": "Social Media Post Design",
+                "description": "Creating visually appealing social media graphics for audience engagement.",
+                "icon": "/assets/img/icons/icon-social-media.svg"
+            },
+            {
+                "title": "Presentation Design (Pitch Decks, Slides)",
+                "description": "Designing impactful pitch decks and slides for business presentations.",
+                "icon": "/assets/img/icons/icon-presentation.svg"
+            },
+            {
+                "title": "Infographic Design",
+                "description": "Creating informative and visually engaging infographics.",
+                "icon": "/assets/img/icons/icon-infographic.svg"
+            },
+            {
+                "title": "Branding & Concept Art",
+                "description": "Developing creative branding assets and concept art for unique identities.",
+                "icon": "/assets/img/icons/icon-branding.svg"
+            },
+            {
+                "title": "Print Design (Billboards, Rollups, Posters)",
+                "description": "Designing high-quality print materials for outdoor and promotional use.",
+                "icon": "/assets/img/icons/icon-print.svg"
+            }
+        ],
+        "content": {
+            "breadcrumb": "Design Services",
+            "hero": {
+                "image": "/assets/img/new/design-services.jpg",
+                "title": "Design Services for",
+                "highlight": "creative",
+                "subtitle": "digital & print solutions",
+                "description": [
+                    "Our design services craft visually stunning and user-centric solutions for web, mobile, and print media.",
+                    "At Fajraan Tech, we create designs that resonate with your audience and strengthen your brand identity."
+                ]
+            },
+            "sections": [
+                {
+                    "title": "1/ UI/UX Design:",
+                    "points": [
+                        "We design intuitive and engaging user interfaces for web and mobile applications using Figma and Adobe XD.",
+                        "Our UX strategies focus on user research, accessibility, and seamless navigation.",
+                        "Key aspects include wireframes, prototypes, and interactive design flows."
+                    ]
+                },
+                {
+                    "title": "2/ Graphic & Print Design:",
+                    "points": [
+                        "We create impactful branding assets, including logos, business cards, brochures, and posters.",
+                        "Our designs are tailored to reflect your brand’s identity and values across digital and physical mediums.",
+                        "Key aspects include visual consistency, typography, and high-quality print outputs."
+                    ]
+                }
+            ],
+            "approach": {
+                "title": "Our Approach",
+                "description": "We follow a collaborative process to deliver design solutions that are both functional and visually appealing:",
+                "steps": [
+                    {
+                        "icon": "/assets/img/icons/icon-black-search.svg",
+                        "title": "Discovery & Research:",
+                        "points": [
+                            "Understanding your brand, audience, and design goals to create a tailored strategy."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-edit.svg",
+                        "title": "Design & Prototyping:",
+                        "points": [
+                            "Creating wireframes, prototypes, and final designs with a focus on usability and aesthetics."
+                        ]
+                    },
+                    {
+                        "icon": "/ Rossetti",
+                        "title": "Delivery & Refinement:",
+                        "points": [
+                            "Delivering high-quality design assets and iterating based on feedback to ensure perfection."
+                        ]
+                    }
+                ],
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-design.jpg"
+            }
+        }
+    },
+    {
+        "icon": "th-1-service-icon-4.svg",
+        "title": "Media & Animation",
+        "slug": "media-animation",
+        "seoTitle": "Media & Animation Services | 2D/3D Animation & Video Editing - Fajraan Tech",
+        "seoDescription": "Fajraan Tech provides engaging media and animation services, including 2D/3D animations, explainer videos, motion graphics, and video editing for brands.",
+        "seoKeywords": [
+            "2d animation",
+            "3d animation",
+            "video editing",
+            "explainer videos",
+            "motion graphics",
+            "promotional videos",
+            "Fajraan Tech"
+        ],
+        "category": "Media",
+        "description": "Engaging multimedia solutions that bring stories and brands to life.",
+        "subServices": [
+            {
+                "title": "2D Animation",
+                "description": "Creating engaging 2D animations for storytelling, marketing, or educational purposes.",
+                "icon": "/assets/img/icons/icon-2d-animation.svg"
+            },
+            {
+                "title": "3D Animation",
+                "description": "Producing high-quality 3D animations for immersive and realistic visuals.",
+                "icon": "/assets/img/icons/icon-3d-animation.svg"
+            },
+            {
+                "title": "Video Editing & Post-Production",
+                "description": "Professional video editing and post-production for polished and engaging content.",
+                "icon": "/assets/img/icons/icon-video-editing.svg"
+            },
+            {
+                "title": "Explainer Videos",
+                "description": "Crafting concise and impactful explainer videos to communicate complex ideas.",
+                "icon": "/assets/img/icons/icon-explainer-video.svg"
+            },
+            {
+                "title": "Motion Graphics",
+                "description": "Designing dynamic motion graphics for promotions and brand storytelling.",
+                "icon": "/assets/img/icons/icon-motion-graphics.svg"
+            },
+            {
+                "title": "Reels & Promotional Video Design",
+                "description": "Creating short-form reels and promotional videos optimized for social media.",
+                "icon": "/assets/img/icons/icon-reels.svg"
+            }
+        ],
+        "content": {
+            "breadcrumb": "Media & Animation Services",
+            "hero": {
+                "image": "/assets/img/new/media-animation-service.jpg",
+                "title": "Media & Animation for",
+                "highlight": "engaging",
+                "subtitle": "brand storytelling",
+                "description": [
+                    "Our media and animation services create compelling visuals that captivate audiences and elevate your brand.",
+                    "At Fajraan Tech, we specialize in producing high-quality animations and videos tailored to your marketing goals."
+                ]
+            },
+            "sections": [
+                {
+                    "title": "1/ Animation Services:",
+                    "points": [
+                        "We create 2D and 3D animations using tools like Blender, After Effects, and Animate.",
+                        "Our animations are designed to tell stories, explain concepts, or promote products effectively.",
+                        "Key aspects include smooth transitions, character design, and visual effects."
+                    ]
+                },
+                {
+                    "title": "2/ Video Editing & Production:",
+                    "points": [
+                        "We provide professional video editing and post-production services using Premiere Pro and DaVinci Resolve.",
+                        "Our team ensures high-quality outputs with color grading, sound design, and seamless cuts.",
+                        "Key aspects include storytelling, pacing, and audience engagement."
+                    ]
+                }
+            ],
+            "approach": {
+                "title": "Our Approach",
+                "description": "We follow a creative process to deliver media and animation projects that resonate with your audience:",
+                "steps": [
+                    {
+                        "icon": "/assets/img/icons/icon-black-search.svg",
+                        "title": "Concept & Storyboarding:",
+                        "points": [
+                            "Defining your vision, audience, and creative goals to develop a compelling storyboard."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-edit.svg",
+                        "title": "Production & Animation:",
+                        "points": [
+                            "Creating high-quality animations and videos with a focus on creativity and technical precision."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-rocket.svg",
+                        "title": "Delivery & Optimization:",
+                        "points": [
+                            "Delivering final assets optimized for various platforms and iterating based on feedback."
+                        ]
+                    }
+                ],
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-media.jpg"
+            }
+        }
+    },
+    {
+        "icon": "th-1-service-icon-4.svg",
+        "title": "Digital Marketing & Content",
+        "slug": "digital-marketing-content",
+        "seoTitle": "Digital Marketing & Content Services | SEO, Social Media, Ads - Fajraan Tech",
+        "seoDescription": "Fajraan Tech offers digital marketing and content services, including SEO, social media management, paid ads, email campaigns, and content writing for businesses.",
+        "seoKeywords": [
+            "digital marketing",
+            "seo optimization",
+            "social media management",
+            "paid ads",
+            "content writing",
+            "email marketing",
+            "Fajraan Tech"
+        ],
+        "category": "Marketing",
+        "description": "Strategies and content that amplify your digital presence and connect with audiences.",
+        "subServices": [
+            {
+                "title": "SEO Optimization (Technical + On-Page)",
+                "description": "Enhancing website visibility with technical and on-page SEO strategies.",
+                "icon": "/assets/img/icons/icon-seo.svg"
+            },
+            {
+                "title": "Social Media Management",
+                "description": "Managing social media platforms to boost engagement and brand awareness.",
+                "icon": "/assets/img/icons/icon-social-media.svg"
+            },
+            {
+                "title": "Paid Ads (Facebook, Google, Instagram)",
+                "description": "Creating targeted ad campaigns for measurable results and ROI.",
+                "icon": "/assets/img/icons/icon-paid-ads.svg"
+            },
+            {
+                "title": "Email Marketing Campaigns",
+                "description": "Designing effective email campaigns to nurture leads and drive conversions.",
+                "icon": "/assets/img/icons/icon-email-marketing.svg"
+            },
+            {
+                "title": "Content Writing & Copywriting",
+                "description": "Crafting compelling content and copy to engage and persuade audiences.",
+                "icon": "/assets/img/icons/icon-content-writing.svg"
+            },
+            {
+                "title": "Blog & Article Writing",
+                "description": "Producing SEO-optimized blogs and articles to attract and inform audiences.",
+                "icon": "/assets/img/icons/icon-blog.svg"
+            },
+            {
+                "title": "Product Descriptions for E-Commerce",
+                "description": "Writing persuasive product descriptions to boost e-commerce sales.",
+                "icon": "/assets/img/icons/icon-product-description.svg"
+            }
+        ],
+        "content": {
+            "breadcrumb": "Digital Marketing & Content Services",
+            "hero": {
+                "image": "/assets/img/new/digital-marketing-content-service.jpg",
+                "title": "Digital Marketing for",
+                "highlight": "amplified",
+                "subtitle": "brand visibility",
+                "description": [
+                    "Our digital marketing and content services drive traffic, engagement, and conversions for your business.",
+                    "At Fajraan Tech, we create tailored strategies to boost your online presence and connect with your audience."
+                ]
+            },
+            "sections": [
+                {
+                    "title": "1/ SEO & Content Marketing:",
+                    "points": [
+                        "We optimize your website for search engines with technical SEO, on-page SEO, and keyword strategies.",
+                        "Our content team creates engaging blogs, articles, and product descriptions to attract and retain customers.",
+                        "Key aspects include keyword research, link building, and content optimization."
+                    ]
+                },
+                {
+                    "title": "2/ Social Media & Paid Ads:",
+                    "points": [
+                        "We manage social media platforms and create targeted ad campaigns on Facebook, Google, and Instagram.",
+                        "Our strategies focus on audience engagement, brand awareness, and measurable ROI.",
+                        "Key aspects include ad creatives, analytics, and campaign optimization."
+                    ]
+                }
+            ],
+            "approach": {
+                "title": "Our Approach",
+                "description": "We follow a data-driven process to deliver marketing and content solutions that drive results:",
+                "steps": [
+                    {
+                        "icon": "/assets/img/icons/icon-black-search.svg",
+                        "title": "Research & Strategy:",
+                        "points": [
+                            "Analyzing your market, competitors, and audience to create a tailored marketing plan."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-edit.svg",
+                        "title": "Content & Campaign Creation:",
+                        "points": [
+                            "Developing engaging content and targeted campaigns to maximize reach and impact."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-rocket.svg",
+                        "title": "Execution & Optimization:",
+                        "points": [
+                            "Launching campaigns, monitoring performance, and optimizing for better results."
+                        ]
+                    }
+                ],
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-marketing.jpg"
+            }
+        }
+    },
+    {
+        "icon": "th-1-service-icon-3.svg",
+        "title": "Data & Admin Services",
+        "slug": "data-admin-services",
+        "seoTitle": "Data & Admin Services | Data Entry & Virtual Support - Fajraan Tech",
+        "seoDescription": "Fajraan Tech provides reliable data entry, database management, document formatting, and virtual assistant support to streamline your business operations.",
+        "seoKeywords": [
+            "data entry",
+            "database management",
+            "document formatting",
+            "virtual assistant",
+            "crm data cleanup",
+            "Fajraan Tech"
+        ],
+        "category": "Administration",
+        "description": "Reliable data and admin support for businesses of all sizes.",
+        "subServices": [
+            {
+                "title": "Data Entry & Processing",
+                "description": "Accurate and efficient data entry and processing services for business needs.",
+                "icon": "/assets/img/icons/icon-data-entry.svg"
+            },
+            {
+                "title": "Database Management",
+                "description": "Organizing and maintaining databases for seamless data access and reporting.",
+                "icon": "/assets/img/icons/icon-database.svg"
+            },
+            {
+                "title": "Document Formatting & Conversion",
+                "description": "Formatting and converting documents for professional and consistent outputs.",
+                "icon": "/assets/img/icons/icon-document.svg"
+            },
+            {
+                "title": "CRM Data Cleanup",
+                "description": "Cleaning and organizing CRM data to improve efficiency and accuracy.",
+                "icon": "/assets/img/icons/icon-crm.svg"
+            },
+            {
+                "title": "Virtual Assistant Support",
+                "description": "Providing virtual assistant services for administrative tasks and support.",
+                "icon": "/assets/img/icons/icon-virtual-assistant.svg"
+            }
+        ],
+        "content": {
+            "breadcrumb": "Data & Admin Services",
+            "hero": {
+                "image": "/assets/img/new/data-admin-service.jpg",
+                "title": "Data & Admin Services for",
+                "highlight": "efficient",
+                "subtitle": "business operations",
+                "description": [
+                    "Our data and admin services streamline your business processes with accurate data management and reliable support.",
+                    "At Fajraan Tech, we provide tailored solutions to handle your administrative and data-related tasks efficiently."
+                ]
+            },
+            "sections": [
+                {
+                    "title": "1/ Data Management:",
+                    "points": [
+                        "We offer precise data entry, processing, and database management services for businesses.",
+                        "Our team ensures data accuracy, organization, and integration with your systems.",
+                        "Key aspects include data validation, cleanup, and reporting."
+                    ]
+                },
+                {
+                    "title": "2/ Administrative Support:",
+                    "points": [
+                        "We provide virtual assistant services for scheduling, document formatting, and CRM management.",
+                        "Our solutions help businesses save time and focus on core operations.",
+                        "Key aspects include task automation, communication support, and process optimization."
+                    ]
+                }
+            ],
+            "approach": {
+                "title": "Our Approach",
+                "description": "We follow a systematic process to deliver data and admin services that enhance your operational efficiency:",
+                "steps": [
+                    {
+                        "icon": "/assets/img/icons/icon-black-search.svg",
+                        "title": "Needs Assessment:",
+                        "points": [
+                            "Evaluating your data and administrative needs to create a customized support plan."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-edit.svg",
+                        "title": "Execution & Management:",
+                        "points": [
+                            "Handling data entry, processing, and administrative tasks with precision and efficiency."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-rocket.svg",
+                        "title": "Optimization & Support:",
+                        "points": [
+                            "Delivering results, monitoring performance, and providing ongoing support for continuous improvement."
+                        ]
+                    }
+                ],
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-data.jpg"
+            }
+        }
+    }
+]

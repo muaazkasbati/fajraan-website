@@ -60,7 +60,7 @@ export default function Home() {
           <div className="horizontal-line bg-[#e6e6e6]"></div>
           <TextimonialSection />
           <TextSliderSection />
-{/*           <TeamSection /> */}
+          <TeamSection />
         </main>
         <Footer />
       </div>

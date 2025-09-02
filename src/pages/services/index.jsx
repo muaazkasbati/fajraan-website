@@ -32,7 +32,7 @@ export default function Services() {
 
         <main className="main-wrapper">
             <BreadCrumb page="Our Services" />
-            <ServiceSection />
+            <ServiceSection servicePage />
             <TextSliderSection />
             <ProcessSection />
         </main>
