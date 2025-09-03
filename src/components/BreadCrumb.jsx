@@ -59,7 +59,7 @@ const BreadCrumb = ({ page }) => {
                     <div className="container">
                         <div className="breadcrumb-block">
                             <h1>{page || capitalize(pathSegments[pathSegments?.length - 1]) || 'Home'}</h1>
-                            <ul className="breadcrumb-nav">
+                            <ul className="breadcrumb-nav sm:flex-nowrap flex-wrap sm:justify-start justify-center gap-y-2!">
                                 {breadcrumbs?.map((crumb, index) => (
                                     <li key={index}>
                                         {index === breadcrumbs?.length - 1 ? (

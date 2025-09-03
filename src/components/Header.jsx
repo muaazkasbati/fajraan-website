@@ -32,28 +32,16 @@ const Header = () => {
     }, []);
     return (
         <>
-            {/* <header className={`section-header ${isScrolled ? "bg-black/80 py-2" : "bg-transparent py-6"} backdrop-blur-2xl transition-all duration-300 fixed top-0 z-30 w-full`}> */}
-               <header
-  className={`section-header ${
-    isScrolled ? "bg-secondary/70 py-2" : "bg-transparent py-6"
-  } backdrop-blur-md! transition-all duration-300 fixed top-0 z-40 w-full`}
->
-
+            <header className={`section-header site-header ${isScrolled ? "bg-secondary/70! py-2" : "bg-transparent py-6"} backdrop-blur-md! transition-all duration-300 fixed top-0 z-40 w-full`}>
                 <div className="container">
                     <div className="flex items-center justify-between">
                         <Link href="/" className="h-auto w-auto">
-                            <img src="/assets/img/logo-white.png" alt="Fajraan" width="200"
-                            // height="24" 
-                            />
+                            <img src="/assets/img/logo-white.png" alt="Fajraan" width="200" />
                         </Link>
                         <div className="flex items-center gap-x-10">
-
                             <div className="menu-block-wrapper">
                                 {menuOpen && (
-                                    <div
-                                        className="menu-overlay fixed inset-0 bg-black/60 z-10"
-                                        onClick={closeMenu}
-                                    />
+                                    <div className="menu-overlay fixed inset-0 bg-black/60 z-10" onClick={closeMenu} />
                                 )}
                                 <nav className={`menu-block ${menuOpen ? "active" : ""}`} id="append-menu-header">
                                     <div className="mobile-menu-head">
@@ -73,168 +61,6 @@ const Header = () => {
                                                 <a href={item.href}>{item.label}</a>
                                             </li>
                                         ))}
-                                        {/* <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <Link href="/" className="nav-link-item">Home</Link>
-                                        </li> */}
-                                        {/* <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <Link href="/about" className="nav-link-item">About Us</Link>
-                                        </li>
-                                        <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <Link href="/services" className="nav-link-item">Services</Link>
-                                        </li>
-                                        <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <Link href="/#portfolio" className="nav-link-item">Portfolio</Link>
-                                        </li> */}
-                                        {/* <li className="nav-item nav-item-has-children">
-                                        <a href="#" className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">Demo
-                                            <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" className="-rotate-90 invert-0 lg:rotate-0 lg:invert" />
-                                        </a>
-                                        <ul className="sub-menu" id="submenu-0">
-                                            <li className="sub-menu--item">
-                                                <a href="index-2.html">Design Agency</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="index-3.html">Startup Agency</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="index-4.html">SEO Agency</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="index-5.html">Business Consultation</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="index-6.html">Digital Marketing</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="index-7.html">Interior Design Agency</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="index-8.html">Advertising Agency</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="index-9.html">IT Agency</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="index-10.html">Social Marketing Agency</a>
-                                            </li>
-                                        </ul>
-                                    </li> */}
-                                        {/* <li className="nav-item nav-item-has-children">
-                                        <a href="#" className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">Pages
-                                            <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" className="-rotate-90 invert-0 lg:rotate-0 lg:invert" />
-                                        </a>
-                                        <ul className="sub-menu" id="submenu-1">
-                                            <li className="sub-menu--item nav-item-has-children">
-                                                <a href="#" data-menu-get="h3" className="drop-trigger">Services
-                                                    <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" className="-rotate-90" />
-                                                </a>
-                                                <ul className="sub-menu shape-none" id="submenu-2">
-                                                    <li className="sub-menu--item">
-                                                        <a href="service.html">Service</a>
-                                                    </li>
-                                                    <li className="sub-menu--item">
-                                                        <a href="service-details.html">Service Details</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="sub-menu--item nav-item-has-children">
-                                                <a href="#" data-menu-get="h3" className="drop-trigger">Projects
-                                                    <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" className="-rotate-90" />
-                                                </a>
-                                                <ul className="sub-menu shape-none" id="submenu-3">
-                                                    <li className="sub-menu--item">
-                                                        <a href="portfolio-1.html">Project 1</a>
-                                                    </li>
-                                                    <li className="sub-menu--item">
-                                                        <a href="portfolio-2.html">Project 2</a>
-                                                    </li>
-                                                    <li className="sub-menu--item">
-                                                        <a href="portfolio-details.html">Project Details</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="sub-menu--item nav-item-has-children">
-                                                <a href="#" data-menu-get="h3" className="drop-trigger">Team
-                                                    <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" className="-rotate-90" height="4" />
-                                                </a>
-                                                <ul className="sub-menu shape-none" id="submenu-4">
-                                                    <li className="sub-menu--item">
-                                                        <a href="team.html">Team</a>
-                                                    </li>
-                                                    <li className="sub-menu--item">
-                                                        <a href="team-details.html">Team Details</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="sub-menu--item nav-item-has-children">
-                                                <a href="#" data-menu-get="h3" className="drop-trigger">Utility
-                                                    <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" className="-rotate-90" />
-                                                </a>
-                                                <ul className="sub-menu shape-none" id="submenu-5">
-                                                    <li className="sub-menu--item">
-                                                        <a href="coming-soon.html">Coming Soon</a>
-                                                    </li>
-                                                    <li className="sub-menu--item">
-                                                        <a href="404-error.html">404 Page</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="sub-menu--item nav-item-has-children">
-                                                <a href="#" data-menu-get="h3" className="drop-trigger">Authentication
-                                                    <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" className="-rotate-90" height="4" />
-                                                </a>
-                                                <ul className="sub-menu shape-none" id="submenu-6">
-                                                    <li className="sub-menu--item">
-                                                        <a href="log-in.html">Sign In</a>
-                                                    </li>
-                                                    <li className="sub-menu--item">
-                                                        <a href="sign-up.html">Sign Up</a>
-                                                    </li>
-                                                    <li className="sub-menu--item">
-                                                        <a href="reset-password.html">Reset Password</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="pricing.html" data-menu-get="h3" className="drop-trigger">Pricing
-                                                </a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="faq.html" data-menu-get="h3" className="drop-trigger">FAQ’s
-                                                </a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="testimonial.html" data-menu-get="h3" className="drop-trigger">Testimonial
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="nav-item nav-item-has-children">
-                                        <a href="#" className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">Blog
-                                            <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" className="-rotate-90 invert-0 lg:rotate-0 lg:invert" />
-                                        </a>
-                                        <ul className="sub-menu" id="submenu-7">
-                                            <li className="sub-menu--item">
-                                                <a href="blog-1.html">Blog 1</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="blog-2.html">Blog 2</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="blog-3.html">Blog 3</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="blog-4.html">Blog 4</a>
-                                            </li>
-                                            <li className="sub-menu--item">
-                                                <a href="blog-details.html">Blog Details</a>
-                                            </li>
-                                        </ul>
-                                    </li> */}
-
-                                        {/* <li className="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
-                                            <Link href="/contact" className="nav-link-item">Contact Us</Link>
-                                        </li> */}
                                     </ul>
                                 </nav>
                             </div>
