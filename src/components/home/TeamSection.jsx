@@ -62,7 +62,7 @@ const TeamSection = () => {
                     </div>
 
                     {/* <ul className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"> */}
-                    <ul style={{ placeContent: "center", placeSelf: "center" }} className="grid place-items-center grid-cols-2 gap-x-6 gap-y-10 ">
+                    <ul style={{ placeContent: "center", placeSelf: "center" }} className="grid place-items-center md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-10 ">
 
                         {teamData.map((member, index) => (
                             <li
