@@ -58,7 +58,7 @@ const Header = () => {
                                                 className={`nav-link-item drop-trigger rounded-none border border-transparent ${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "text-colorLightLime" : "text-colorDark lg:text-white"
                                                     }`}
                                             >
-                                                <a href={item.href}>{item.label}</a>
+                                                <Link href={item.href}>{item.label}</Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -67,12 +67,6 @@ const Header = () => {
                         </div>
                         <div className="flex items-center gap-x-6">
                             <Link href="/contact" className="btn-primary relative hidden px-[30px] py-[10px] sm:inline-flex">Contact Us</Link>
-
-                            {/* <div className="block lg:hidden">
-                                <button id="openBtn" className="hamburger-menu mobile-menu-trigger">
-                                    <span className="bg-white before:bg-white after:bg-white"></span>
-                                </button>
-                            </div> */}
                             <div className="block lg:hidden">
                                 <button
                                     id="openBtn"
