@@ -159,7 +159,7 @@ export default function Blogs() {
                                                 <SkeletonBlogCard key={i} />
                                             ))
                                         ) : posts?.map((data, i) => (
-                                                <li key={i} class="jos group rounded-[20px] border border-black bg-[#FFFDF8] p-6">
+                                                <li key={i} class="jos group rounded-[20px] border border-black bg-white p-6">
                                                     <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data?.slug}`} class="block overflow-hidden rounded-[20px]">
                                                         <img alt={data?.title?.rendered} src={data?.yoast_head_json?.og_image[0]?.url ? `${data?.yoast_head_json?.og_image[0]?.url}` : "https://via.placeholder.com/415x268"} width="820" height="500" loading="lazy" class="max-h-[280px] min-h-[280px] w-full object-cover transition-all duration-300 group-hover:scale-110" />
                                                     </Link>

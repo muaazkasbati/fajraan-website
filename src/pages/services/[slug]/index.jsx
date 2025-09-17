@@ -155,8 +155,8 @@ export default function ServiceDetail({ serviceData }) {
               </div>
             </div>
           </section>
-          <section className="section-service" id='services'>
-            <div className="bg-colorIvory">
+          <section className="section-service" id='sub-services'>
+            <div className="bg-white">
               <div className="section-space">
                 <div className="container">
                   <div className="section-block mx-auto mb-10 max-w-[650px] text-center md:mb-[60px] xl:mb-20 xl:max-w-[856px]">
@@ -176,11 +176,11 @@ export default function ServiceDetail({ serviceData }) {
                     <p className="mt-4 text-lg lg:text-xl">End-to-end technology solutions to empower businesses across the Middle East and beyond.</p>
                   </div>
 
-                  <ul className="grid grid-cols-1 gap-[30px] lg:grid-cols-3">
+                  <div className="grid grid-cols-1 gap-[30px] lg:grid-cols-3">
                     {serviceData.subServices.map((service, idx) => (
-                      <li key={idx} className="jos group" data-jos_delay={idx * 0.3}>
+                      <div key={idx} className="jos group" data-jos_delay={idx * 0.3}>
                         <div className="shadow-bg group h-full">
-                          <div className="flex h-full flex-col items-start overflow-hidden rounded-[20px] border-2 border-black bg-colorIvory p-[30px] transition duration-300 group-hover:bg-colorLightLime">
+                          <div className="flex h-full flex-col items-start overflow-hidden rounded-[20px] border-2 border-black bg-white p-[30px] transition duration-300 group-hover:bg-colorLightLime">
                             <img
                               src={`/assets/img/icons/${serviceData.icon}`}
                               alt={service.title}
@@ -201,9 +201,9 @@ export default function ServiceDetail({ serviceData }) {
                           </Link> */}
                           </div>
                         </div>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
             </div>

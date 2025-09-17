@@ -683,5 +683,335 @@
                 "sideImage": "/assets/img/images/th-1/service-details-inner-img-data.jpg"
             }
         }
+    },
+    {
+        "icon": "th-1-service-icon-3.svg",
+        "title": "Cloud & DevOps Solutions",
+        "slug": "cloud-devops-solutions",
+        "seoTitle": "Cloud & DevOps Services | AWS, Azure, CI/CD & Infrastructure - Fajraan Tech",
+        "seoDescription": "Fajraan Tech provides expert cloud & DevOps services including cloud infrastructure setup, CI/CD pipelines, Docker & Kubernetes orchestration, server management, and disaster recovery.",
+        "seoKeywords": [
+            "cloud solutions",
+            "devops services",
+            "aws azure google cloud",
+            "ci cd pipelines",
+            "docker kubernetes",
+            "server management",
+            "cloud security",
+            "fajraan tech"
+        ],
+        "category": "Infrastructure",
+        "description": "End-to-end cloud and DevOps services to optimize your infrastructure, automate workflows, and scale your business with reliability.",
+        "subServices": [
+            {
+                "title": "Cloud Infrastructure Setup",
+                "description": "Deployment and configuration of AWS, Azure, or Google Cloud for secure and scalable business solutions.",
+                "icon": "/assets/img/icons/icon-cloud.svg"
+            },
+            {
+                "title": "Server Management & Deployment",
+                "description": "Efficient server management and automated deployments for uptime and performance.",
+                "icon": "/assets/img/icons/icon-server.svg"
+            },
+            {
+                "title": "CI/CD Pipeline Implementation",
+                "description": "Automated pipelines for seamless code integration, testing, and deployment.",
+                "icon": "/assets/img/icons/icon-cicd.svg"
+            },
+            {
+                "title": "Docker & Kubernetes Orchestration",
+                "description": "Containerization and orchestration for scalable microservices architecture.",
+                "icon": "/assets/img/icons/icon-docker.svg"
+            },
+            {
+                "title": "Cloud Security & Compliance",
+                "description": "Ensuring compliance and robust security practices across your cloud infrastructure.",
+                "icon": "/assets/img/icons/icon-security.svg"
+            },
+            {
+                "title": "Backup & Disaster Recovery",
+                "description": "Automated backups and reliable disaster recovery strategies to protect business data.",
+                "icon": "/assets/img/icons/icon-backup.svg"
+            }
+        ],
+        "content": {
+            "breadcrumb": "Cloud & DevOps Service",
+            "hero": {
+                "image": "/assets/img/new/cloud-devops-solutions-service.jpg",
+                "title": "Cloud & DevOps for",
+                "highlight": "scalable",
+                "subtitle": "infrastructure solutions",
+                "description": [
+                    "Cloud & DevOps solutions streamline development, improve scalability, and reduce downtime.",
+                    "At Fajraan Tech, we build and manage reliable infrastructures to keep your business running smoothly."
+                ]
+            },
+            "sections": [
+                {
+                    "title": "1/ Cloud Solutions:",
+                    "points": [
+                        "Setup and configuration of AWS, Azure, and Google Cloud.",
+                        "Secure, scalable, and cost-optimized cloud hosting.",
+                        "Ongoing monitoring and optimization."
+                    ]
+                },
+                {
+                    "title": "2/ DevOps Practices:",
+                    "points": [
+                        "Automated CI/CD pipelines for faster releases.",
+                        "Infrastructure as Code (IaC) for consistency.",
+                        "Orchestration with Docker and Kubernetes."
+                    ]
+                }
+            ],
+            "approach": {
+                "title": "Our Approach",
+                "description": "We align cloud and DevOps best practices to maximize efficiency, performance, and security:",
+                "steps": [
+                    {
+                        "icon": "/assets/img/icons/icon-black-search.svg",
+                        "title": "Assessment & Planning:",
+                        "points": [
+                            "Analyzing current infrastructure and defining cloud/DevOps strategy."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-edit.svg",
+                        "title": "Implementation:",
+                        "points": [
+                            "Deploying cloud resources, setting up pipelines, and automating workflows."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-rocket.svg",
+                        "title": "Monitoring & Scaling:",
+                        "points": [
+                            "Continuous monitoring, scaling, and security enhancements."
+                        ]
+                    }
+                ],
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img.jpg"
+            }
+        }
+    },
+    {
+        "icon": "th-1-service-icon-3.svg",
+        "title": "AI & Automation",
+        "slug": "ai-automation",
+        "seoTitle": "AI & Automation Services | Machine Learning, Chatbots & RPA - Fajraan Tech",
+        "seoDescription": "Fajraan Tech delivers AI & automation services including chatbots, predictive analytics, NLP, workflow automation, and intelligent business solutions.",
+        "seoKeywords": [
+            "ai solutions",
+            "business automation",
+            "machine learning",
+            "chatbots",
+            "predictive analytics",
+            "nlp services",
+            "workflow automation",
+            "fajraan tech"
+        ],
+        "category": "Artificial Intelligence",
+        "description": "AI-powered solutions and intelligent automation to help businesses optimize operations, improve decision-making, and deliver personalized experiences.",
+        "subServices": [
+            {
+                "title": "AI Chatbots & Virtual Assistants",
+                "description": "Automated chat solutions to improve customer support and engagement.",
+                "icon": "/assets/img/icons/icon-chatbot.svg"
+            },
+            {
+                "title": "Predictive Analytics & Machine Learning",
+                "description": "Custom ML models to forecast trends and support smarter business decisions.",
+                "icon": "/assets/img/icons/icon-ml.svg"
+            },
+            {
+                "title": "Business Process Automation",
+                "description": "Streamlining operations with robotic process automation (RPA).",
+                "icon": "/assets/img/icons/icon-automation.svg"
+            },
+            {
+                "title": "NLP (Natural Language Processing)",
+                "description": "Text analysis, sentiment detection, and smart document processing.",
+                "icon": "/assets/img/icons/icon-nlp.svg"
+            },
+            {
+                "title": "AI-Powered Recommendations",
+                "description": "Personalized product and content suggestions powered by AI.",
+                "icon": "/assets/img/icons/icon-recommendation.svg"
+            },
+            {
+                "title": "Workflow Automation",
+                "description": "Automating repetitive tasks to save time and reduce errors.",
+                "icon": "/assets/img/icons/icon-workflow.svg"
+            }
+        ],
+        "content": {
+            "breadcrumb": "AI & Automation Service",
+            "hero": {
+                "image": "/assets/img/new/ai-automation-service-img.jpg",
+                "title": "AI & Automation for",
+                "highlight": "smart",
+                "subtitle": "business efficiency",
+                "description": [
+                    "AI and automation help businesses reduce costs, save time, and increase efficiency.",
+                    "At Fajraan Tech, we develop intelligent systems that adapt and learn to optimize your workflows."
+                ]
+            },
+            "sections": [
+                {
+                    "title": "1/ AI Solutions:",
+                    "points": [
+                        "Chatbots and conversational AI to boost customer service.",
+                        "Predictive analytics for data-driven decision making.",
+                        "Personalization engines to increase engagement."
+                    ]
+                },
+                {
+                    "title": "2/ Automation Solutions:",
+                    "points": [
+                        "Robotic Process Automation (RPA) for repetitive tasks.",
+                        "Workflow automation to improve productivity.",
+                        "Smart integrations across tools and platforms."
+                    ]
+                }
+            ],
+            "approach": {
+                "title": "Our Approach",
+                "description": "We design AI and automation systems with a focus on business outcomes and adaptability:",
+                "steps": [
+                    {
+                        "icon": "/assets/img/icons/icon-black-search.svg",
+                        "title": "Discovery & Data Analysis:",
+                        "points": [
+                            "Analyzing business workflows and identifying automation opportunities."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-edit.svg",
+                        "title": "AI/Automation Development:",
+                        "points": [
+                            "Building and training AI models, creating workflows, and integrating automation tools."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-rocket.svg",
+                        "title": "Deployment & Optimization:",
+                        "points": [
+                            "Implementing systems, monitoring results, and optimizing performance."
+                        ]
+                    }
+                ],
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img.jpg"
+            }
+        }
+    },
+    {
+        "icon": "th-1-service-icon-2.svg",
+        "title": "Cybersecurity & IT Support",
+        "slug": "cybersecurity-it-support",
+        "seoTitle": "Cybersecurity & IT Support | Security Audits, IT Management - Fajraan Tech",
+        "seoDescription": "Fajraan Tech provides cybersecurity & IT support services including penetration testing, network security, IT support, firewall setup, compliance consulting, and data protection.",
+        "seoKeywords": [
+            "cybersecurity services",
+            "it support",
+            "security audits",
+            "penetration testing",
+            "network security",
+            "firewall setup",
+            "data protection",
+            "fajraan tech"
+        ],
+        "category": "Security",
+        "description": "Comprehensive cybersecurity and IT support solutions to protect your business, secure your data, and ensure smooth IT operations.",
+        "subServices": [
+            {
+                "title": "Security Audits & Penetration Testing",
+                "description": "Identifying vulnerabilities and testing defenses against cyber threats.",
+                "icon": "/assets/img/icons/icon-audit.svg"
+            },
+            {
+                "title": "Endpoint & Network Security",
+                "description": "Protecting business networks and devices from unauthorized access.",
+                "icon": "/assets/img/icons/icon-network.svg"
+            },
+            {
+                "title": "Firewall & VPN Setup",
+                "description": "Secure configuration of firewalls and VPNs to protect communications.",
+                "icon": "/assets/img/icons/icon-firewall.svg"
+            },
+            {
+                "title": "Identity & Access Management",
+                "description": "Managing user roles and permissions for data security.",
+                "icon": "/assets/img/icons/icon-identity.svg"
+            },
+            {
+                "title": "24/7 IT Support & Maintenance",
+                "description": "Continuous IT support to keep systems secure and running smoothly.",
+                "icon": "/assets/img/icons/icon-support.svg"
+            },
+            {
+                "title": "Data Protection & Compliance",
+                "description": "Ensuring data protection and compliance with industry standards like GDPR.",
+                "icon": "/assets/img/icons/icon-compliance.svg"
+            }
+        ],
+        "content": {
+            "breadcrumb": "Cybersecurity & IT Support Service",
+            "hero": {
+                "image": "/assets/img/new/cybersecurity-service-img.jpg",
+                "title": "Cybersecurity & IT Support for",
+                "highlight": "secure",
+                "subtitle": "business operations",
+                "description": [
+                    "Cybersecurity is critical in protecting your business from threats, while IT support ensures operations run smoothly.",
+                    "At Fajraan Tech, we provide end-to-end protection and reliable support to safeguard your digital assets."
+                ]
+            },
+            "sections": [
+                {
+                    "title": "1/ Cybersecurity Services:",
+                    "points": [
+                        "Comprehensive audits and penetration testing.",
+                        "Endpoint and network protection.",
+                        "Secure identity and access management."
+                    ]
+                },
+                {
+                    "title": "2/ IT Support Services:",
+                    "points": [
+                        "24/7 monitoring and maintenance.",
+                        "Firewall and VPN configuration.",
+                        "Data protection and compliance consulting."
+                    ]
+                }
+            ],
+            "approach": {
+                "title": "Our Approach",
+                "description": "We combine proactive security with responsive IT support to minimize risks and ensure business continuity:",
+                "steps": [
+                    {
+                        "icon": "/assets/img/icons/icon-black-search.svg",
+                        "title": "Assessment & Security Testing:",
+                        "points": [
+                            "Identifying vulnerabilities and defining security strategy."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-edit.svg",
+                        "title": "Implementation & Support:",
+                        "points": [
+                            "Deploying cybersecurity measures and providing ongoing IT support."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-rocket.svg",
+                        "title": "Monitoring & Compliance:",
+                        "points": [
+                            "24/7 monitoring, regular updates, and ensuring compliance."
+                        ]
+                    }
+                ],
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img.jpg"
+            }
+        }
     }
 ]
