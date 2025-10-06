@@ -45,29 +45,8 @@ export default function Blogs() {
             const data = await response.json();
             const totalPages = parseInt(response.headers.get('X-WP-TotalPages'));
 
-            // Fetching author, tags, and categories data for each post
             const postsWithData = await Promise.all(
                 data.map(async post => {
-                    // Fetch author data
-                    // const authorResponse = await fetch(`https://blogs.cre8ivesparkx.com//wp-json/wp/v2/users/${post.author}`);
-                    // if (!authorResponse.ok) {
-                    //     console.log('Error fetching author data');
-                    // }
-                    // const authorData = await authorResponse.json();
-
-                    // // Fetch tags data
-                    // const tagsResponse = await Promise.all(
-                    //     post.tags.map(async tagId => {
-                    //         const tagResponse = await fetch(`https://blogs.cre8ivesparkx.com//wp-json/wp/v2/tags/${tagId}`);
-                    //         if (!tagResponse.ok) {
-                    //             console.log('Error fetching tag data');
-                    //         }
-                    //         const tagData = await tagResponse.json();
-                    //         return tagData.name;
-                    //     })
-                    // );
-
-                    // Fetch categories data
                     const categoriesResponse = await Promise.all(
                         post.categories.map(async categoryId => {
                             const categoryResponse = await fetch(`https://blogs.cre8ivesparkx.com//wp-json/wp/v2/categories/${categoryId}`);
@@ -79,19 +58,9 @@ export default function Blogs() {
                         })
                     );
 
-                    // Fetch featured image data
-                    // const mediaResponse = await fetch(`https://blogs.cre8ivesparkx.com//wp-json/wp/v2/media/${post.featured_media}`);
-                    // if (!mediaResponse.ok) {
-                    //     console.log('Error fetching featured image data');
-                    // }
-                    // const featuredImageResponse = await mediaResponse.json();
-
                     return {
                         ...post,
-                        // authorName: authorData,
-                        // tags: tagsResponse,
                         categories: categoriesResponse,
-                        // featured_media: featuredImageResponse
                     };
                 })
             );
