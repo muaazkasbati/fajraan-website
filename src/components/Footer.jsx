@@ -1,96 +1,203 @@
-import Link from 'next/link'
-import React from 'react'
-import ContactForm from './ContactForm'
+"use client";
+import Link from "next/link";
+import React from "react";
+import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
+import services from "@/utils/services.json";
 
 const Footer = () => {
+    const navItems = [
+        { label: "About Us", href: "/about" },
+        { label: "Services", href: "/services" },
+        { label: "Portfolio", href: "/portfolio" },
+        { label: "Blog", href: "/blog" },
+        { label: "Contact", href: "/contact" },
+    ];
     return (
         <>
-            <footer className="section-footer" id='contact'>
-                <div className="bg-secondary">
-                    <div className="section-space">
-                        <div className="container">
-                            <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-[1fr_minmax(0,0.8fr)] lg:gap-x-20 xl:gap-x-24 xxl:gap-x-[139px]">
-                                <div>
-                                    <div className="section-block text-white">
-                                        <h2 className="mb-6">
-                                            Let’s build your {" "}
-                                            <span>
-                                                <img
-                                                    src="/assets/img/elemnts/shape-light-lime-5-arms-star.svg"
-                                                    alt="decorative star"
-                                                    width="74"
-                                                    height="70"
-                                                    className="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]"
-                                                />
-                                            </span>
-                                            digital presence
-                                        </h2>
+            <footer className="footer-area bg-color-primary overflow-hidden">
+                {/* === Marquee Section === */}
+                <motion.div
+                    className="marquee-container fade-anim overflow-hidden"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                >
+                    <Marquee
+                        gradient={false}
+                        speed={60}
+                        pauseOnHover
+                        pauseOnClick
+                        className="py-2"
+                    >
+                        {Array(6)
+                            .fill(null)
+                            .map((_, index) => (
+                                <Link href="/contact" key={index} className="marquee-item-container overflow-hidden">
+                                    <div
+                                        className="marquee-item text-color-white overflow-hidden color-secondary"
+                                    >
+                                        <h1 className="text-color-white color-secondary">
+                                            Empowering your business through innovation
+                                        </h1>
 
-                                        <p className="section-para">
-                                            At Fajraan Tech, we craft bold, modern experiences for brands ready to stand out. Whether you're launching a startup or refining your online identity, we blend strategy, design, and technology to bring your vision to life.
-                                        </p>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="150"
+                                            height="150"
+                                            viewBox="0 0 150 150"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M100.023 58.8388L46.232 112.63L37.3932 103.791L91.1844 50H43.7733V37.5H112.523V106.25H100.023V58.8388Z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
                                     </div>
+                                </Link>
+                            ))}
+                    </Marquee>
+                </motion.div>
 
-
-                                    <div className="grid grid-cols-[1fr_auto] items-center">
-                                        <div>
-                                            <ul className="mt-12 flex flex-col gap-y-3">
-                                                 <li>
-                                                    <span className="block font-syne text-[21px] font-bold leading-[1.42] text-colorLightLime">Give us a WhatsApp call:</span>
-
-                                                    <a href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer" className="text-[21px] leading-[1.42] text-white">+971 54 225 9592</a>
+                {/* === Footer Content === */}
+                <div className="footer__center section-padding-top-bottom">
+                    <div className="container custom-container">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="footer-widgets-wrapper">
+                                    {/* Contact Section */}
+                                    <motion.div
+                                        className="footer-widgets contact text-color-white"
+                                        initial={{ opacity: 0, y: 60 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <h6 className="widget-title text-color-white">Contact</h6>
+                                        <p className="address">
+                                            Dubai, United Arab Emirates
+                                        </p>
+                                        <div className="contacts">
+                                            <ul className="custom-ul">
+                                                <li>
+                                                    <a className="email" href="mailto:info@fajraan.com">
+                                                        info@fajraan.com
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <span className="block font-syne text-[21px] font-bold leading-[1.42] text-colorLightLime">Send us an email:
-                                                    </span>
-                                                    <a href="mailto:info@fajraan.com" className="text-[21px] leading-[1.42] text-white">info@fajraan.com</a>
+                                                    <a
+                                                        className="mobile"
+                                                        href="https://wa.me/971542259592"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        +971 54 225 9592 (WhatsApp only)
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </motion.div>
+
+                                    {/* Agency Links */}
+                                    <motion.div
+                                        className="footer-widgets"
+                                        initial={{ opacity: 0, y: 60 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.1, duration: 0.6 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <h6 className="widget-title text-color-white">Agency</h6>
+                                        <div className="widget-links">
+                                            <ul className="custom-ul">
+                                                {navItems.map((item, index) => (
+                                                    <li key={index}>
+                                                        <Link href={item.href}>{item.label}</Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </motion.div>
+
+                                    {/* Services Links */}
+                                    <motion.div
+                                        className="footer-widgets"
+                                        initial={{ opacity: 0, y: 60 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.2, duration: 0.6 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <h6 className="widget-title text-color-white">Services</h6>
+                                        <div className="widget-links">
+                                            <ul className="custom-ul">
+                                                {services.slice(0, 5).map((service, index) => (
+                                                    <li key={index}>
+                                                        <Link href={`/services/${service.slug}`}>{service.title}</Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </motion.div>
+
+                                    {/* Social Links */}
+                                    <motion.div
+                                        className="footer-widgets"
+                                        initial={{ opacity: 0, y: 60 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.3, duration: 0.6 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <div className="social-links">
+                                            {/* <ul className="custom-ul flex gap-3">
+                                                <li><a href="https://x.com/" target="_blank"><i className="fab fa-x-twitter" /></a></li>
+                                                <li><a href="https://instagram.com/" target="_blank"><i className="fab fa-instagram" /></a></li>
+                                                <li><a href="https://linkedin.com/" target="_blank"><i className="fab fa-linkedin" /></a></li>
+                                                <li><a href="https://behance.net/" target="_blank"><i className="fab fa-behance" /></a></li>
+                                                <li><a href="https://dribbble.com/" target="_blank"><i className="fab fa-dribbble" /></a></li>
+                                            </ul> */}
+                                            <ul className="custom-ul flex gap-3">
+                                                <li>
+                                                    <a href="https://www.instagram.com/fajraan_tech" target="_blank">
+                                                        <i className="fab fa-instagram" />
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.facebook.com/fajraantech" target="_blank">
+                                                        <i className="fab fa-facebook-f" />
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.linkedin.com/company/fajraan-tech" target="_blank">
+                                                        <i className="fab fa-linkedin" />
+                                                    </a>
                                                 </li>
                                             </ul>
 
-                                            <div className="mt-11 flex w-full gap-4">
-                                                {/* <a href="../../../external.html?link=http://www.twitter.com/" target="_blank" rel="noopener noreferrer" className="group/link relative inline-flex h-[34px] w-[34px] items-center justify-center rounded-[50%] border border-white bg-black transition-all duration-300 hover:border-black hover:bg-colorLightLime hover:shadow-[0_1.5px_0_0] hover:shadow-white">
-                                                    <img src="/assets/img/icons/icon-logo-buttery-white-twitter.svg" alt="icon-logo-buttery-white-twitter" width="19" height="16" className="opacity-100 transition-all duration-300 group-hover/link:opacity-0" />
-                                                    <img src="/assets/img/icons/icon-logo-black-twitter.svg" alt="icon-logo-black-twitter" width="19" height="16" className="absolute opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
-                                                </a> */}
-                                                <Link href="https://www.instagram.com/fajraan_tech" target="_blank" rel="noopener noreferrer" className="group/link relative inline-flex h-[34px] w-[34px] items-center justify-center rounded-[50%] border border-white bg-primary transition-all duration-300 hover:border-primary hover:bg-colorLightLime hover:shadow-[0_1.5px_0_0] hover:shadow-white">
-                                                    <img src="/assets/img/icons/icon-logo-buttery-white-instagram.svg" alt="icon-logo-buttery-white-instagram" width="17" height="18" className="opacity-100 transition-all duration-300 group-hover/link:opacity-0" />
-                                                    <img src="/assets/img/icons/icon-logo-black-instagram.svg" alt="icon-logo-black-instagram" width="17" height="18" className="absolute opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
-                                                </Link>
-                                                <Link href="https://www.facebook.com/fajraantech" target="_blank" rel="noopener noreferrer" className="group/link relative inline-flex h-[34px] w-[34px] items-center justify-center rounded-[50%] border border-white bg-primary transition-all duration-300 hover:border-primary hover:bg-colorLightLime hover:shadow-[0_1.5px_0_0] hover:shadow-white">
-                                                    <img src="/assets/img/icons/icon-logo-buttery-white-facebook.svg" alt="icon-logo-buttery-white-facebook" width="10" height="17" className="opacity-100 transition-all duration-300 group-hover/link:opacity-0" />
-                                                    <img src="/assets/img/icons/icon-logo-black-facebook.svg" alt="icon-logo-black-facebook" width="10" height="17" className="absolute opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
-                                                </Link>
-                                                <Link href="https://www.linkedin.com/company/fajraan-tech" target="_blank" rel="noopener noreferrer" className="group/link relative inline-flex h-[34px] w-[34px] items-center justify-center rounded-[50%] border border-white bg-primary transition-all duration-300 hover:border-primary hover:bg-colorLightLime hover:shadow-[0_1.5px_0_0] hover:shadow-white">
-                                                    <img src="/assets/img/icons/icon-logo-buttery-white-linkedin.svg" alt="icon-logo-buttery-white-linkedin" width="17" height="18" className="opacity-100 transition-all duration-300 group-hover/link:opacity-0" />
-                                                    <img src="/assets/img/icons/icon-logo-black-linkedin.svg" alt="icon-logo-black-linkedin" width="17" height="18" className="absolute opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
-                                                </Link>
-                                            </div>
                                         </div>
-                                        <div className="hidden lg:inline-block">
-                                            <img src="/assets/img/elemnts/element-light-lime-curve-arrow.svg" alt="element-light-lime-curve-arrow" width="284" height="153" className="h-auto max-w-52 lg:inline-block xl:max-w-full" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <span className="display-heading display-heading-5 mb-[30px] block text-white">Send us a message</span>
-                                    <ContactForm />
+                                    </motion.div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div className="horizontal-line bg-white/30"></div>
+                {/* === Footer Bottom === */}
+                <div className="footer__bottom has-bodder">
+                    <div className="container custom-container p-xxl-0 overflow-hidden">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="footer__bottom-content row-padding-bottom">
+                                    <div className="copyright-text text-color-white">
+                                        All rights reserved — {new Date().getFullYear()} © Fajraan Tech
+                                    </div>
+                                    <a
+                                        className="scroll-to-top section-link cursor-pointer"
+                                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                    >
+                                        Back to top <i className="fas fa-angle-up" />
+                                    </a>
 
-                    <div className="py-[35px]">
-                        <div className="container">
-                            <div className="flex flex-wrap justify-center gap-x-[30px] gap-y-4 lg:justify-between">
-                                <Link href="/">
-                                    <img src="/assets/img/logo-white.png" alt="Faraan" width="121" height="24" />
-                                </Link>
-
-                                <div className="text-white text-sm">
-                                    &copy; Copyright {new Date().getFullYear()}, All Rights Reserved by Fajraan Tech
                                 </div>
                             </div>
                         </div>
@@ -98,7 +205,7 @@ const Footer = () => {
                 </div>
             </footer>
         </>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

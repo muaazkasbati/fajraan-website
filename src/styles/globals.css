@@ -1,143 +1,27 @@
-@import "tailwindcss";
-
-@theme {
-  --color-primary: #19bec9;
-  --color-secondary: #092a54;
-}
-
-
 :root {
   --red: #c90002;
   --light-red: #e04444;
 }
 
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  scroll-behavior: auto !important;
+  /* disable native smooth */
+  overflow-x: hidden;
+  overscroll-behavior: none;
 }
+
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Instrument Sans", sans-serif;
 }
 
-.horizontal-slide-from-right-to-left {
-  animation: horizontal-slide-from-right-to-left linear 10s infinite;
+.blog-body h3 {
+  font-size: 30px;
+  line-height: 1.5;
+  letter-spacing: -1px;
 }
 
-@keyframes horizontal-slide-from-right-to-left {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+.blog-body p {
+  margin-bottom: 28px;
 }
-
-.horizontal-slide-from-left-to-right {
-  animation: horizontal-slide-from-left-to-right linear 10s infinite;
-}
-
-@keyframes horizontal-slide-from-left-to-right {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(50%);
-  }
-}
-
-.animation-duration-2s {
-  animation-duration: 2s;
-}
-
-.animation-duration-5s {
-  animation-duration: 5s;
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateZ(0);
-  }
-}
-
-.rotate-full {
-  animation: rotate-full 10s linear infinite;
-}
-
-@keyframes rotate-full {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.scrolling {
-  animation: fadeInDown 0.9s 1;
-  backdrop-filter: blur(4px);
-}
-
-.swiper-wrapper {
-  transition-timing-function: linear;
-}
-
-.swiper-scrollbar-drag {
-  cursor: pointer;
-  width: 85px !important;
-  height: 50px;
-  top: -24px;
-  left: -2px;
-  position: absolute;
-  background-size: cover;
-  background-color: transparent;
-  background-image: url(/assets/img/icons/icon-white-slider-drug-arrow.svg);
-}
-
-.testimonial-custom-pagination .swiper-pagination-bullet {
-  width: 50px;
-  height: 6px;
-  border-radius: 6px;
-  background-color: #a58a6a;
-}
-
-.testimonial-custom-pagination .swiper-pagination-bullet-active {
-  background-color: #221f1a;
-}
-
-.offcanvas-body {
-  transition: transform 0.3s ease;
-}
-
-
-/* .rush-driver-font {
-  font-family: 'Rush Driver', sans-serif !important;
-}
-
-.inter-font {
-  font-family: "Inter", sans-serif !important;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: 'Racing Engine', sans-serif;
-}
-
-.racing-engine-font {
-  font-family: 'Racing Engine', sans-serif;
-}
-
-.stroke-only {
-  -webkit-text-stroke: 1px white;
-  color: transparent;
-} */

@@ -1,72 +1,74 @@
-import React from 'react'
-import services from '@/utils/services'
-import Link from 'next/link'
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import services from "@/utils/services.json";
+import Link from "next/link";
 
-const ServiceSection = ({ servicePage = false }) => {
+const ServiceSection = () => {
+    const fadeInUp = {
+        initial: { opacity: 0, y: 80, rotateX: -80, transformOrigin: "top center" },
+        whileInView: { opacity: 1, y: 0, rotateX: 0 },
+        viewport: { once: true },
+        transition: { duration: 0.6, ease: "easeOut" },
+    };
+
+    const headerAnim = {
+        initial: { opacity: 0, x: -100 },
+        whileInView: { opacity: 1, x: 0 },
+        viewport: { once: true },
+        transition: { duration: 0.6, ease: "easeOut" },
+    };
+
     return (
-        <>
-            <section className="section-service" id='services'>
-                <div className="">
-                    <div className="section-space">
-                        <div className="container">
-                            <div className="section-block mx-auto mb-10 max-w-[650px] text-center md:mb-[60px] xl:mb-20 xl:max-w-[856px]">
-                                <h2 className="jos">
-                                    Fajraan Tech Services{' '}
-                                    <span>
-
-                                        <img
-                                            src="/assets/img/elemnts/shape-light-lime-5-arms-star.svg"
-                                            alt="star"
-                                            width={74}
-                                            height={70}
-                                            className="relative inline-block h-auto w-8 md:w-10 lg:w-[57px]"
-                                        />
-                                    </span>
-                                </h2>
-                                <p className="mt-4 text-lg lg:text-xl">End-to-end technology solutions to empower businesses across the Middle East and beyond.</p>
-                            </div>
-
-                            <div className={`grid grid-cols-1 gap-[30px] ${servicePage ? "lg:grid-cols-2" : "lg:grid-cols-3"}`}>
-                                {services.map((service, idx) => (
-                                    <Link href={`/services/${service.slug}`} key={idx} className="jos group" data-jos_delay={idx * 0.3}>
-                                        <div className="shadow-bg group h-full">
-                                            <div className="flex h-full flex-col items-start overflow-hidden rounded-[20px] border-2 border-black bg-white p-[30px] transition duration-300 group-hover:bg-colorLightLime">
-                                                <img
-                                                    src={`/assets/img/icons/${service.icon}`}
-                                                    alt={service.title}
-                                                    className="h-[70px] w-auto"
-                                                />
-                                                <h4 className="mb-[15px] mt-[30px]">{service.title}</h4>
-                                                <p className={`${servicePage ? "mb-4" : "mb-7"}`}>{service.description}</p>
-                                                {servicePage &&
-                                                    <ul className="mb-7 list-disc pl-6">
-                                                        {service.subServices.map(item => (
-                                                            <li>{item.title}</li>
-                                                        ))}
-                                                    </ul>
-                                                }
-                                                <Link
-                                                    href={`/services/${service.slug}`}
-                                                    className="mt-auto inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-5"
-                                                >
-                                                    <img
-                                                        src="/assets/img/icons/icon-black-arrow-right.svg"
-                                                        alt="arrow"
-                                                        width={34}
-                                                        height={28}
-                                                    />
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
+        <section className="quanto-service-section section-padding-top-bottom overflow-hidden">
+            <div className="container custom-container">
+                {/* Header */}
+                <div className="row">
+                    <div className="col-12 col-lg-9 col-xl-7 col-xxl-6">
+                        <motion.div className="quanto__header" {...headerAnim}>
+                            <h3 className="title color-primary">We help you build your online success</h3>
+                        </motion.div>
                     </div>
                 </div>
-            </section>
-        </>
-    )
-}
 
-export default ServiceSection
+                {/* Services */}
+                <div className="row g-4 row-padding-top">
+                    {services.slice(0,8).map((service, index) => (
+                        <div key={index} className="col-md-6 col-lg-4 col-xxl-3">
+                            <motion.div
+                                className="quanto-service-box"
+                                {...fadeInUp}
+                                transition={{ ...fadeInUp.transition, delay: 0.15 * index }}
+                            >
+                                <div className="quanto-iconbox-icon mb-3">
+                                    <img
+                                        src={service.icon}
+                                        alt={`${service.title} icon`}
+                                        width={52}
+                                        height={52}
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div className="quanto-iconbox-data">
+                                    <div className="quanto-iconbox-data-wrapper">
+                                        <h5>{service.title}</h5>
+                                        <p>{service.description}</p>
+                                    </div>
+                                    <Link className="quanto-link-btn" href={`/services/${service.slug}`}>
+                                        View details
+                                        <span>
+                                            <i className="fa-solid fa-arrow-right arry1" />
+                                            <i className="fa-solid fa-arrow-right arry2" />
+                                        </span>
+                                    </Link>
+                                </div>
+                            </motion.div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default ServiceSection;

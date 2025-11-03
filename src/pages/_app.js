@@ -1,8 +1,8 @@
-// import '../../public/assets/css/custom.css'
-// import '../../public/assets/css/style.css'
+import useLenis from "@/hooks/useLenis";
 import "@/styles/globals.css";
 
 
 export default function App({ Component, pageProps }) {
+  useLenis();
   return <Component {...pageProps} />;
 }

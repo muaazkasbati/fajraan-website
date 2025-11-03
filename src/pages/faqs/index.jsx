@@ -1,9 +1,11 @@
-import BreadCrumb from '@/components/BreadCrumb'
 import FaqsSection from '@/components/FaqsSection'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import HeroSec from '@/components/HeroSec'
 import Head from 'next/head'
 import React from 'react'
+import { motion } from "framer-motion";
+import VideoAreaSection from '@/components/VideoAreaSection'
 
 export default function Faqs() {
     return (
@@ -25,15 +27,11 @@ export default function Faqs() {
                 <meta name="twitter:image" content="https://fajraan.com/your-twitter-image.jpg" />
 
             </Head>
-            <div className="page-wrapper">
-                <Header />
-
-                <main className="main-wrapper">
-                    <BreadCrumb page="Faqs" />
-                    <FaqsSection />
-                </main>
-                <Footer />
-            </div>
+            <Header />
+            <HeroSec title="Quick answers to common questions" />
+            <VideoAreaSection imageUrl="/images/hero/fag-hero-banner.jpg" />
+            <FaqsSection />
+            <Footer />
         </>
     )
 }

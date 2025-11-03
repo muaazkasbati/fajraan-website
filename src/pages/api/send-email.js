@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ message: 'Method Not Allowed' });
 
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, company, message, subject, plan } = req.body;
 
   if (!name || !email) {
     return res.status(400).json({ message: 'Name and email are required' });
@@ -28,7 +28,7 @@ export default async function handler(req, res) {
         address: "info@fajraan.com",
       },
       to: "info@fajraan.com",
-      subject: 'Contact Form Submission',
+      subject: `Contact Form Submission - ${subject || 'No Subject'}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px;">
           <h2 style="color: #333; text-align: center;">Contact Form Submission</h2>
@@ -46,6 +46,24 @@ export default async function handler(req, res) {
             <tr>
               <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e0e0e0;">Phone:</td>
               <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${phone}</td>
+            </tr>
+            ` : ''}
+            ${subject ? `
+            <tr>
+              <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e0e0e0;">Subject:</td>
+              <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${subject}</td>
+            </tr>
+            ` : ''}
+            ${company ? `
+            <tr>
+              <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e0e0e0;">Company:</td>
+              <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${company}</td>
+            </tr>
+            ` : ''}
+            ${plan ? `
+            <tr>
+              <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e0e0e0;">Plan:</td>
+              <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${plan}</td>
             </tr>
             ` : ''}
             <tr>

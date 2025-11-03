@@ -1,8 +1,9 @@
-import BreadCrumb from '@/components/BreadCrumb'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import HeroSec from '@/components/HeroSec'
 import Head from 'next/head'
 import React from 'react'
+import { motion } from "framer-motion";
 
 export default function PrivacyPolicy() {
     return (
@@ -29,59 +30,69 @@ export default function PrivacyPolicy() {
                 <meta name="twitter:image" content="https://fajraan.com/assets/img/og-image.jpg" />
             </Head>
 
-            <div className="page-wrapper">
-                <Header />
-                <main className="main-wrapper">
-                    <BreadCrumb page="Privacy Policy" />
-
-                    <section className="section-policy">
-                        <div className="section-space">
-                            <div className="container max-w-[900px] mx-auto">
-                                <h2 className="jos text-center mb-8">Privacy Policy</h2>
-                                <p className="mb-5">
+            <Header />
+            <HeroSec title="Privacy Policy" />
+            <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden">
+                <div className="container custom-container">
+                    <motion.div
+                        className="row g-4 justify-content-center"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="col-xl-8">
+                            <motion.div
+                                className="blog-body"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                viewport={{ once: true }}
+                            >
+                                <p className="">
                                     At Fajraan Tech, we value your privacy and are committed to protecting your personal information.
                                     This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or use our services.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">1. Information We Collect</h4>
-                                <p className="mb-5">
+                                <h3 className="">1. Information We Collect</h3>
+                                <p className="">
                                     We may collect personal information such as your name, email address, phone number, and business details when you
                                     contact us, fill out forms, or subscribe to our services.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">2. How We Use Your Information</h4>
-                                <p className="mb-5">
+                                <h3 className="">2. How We Use Your Information</h3>
+                                <p className="">
                                     Your data is used to provide services, respond to inquiries, improve our website, and send relevant updates.
                                     We do not sell or share your personal information with third parties.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">3. Cookies</h4>
-                                <p className="mb-5">
+                                <h3 className="">3. Cookies</h3>
+                                <p className="">
                                     Our website uses cookies to enhance your browsing experience and analyze traffic. You can disable cookies in your browser settings.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">4. Data Security</h4>
-                                <p className="mb-5">
+                                <h3 className="">4. Data Security</h3>
+                                <p className="">
                                     We implement industry-standard security measures to protect your information against unauthorized access, alteration, or disclosure.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">5. Changes to This Policy</h4>
-                                <p className="mb-5">
+                                <h3 className="">5. Changes to This Policy</h3>
+                                <p className="">
                                     Fajraan Tech reserves the right to update this policy periodically. Updates will be posted on this page with a revised effective date.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">6. Contact Us</h4>
+                                <h3 className="">6. Contact Us</h3>
                                 <p>
                                     If you have any questions about our Privacy Policy, contact us at:
                                     <br />
                                     <strong>Email:</strong> info@fajraan.com
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
-                    </section>
-                </main>
-                <Footer />
-            </div>
+                    </motion.div>
+                </div>
+            </section>
+            <Footer />
         </>
     )
 }
