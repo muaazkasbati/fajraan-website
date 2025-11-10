@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import moment from "moment";
 
-export default function BlogSection({ posts }) {
+export default function BlogSection({ posts = [] }) {
   return (
     <section className="quanto-blog-section section-padding-top-bottom overflow-hidden">
       <div className="container custom-container">

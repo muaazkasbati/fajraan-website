@@ -39,7 +39,7 @@ import BlogSection from "@/components/home/BlogSection";
 export async function getServerSideProps() {
   try {
     const [postsRes, portfolioRes] = await Promise.all([
-      fetch('https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3&_embed'),
+      fetch('https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3'),
       fetch('https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed')
     ]);
 
@@ -53,15 +53,15 @@ export async function getServerSideProps() {
     ]);
 
     // Map portfolio data
-    const mappedPortfolio = portfolioData.map((item) => ({
-      id: item.id,
-      title: item.title.rendered,
-      slug: item.slug,
-      link: item.link,
-      year: item.meta?.year || '—',
-      category: item._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
+    const mappedPortfolio = portfolioData?.map((item) => ({
+      id: item?.id,
+      title: item?.title?.rendered,
+      slug: item?.slug,
+      link: item?.link,
+      year: item?.meta?.year || '—',
+      category: item?._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
       image:
-        item._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
+        item?._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
         '/images/default.webp',
     }));
 
