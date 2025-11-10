@@ -5,7 +5,7 @@ import PortfolioSection from '@/components/home/PortfolioSection'
 import Head from 'next/head'
 import React from 'react'
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     try {
         const res = await fetch(
             'https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed&per_page=20'

@@ -36,7 +36,7 @@ import BlogSection from "@/components/home/BlogSection";
 //   }
 // }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const [postsRes, portfolioRes] = await Promise.all([
       fetch('https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3'),
