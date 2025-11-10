@@ -10,33 +10,80 @@ import OurAchivementSection from "@/components/home/OurAchivementSection";
 import ClientsSection from "@/components/home/ClientsSection";
 import BlogSection from "@/components/home/BlogSection";
 
-export async function getStaticProps() {
-  try {
-    const response = await fetch(
-      'https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3'
-    );
-    if (!response.ok) throw new Error('Failed to fetch latest posts');
+// export async function getStaticProps() {
+//   try {
+//     const response = await fetch(
+//       'https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3'
+//     );
+//     if (!response.ok) throw new Error('Failed to fetch latest posts');
 
-    const data = await response.json();
+//     const data = await response.json();
+
+//     return {
+//       props: {
+//         posts: data,
+//       },
+//       revalidate: 300, // Rebuild every 5 minutes (ISR)
+//     };
+//   } catch (error) {
+//     console.error('Home page fetch error:', error);
+//     return {
+//       props: {
+//         posts: [],
+//       },
+//       revalidate: 300,
+//     };
+//   }
+// }
+
+export async function getServerSideProps() {
+  try {
+    const [postsRes, portfolioRes] = await Promise.all([
+      fetch('https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3&_embed'),
+      fetch('https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed')
+    ]);
+
+    if (!postsRes.ok || !portfolioRes.ok) {
+      throw new Error('Failed to fetch data');
+    }
+
+    const [postsData, portfolioData] = await Promise.all([
+      postsRes.json(),
+      portfolioRes.json()
+    ]);
+
+    // Map portfolio data
+    const mappedPortfolio = portfolioData.map((item) => ({
+      id: item.id,
+      title: item.title.rendered,
+      slug: item.slug,
+      link: item.link,
+      year: item.meta?.year || '—',
+      category: item._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
+      image:
+        item._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
+        '/images/default.webp',
+    }));
 
     return {
       props: {
-        posts: data,
+        posts: postsData,
+        portfolio: mappedPortfolio,
       },
-      revalidate: 300, // Rebuild every 5 minutes (ISR)
     };
   } catch (error) {
-    console.error('Home page fetch error:', error);
+    console.error('Error fetching data:', error);
     return {
       props: {
         posts: [],
+        portfolio: [],
       },
-      revalidate: 300,
     };
   }
 }
 
-export default function Home({ posts }) {
+
+export default function Home({ posts, portfolio }) {
   return (
     <>
       <Head>
@@ -59,7 +106,7 @@ export default function Home({ posts }) {
       <HeroSection />
       <AboutSection />
       <OurAchivementSection />
-      <PortfolioSection />
+      <PortfolioSection projects={portfolio} />
       <ServiceSection />
       <TextimonialSection />
       {/* <ClientsSection /> */}

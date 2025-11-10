@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const projects = [
+const projectsList = [
     {
         title: "Kinetic Sandscapes",
         year: "2024",
@@ -42,13 +42,15 @@ const projects = [
     },
 ];
 
-const PortfolioSection = ({ theme = "dark" }) => {
+const PortfolioSection = ({ theme = "dark", projects = [] }) => {
     const imageAnim = {
         initial: { opacity: 0, x: -300 },
         whileInView: { opacity: 1, x: 0 },
         viewport: { once: true },
         transition: { duration: 0.8, ease: "easeOut" },
     };
+
+
 
     return (
         <section className={`quanto-project-section ${theme === "dark" ? "bg-color-primary" : ""} section-padding-top-bottom overflow-hidden`}>

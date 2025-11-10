@@ -5,7 +5,34 @@ import PortfolioSection from '@/components/home/PortfolioSection'
 import Head from 'next/head'
 import React from 'react'
 
-export default function Portfolio() {
+export async function getServerSideProps() {
+    try {
+        const res = await fetch(
+            'https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed&per_page=20'
+        );
+        if (!res.ok) throw new Error('Failed to fetch portfolio');
+        const data = await res.json();
+
+        const mapped = data.map((item) => ({
+            id: item.id,
+            title: item.title.rendered,
+            slug: item.slug,
+            link: item.link,
+            year: item.meta?.year || '—',
+            category: item._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
+            image:
+                item._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
+                '/images/default.webp',
+        }));
+
+        return { props: { projects: mapped } };
+    } catch (error) {
+        console.error('Portfolio page error:', error);
+        return { props: { projects: [] } };
+    }
+}
+
+export default function Portfolio({ projects }) {
     return (
         <>
             <Head>
@@ -27,7 +54,7 @@ export default function Portfolio() {
             </Head>
             <Header />
             <HeroSec title="Creating unforgettable digital impressions" />
-            <PortfolioSection theme='light' />
+            <PortfolioSection theme='light' projects={projects} />
             <Footer />
         </>
     )
