@@ -1,6 +1,6 @@
 [
     {
-        "icon": "th-1-service-icon-1.svg",
+        "icon": "/images/service/service-icon-1.svg",
         "title": "Web Development",
         "slug": "web-development",
         "seoTitle": "Web Development Services | Custom Websites & Web Apps - Fajraan Tech",
@@ -52,7 +52,7 @@
         "content": {
             "breadcrumb": "Web Development Service",
             "hero": {
-                "image": "/assets/img/new/web-development-service-img.jpg",
+                "image": "/images/service/web-development-service-img.jpg",
                 "title": "Web Development for",
                 "highlight": "modern",
                 "subtitle": "business solutions",
@@ -110,7 +110,7 @@
         }
     },
     {
-        "icon": "th-1-service-icon-2.svg",
+        "icon": "/images/service/service-icon-2.svg",
         "title": "Mobile & Desktop Applications",
         "slug": "mobile-desktop-applications",
         "seoTitle": "Mobile & Desktop App Development | Custom Apps - Fajraan Tech",
@@ -151,7 +151,7 @@
         "content": {
             "breadcrumb": "Mobile & Desktop Application Development",
             "hero": {
-                "image": "/assets/img/new/mobile-desktop-application-development-service.jpg",
+                "image": "/images/service/mobile-desktop-application-development-service.jpg",
                 "title": "Mobile & Desktop Apps for",
                 "highlight": "seamless",
                 "subtitle": "user experiences",
@@ -209,7 +209,7 @@
         }
     },
     {
-        "icon": "th-1-service-icon-3.svg",
+        "icon": "/images/service/service-icon-3.svg",
         "title": "Design Services",
         "slug": "design-services",
         "seoTitle": "UI/UX & Graphic Design Services | Branding & Prototyping - Fajraan Tech",
@@ -301,7 +301,7 @@
         "content": {
             "breadcrumb": "Design Services",
             "hero": {
-                "image": "/assets/img/new/design-services.jpg",
+                "image": "/images/service/design-services.jpg",
                 "title": "Design Services for",
                 "highlight": "creative",
                 "subtitle": "digital & print solutions",
@@ -359,7 +359,7 @@
         }
     },
     {
-        "icon": "th-1-service-icon-4.svg",
+        "icon": "/images/service/service-icon-4.svg",
         "title": "Media & Animation",
         "slug": "media-animation",
         "seoTitle": "Media & Animation Services | 2D/3D Animation & Video Editing - Fajraan Tech",
@@ -410,7 +410,7 @@
         "content": {
             "breadcrumb": "Media & Animation Services",
             "hero": {
-                "image": "/assets/img/new/media-animation-service.jpg",
+                "image": "/images/service/media-animation-service.jpg",
                 "title": "Media & Animation for",
                 "highlight": "engaging",
                 "subtitle": "brand storytelling",
@@ -468,7 +468,7 @@
         }
     },
     {
-        "icon": "th-1-service-icon-4.svg",
+        "icon": "/images/service/service-icon-1.svg",
         "title": "Digital Marketing & Content",
         "slug": "digital-marketing-content",
         "seoTitle": "Digital Marketing & Content Services | SEO, Social Media, Ads - Fajraan Tech",
@@ -524,7 +524,7 @@
         "content": {
             "breadcrumb": "Digital Marketing & Content Services",
             "hero": {
-                "image": "/assets/img/new/digital-marketing-content-service.jpg",
+                "image": "/images/service/digital-marketing-content-service.jpg",
                 "title": "Digital Marketing for",
                 "highlight": "amplified",
                 "subtitle": "brand visibility",
@@ -582,7 +582,7 @@
         }
     },
     {
-        "icon": "th-1-service-icon-3.svg",
+        "icon": "/images/service/service-icon-2.svg",
         "title": "Data & Admin Services",
         "slug": "data-admin-services",
         "seoTitle": "Data & Admin Services | Data Entry & Virtual Support - Fajraan Tech",
@@ -627,7 +627,7 @@
         "content": {
             "breadcrumb": "Data & Admin Services",
             "hero": {
-                "image": "/assets/img/new/data-admin-service.jpg",
+                "image": "/images/service/data-admin-service.jpg",
                 "title": "Data & Admin Services for",
                 "highlight": "efficient",
                 "subtitle": "business operations",
@@ -685,7 +685,7 @@
         }
     },
     {
-        "icon": "th-1-service-icon-3.svg",
+        "icon": "/images/service/service-icon-3.svg",
         "title": "Cloud & DevOps Solutions",
         "slug": "cloud-devops-solutions",
         "seoTitle": "Cloud & DevOps Services | AWS, Azure, CI/CD & Infrastructure - Fajraan Tech",
@@ -737,7 +737,7 @@
         "content": {
             "breadcrumb": "Cloud & DevOps Service",
             "hero": {
-                "image": "/assets/img/new/cloud-devops-solutions-service.jpg",
+                "image": "/images/service/cloud-devops-solutions-service.jpg",
                 "title": "Cloud & DevOps for",
                 "highlight": "scalable",
                 "subtitle": "infrastructure solutions",
@@ -795,7 +795,7 @@
         }
     },
     {
-        "icon": "th-1-service-icon-3.svg",
+        "icon": "/images/service/service-icon-4.svg",
         "title": "AI & Automation",
         "slug": "ai-automation",
         "seoTitle": "AI & Automation Services | Machine Learning, Chatbots & RPA - Fajraan Tech",
@@ -847,7 +847,7 @@
         "content": {
             "breadcrumb": "AI & Automation Service",
             "hero": {
-                "image": "/assets/img/new/ai-automation-service-img.jpg",
+                "image": "/images/service/ai-automation-service-img.jpg",
                 "title": "AI & Automation for",
                 "highlight": "smart",
                 "subtitle": "business efficiency",
@@ -905,7 +905,7 @@
         }
     },
     {
-        "icon": "th-1-service-icon-2.svg",
+        "icon": "/images/service/service-icon-1.svg",
         "title": "Cybersecurity & IT Support",
         "slug": "cybersecurity-it-support",
         "seoTitle": "Cybersecurity & IT Support | Security Audits, IT Management - Fajraan Tech",
@@ -957,7 +957,7 @@
         "content": {
             "breadcrumb": "Cybersecurity & IT Support Service",
             "hero": {
-                "image": "/assets/img/new/cybersecurity-service-img.jpg",
+                "image": "/images/service/cybersecurity-service-img.jpg",
                 "title": "Cybersecurity & IT Support for",
                 "highlight": "secure",
                 "subtitle": "business operations",

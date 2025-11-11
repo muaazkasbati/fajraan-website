@@ -1,12 +1,40 @@
-import BreadCrumb from '@/components/BreadCrumb'
-import ContactForm from '@/components/ContactForm'
-import FaqsSection from '@/components/FaqsSection'
+import { motion } from "framer-motion";
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import HeroSec from '@/components/HeroSec'
 import Head from 'next/head'
 import React from 'react'
+import { useRouter } from "next/router";
 
 export default function Contact() {
+    const router = useRouter()
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+            // Send form data to API
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ ...data, plan: router.query.plan ? router.query.plan : '' }),
+            });
+
+            // Check response status
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error submitting form:', errorData.message);
+                return;
+            }
+
+        } catch (error) {
+            console.error('Error submitting form:', error);
+        }
+    };
+
     return (
         <>
             <Head>
@@ -26,105 +54,165 @@ export default function Contact() {
                 <meta name="twitter:image" content="https://fajraan.com/your-twitter-image.jpg" />
 
             </Head>
-            <div className="page-wrapper">
-                <Header />
-                <main className="main-wrapper">
-                    <BreadCrumb page="Contact Us" />
-                    <section class="section-contact-form">
-                        <div class="section-space">
-                            <div class="container">
-                                <div class="grid grid-cols-1 items-end gap-x-20 gap-y-10 lg:grid-cols-[1fr_minmax(0,420px)]">
-                                    <div class="jos" data-jos_animation="fade-left">
-                                        <div class="section-block mb-10 md:mb-[60px] xl:mb-20">
-                                            <h2>
-                                                Let’s Build Something{" "}
-                                                <span>
-                                                    <img
-                                                        src="assets/img/elemnts/shape-light-lime-5-arms-star.svg"
-                                                        alt="shape-light-lime-5-arms-star"
-                                                        width="74"
-                                                        height="70"
-                                                        class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]"
-                                                    />
-                                                </span>
-                                                Extraordinary Together
-                                            </h2>
-                                        </div>
-
-                                        <ContactForm contactPage />
-                                    </div>
-
-                                    <div class="jos hidden overflow-hidden rounded-[20px] border-2 border-black lg:block lg:border-[5px]" data-jos_animation="fade-right">
-                                        <img src="assets/img/images/th-1/contact-img.jpg" alt="contact-img" width="456" height="731" class="h-full w-full object-cover" />
-                                    </div>
-                                </div>
-                            </div>
+            <Header />
+            <HeroSec title="We’re just a message away to bring your ideas to life" />
+            <div className="quanto-map-area style-2 overflow-hidden">
+                <div className="container custom-container position-relative">
+                    <a className="scroll-down section-link" href="#service-section">
+                        Scroll down
+                        <img
+                            src="/images/icons/scroll-down.svg"
+                            alt="Scroll down"
+                            width="16"
+                            height="28"
+                            loading="lazy"
+                            style={{ color: "transparent" }}
+                        />
+                    </a>
+                    <div className="row">
+                        <div className="col-12">
+                            <motion.iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462563.0383690874!2d54.897151952799646!3d25.07565689924587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1755890374332!5m2!1sen!2s"
+                                width="600"
+                                height="400"
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="d-block w-100"
+                                style={{ border: 0 }}
+                                initial={{ opacity: 0, y: 80 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                viewport={{ once: true }}
+                            />
                         </div>
-                    </section>
-
-                    <section class="section-contact-info">
-                        <div class="section-space-bottom">
-                            <div class="container">
-                                <div class="section-block mx-auto mb-10 max-w-[650px] text-center md:mb-[60px] xl:mb-20 xl:max-w-[866px]">
-                                    <h2 class="jos">
-                                        Contact Information {" "}
-                                        <span>
-                                            <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
-                                        </span>
-                                    </h2>
-                                </div>
-                                <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                                    <li class="jos flex gap-x-6 rounded-[10px] bg-black px-5 py-[30px] xl:px-8 xxl:px-[70px]">
-                                        <div class="h-auto w-10">
-                                            <img src="assets/img/icons/icon-buttery-white-phone.svg" alt="icon-buttery-white-phone" width="30" height="30" class="h-auto w-10" />
-                                        </div>
-                                        <div class="flex-1">
-                                            <span class="mb-3 block text-xl font-bold text-white xl:text-2xl">WhatsApp us</span>
-                                            <div class="flex flex-col text-lg leading-[1.42] lg:text-[21px]">
-                                                <a href="https://wa.me/971542259592" class="text-white hover:text-colorLightLime">+971 54 225 9592</a>
-                                                {/* <a href="tel:+0123456789" class="text-white hover:text-colorLightLime">+012-345-6789</a> */}
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="jos flex gap-x-6 rounded-[10px] bg-black px-5 py-[30px] xl:px-8 xxl:px-[70px]">
-                                        <div class="h-auto w-10">
-                                            <img src="assets/img/icons/icon-buttery-white-mail.svg" alt="icon-buttery-white-mail" width="40" height="40" class="h-auto w-10" />
-                                        </div>
-                                        <div class="flex-1">
-                                            <span class="mb-3 block text-xl font-bold text-white xl:text-2xl">Email us</span>
-                                            <div class="flex flex-col text-lg leading-[1.42] lg:text-[21px]">
-                                                <a href="mailto:info@fajraan.com" class="text-white hover:text-colorLightLime">info@fajraan.com</a>
-                                                {/* <a href="mailto:" class="text-white hover:text-colorLightLime">example@gmail.com</a> */}
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="jos flex gap-x-6 rounded-[10px] bg-black px-5 py-[30px] xl:px-8 xxl:px-[70px]">
-                                        <div class="h-auto w-10">
-                                            <img src="assets/img/icons/icon-buttery-white-location-marker.svg" alt="icon-buttery-white-location-marker" width="40" height="40" class="h-auto w-10" />
-                                        </div>
-                                        <div class="flex-1">
-                                            <span class="mb-3 block text-xl font-bold text-white xl:text-2xl">Office address</span>
-                                            <div class="flex flex-col text-lg leading-[1.42] lg:text-[21px]">
-                                                <address class="not-italic text-white">
-                                                    Dubai, United Arab Emirates
-                                                </address>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="jos mt-10 md:mt-[60px] lg:mt-20">
-                                    <div class="h-96 w-full overflow-hidden rounded-[20px] border-2 border-black lg:h-[550px] lg:rounded-[30px] lg:border-[5px]">
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462563.0383690874!2d54.897151952799646!3d25.07565689924587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1755890374332!5m2!1sen!2s" width="600" height="450" className="h-full w-full border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <div class="horizontal-line bg-[#e6e6e6]"></div>
-                    <FaqsSection />
-                </main>
-                <Footer />
+                    </div>
+                </div>
             </div>
+            <section
+                id="quanto-contact-section"
+                className="quanto-contact-section bg-color-white section-padding-top-bottom"
+            >
+                <div className="container custom-container">
+                    <div className="row g-4 justify-content-between">
+                        <div className="col-lg-6 col-xxl-5">
+                            <motion.div
+                                className="quanto-contact__content"
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                            >
+                                <h3 className="title color-primary">Let’s build something amazing together!</h3>
+                                <p>
+                                    At Fajraan Tech, we’re always ready to discuss your next digital project — whether it’s a website, app,
+                                    design, or marketing campaign. Reach out to our team and let’s turn your vision into reality.
+                                </p>
+
+                                <div className="address">
+                                    <h6>Address:</h6>
+                                    <span>
+                                        Sheikh Zayed Road, <br />
+                                        Dubai, United Arab Emirates
+                                    </span>
+                                </div>
+
+                                <div className="contact-info">
+                                    <h5>
+                                        <a href="mailto:info@fajraan.com">info@fajraan.com</a>
+                                    </h5>
+                                    <a href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
+                                        +971 54 225 9592 (WhatsApp only)
+                                    </a>
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        <div className="col-lg-6 col-xxl-6">
+                            <motion.form
+                                onSubmit={handleSubmit}
+                                action="#"
+                                className="quanto-contact__form"
+                                autoComplete="off"
+                                initial={{ opacity: 0, y: 60 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+                            >
+                                <div className="row g-3 g-xl-4">
+                                    <div className="col-md-6">
+                                        <input
+                                            placeholder="Your name"
+                                            required
+                                            className="form-control"
+                                            pattern="[A-Za-z\s]+"
+                                            title="Please enter only alphabets and spaces"
+                                            type="text"
+                                            name="name"
+                                        />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <input
+                                            placeholder="Company name"
+                                            className="form-control"
+                                            type="text"
+                                            name="company"
+                                        />
+                                    </div>
+                                    <div className="col-12">
+                                        <input
+                                            placeholder="Enter your phone number"
+                                            required
+                                            className="form-control"
+                                            type="tel"
+                                            name="phone"
+                                            pattern="^\+?[0-9]{7,15}$"
+                                            title="Please enter a valid phone number (digits only, with optional + and 7–15 digits)"
+                                        />
+                                    </div>
+                                    <div className="col-12">
+                                        <input
+                                            placeholder="Enter your e-mail address"
+                                            required
+                                            className="form-control"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                            title="Please enter a valid email address"
+                                            type="email"
+                                            name="email"
+                                        />
+                                    </div>
+                                    <div className="col-12">
+                                        <input
+                                            placeholder="What is the subject of your query?"
+                                            className="form-control"
+                                            type="text"
+                                            name="subject"
+                                        />
+                                    </div>
+                                    <div className="col-12">
+                                        <textarea
+                                            name="message"
+                                            rows="6"
+                                            placeholder="Describe about your project"
+                                            className="form-control"
+                                        ></textarea>
+                                    </div>
+                                    <div className="col-12 mt-5">
+                                        <button type="submit" className="quanto-link-btn btn-pill">
+                                            Submit
+                                            <span>
+                                                <i className="fa-solid fa-arrow-right arry1"></i>
+                                                <i className="fa-solid fa-arrow-right arry2"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </motion.form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <Footer />
         </>
     )
 }

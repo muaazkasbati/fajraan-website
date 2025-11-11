@@ -13,7 +13,7 @@ const Header = () => {
         { label: "Home", href: "/" },
         { label: "About Us", href: "/about" },
         { label: "Services", href: "/services" },
-        { label: "Portfolio", href: "/#portfolio" },
+        { label: "Portfolio", href: "/portfolio" },
         { label: "Blog", href: "/blog" },
     ];
 
@@ -32,54 +32,344 @@ const Header = () => {
     }, []);
     return (
         <>
-            <header className={`section-header site-header ${isScrolled ? "bg-secondary/70! py-2" : "bg-transparent py-6"} backdrop-blur-md! transition-all duration-300 fixed top-0 z-40 w-full`}>
-                <div className="container">
-                    <div className="flex items-center justify-between">
-                        <Link href="/" className="h-auto w-auto">
-                            <img src="/assets/img/logo-white.png" alt="Fajraan" width="200" />
-                        </Link>
-                        <div className="flex items-center gap-x-10">
-                            <div className="menu-block-wrapper">
-                                {menuOpen && (
-                                    <div className="menu-overlay fixed inset-0 bg-black/60 z-10" onClick={closeMenu} />
-                                )}
-                                <nav className={`menu-block ${menuOpen ? "active" : ""}`} id="append-menu-header">
-                                    <div className="mobile-menu-head">
-                                        <div className="go-back">
-                                            <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="12" height="7" />
-                                        </div>
-                                        <div className="current-menu-title"></div>
-                                        <div onClick={closeMenu} className="mobile-menu-close">&times;</div>
+            <header className={`quanto-header main-header bg-color-white ${isScrolled ? "sticky-menu" : ""}`}>
+                <div className="sticky-wrap">
+                    <div className="sticky-active">
+                        <div className="container custom-container">
+                            <div className="row gx-3 align-items-center justify-content-between">
+                                <div className="col-8 col-sm-auto">
+                                    <div className="header-logo">
+                                        <Link href="/">
+                                            <img
+                                                alt="logo"
+                                                width={177}
+                                                height={29}
+                                                decoding="async"
+                                                data-nimg={1}
+                                                style={{ color: "transparent" }}
+                                                src="/images/logo-web.svg"
+                                            />
+                                        </Link>
                                     </div>
-                                    <ul className="site-menu-main">
-                                        {navItems.map((item) => (
-                                            <li
-                                                key={item.href}
-                                                className={`nav-link-item drop-trigger rounded-none border border-transparent ${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "text-colorLightLime" : "text-colorDark lg:text-white"
-                                                    }`}
-                                            >
-                                                <Link href={item.href}>{item.label}</Link>
+                                </div>
+                                <div className="col text-end text-lg-center">
+                                    <nav className="main-menu menu-style1 d-none d-lg-block">
+                                        <ul>
+                                            {navItems.map((item) => (
+                                                <li key={item.href} className={`${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "" : ""}`}>
+                                                    <Link href={item.href}>{item.label}</Link>
+                                                </li>
+                                            ))}
+                                            {/* <li className="menu-item-has-children">
+                                                <a href="#">Home</a>
+                                                <ul className="sub-menu">
+                                                    <li className="">
+                                                        <a className="" href="index.html">
+                                                            Digital Agency
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="home-2.html">
+                                                            Creative Agency
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="home-3.html">
+                                                            Design Studio
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="home-4.html">
+                                                            Branding Agency
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="home-5.html">
+                                                            Modern Agency
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="home-6.html">
+                                                            Personal Portfolio
+                                                        </a>
+                                                    </li>
+                                                </ul>
                                             </li>
-                                        ))}
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-x-6">
-                            <Link href="/contact" className="btn-primary relative hidden px-[30px] py-[10px] sm:inline-flex">Contact Us</Link>
-                            <div className="block lg:hidden">
-                                <button
-                                    id="openBtn"
-                                    className="hamburger-menu mobile-menu-trigger "
-                                    onClick={toggleMenu}
-                                >
-                                    <span className="bg-white before:bg-white after:bg-white"></span>
-                                </button>
+                                            <li className="menu-item-has-children">
+                                                <a href="#">Pages</a>
+                                                <ul className="sub-menu">
+                                                    <li className="">
+                                                        <a className="" href="about.html">
+                                                            About Us
+                                                        </a>
+                                                    </li>
+                                                    <li className="menu-item-has-children">
+                                                        <a className="no-border" href="#">
+                                                            Service
+                                                        </a>
+                                                        <ul className="sub-menu">
+                                                            <li className="">
+                                                                <a className="" href="service.html">
+                                                                    Service - 1
+                                                                </a>
+                                                            </li>
+                                                            <li className="">
+                                                                <a className="" href="service-2.html">
+                                                                    Service - 2
+                                                                </a>
+                                                            </li>
+                                                            <li className="">
+                                                                <a className="" href="service-details.html">
+                                                                    Service Details
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li className="menu-item-has-children">
+                                                        <a className="no-border" href="#">
+                                                            Career
+                                                        </a>
+                                                        <ul className="sub-menu">
+                                                            <li className="">
+                                                                <a className="" href="career.html">
+                                                                    Career
+                                                                </a>
+                                                            </li>
+                                                            <li className="">
+                                                                <a className="" href="career-details.html">
+                                                                    Career Details
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li className="menu-item-has-children">
+                                                        <a className="no-border" href="#">
+                                                            Team
+                                                        </a>
+                                                        <ul className="sub-menu">
+                                                            <li className="">
+                                                                <a className="" href="team.html">
+                                                                    Team
+                                                                </a>
+                                                            </li>
+                                                            <li className="">
+                                                                <a className="" href="team-details.html">
+                                                                    Team Details
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="pricing.html">
+                                                            Pricing
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="faq.html">
+                                                            FAQ's
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href={404}>
+                                                            404
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li className="menu-item-has-children">
+                                                <a href="#">Portfolio</a>
+                                                <ul className="sub-menu">
+                                                    <li className="">
+                                                        <a className="" href="portfolio-masonry.html">
+                                                            Portfolio Masonry
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="portfolio-standard.html">
+                                                            Portfolio Standard
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="portfolio-gallery.html">
+                                                            Portfolio Gallery
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="portfolio-slider.html">
+                                                            Portfolio Slider
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="portfolio-card.html">
+                                                            Portfolio Card
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="portfolio-details.html">
+                                                            Portfolio Details
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li className="menu-item-has-children">
+                                                <a href="#">Blog</a>
+                                                <ul className="sub-menu">
+                                                    <li className="">
+                                                        <a className="" href="blog-grid.html">
+                                                            Blog Grid
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="blog-list.html">
+                                                            Blog List
+                                                        </a>
+                                                    </li>
+                                                    <li className="">
+                                                        <a className="" href="blog-details.html">
+                                                            Blog Details
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="contact.html">Contact</a>
+                                            </li> */}
+                                        </ul>
+                                    </nav>
+                                    <button onClick={toggleMenu} className="menuBar-toggle quanto-menu-toggle d-inline-block d-lg-none">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width={40}
+                                            height={40}
+                                            viewBox="0 0 40 40"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M24.4444 26V28H0V26H24.4444ZM40 19V21H0V19H40ZM40 12V14H15.5556V12H40Z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div className="col-auto d-none d-lg-block">
+                                    <Link className="quanto-link-btn btn-pill" href="/contact">
+                                        Get in touch
+                                        <span>
+                                            <i className="fa-solid fa-arrow-right arry1" />
+                                            <i className="fa-solid fa-arrow-right arry2" />
+                                        </span>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
+            <div className={`quanto-menu-wrapper ${menuOpen ? "quanto-body-visible" : ""}`}>
+                <div className="quanto-menu-area text-center">
+                    <div className="quanto-menu-mobile-top">
+                        <div className="mobile-logo">
+                            <a href="index.html">
+                                <img
+                                    alt="logo"
+                                    width={120}
+                                    height={20}
+                                    decoding="async"
+                                    data-nimg={1}
+                                    style={{ color: "transparent" }}
+                                    src="/images/logo-web.svg"
+                                />
+                            </a>
+                        </div>
+                        <button onClick={closeMenu} className="quanto-menu-toggle mobile">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div className="quanto-mobile-menu">
+                        <ul>
+                            {navItems.map((item) => (
+                                <li key={item.href} className={`menu-item-has-children ${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "" : ""}`}>
+                                    <Link href={item.href}>{item.label}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="quanto-mobile-menu-btn">
+                        <div className="sidebar-wrap">
+                            <h6>Dubai, United Arab Emirates</h6>
+                            {/* <h6>NY 10002, USA</h6> */}
+                        </div>
+                        <div className="sidebar-wrap">
+                            <h6>
+                                <a
+                                    href="https://wa.me/971542259592"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    +971 54 225 9592 (WhatsApp)
+                                </a>
+                            </h6>
+                            <h6>
+                                <a href="mailto:info@fajraan.com">
+                                    info@fajraan.com
+                                </a>
+                            </h6>
+                        </div>
+                        <div className="social-btn style-3">
+                            {/* <a href="https://x.com/">
+                                <span className="link-effect">
+                                    <span className="effect-1">
+                                        <i className="fab fa-x-twitter" />
+                                    </span>
+                                    <span className="effect-1">
+                                        <i className="fab fa-x-twitter" />
+                                    </span>
+                                </span>
+                            </a> */}
+                            <a href="https://www.instagram.com/fajraan_tech">
+                                <span className="link-effect">
+                                    <span className="effect-1">
+                                        <i className="fab fa-instagram" />
+                                    </span>
+                                    <span className="effect-1">
+                                        <i className="fab fa-instagram" />
+                                    </span>
+                                </span>
+                            </a>
+                            <a href="https://www.linkedin.com/company/fajraan-tech">
+                                <span className="link-effect">
+                                    <span className="effect-1">
+                                        <i className="fab fa-linkedin" />
+                                    </span>
+                                    <span className="effect-1">
+                                        <i className="fab fa-linkedin" />
+                                    </span>
+                                </span>
+                            </a>
+                            <a href="https://www.facebook.com/fajraantech">
+                                <span className="link-effect">
+                                    <span className="effect-1">
+                                        <i className="fab fa-facebook-f" />
+                                    </span>
+                                    <span className="effect-1">
+                                        <i className="fab fa-facebook-f" />
+                                    </span>
+                                </span>
+                            </a>
+                            {/* <a href="https://dribbble.com/">
+                                <span className="link-effect">
+                                    <span className="effect-1">
+                                        <i className="fab fa-dribbble" />
+                                    </span>
+                                    <span className="effect-1">
+                                        <i className="fab fa-dribbble" />
+                                    </span>
+                                </span>
+                            </a> */}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

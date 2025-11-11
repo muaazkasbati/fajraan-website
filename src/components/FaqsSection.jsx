@@ -1,74 +1,104 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-const faqsData = [
+const faqData = [
     {
-        question: "What services does Fajraan Tech offer?",
+        question: "What happens after I approve the design or proposal?",
         answer:
-            "We provide end-to-end digital solutions including web development, mobile apps, desktop software, UI/UX design, branding, digital marketing, SEO, and more.",
+            "Once you approve the design or proposal, our development team begins implementation — setting up the project structure, creating components, and integrating functionality. You’ll receive regular progress updates until launch.",
     },
     {
-        question: "What is your development process like?",
+        question: "Can you work with my existing website, app, or design files?",
         answer:
-            "Our process includes discovery & requirements, design & architecture, development, testing, and launch. We ensure full transparency and collaboration at every stage.",
+            "Yes. Whether you already have wireframes, Figma designs, or a live website, we can improve, rebuild, or scale it. We often take over incomplete projects or outdated systems and modernize them using the latest tech stack.",
     },
     {
-        question: "How much does a project cost?",
+        question: "Do you charge for revisions or updates?",
         answer:
-            "Costs vary depending on the complexity and requirements of your project. We provide tailored quotes after discussing your goals in detail.",
+            "Minor revisions during the development phase are included. Major scope changes or additional features requested after approval may involve extra cost — but we always confirm before proceeding.",
     },
     {
-        question: "How do you handle client feedback?",
+        question: "Can agencies or startups outsource their work to Fajraan Tech?",
         answer:
-            "We work closely with our clients, incorporating feedback at every stage. We also offer structured revision rounds to ensure complete satisfaction.",
+            "Absolutely. We regularly partner with agencies, startups, and businesses needing a reliable tech team for white-label or outsourced projects. We maintain full confidentiality and deliver under your brand if required.",
     },
     {
-        question: "Can we see samples of your work?",
+        question: "What do I need to provide before the project starts?",
         answer:
-            "Yes, you can explore our portfolio on the website to see case studies and examples of projects we've delivered for clients across industries.",
+            "We’ll need your brand assets (logo, colors, content), goals, and feature requirements. For larger projects, we conduct a short discovery call to clarify the scope, timeline, and deliverables before signing off.",
     },
     {
-        question: "Do you provide post-launch support and maintenance?",
+        question: "How long does a typical project take?",
         answer:
-            "Yes, we offer ongoing support and maintenance packages to keep your website, app, or software updated, secure, and running smoothly after launch.",
+            "Timelines vary by scope. Basic websites take 3–4 weeks, while custom apps or platforms may take 2–4 months. We provide a detailed timeline and milestones before starting development.",
+    },
+    {
+        question: "Do you handle ongoing maintenance and updates?",
+        answer:
+            "Yes. We offer monthly maintenance and marketing retainers covering updates, security, performance, and SEO — ensuring your website or app stays optimized and up to date.",
+    },
+    {
+        question: "What technologies does Fajraan Tech specialize in?",
+        answer:
+            "We primarily use the MERN stack (MongoDB, Express, React, Node.js), along with Next.js, Tailwind CSS, Firebase, and modern tools for performance, scalability, and SEO-friendly solutions.",
     },
 ];
 
 
 const FaqsSection = () => {
     return (
-        <section className="section-faq">
-            <div className="section-space">
-                <div className="container">
-                    <div className="section-block mx-auto mb-10 max-w-[650px] text-center md:mb-[60px] xl:mb-20 xl:max-w-[856px]">
-                        <h2 className="jos">
-                            These FAQs help{" "}
-                            <span>
-                                <img
-                                    src="assets/img/elemnts/shape-light-lime-5-arms-star.svg"
-                                    alt="star"
-                                    width="74"
-                                    height="70"
-                                    className="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]"
-                                />
-                            </span>{" "}
-                            clients learn about us
-                        </h2>
-                    </div>
+        <section className="quanto-faq-area bg-color-white overflow-hidden section-padding-bottom section-padding-top-bottom">
+            <div className="container custom-container">
+                <div className="row g-4 justify-content-between">
+                    <motion.div
+                        className="col-lg-6 col-xl-5 col-xxl-4 gsap-sticky"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="quanto__header">
+                            <h3 className="title color-primary">Frequently Asked Questions</h3>
+                            <p className="subtitle text-gray-500 mt-2">
+                                Everything you need to know about working with Fajraan Tech — from project flow to support.
+                            </p>
+                        </div>
 
-                    <div className="grid grid-cols-1 gap-x-6 gap-y-10 lg:grid-cols-2">
-                        {faqsData.map((faq, index) => (
-                            <div
-                                key={index}
-                                className="jos flex flex-col gap-y-4"
-                            >
-                                <h4 className="relative pl-10 before:absolute before:left-0 before:top-1 before:h-[30px] before:w-[30px] before:bg-[url(/assets/img/icons/icon-lightlime-question.svg)]">
-                                    {faq.question}
-                                </h4>
-                                <div className="ml-10 text-[#0C0C0C]">
-                                    <p>{faq.answer}</p>
-                                </div>
-                            </div>
-                        ))}
+                    </motion.div>
+
+                    <div className="col-lg-6 col-xl-7 col-xxl-7 gsap-scroll">
+                        <div className="accordion quanto-faq-accordion" id="accordionExample">
+                            {faqData.map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    className="accordion-item"
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <h6 className="accordion-header">
+                                        <button
+                                            className="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target={`#collapse${index}`}
+                                            aria-expanded={index === 0 ? "true" : "false"}
+                                            aria-controls={`collapse${index}`}
+                                        >
+                                            {item.question}
+                                        </button>
+                                    </h6>
+                                    <div
+                                        id={`collapse${index}`}
+                                        className={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}
+                                        data-bs-parent="#accordionExample"
+                                    >
+                                        <div className="accordion-body">{item.answer}</div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

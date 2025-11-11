@@ -5,29 +5,89 @@ import HeroSection from "@/components/home/HeroSection";
 import ServiceSection from "@/components/home/ServiceSection";
 import AboutSection from "@/components/home/AboutSection";
 import PortfolioSection from "@/components/home/PortfolioSection";
-import ProcessSection from "@/components/home/ProcessSection";
 import TextimonialSection from "@/components/home/TextimonialSection";
-import TextSliderSection from "@/components/home/TextSliderSection";
-import TeamSection from "@/components/home/TeamSection";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+import OurAchivementSection from "@/components/home/OurAchivementSection";
+import ClientsSection from "@/components/home/ClientsSection";
+import BlogSection from "@/components/home/BlogSection";
+
+// export async function getStaticProps() {
+//   try {
+//     const response = await fetch(
+//       'https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3'
+//     );
+//     if (!response.ok) throw new Error('Failed to fetch latest posts');
+
+//     const data = await response.json();
+
+//     return {
+//       props: {
+//         posts: data,
+//       },
+//       revalidate: 300, // Rebuild every 5 minutes (ISR)
+//     };
+//   } catch (error) {
+//     console.error('Home page fetch error:', error);
+//     return {
+//       props: {
+//         posts: [],
+//       },
+//       revalidate: 300,
+//     };
+//   }
+// }
+
+export async function getStaticProps() {
+  try {
+    const timestamp = Date.now();
+
+    const [postsRes, portfolioRes] = await Promise.all([
+      fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3&_=${timestamp}`),
+      fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed&_=${timestamp}`)
+    ]);
+
+    if (!postsRes.ok || !portfolioRes.ok) {
+      throw new Error('Failed to fetch data');
+    }
+
+    const [postsData, portfolioData] = await Promise.all([
+      postsRes.json(),
+      portfolioRes.json()
+    ]);
+
+    const mappedPortfolio = portfolioData?.map((item) => ({
+      id: item?.id,
+      title: item?.title?.rendered,
+      slug: item?.slug,
+      link: item?.link,
+      year: item?.meta?.year || '—',
+      category: item?._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
+      image:
+        item?._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
+        '/images/default.webp',
+    }));
+
+    return {
+      props: {
+        posts: postsData,
+        portfolio: mappedPortfolio,
+      },
+      revalidate: 60, // Re-fetch every 60 seconds (adjust as needed)
+    };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return {
+      props: {
+        posts: [],
+        portfolio: [],
+      },
+      revalidate: 60, // Still revalidate even on error to retry later
+    };
+  }
+}
 
 
-export default function Home() {
-  const router = useRouter()
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const id = router.asPath.split('#')[1]; // Get the ID from the URL
-  //     if (id) {
-  //       const element = document.getElementById(id);
-  //       if (element) {
-  //         element.scrollIntoView({ behavior: 'smooth' });
-  //       }
-  //     }
-  //   };
 
-  //   handleScroll();
-  // }, [router.asPath]);
+export default function Home({ posts, portfolio }) {
   return (
     <>
       <Head>
@@ -45,25 +105,17 @@ export default function Home() {
         <meta name="twitter:title" content="Fajraan Tech | Custom Web & Mobile App Development Middle East" />
         <meta name="twitter:description" content="Scalable and smart digital solutions: web, mobile, desktop apps, UI/UX, SEO and data services across the Middle East." />
         <meta name="twitter:image" content="https://fajraan.com/your-twitter-image.jpg" />
-
       </Head>
-      <div className="page-wrapper">
-        <Header />
-
-        <main className="main-wrapper">
-          <HeroSection />
-          <ServiceSection />
-          <div className="horizontal-line bg-[#e6e6e6]"></div>
-          <AboutSection />
-          <PortfolioSection />
-          <ProcessSection />
-          <div className="horizontal-line bg-[#e6e6e6]"></div>
-          <TextimonialSection />
-          <TextSliderSection />
-          <TeamSection />
-        </main>
-        <Footer />
-      </div>
+      <Header />
+      <HeroSection />
+      <AboutSection />
+      <OurAchivementSection />
+      <PortfolioSection projects={portfolio} />
+      <ServiceSection />
+      <TextimonialSection />
+      {/* <ClientsSection /> */}
+      <BlogSection posts={posts} />
+      <Footer />
     </>
   );
 }

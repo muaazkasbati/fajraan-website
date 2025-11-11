@@ -1,6 +1,7 @@
-import BreadCrumb from '@/components/BreadCrumb'
+import { motion } from "framer-motion";
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import HeroSec from '@/components/HeroSec'
 import Head from 'next/head'
 import React from 'react'
 
@@ -28,57 +29,66 @@ export default function TermsAndConditions() {
                 <meta name="twitter:description" content="Understand Fajraan Tech’s terms of use for all services, solutions, and website content." />
                 <meta name="twitter:image" content="https://fajraan.com/assets/img/og-image.jpg" />
             </Head>
-
-            <div className="page-wrapper">
-                <Header />
-                <main className="main-wrapper">
-                    <BreadCrumb page="Terms & Conditions" />
-
-                    <section className="section-policy">
-                        <div className="section-space">
-                            <div className="container max-w-[900px] mx-auto">
-                                <h2 className="jos text-center mb-8">Terms & Conditions</h2>
-                                <p className="mb-5">
+            <Header />
+            <HeroSec title="Terms & Conditions" />
+            <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden">
+                <div className="container custom-container">
+                    <motion.div
+                        className="row g-4 justify-content-center"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="col-xl-8">
+                            <motion.div
+                                className="blog-body"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                viewport={{ once: true }}
+                            >
+                                <p>
                                     Welcome to Fajraan Tech. By accessing our website or using our services, you agree to the following terms and conditions.
                                     Please read them carefully before proceeding.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">1. Use of Services</h4>
-                                <p className="mb-5">
+                                <h3>1. Use of Services</h3>
+                                <p>
                                     Our services are provided for lawful purposes only. You agree not to misuse our website or engage in any activity that disrupts or harms other users.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">2. Intellectual Property</h4>
-                                <p className="mb-5">
+                                <h3>2. Intellectual Property</h3>
+                                <p>
                                     All content, designs, and code on this website are the intellectual property of Fajraan Tech and may not be copied, distributed, or reproduced without permission.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">3. Payment & Refund Policy</h4>
-                                <p className="mb-5">
+                                <h3>3. Payment & Refund Policy</h3>
+                                <p>
                                     Payment terms are agreed upon before project initiation. Refunds are subject to review based on project stage and deliverables.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">4. Limitation of Liability</h4>
-                                <p className="mb-5">
+                                <h3>4. Limitation of Liability</h3>
+                                <p>
                                     Fajraan Tech shall not be held responsible for any direct or indirect damages arising from the use of our website or services.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">5. Modifications</h4>
-                                <p className="mb-5">
+                                <h3>5. Modifications</h3>
+                                <p>
                                     We reserve the right to modify or update these terms at any time. Continued use of the website implies acceptance of any revisions.
                                 </p>
 
-                                <h4 className="font-semibold mb-2">6. Governing Law</h4>
+                                <h3>6. Governing Law</h3>
                                 <p>
-                                    These Terms & Conditions are governed by the laws of the United Arab Emirates.  
+                                    These Terms & Conditions are governed by the laws of the United Arab Emirates.
                                     Any disputes will be resolved under UAE jurisdiction.
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
-                    </section>
-                </main>
-                <Footer />
-            </div>
+                    </motion.div>
+                </div>
+            </section>
+            <Footer />
         </>
     )
 }

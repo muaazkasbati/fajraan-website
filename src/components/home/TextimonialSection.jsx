@@ -1,120 +1,269 @@
-import React from 'react'
+"use client";
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade, Navigation, Controller } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import { motion } from "framer-motion";
 
-const testimonials = [
-  {
-    rating: 5,
-    title: "Exceptional Support and Delivery",
-    content:
-      "Fajraan Tech delivered our web app ahead of schedule with excellent code quality and clear communication. Their professionalism made the whole process seamless.",
-    user: {
-      name: "Omar Al-Farsi",
-      role: "Startup Founder",
+export default function TestimonialSection({ aboutPage = false }) {
+  const imgSwiperRef = useRef(null);
+  const textSwiperRef = useRef(null);
+
+  // we store swiper instances in state so controller can be set after initialization
+  const [imgController, setImgController] = useState(null);
+  const [textController, setTextController] = useState(null);
+  const testimonials = [
+    {
+      text: `"Working with Fajraan Tech was a game-changer. They delivered a sleek, animated website that not only elevated our brand presence but also made our online experience more engaging for customers. The team was professional, fast, and exceeded our expectations."`,
+      author: "Maaz Khawaja",
+      role: "Founder at Meem Products",
+      image: "images/testimonial/Testimonial-1.jpg",
     },
-    avatar: "/assets/img/images/th-1/testimonial-user-img-1.png",
-  },
-  {
-    rating: 5,
-    title: "Highly Skilled Team",
-    content:
-      "Working with Fajraan Tech brought our ideas to life with clean, scalable code. The custom web applications they built exceeded our expectations in both performance and design.",
-    user: {
-      name: "Layla Hassan",
-      role: "Product Manager",
+    {
+      text: `"This was a complex project involving booking management, payment integration, and multiple advanced features—and Fajraan Tech nailed it. They built a powerful, user-friendly platform that streamlined our operations and impressed our clients. Truly reliable and skilled."`,
+      author: "Ahmed Al Qureshi",
+      role: "AB Limousine",
+      image: "images/testimonial/Testimonial-2.jpg",
     },
-    avatar: "/assets/img/images/th-1/testimonial-user-img-2.png",
-  },
-  {
-    rating: 5,
-    title: "Reliable and Innovative",
-    content:
-      "The Fajraan Tech team consistently demonstrated deep technical expertise and innovative solutions, making complex development challenges look easy. Highly recommended for MERN projects.",
-    user: {
-      name: "Faisal Al-Mansoori",
-      role: "Tech Lead",
+    {
+      text: `"Fajraan Tech developed a stunning animated website for us that perfectly captured our brand’s personality. The creativity, smooth functionality, and attention to detail were outstanding. We couldn’t be happier with the results."`,
+      author: "Layla Al Rashid",
+      role: "TheForCollective",
+      image: "images/testimonial/Testimonial-3.jpg",
     },
-    avatar: "/assets/img/images/th-1/testimonial-user-img-3.png",
-  },
-  {
-    rating: 5,
-    title: "Transformative Development Experience",
-    content:
-      "Our collaboration with Fajraan Tech transformed our product vision into a fully functional platform. Their attention to detail and fast turnaround times were impressive.",
-    user: {
-      name: "Noura Al-Sayed",
-      role: "CEO",
-    },
-    avatar: "/assets/img/images/th-1/testimonial-user-img-4.png",
-  },
-];
+  ];
 
 
-const StarIcon = () => (
-    <img
-        src="/assets/img/icons/icon-black-star.svg"
-        alt="star"
-        width="37"
-        height="35"
-    />
-);
-const TextimonialSection = () => {
-    return (
-        <>
-            <section className="section-testimonial bg-white">
-                <div className="section-space">
-                    <div className="container">
-                        <div className="section-block mx-auto mb-10 max-w-[650px] text-center md:mb-[60px] xl:mb-20 xl:max-w-[856px]">
-                            <h2 className="jos">
-                                Clients are always satisfied with
-                                <span>
-                                    {" "}
-                                    us {" "}
-                                    <img
-                                        src="/assets/img/elemnts/shape-light-lime-5-arms-star.svg"
-                                        alt="shape-light-lime-5-arms-star"
-                                        width="74"
-                                        height="70"
-                                        className="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]"
-                                    />
-                                </span>
-                            </h2>
+
+  return aboutPage ?
+    <section className="quanto-testimonial3-section bg-color-2 section-padding-top-bottom">
+      <div className="container custom-container">
+        <div className="row g-4 justify-content-between overflow-hidden">
+          {/* Left Title */}
+          <div className="col-lg-6 col-xxl-5 pe-xxl-0">
+            <motion.div
+              className="quanto__header h-100"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <h3 className="title color-primary">What clients say about Fajraan Tech</h3>
+            </motion.div>
+          </div>
+
+          {/* Right Slider */}
+          <div className="col-lg-6 col-xxl-5">
+            <motion.div
+              className="fade-anim"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Swiper
+                modules={[Navigation]}
+                navigation={{
+                  nextEl: ".next-btn",
+                  prevEl: ".prev-btn",
+                }}
+                slidesPerView={1}
+                loop={true}
+                spaceBetween={30}
+                speed={700}
+              >
+                {testimonials.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <motion.div
+                      className="swiper-slide"
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.2 + 0.3,
+                        ease: "easeOut",
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="testimonial3-content">
+                        <p>{item.text}</p>
+                        <div className="client-info">
+                          <h5 className="client-name">{item.author}</h5>
+                          <span className="client-designation">
+                            {item.role}
+                          </span>
                         </div>
+                      </div>
+                    </motion.div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
 
-                        <ul className="grid grid-cols-1 gap-x-6 gap-y-[30px] md:grid-cols-2">
-                            {testimonials.map((item, i) => (
-                                <li className="jos" key={i} data-jos_delay={`${i * 0.3}`}>
-                                    <div className="flex h-full flex-col rounded-[20px] border-2 border-black px-[30px] py-6 transition-all duration-300 hover:shadow-[5px_5px_0_0] hover:shadow-black">
-                                        <div className="mb-8 flex gap-x-2">
-                                            {[...Array(item.rating)].map((_, idx) => (
-                                                <StarIcon key={idx} />
-                                            ))}
-                                        </div>
-                                        <h4 className="mb-5">{item.title}</h4>
-                                        <p className="mb-[30px]">{item.content}</p>
-                                        <div className="mt-auto flex items-center gap-3">
-                                            <div className="h-[70px] w-[70px] overflow-hidden rounded-[50%] border-2 border-black">
-                                                <img
-                                                    src={item.avatar}
-                                                    alt={`${item.user.name} avatar`}
-                                                    width="64"
-                                                    height="64"
-                                                    className="h-full w-full object-cover"
-                                                />
-                                            </div>
-
-                                            <div className="flex-1 font-syne text-lg font-bold leading-none -tracking-[0.5px] lg:text-[21px]">
-                                                {item.user.name}
-                                                <span className="font-normal"> {item.user.role}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+              {/* Navigation Buttons */}
+              <div
+                className="testimonial3-navigation"
+                style={{ cursor: "pointer" }}
+              >
+                <div className="prev-btn bg-color-white">
+                  <i className="fa-solid fa-angle-left"></i>
                 </div>
-            </section>
-        </>
-    )
-}
+                <div className="next-btn bg-color-white">
+                  <i className="fa-solid fa-angle-right"></i>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+    :
+    // <section className="quanto-testimonial-section section-padding-top overflow-hidden">
+    //   <div className="container custom-container">
+    //     <div className="quanto__header text-center mb-10">
+    //       <h3 className="title">Client Testimonials</h3>
+    //     </div>
 
-export default TextimonialSection
+    //     <div className="row g-4 justify-content-between">
+    //       <div className="col-12 col-lg-6 col-xl-5">
+    //         <Swiper
+    //           modules={[Autoplay, EffectFade]}
+    //           effect="fade"
+    //           autoplay={{ delay: 4000 }}
+    //           loop
+    //           className="h-100"
+    //         >
+    //           {testimonials.map((t, index) => (
+    //             <SwiperSlide key={index}>
+    //               <div
+    //                 className="testimonial-img rounded-xl"
+    //                 style={{
+    //                   backgroundImage: `url(${t.image})`,
+    //                   backgroundPosition: "center",
+    //                   backgroundSize: "cover",
+    //                   height: "100%",
+    //                 }}
+    //               />
+    //             </SwiperSlide>
+    //           ))}
+    //         </Swiper>
+    //       </div>
+
+    //       <div className="col-12 col-lg-6 col-xl-6">
+    //         <Swiper
+    //           modules={[Navigation, Autoplay]}
+    //           navigation={{
+    //             nextEl: ".next-slide",
+    //             prevEl: ".prev-slide",
+    //           }}
+    //           autoplay={{ delay: 4000 }}
+    //           loop
+    //           className="testimonial-text-slider"
+    //         >
+    //           {testimonials.map((t, index) => (
+    //             <SwiperSlide key={index}>
+    //               <div className="testimonial-content">
+    //                 <p>{t.text}</p>
+    //                 <div className="author">
+    //                   <h5 className="author-title color-primary">{t.author}</h5>
+    //                   <span className="author-designation">{t.role}</span>
+    //                 </div>
+    //               </div>
+    //             </SwiperSlide>
+    //           ))}
+    //         </Swiper>
+
+    //         <div className="quanto-testimonial__navigation flex gap-4 mt-4">
+    //           <div className="quanto-testimonial__prev prev-slide cursor-pointer">
+    //             <i className="fa-solid fa-arrow-left" />
+    //           </div>
+    //           <div className="quanto-testimonial__next next-slide cursor-pointer">
+    //             <i className="fa-solid fa-arrow-right" />
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </section>
+    <section className="quanto-testimonial-section section-padding-top overflow-hidden">
+      <div className="container custom-container">
+        <div className="quanto__header text-center mb-10">
+          <h3 className="title">Client Testimonials</h3>
+        </div>
+
+        <div className="row g-4 justify-content-between">
+          {/* IMAGE SLIDER */}
+          <div className="col-12 col-lg-6 col-xl-5">
+            <Swiper
+              // modules
+              modules={[Autoplay, EffectFade, Controller]}
+              effect="fade"
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              loop={true}
+              onSwiper={(swiper) => {
+                imgSwiperRef.current = swiper;
+                setImgController(swiper);
+              }}
+              controller={{ control: textController }}
+              className="h-100"
+            >
+              {testimonials.map((t, index) => (
+                <SwiperSlide key={index}>
+                  <div
+                    className="testimonial-img rounded-xl"
+                    style={{
+                      backgroundImage: `url(${t.image})`,
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                      height: "100%",
+                    }}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* TEXT SLIDER */}
+          <div className="col-12 col-lg-6 col-xl-6">
+            <Swiper
+              modules={[Navigation, Autoplay, Controller]}
+              navigation={{
+                nextEl: ".next-slide",
+                prevEl: ".prev-slide",
+              }}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              loop={true}
+              onSwiper={(swiper) => {
+                textSwiperRef.current = swiper;
+                setTextController(swiper);
+              }}
+              controller={{ control: imgController }}
+              className="testimonial-text-slider"
+            >
+              {testimonials.map((t, index) => (
+                <SwiperSlide key={index}>
+                  <div className="testimonial-content">
+                    <p>{t.text}</p>
+                    <div className="author">
+                      <h5 className="author-title color-primary">{t.author}</h5>
+                      <span className="author-designation">{t.role}</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <div className="quanto-testimonial__navigation flex gap-4 mt-4">
+              <div className="quanto-testimonial__prev prev-slide cursor-pointer">
+                <i className="fa-solid fa-arrow-left" />
+              </div>
+              <div className="quanto-testimonial__next next-slide cursor-pointer">
+                <i className="fa-solid fa-arrow-right" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+}
