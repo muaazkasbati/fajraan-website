@@ -8,7 +8,7 @@ import React from 'react'
 export async function getStaticProps() {
     try {
         const res = await fetch(
-            'https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed&per_page=20'
+            `https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`
         );
         if (!res.ok) throw new Error('Failed to fetch portfolio');
         const data = await res.json();
@@ -25,12 +25,16 @@ export async function getStaticProps() {
                 '/images/default.webp',
         }));
 
-        return { props: { projects: mapped } };
+        return {
+            props: { projects: mapped },
+            revalidate: 60, // re-fetch every 60 seconds
+        };
     } catch (error) {
         console.error('Portfolio page error:', error);
-        return { props: { projects: [] } };
+        return { props: { projects: [] }, revalidate: 60 };
     }
 }
+
 
 export default function Portfolio({ projects }) {
     return (

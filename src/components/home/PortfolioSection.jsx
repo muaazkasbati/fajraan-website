@@ -59,7 +59,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                     {/* Left Column */}
                     <div className="col-12 col-md-5 order-1 order-md-0">
                         <div className="row g-0">
-                            {projects.slice(0, 3).map((proj, index) => (
+                            {projects.slice(0, Math.ceil(projects.length / 2)).map((proj, index) => (
                                 <div key={index} className="col-md-12 project-row-gap">
                                     <div className="quanto-data-box overflow-hidden">
                                         <a>
@@ -108,7 +108,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                 </div>
                             </div>
 
-                            {projects.slice(3).map((proj, index) => (
+                            {projects.slice(Math.ceil(projects.length / 2)).map((proj, index) => (
                                 <div key={index} className="col-md-10 mx-auto project-row-gap">
                                     <div className="quanto-data-box overflow-hidden">
                                         <a>

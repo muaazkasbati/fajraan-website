@@ -248,11 +248,52 @@ export default function Blogs({ posts, totalPages, currentPage }) {
     )
 }
 
+// export async function getServerSideProps(context) {
+//     const page = parseInt(context.query.page || 1, 10);
+
+//     try {
+//         const response = await fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=18&page=${page}`);
+//         if (!response.ok) {
+//             return {
+//                 props: {
+//                     posts: [],
+//                     totalPages: 1,
+//                     currentPage: page,
+//                 },
+//             };
+//         }
+
+//         const data = await response.json();
+//         const totalPages = parseInt(response.headers.get('X-WP-TotalPages')) || 1;
+
+//         return {
+//             props: {
+//                 posts: data,
+//                 totalPages,
+//                 currentPage: page,
+//             },
+//         };
+//     } catch (error) {
+//         console.error('SSR fetch error:', error);
+//         return {
+//             props: {
+//                 posts: [],
+//                 totalPages: 1,
+//                 currentPage: page,
+//             },
+//         };
+//     }
+// }
 export async function getServerSideProps(context) {
     const page = parseInt(context.query.page || 1, 10);
+    const timestamp = Date.now(); // prevents cached responses
 
     try {
-        const response = await fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=18&page=${page}`);
+        const response = await fetch(
+            `https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=18&page=${page}&_=${timestamp}`,
+            { cache: 'no-store' } // tells Next.js not to cache this request
+        );
+
         if (!response.ok) {
             return {
                 props: {
@@ -284,3 +325,4 @@ export async function getServerSideProps(context) {
         };
     }
 }
+

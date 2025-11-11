@@ -38,9 +38,11 @@ import BlogSection from "@/components/home/BlogSection";
 
 export async function getStaticProps() {
   try {
+    const timestamp = Date.now();
+
     const [postsRes, portfolioRes] = await Promise.all([
-      fetch('https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3'),
-      fetch('https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed')
+      fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3&_=${timestamp}`),
+      fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed&_=${timestamp}`)
     ]);
 
     if (!postsRes.ok || !portfolioRes.ok) {
@@ -52,7 +54,6 @@ export async function getStaticProps() {
       portfolioRes.json()
     ]);
 
-    // Map portfolio data
     const mappedPortfolio = portfolioData?.map((item) => ({
       id: item?.id,
       title: item?.title?.rendered,
@@ -70,6 +71,7 @@ export async function getStaticProps() {
         posts: postsData,
         portfolio: mappedPortfolio,
       },
+      revalidate: 60, // Re-fetch every 60 seconds (adjust as needed)
     };
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -78,9 +80,11 @@ export async function getStaticProps() {
         posts: [],
         portfolio: [],
       },
+      revalidate: 60, // Still revalidate even on error to retry later
     };
   }
 }
+
 
 
 export default function Home({ posts, portfolio }) {
