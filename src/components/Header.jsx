@@ -277,12 +277,12 @@ const Header = () => {
                                     decoding="async"
                                     data-nimg={1}
                                     style={{ color: "transparent" }}
-                                    src="/images/logo-1.svg"
+                                    src="/images/logo-web.svg"
                                 />
                             </a>
                         </div>
                         <button onClick={closeMenu} className="quanto-menu-toggle mobile">
-                            <i className="ri-close-line" />
+                            <i class="fa-solid fa-xmark"></i>
                         </button>
                     </div>
                     <div className="quanto-mobile-menu">
@@ -292,156 +292,31 @@ const Header = () => {
                                     <Link href={item.href}>{item.label}</Link>
                                 </li>
                             ))}
-                            {/* <li className="menu-item-has-children ">
-                                <button className="menu-link">
-                                    Home
-                                    <i className="ri-arrow-down-s-line" />
-                                </button>
-                                <div
-                                    className="ReactCollapse--collapse"
-                                    style={{ height: 0, overflow: "hidden" }}
-                                    aria-hidden="true"
-                                >
-                                    <div className="ReactCollapse--content">
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <a href="index.html">Digital Agency</a>
-                                            </li>
-                                            <li>
-                                                <a href="home-2.html">Creative Agency</a>
-                                            </li>
-                                            <li>
-                                                <a href="home-3.html">Design Studio</a>
-                                            </li>
-                                            <li>
-                                                <a href="home-4.html">Branding Agency</a>
-                                            </li>
-                                            <li>
-                                                <a href="home-5.html">Modern Agency</a>
-                                            </li>
-                                            <li>
-                                                <a href="home-6.html">Personal Portfolio</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="menu-item-has-children ">
-                                <button className="menu-link">
-                                    Pages
-                                    <i className="ri-arrow-down-s-line" />
-                                </button>
-                                <div
-                                    className="ReactCollapse--collapse"
-                                    style={{ height: 0, overflow: "hidden" }}
-                                    aria-hidden="true"
-                                >
-                                    <div className="ReactCollapse--content">
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <a href="about.html">About Us</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Service</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Career</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Team</a>
-                                            </li>
-                                            <li>
-                                                <a href="pricing.html">Pricing</a>
-                                            </li>
-                                            <li>
-                                                <a href="faq.html">FAQ's</a>
-                                            </li>
-                                            <li>
-                                                <a href={404}>404</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="menu-item-has-children ">
-                                <button className="menu-link">
-                                    Portfolio
-                                    <i className="ri-arrow-down-s-line" />
-                                </button>
-                                <div
-                                    className="ReactCollapse--collapse"
-                                    style={{ height: 0, overflow: "hidden" }}
-                                    aria-hidden="true"
-                                >
-                                    <div className="ReactCollapse--content">
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <a href="portfolio-masonry.html">Portfolio Masonry</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-standard.html">Portfolio Standard</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-gallery.html">Portfolio Gallery</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-slider.html">Portfolio Slider</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-card.html">Portfolio Card</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-details.html">Portfolio Details</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="menu-item-has-children ">
-                                <button className="menu-link">
-                                    Blog
-                                    <i className="ri-arrow-down-s-line" />
-                                </button>
-                                <div
-                                    className="ReactCollapse--collapse"
-                                    style={{ height: 0, overflow: "hidden" }}
-                                    aria-hidden="true"
-                                >
-                                    <div className="ReactCollapse--content">
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <a href="blog-grid.html">Blog Grid</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-list.html">Blog List</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-details.html">Blog Details</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="menu-item-has-children ">
-                                <a href="contact.html">Contact</a>
-                            </li> */}
                         </ul>
                     </div>
                     <div className="quanto-mobile-menu-btn">
                         <div className="sidebar-wrap">
-                            <h6>27 Division St, New York,</h6>
-                            <h6>NY 10002, USA</h6>
+                            <h6>Dubai, United Arab Emirates</h6>
+                            {/* <h6>NY 10002, USA</h6> */}
                         </div>
                         <div className="sidebar-wrap">
                             <h6>
-                                <a href="tel:1800123654987">+1 800 123 654 987</a>
+                                <a
+                                    href="https://wa.me/971542259592"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    +971 54 225 9592 (WhatsApp)
+                                </a>
                             </h6>
                             <h6>
-                                <a href="mailto:quanto.agency@mail.com">quanto.agency@mail.com</a>
+                                <a href="mailto:info@fajraan.com">
+                                    info@fajraan.com
+                                </a>
                             </h6>
                         </div>
                         <div className="social-btn style-3">
-                            <a href="https://x.com/">
+                            {/* <a href="https://x.com/">
                                 <span className="link-effect">
                                     <span className="effect-1">
                                         <i className="fab fa-x-twitter" />
@@ -450,8 +325,8 @@ const Header = () => {
                                         <i className="fab fa-x-twitter" />
                                     </span>
                                 </span>
-                            </a>
-                            <a href="https://instagram.com/">
+                            </a> */}
+                            <a href="https://www.instagram.com/fajraan_tech">
                                 <span className="link-effect">
                                     <span className="effect-1">
                                         <i className="fab fa-instagram" />
@@ -461,7 +336,7 @@ const Header = () => {
                                     </span>
                                 </span>
                             </a>
-                            <a href="https://linkedin.com/">
+                            <a href="https://www.linkedin.com/company/fajraan-tech">
                                 <span className="link-effect">
                                     <span className="effect-1">
                                         <i className="fab fa-linkedin" />
@@ -471,17 +346,17 @@ const Header = () => {
                                     </span>
                                 </span>
                             </a>
-                            <a href="https://behance.net/">
+                            <a href="https://www.facebook.com/fajraantech">
                                 <span className="link-effect">
                                     <span className="effect-1">
-                                        <i className="fab fa-behance" />
+                                        <i className="fab fa-facebook-f" />
                                     </span>
                                     <span className="effect-1">
-                                        <i className="fab fa-behance" />
+                                        <i className="fab fa-facebook-f" />
                                     </span>
                                 </span>
                             </a>
-                            <a href="https://dribbble.com/">
+                            {/* <a href="https://dribbble.com/">
                                 <span className="link-effect">
                                     <span className="effect-1">
                                         <i className="fab fa-dribbble" />
@@ -490,7 +365,7 @@ const Header = () => {
                                         <i className="fab fa-dribbble" />
                                     </span>
                                 </span>
-                            </a>
+                            </a> */}
                         </div>
                     </div>
                 </div>

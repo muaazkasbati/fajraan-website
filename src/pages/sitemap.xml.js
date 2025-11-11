@@ -3,6 +3,8 @@ const staticRoutes = [
   { path: 'about', changefreq: 'monthly', priority: 0.8 },
   { path: 'contact', changefreq: 'monthly', priority: 0.8 },
   { path: 'faqs', changefreq: 'monthly', priority: 0.7 },
+  { path: 'portfolio', changefreq: 'monthly', priority: 0.7 },
+  { path: 'pricing', changefreq: 'yearly', priority: 0.6 },
   { path: 'privacy-policy', changefreq: 'yearly', priority: 0.6 },
   { path: 'terms-and-conditions', changefreq: 'yearly', priority: 0.6 },
   { path: 'services', changefreq: 'monthly', priority: 0.7 },

@@ -19,19 +19,19 @@ export default function TestimonialSection({ aboutPage = false }) {
       text: `"Working with Fajraan Tech was a game-changer. They delivered a sleek, animated website that not only elevated our brand presence but also made our online experience more engaging for customers. The team was professional, fast, and exceeded our expectations."`,
       author: "Maaz Khawaja",
       role: "Founder at Meem Products",
-      image: "images/testimonial/Testimonial-1.png",
+      image: "images/testimonial/Testimonial-1.jpg",
     },
     {
       text: `"This was a complex project involving booking management, payment integration, and multiple advanced features—and Fajraan Tech nailed it. They built a powerful, user-friendly platform that streamlined our operations and impressed our clients. Truly reliable and skilled."`,
       author: "Ahmed Al Qureshi",
       role: "AB Limousine",
-      image: "images/testimonial/Testimonial-2.png",
+      image: "images/testimonial/Testimonial-2.jpg",
     },
     {
       text: `"Fajraan Tech developed a stunning animated website for us that perfectly captured our brand’s personality. The creativity, smooth functionality, and attention to detail were outstanding. We couldn’t be happier with the results."`,
       author: "Layla Al Rashid",
-      role: "ThePipCollective",
-      image: "images/testimonial/Testimonial-3.png",
+      role: "TheForCollective",
+      image: "images/testimonial/Testimonial-3.jpg",
     },
   ];
 

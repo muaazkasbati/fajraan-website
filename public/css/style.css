@@ -1847,7 +1847,7 @@ ul.sub-menu li a {
 	line-height: 1;
 	font-size: 16px;
 	text-transform: capitalize;
-	color: #000 !important;
+	color: var(--color-primary) !important;
 	font-weight: 600
 }
 
