@@ -42,7 +42,7 @@ export async function getStaticProps() {
 
     const [postsRes, portfolioRes] = await Promise.all([
       fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3&_=${timestamp}`),
-      fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed&_=${timestamp}`)
+      fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`)
     ]);
 
     if (!postsRes.ok || !portfolioRes.ok) {
