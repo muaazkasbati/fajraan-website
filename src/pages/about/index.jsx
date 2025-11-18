@@ -12,6 +12,7 @@ import Marquee from 'react-fast-marquee';
 import TeamSection from '@/components/TeamSection';
 import TestimonialSection from '@/components/home/TextimonialSection';
 import VideoAreaSection from '@/components/VideoAreaSection';
+import Link from 'next/link';
 
 export default function About() {
     const awards = [
@@ -221,13 +222,13 @@ export default function About() {
                                 </motion.div>
 
                                 {/* Link */}
-                                <a className="quanto-link-btn" href="about.html">
+                                <Link className="quanto-link-btn" href="/about">
                                     More about us
                                     <span>
                                         <i className="fa-solid fa-arrow-right arry1"></i>
                                         <i className="fa-solid fa-arrow-right arry2"></i>
                                     </span>
-                                </a>
+                                </Link>
 
                                 {/* Middle Image */}
                                 <figure className="overflow-hidden w-100">

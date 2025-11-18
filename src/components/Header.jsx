@@ -60,180 +60,7 @@ const Header = () => {
                                                     <Link href={item.href}>{item.label}</Link>
                                                 </li>
                                             ))}
-                                            {/* <li className="menu-item-has-children">
-                                                <a href="#">Home</a>
-                                                <ul className="sub-menu">
-                                                    <li className="">
-                                                        <a className="" href="index.html">
-                                                            Digital Agency
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="home-2.html">
-                                                            Creative Agency
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="home-3.html">
-                                                            Design Studio
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="home-4.html">
-                                                            Branding Agency
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="home-5.html">
-                                                            Modern Agency
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="home-6.html">
-                                                            Personal Portfolio
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="menu-item-has-children">
-                                                <a href="#">Pages</a>
-                                                <ul className="sub-menu">
-                                                    <li className="">
-                                                        <a className="" href="about.html">
-                                                            About Us
-                                                        </a>
-                                                    </li>
-                                                    <li className="menu-item-has-children">
-                                                        <a className="no-border" href="#">
-                                                            Service
-                                                        </a>
-                                                        <ul className="sub-menu">
-                                                            <li className="">
-                                                                <a className="" href="service.html">
-                                                                    Service - 1
-                                                                </a>
-                                                            </li>
-                                                            <li className="">
-                                                                <a className="" href="service-2.html">
-                                                                    Service - 2
-                                                                </a>
-                                                            </li>
-                                                            <li className="">
-                                                                <a className="" href="service-details.html">
-                                                                    Service Details
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="menu-item-has-children">
-                                                        <a className="no-border" href="#">
-                                                            Career
-                                                        </a>
-                                                        <ul className="sub-menu">
-                                                            <li className="">
-                                                                <a className="" href="career.html">
-                                                                    Career
-                                                                </a>
-                                                            </li>
-                                                            <li className="">
-                                                                <a className="" href="career-details.html">
-                                                                    Career Details
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="menu-item-has-children">
-                                                        <a className="no-border" href="#">
-                                                            Team
-                                                        </a>
-                                                        <ul className="sub-menu">
-                                                            <li className="">
-                                                                <a className="" href="team.html">
-                                                                    Team
-                                                                </a>
-                                                            </li>
-                                                            <li className="">
-                                                                <a className="" href="team-details.html">
-                                                                    Team Details
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="pricing.html">
-                                                            Pricing
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="faq.html">
-                                                            FAQ's
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href={404}>
-                                                            404
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="menu-item-has-children">
-                                                <a href="#">Portfolio</a>
-                                                <ul className="sub-menu">
-                                                    <li className="">
-                                                        <a className="" href="portfolio-masonry.html">
-                                                            Portfolio Masonry
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="portfolio-standard.html">
-                                                            Portfolio Standard
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="portfolio-gallery.html">
-                                                            Portfolio Gallery
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="portfolio-slider.html">
-                                                            Portfolio Slider
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="portfolio-card.html">
-                                                            Portfolio Card
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="portfolio-details.html">
-                                                            Portfolio Details
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="menu-item-has-children">
-                                                <a href="#">Blog</a>
-                                                <ul className="sub-menu">
-                                                    <li className="">
-                                                        <a className="" href="blog-grid.html">
-                                                            Blog Grid
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="blog-list.html">
-                                                            Blog List
-                                                        </a>
-                                                    </li>
-                                                    <li className="">
-                                                        <a className="" href="blog-details.html">
-                                                            Blog Details
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">Contact</a>
-                                            </li> */}
+
                                         </ul>
                                     </nav>
                                     <button onClick={toggleMenu} className="menuBar-toggle quanto-menu-toggle d-inline-block d-lg-none">
@@ -269,7 +96,7 @@ const Header = () => {
                 <div className="quanto-menu-area text-center">
                     <div className="quanto-menu-mobile-top">
                         <div className="mobile-logo">
-                            <a href="index.html">
+                            <Link href="/">
                                 <img
                                     alt="logo"
                                     width={120}
@@ -279,7 +106,7 @@ const Header = () => {
                                     style={{ color: "transparent" }}
                                     src="/images/logo-web.svg"
                                 />
-                            </a>
+                            </Link>
                         </div>
                         <button onClick={closeMenu} className="quanto-menu-toggle mobile">
                             <i class="fa-solid fa-xmark"></i>

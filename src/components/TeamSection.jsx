@@ -59,18 +59,6 @@ const TeamSection = () => {
                             </h3>
                         </motion.div>
                     </div>
-
-                    {/* <div className="col-md-3 col-xl-5 col-xxl-6">
-                            <div className="quanto__headerr d-flex justify-content-center justify-content-lg-end">
-                                <a className="quanto-link-btn" href="team.html">
-                                    Join the team
-                                    <span>
-                                        <i className="fa-solid fa-arrow-right arry1"></i>
-                                        <i className="fa-solid fa-arrow-right arry2"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div> */}
                 </div>
 
                 {/* Team Members */}
