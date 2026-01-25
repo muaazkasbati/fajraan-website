@@ -25,3 +25,10 @@ body {
 .blog-body p {
   margin-bottom: 28px;
 }
+
+@media (pointer: coarse) {
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+}
