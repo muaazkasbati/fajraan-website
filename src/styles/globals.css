@@ -8,7 +8,7 @@ body {
   scroll-behavior: auto !important;
   /* disable native smooth */
   overflow-x: hidden;
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
 }
 
 
