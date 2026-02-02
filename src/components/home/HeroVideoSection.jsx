@@ -45,7 +45,7 @@ export default function QuantoHero() {
             <div ref={wrapperRef} className="video-wrapper" style={{ width: "42.4%" }}>
               <video loop muted autoPlay playsInline>
                 <source
-                  src="https://videos.pexels.com/video-files/8940171/8940171-hd_1920_1080_25fps.mp4"
+                  src="https://videos.pexels.com/video-files/3252291/3252291-uhd_2560_1440_25fps.mp4"
                   type="video/mp4"
                 />
               </video>

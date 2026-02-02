@@ -183,7 +183,7 @@ export default function About() {
                                     loading="lazy"
                                     className="w-100"
                                     style={{ height: '563px', objectFit: 'cover' }}
-                                    src="/images/about/about-img-1.jpg"
+                                    src="/images/about/about-img-5.jpg"
                                 />
                             </motion.div>
                         </div>
@@ -267,7 +267,7 @@ export default function About() {
                                     loading="lazy"
                                     className="w-100"
                                     style={{ height: '295px', objectFit: 'cover' }}
-                                    src="/images/about/about-img-3.jpg"
+                                    src="/images/about/about-img-1.jpg"
                                 />
                             </motion.div>
                         </div>

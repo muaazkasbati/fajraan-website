@@ -20,15 +20,15 @@ const teamData = [
         // 'instagram': 'http://www.instagram.com/',
         'linkedin': 'https://www.linkedin.com/in/ayesha-kasbati',
     },
-    // {
-    //     name: 'Talha Ahmed',
-    //     role: 'Co-Founder',
-    //     image: '/assets/img/images/th-1/team-img-3.jpg',
-    //     // 'twitter': 'http://www.twitter.com/',
-    //     // 'facebook': 'http://www.facebook.com/',
-    //     // 'instagram': 'http://www.instagram.com/',
-    //     // 'linkedin': 'http://www.linkedin.com/',
-    // },
+    {
+        name: 'Talha Ahmed',
+        role: 'Co-Founder',
+        image: '/images/team/team-3.jpg',
+        // 'twitter': 'http://www.twitter.com/',
+        // 'facebook': 'http://www.facebook.com/',
+        // 'instagram': 'http://www.instagram.com/',
+        'linkedin': 'https://www.linkedin.com/in/talha-ahmed-0abb82233',
+    },
     // {
     //     name: 'Adam Straw',
     //     role: 'Web Developer',
@@ -46,7 +46,7 @@ const TeamSection = () => {
             <div className="container custom-container">
                 {/* Header Row */}
                 <div className="row gx-4 gy-2 align-items-end">
-                    <div className="col-md-9 col-xl-7 col-xxl-6">
+                    <div className="col-md-12">
                         <motion.div
                             className="quanto__header"
                             initial={{ opacity: 0, x: -100 }}
@@ -95,12 +95,35 @@ const TeamSection = () => {
                                         style={{ color: "transparent", height:'466px', objectFit:'cover' }}
                                     />
                                     <ul className="custom-ul">
-                                        <li>
-                                            <a href="#">
-                                                <i className="fa-brands fa-facebook-f" />
-                                            </a>
-                                        </li>
-                                        <li>
+                                        {member.facebook && (
+                                            <li>
+                                                <a href={member.facebook} target="_blank" rel="noopener noreferrer">
+                                                    <i className="fa-brands fa-facebook-f" />
+                                                </a>
+                                            </li>
+                                        )}
+                                        {member.twitter && (
+                                            <li>
+                                                <a href={member.twitter} target="_blank" rel="noopener noreferrer">
+                                                    <i className="fa-brands fa-x-twitter" />
+                                                </a>
+                                            </li>
+                                        )}
+                                        {member.instagram && (
+                                            <li>
+                                                <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+                                                    <i className="fa-brands fa-instagram" />
+                                                </a>
+                                            </li>
+                                        )}
+                                        {member.linkedin && (
+                                            <li>
+                                                <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                                                    <i className="fa-brands fa-linkedin-in" />
+                                                </a>
+                                            </li>
+                                        )}
+                                        {/* <li>
                                             <a href="#">
                                                 <i className="fa-brands fa-x-twitter" />
                                             </a>
@@ -114,7 +137,7 @@ const TeamSection = () => {
                                             <a href="#">
                                                 <i className="fa-brands fa-linkedin-in" />
                                             </a>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </figure>
                                 <div className="team-content">

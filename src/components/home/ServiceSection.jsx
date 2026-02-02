@@ -24,7 +24,7 @@ const ServiceSection = () => {
             <div className="container custom-container">
                 {/* Header */}
                 <div className="row">
-                    <div className="col-12 col-lg-9 col-xl-7 col-xxl-6">
+                    <div className="col-12 col-lg-9 col-xl-7">
                         <motion.div className="quanto__header" {...headerAnim}>
                             <h3 className="title color-primary">We help you build your online success</h3>
                         </motion.div>

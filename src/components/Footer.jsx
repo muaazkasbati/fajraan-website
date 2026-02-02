@@ -78,13 +78,13 @@ const Footer = () => {
                                         <p className="address">
                                             Dubai, United Arab Emirates
                                         </p>
-                                        <div className="contacts">
+                                        <div className="contacts mt-1">
                                             <ul className="custom-ul">
-                                                <li>
+                                                {/* <li>
                                                     <a className="email" href="mailto:info@fajraan.com">
                                                         info@fajraan.com
                                                     </a>
-                                                </li>
+                                                </li> */}
                                                 <li>
                                                     <a
                                                         className="mobile"
@@ -92,7 +92,39 @@ const Footer = () => {
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                     >
-                                                        +971 54 225 9592 (WhatsApp only)
+                                                        +971 54 225 9592 (WhatsApp)
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <p className="address mt-4">
+                                            76 Wanstead Lane, Ilford IG1 3SE, London UK
+                                        </p>
+                                        <div className="contacts mt-1">
+                                            <ul className="custom-ul">
+                                                {/* <li>
+                                                    <a className="email" href="mailto:london@fajraan.com">
+                                                        london@fajraan.com
+                                                    </a>
+                                                </li> */}
+                                                <li>
+                                                    <a
+                                                        className="mobile"
+                                                        href="https://wa.me/447830526752"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        +44 7830 526752 (WhatsApp)
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="contacts">
+                                            <ul className="custom-ul">
+                                                <li>
+                                                    <a className="email" href="mailto:info@fajraan.com">
+                                                        info@fajraan.com
                                                     </a>
                                                 </li>
                                             </ul>

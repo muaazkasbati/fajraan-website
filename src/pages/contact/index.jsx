@@ -71,8 +71,9 @@ export default function Contact() {
                     </a>
                     <div className="row">
                         <div className="col-12">
+                            
                             <motion.iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462563.0383690874!2d54.897151952799646!3d25.07565689924587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1755890374332!5m2!1sen!2s"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.706867964713!2d0.05159407660142838!3d51.5736070718285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a6e6b8f4dd5b%3A0xc0b05abcd40481bd!2sWanstead%20Ln%2C%20Ilford%2C%20UK!5e0!3m2!1sen!2s!4v1770044643021!5m2!1sen!2s"
                                 width="600"
                                 height="400"
                                 allowFullScreen=""
@@ -115,6 +116,11 @@ export default function Contact() {
                                         Sheikh Zayed Road, <br />
                                         Dubai, United Arab Emirates
                                     </span>
+                                    <br />
+                                    <br />
+                                    <span>
+                                        76 Wanstead Lane, Ilford IG1 3SE,<br /> London, United Kingdom
+                                    </span>
                                 </div>
 
                                 <div className="contact-info">
@@ -122,7 +128,10 @@ export default function Contact() {
                                         <a href="mailto:info@fajraan.com">info@fajraan.com</a>
                                     </h5>
                                     <a href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
-                                        +971 54 225 9592 (WhatsApp only)
+                                        +971 54 225 9592 (WhatsApp UAE)
+                                    </a>
+                                    <a href="https://wa.me/447830526752" target="_blank" rel="noopener noreferrer">
+                                        +44 7830 526752 (WhatsApp UK)
                                     </a>
                                 </div>
                             </motion.div>

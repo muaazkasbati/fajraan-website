@@ -659,15 +659,15 @@ body::-webkit-scrollbar-thumb {
 
 @media (min-width:1200px) {
 	.container.custom-container {
-		max-width: 1500px
+		max-width: 1400px
 	}
 }
 
-@media (min-width:1400px) {
+/* @media (min-width:1400px) {
 	.container.custom-container {
 		max-width: 1604px
 	}
-}
+} */
 
 .quanto_screenfix_right {
 	margin-right: calc((-100vw + 100%) / 2)
@@ -6551,7 +6551,7 @@ a.quanto-default-btn.sm-size {
 }
 
 .footer-widgets.contact {
-	max-width: 206px
+	max-width: 290px
 }
 
 .footer-widgets.quanto {

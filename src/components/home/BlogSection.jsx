@@ -16,14 +16,14 @@ export default function BlogSection({ posts = [] }) {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="col-12 col-lg-9 col-xl-7 col-xxl-6">
+          <div className="col-12 col-lg-9 col-xl-7">
             <div className="quanto__header text-center text-md-start">
               <h3 className="title color-primary">
                 Latest blogs to level up your business
               </h3>
             </div>
           </div>
-          <div className="col-12 col-lg-3 col-xl-5 col-xxl-6">
+          <div className="col-12 col-lg-3 col-xl-5">
             <div className="quanto__headerr d-flex justify-content-center justify-content-lg-end">
               <Link className="quanto-link-btn" href="/blog">
                 View all articles
