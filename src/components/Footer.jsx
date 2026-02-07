@@ -190,7 +190,7 @@ const Footer = () => {
                                             </ul> */}
                                             <ul className="custom-ul flex gap-3">
                                                 <li>
-                                                    <a href="https://www.instagram.com/fajraan_tech" target="_blank">
+                                                    <a href="https://www.instagram.com/fajraantech" target="_blank">
                                                         <i className="fab fa-instagram" />
                                                     </a>
                                                 </li>
