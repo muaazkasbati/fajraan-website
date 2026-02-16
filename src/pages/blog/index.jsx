@@ -212,7 +212,6 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                                                             e.preventDefault();
                                                             handlePageChange(page);
                                                         }}
-                                                        href="#"
                                                     >
                                                         {page}
                                                     </a>
@@ -224,7 +223,6 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                                                 <li className="page-item">
                                                     <a
                                                         className="page-link next"
-                                                        href="#"
                                                         onClick={(e) => {
                                                             e.preventDefault();
                                                             handlePageChange(currentPage + 1);
