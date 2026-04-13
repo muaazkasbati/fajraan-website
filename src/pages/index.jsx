@@ -13,7 +13,7 @@ import BlogSection from "@/components/home/BlogSection";
 // export async function getStaticProps() {
 //   try {
 //     const response = await fetch(
-//       'https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3'
+//       'http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3'
 //     );
 //     if (!response.ok) throw new Error('Failed to fetch latest posts');
 
@@ -41,8 +41,8 @@ export async function getStaticProps() {
     const timestamp = Date.now();
 
     const [postsRes, portfolioRes] = await Promise.all([
-      fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3&_=${timestamp}`),
-      fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`)
+      fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3&_=${timestamp}`),
+      fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`)
     ]);
 
     if (!postsRes.ok || !portfolioRes.ok) {

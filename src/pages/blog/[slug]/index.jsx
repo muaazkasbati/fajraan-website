@@ -13,7 +13,7 @@ export async function getServerSideProps({ params }) {
 
     try {
         // Fetch the current post
-        const response = await fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?slug=${slug}`);
+        const response = await fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?slug=${slug}`);
         if (!response.ok) return { notFound: true };
         const data = await response.json();
         if (data.length === 0) return { notFound: true };
@@ -22,23 +22,23 @@ export async function getServerSideProps({ params }) {
 
         // Fetch related content in parallel
         const [authorResponse, tagsResponse, categoriesResponse, mediaResponse, morePostsResponse] = await Promise.all([
-            fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/users/${post.author}`),
+            fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/users/${post.author}`),
             Promise.all(
                 post.tags.map(async (tagId) => {
-                    const tagResponse = await fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/tags/${tagId}`);
+                    const tagResponse = await fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/tags/${tagId}`);
                     const tagData = await tagResponse.json();
                     return tagData.name;
                 })
             ),
             Promise.all(
                 post.categories.map(async (categoryId) => {
-                    const categoryResponse = await fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/categories/${categoryId}`);
+                    const categoryResponse = await fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/categories/${categoryId}`);
                     const categoryData = await categoryResponse.json();
                     return categoryData.name;
                 })
             ),
-            fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/media/${post.featured_media}`),
-            fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=3&page=1&_=${Date.now()}`)
+            fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/media/${post.featured_media}`),
+            fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3&page=1&_=${Date.now()}`)
         ]);
 
         const [authorData, featuredImageData, morePosts] = await Promise.all([

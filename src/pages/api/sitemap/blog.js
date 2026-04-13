@@ -3,7 +3,7 @@
 export default async function handler(req, res) {
   try {
     const siteUrl = process.env.NEXT_PUBLIC_APPFRONTURL || 'https://www.fajraan.com';
-    const WP_API = 'https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=100';
+    const WP_API = 'http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=100';
 
     // Fetch latest posts
     const response = await fetch(WP_API);

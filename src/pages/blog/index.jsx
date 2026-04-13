@@ -19,7 +19,7 @@
 //         try {
 //             setloadd(true);
 //             setPosts([])
-//             const response = await fetch(`https://blogs.cre8ivesparkx.com//wp-json/wp/v2/posts?per_page=18&page=${currentPage}&_=${Date.now()}`);
+//             const response = await fetch(`http://blog.devsolsystems.co.uk//wp-json/wp/v2/posts?per_page=18&page=${currentPage}&_=${Date.now()}`);
 //             if (!response.ok) {
 //                 toast.error('Post Not Found');
 //                 return
@@ -31,7 +31,7 @@
 //             //     data.map(async post => {
 //             //         const categoriesResponse = await Promise.all(
 //             //             post.categories.map(async categoryId => {
-//             //                 const categoryResponse = await fetch(`https://blogs.cre8ivesparkx.com//wp-json/wp/v2/categories/${categoryId}`);
+//             //                 const categoryResponse = await fetch(`http://blog.devsolsystems.co.uk//wp-json/wp/v2/categories/${categoryId}`);
 //             //                 if (!categoryResponse.ok) {
 //             //                     console.log('Error fetching category data');
 //             //                 }
@@ -250,7 +250,7 @@ export default function Blogs({ posts, totalPages, currentPage }) {
 //     const page = parseInt(context.query.page || 1, 10);
 
 //     try {
-//         const response = await fetch(`https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=18&page=${page}`);
+//         const response = await fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}`);
 //         if (!response.ok) {
 //             return {
 //                 props: {
@@ -288,7 +288,7 @@ export async function getServerSideProps(context) {
 
     try {
         const response = await fetch(
-            `https://blogs.cre8ivesparkx.com/wp-json/wp/v2/posts?per_page=18&page=${page}&_=${timestamp}`,
+            `http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}&_=${timestamp}`,
             { cache: 'no-store' } // tells Next.js not to cache this request
         );
 

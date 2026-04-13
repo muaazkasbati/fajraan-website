@@ -8,7 +8,7 @@ import React from 'react'
 export async function getStaticProps() {
     try {
         const res = await fetch(
-            `https://blogs.cre8ivesparkx.com/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`
+            `http://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`
         );
         if (!res.ok) throw new Error('Failed to fetch portfolio');
         const data = await res.json();
