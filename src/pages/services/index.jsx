@@ -5,7 +5,7 @@ import Head from 'next/head'
 import React from 'react'
 import { motion } from "framer-motion";
 import PricingSection from '@/components/PricingSection'
-import services from "@/utils/services.json";
+import services from "@/utils/servicesNew.json";
 import Link from 'next/link'
 import VideoAreaSection from '@/components/VideoAreaSection'
 

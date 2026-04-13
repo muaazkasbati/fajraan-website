@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import services from "@/utils/services.json";
+import services from "@/utils/servicesNew.json";
 import Link from "next/link";
 
 const ServiceSection = () => {
@@ -33,21 +33,11 @@ const ServiceSection = () => {
 
                 {/* Services */}
                 <div className="row g-4 row-padding-top">
-                    {services.slice(0,8).map((service, index) => (
-                        <div key={index} className="col-md-6 col-lg-4 col-xxl-3">
-                            <motion.div
-                                className="quanto-service-box"
-                                {...fadeInUp}
-                                transition={{ ...fadeInUp.transition, delay: 0.15 * index }}
-                            >
+                    {services.slice(0, 8).map((service, index) => (
+                        <div key={index} className="col-md-6">
+                            <motion.div className="quanto-service-box" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.15 * index }}>
                                 <div className="quanto-iconbox-icon mb-3">
-                                    <img
-                                        src={service.icon}
-                                        alt={`${service.title} icon`}
-                                        width={52}
-                                        height={52}
-                                        loading="lazy"
-                                    />
+                                    <img src={service.icon} alt={`${service.title} icon`} width={52} height={52} loading="lazy" />
                                 </div>
                                 <div className="quanto-iconbox-data">
                                     <div className="quanto-iconbox-data-wrapper">

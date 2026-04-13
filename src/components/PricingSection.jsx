@@ -11,7 +11,9 @@ const pricingData = [
         // price: "AED 3,500 - AED 6,000",
         features: [
             "Custom responsive website (up to 7 pages)",
+            "Mobile-friendly design",
             "Basic CMS integration",
+            "Basic functionality",
             "Standard UI/UX design",
             "Basic on-page SEO setup",
             "1 month of post-launch support",
@@ -23,7 +25,7 @@ const pricingData = [
         price: "15,000",
         // price: "AED 9,000 - AED 15,000",
         features: [
-            "Custom web app or e-commerce platform (React + Node.js)",
+            "Custom web app or e-commerce platform",
             "Advanced UI/UX design & prototyping",
             "CMS or Admin panel for content management",
             "SEO setup + Google Analytics integration",
@@ -35,7 +37,7 @@ const pricingData = [
         info: "Ideal for established companies or startups building large-scale digital platforms.",
         price: "25,000+",
         features: [
-            "Full-stack web or mobile platform (MERN / scalable architecture)",
+            "Full-stack web or mobile platform (scalable architecture)",
             "Payment gateways & API integrations",
             "Complete UI/UX strategy with user testing",
             "Branding & localization support",
@@ -58,7 +60,7 @@ const PricingSection = () => {
                                 transition={{ duration: 0.8, ease: "easeOut" }}
                                 viewport={{ once: true }}
                             >
-                                  Choose the perfect plan for your business
+                                Choose the perfect plan for your business
                             </motion.h3>
                         </div>
                     </div>
@@ -74,7 +76,7 @@ const PricingSection = () => {
                         return (
                             <motion.div
                                 key={index}
-                                className="col-md-6 col-xl-4"
+                                className="col-md-6 col-xl-4 h-100"
                                 initial={{ opacity: 0, x: 100 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{
@@ -87,38 +89,24 @@ const PricingSection = () => {
                                 {/* Parent box */}
                                 <motion.div
                                     className="quanto-pricing-box bg-white"
-                                    style={{ position: "relative", overflow: "hidden" }}
+                                    style={{ position: "relative", overflow: "hidden", height: "100%" }}
                                     whileHover="hover" // triggers children variants
                                     initial="initial"
                                 >
-                                    {/* Overlay child controlled by parent hover */}
-                                    <motion.div
-                                        className="hover-overlay"
-                                        variants={overlayVariants}
-                                        transition={{ duration: 0.5, ease: "easeOut" }}
-                                    />
+                                    <motion.div className="hover-overlay" variants={overlayVariants} transition={{ duration: 0.5, ease: "easeOut" }} />
 
                                     <h5 className="pricing-title">{plan.title}</h5>
                                     <p className="pricing-info">{plan.info}</p>
-                                    <h3 className="pricing color-secondary">{plan.price} <small style={{fontSize:'30px'}}>AED</small></h3>
+                                    <h3 className="pricing color-secondary">$ {plan.price} 
+                                        {/* <small style={{ fontSize: '30px' }}>USD</small> */}
+                                        </h3>
 
                                     <div className="pricing-list">
                                         <ul className="custom-ul">
                                             {plan.features.map((feature, i) => (
                                                 <li key={i}>
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="24"
-                                                        height="24"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                    >
-                                                        <path
-                                                            fillRule="evenodd"
-                                                            clipRule="evenodd"
-                                                            d="M8.26686 17.2517L23.3996 2.09009C18.5966 8.6869 13.7937 15.2841 9.01958 21.9098L0.599609 11.6671C3.17479 13.5188 5.72074 15.3708 8.2673 17.2513L8.26686 17.2517Z"
-                                                            fill="currentColor"
-                                                        />
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path fillRule="evenodd" clipRule="evenodd" d="M8.26686 17.2517L23.3996 2.09009C18.5966 8.6869 13.7937 15.2841 9.01958 21.9098L0.599609 11.6671C3.17479 13.5188 5.72074 15.3708 8.2673 17.2513L8.26686 17.2517Z" fill="currentColor" />
                                                     </svg>
                                                     {feature}
                                                 </li>

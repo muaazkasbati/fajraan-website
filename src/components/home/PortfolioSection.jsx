@@ -3,45 +3,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const projectsList = [
-    {
-        title: "Kinetic Sandscapes",
-        year: "2024",
-        category: "Branding",
-        image: "/images/project/project-1.webp",
-    },
-    {
-        title: "Brooklyn Brewery",
-        year: "2024",
-        category: "Photography",
-        image: "/images/project/project-3.webp",
-    },
-    {
-        title: "Regenerative Farming",
-        year: "2024",
-        category: "Branding",
-        image: "/images/project/project-5.webp",
-    },
-    {
-        title: "Hopscotch Payments",
-        year: "2024",
-        category: "Development",
-        image: "/images/project/project-2.webp",
-    },
-    {
-        title: "Stories Worthwhile",
-        year: "2024",
-        category: "UI/UX Design",
-        image: "/images/project/project-4.webp",
-    },
-    {
-        title: "Fintech Accelerator",
-        year: "2024",
-        category: "UI/UX Design",
-        image: "/images/project/project-6.webp",
-    },
-];
-
 const PortfolioSection = ({ theme = "dark", projects = [] }) => {
     const imageAnim = {
         initial: { opacity: 0, x: -300 },
@@ -49,8 +10,6 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
         viewport: { once: true },
         transition: { duration: 0.8, ease: "easeOut" },
     };
-
-
 
     return (
         <section className={`quanto-project-section ${theme === "dark" ? "bg-color-primary" : ""} section-padding-top-bottom overflow-hidden`}>
@@ -82,9 +41,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                                 <a>{proj.title}</a>
                                             </h5>
                                             <span className={`quanto-data-date ${theme === "dark" ? "text-color-white" : ""}`}>
-                                                {proj.year}
-                                                <i className="bi bi-dash" />
-                                                {proj.category}
+                                                {proj.year} - {proj.category}
                                             </span>
                                         </div>
                                     </div>
@@ -131,9 +88,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                                 <a>{proj.title}</a>
                                             </h5>
                                             <span className={`quanto-data-date ${theme === "dark" ? "text-color-white" : ""}`}>
-                                                {proj.year}
-                                                <i className="bi bi-dash" />
-                                                {proj.category}
+                                                {proj.year} - {proj.category}
                                             </span>
                                         </div>
                                     </div>

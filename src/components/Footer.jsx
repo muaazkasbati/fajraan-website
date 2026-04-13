@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
-import services from "@/utils/services.json";
+import services from "@/utils/servicesNew.json";
 
 const Footer = () => {
     const navItems = [
