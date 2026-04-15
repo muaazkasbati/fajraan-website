@@ -116,11 +116,11 @@ export default function Contact() {
                                         Sheikh Zayed Road, <br />
                                         Dubai, United Arab Emirates
                                     </span>
-                                    <br />
-                                    <br />
+                                    {/* <br /> */}
+                                    {/* <br />
                                     <span>
                                         76 Wanstead Lane, Ilford IG1 3SE,<br /> London, United Kingdom
-                                    </span>
+                                    </span> */}
                                 </div>
 
                                 <div className="contact-info">
@@ -130,9 +130,9 @@ export default function Contact() {
                                     <a href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
                                         +971 54 225 9592 (WhatsApp UAE)
                                     </a>
-                                    <a href="https://wa.me/447830526752" target="_blank" rel="noopener noreferrer">
+                                    {/* <a href="https://wa.me/447830526752" target="_blank" rel="noopener noreferrer">
                                         +44 7830 526752 (WhatsApp UK)
-                                    </a>
+                                    </a> */}
                                 </div>
                             </motion.div>
                         </div>

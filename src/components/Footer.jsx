@@ -98,16 +98,11 @@ const Footer = () => {
                                             </ul>
                                         </div>
 
-                                        <p className="address mt-4">
+                                        {/* <p className="address mt-4">
                                             76 Wanstead Lane, Ilford IG1 3SE, London UK
                                         </p>
                                         <div className="contacts mt-1">
                                             <ul className="custom-ul">
-                                                {/* <li>
-                                                    <a className="email" href="mailto:london@fajraan.com">
-                                                        london@fajraan.com
-                                                    </a>
-                                                </li> */}
                                                 <li>
                                                     <a
                                                         className="mobile"
@@ -119,7 +114,7 @@ const Footer = () => {
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> */}
                                         <div className="contacts">
                                             <ul className="custom-ul">
                                                 <li>
