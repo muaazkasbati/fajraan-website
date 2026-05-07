@@ -21,13 +21,13 @@ export default function TermsAndConditions() {
                 <meta name="author" content="Fajraan Tech" />
                 <meta property="og:title" content="Terms & Conditions | Fajraan Tech" />
                 <meta property="og:description" content="These Terms & Conditions outline your rights and responsibilities when using Fajraan Tech’s services." />
-                <meta property="og:image" content="https://fajraan.com/assets/img/og-image.jpg" />
-                <meta property="og:url" content="https://fajraan.com/terms-and-conditions" />
+                <meta property="og:image" content="https://www.fajraan.tech/assets/img/og-image.jpg" />
+                <meta property="og:url" content="https://www.fajraan.tech/terms-and-conditions" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Terms & Conditions | Fajraan Tech" />
                 <meta name="twitter:description" content="Understand Fajraan Tech’s terms of use for all services, solutions, and website content." />
-                <meta name="twitter:image" content="https://fajraan.com/assets/img/og-image.jpg" />
+                <meta name="twitter:image" content="https://www.fajraan.tech/assets/img/og-image.jpg" />
             </Head>
             <Header />
             <HeroSec title="Terms & Conditions" />

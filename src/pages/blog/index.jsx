@@ -98,14 +98,14 @@
 //                 <meta name="author" content="Fajraan Tech" />
 //                 <meta property="og:title" content="Our Blogs | Fajraan Tech" />
 //                 <meta property="og:description" content="We deliver scalable custom web, mobile, and desktop applications with UI/UX and SEO for businesses in Saudi, UAE, Bahrain & beyond." />
-//                 <meta property="og:image" content="https://fajraan.com/your-og-image.jpg" />
-//                 <meta property="og:url" content="https://fajraan.com" />
+//                 <meta property="og:image" content="https://www.fajraan.tech/images/about/about-img-5.jpg" />
+//                 <meta property="og:url" content="https://www.fajraan.tech" />
 //                 <meta property="og:type" content="website" />
 
 //                 <meta name="twitter:card" content="summary_large_image" />
 //                 <meta name="twitter:title" content="Our Blogs | Fajraan Tech" />
 //                 <meta name="twitter:description" content="Scalable and smart digital solutions: web, mobile, desktop apps, UI/UX, SEO and data services across the Middle East." />
-//                 <meta name="twitter:image" content="https://fajraan.com/your-twitter-image.jpg" />
+//                 <meta name="twitter:image" content="https://www.fajraan.tech/your-twitter-image.jpg" />
 
 //             </Head>
 //             <Header />
@@ -169,13 +169,13 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                 <meta name="author" content="Fajraan Tech" />
                 <meta property="og:title" content="Our Blogs | Fajraan Tech" />
                 <meta property="og:description" content="We deliver scalable custom web, mobile, and desktop applications with UI/UX and SEO for businesses in Saudi, UAE, Bahrain & beyond." />
-                <meta property="og:image" content="https://fajraan.com/your-og-image.jpg" />
-                <meta property="og:url" content="https://fajraan.com" />
+                <meta property="og:image" content="https://www.fajraan.tech/images/about/about-img-5.jpg" />
+                <meta property="og:url" content="https://www.fajraan.tech" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Our Blogs | Fajraan Tech" />
                 <meta name="twitter:description" content="Scalable and smart digital solutions: web, mobile, desktop apps, UI/UX, SEO and data services across the Middle East." />
-                <meta name="twitter:image" content="https://fajraan.com/your-twitter-image.jpg" />
+                <meta name="twitter:image" content="https://www.fajraan.tech/your-twitter-image.jpg" />
             </Head>
 
             <Header />

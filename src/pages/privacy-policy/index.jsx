@@ -21,13 +21,13 @@ export default function PrivacyPolicy() {
                 <meta name="author" content="Fajraan Tech" />
                 <meta property="og:title" content="Privacy Policy | Fajraan Tech" />
                 <meta property="og:description" content="Understand how Fajraan Tech protects your personal data and privacy across all services and platforms." />
-                <meta property="og:image" content="https://fajraan.com/assets/img/og-image.jpg" />
-                <meta property="og:url" content="https://fajraan.com/privacy-policy" />
+                <meta property="og:image" content="https://www.fajraan.tech/assets/img/og-image.jpg" />
+                <meta property="og:url" content="https://www.fajraan.tech/privacy-policy" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Privacy Policy | Fajraan Tech" />
                 <meta name="twitter:description" content="Learn how Fajraan Tech safeguards your personal data and ensures compliance with global privacy standards." />
-                <meta name="twitter:image" content="https://fajraan.com/assets/img/og-image.jpg" />
+                <meta name="twitter:image" content="https://www.fajraan.tech/assets/img/og-image.jpg" />
             </Head>
 
             <Header />

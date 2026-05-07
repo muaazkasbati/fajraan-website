@@ -49,7 +49,7 @@ export default function ServiceDetail({ serviceData }) {
         <meta property="og:title" content={serviceData.seoTitle} />
         <meta property="og:description" content={serviceData.seoDescription} />
         <meta property="og:image" content={serviceData.content?.hero?.image} />
-        <meta property="og:url" content={`https://fajraan.com/services/${serviceData.slug}`} />
+        <meta property="og:url" content={`https://www.fajraan.tech/services/${serviceData.slug}`} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={serviceData.seoTitle} />
