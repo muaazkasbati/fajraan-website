@@ -3,7 +3,7 @@ export async function getServerSideProps({ res }) {
 /* TEAM */
 Founder & CEO: Muaaz Kasbati
 Company: Fajraan Tech
-Website: https://www.fajraan.com
+Website: https://www.fajraan.tech
 Email: info@fajraan.com
 Founded: June 2025
 Headquarters: Dubai, UAE

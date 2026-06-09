@@ -20,41 +20,90 @@ export async function getServerSideProps(context) {
 
 
 export default function ServiceDetail({ serviceData }) {
-  const benefitsLeft = [
-    "Custom Website Design",
-    "Responsive Web Development",
-    "E-Commerce Solutions",
-    "JavaScript",
-    "API Integration",
-    "Front End Development",
-  ];
-
-  const benefitsRight = [
-    "Front End Development",
-    "Content Management Systems (CMS)",
-    "Website Maintenance and Support",
-    "SEO Optimization",
-    "UX Research & Testing",
-    "Mobile Optimization",
-  ];
-
-
   return (
     <>
       <Head>
         <title>{serviceData.seoTitle}</title>
+
         <meta name="description" content={serviceData.seoDescription} />
-        <meta name="keywords" content={serviceData.seoKeywords.join(', ')} />
-        <meta name="author" content="Fajraan Tech" />
+        <meta name="keywords" content={serviceData.seoKeywords.join(", ")} />
+
+        <link rel="canonical" href={`https://www.fajraan.tech/services/${serviceData.slug}`} />
+
+        <link rel="alternate" hrefLang="en" href={`https://www.fajraan.tech/services/${serviceData.slug}`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://www.fajraan.tech/services/${serviceData.slug}`} />
+
         <meta property="og:title" content={serviceData.seoTitle} />
         <meta property="og:description" content={serviceData.seoDescription} />
-        <meta property="og:image" content={serviceData.content?.hero?.image} />
+        <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="600" />
+        <meta property="og:image:alt" content={serviceData.title} />
         <meta property="og:url" content={`https://www.fajraan.tech/services/${serviceData.slug}`} />
         <meta property="og:type" content="website" />
+
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@FajraanTech" />
+        <meta name="twitter:creator" content="@FajraanTech" />
         <meta name="twitter:title" content={serviceData.seoTitle} />
         <meta name="twitter:description" content={serviceData.seoDescription} />
-        <meta name="twitter:image" content={serviceData.content?.hero?.image} />
+        <meta name="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+        <meta name="twitter:image:alt" content={serviceData.title} />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: serviceData.title,
+              description: serviceData.seoDescription,
+              url: `https://www.fajraan.tech/services/${serviceData.slug}`,
+              provider: {
+                "@type": "Organization",
+                name: "Fajraan Tech",
+                url: "https://www.fajraan.tech",
+                logo: "https://www.fajraan.tech/images/logo.png",
+                sameAs: [
+                  "https://www.linkedin.com/company/fajraan-tech",
+                  "https://twitter.com/fajraantech",
+                  "https://www.instagram.com/fajraantech",
+                  "https://www.facebook.com/fajraantech"
+                ]
+              }
+            })
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://www.fajraan.tech/"
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Services",
+                  item: "https://www.fajraan.tech/services"
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: serviceData.title,
+                  item: `https://www.fajraan.tech/services/${serviceData.slug}`
+                }
+              ]
+            })
+          }}
+        />
       </Head>
       <Header />
       <HeroSec title={serviceData.content.breadcrumb} />

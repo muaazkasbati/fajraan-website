@@ -9,25 +9,92 @@ export default function PrivacyPolicy() {
     return (
         <>
             <Head>
-                <title>Privacy Policy | Fajraan Tech</title>
+                <title>Privacy Policy | Fajraan Tech – Your Privacy Matters</title>
+
                 <meta
                     name="description"
-                    content="Fajraan Tech respects your privacy. Learn how we collect, use, and protect your personal data when you visit our website or use our services."
+                    content="Read Fajraan Tech's Privacy Policy to understand how we collect, use, store, and protect your personal information when you use our website, products, and services worldwide."
                 />
                 <meta
                     name="keywords"
-                    content="privacy policy, fajraan tech, data protection, website privacy, cookies policy, uae privacy law"
+                    content="privacy policy, data protection, personal information, website privacy, cookies policy, user data protection, privacy practices, Fajraan Tech"
                 />
-                <meta name="author" content="Fajraan Tech" />
-                <meta property="og:title" content="Privacy Policy | Fajraan Tech" />
-                <meta property="og:description" content="Understand how Fajraan Tech protects your personal data and privacy across all services and platforms." />
-                <meta property="og:image" content="https://www.fajraan.tech/assets/img/og-image.jpg" />
+
+                <link rel="canonical" href="https://www.fajraan.tech/privacy-policy" />
+
+                <link rel="alternate" hrefLang="en" href="https://www.fajraan.tech/privacy-policy" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/privacy-policy" />
+
+                <meta property="og:title" content="Privacy Policy | Fajraan Tech – Your Privacy Matters" />
+                <meta
+                    property="og:description"
+                    content="Learn how Fajraan Tech collects, uses, stores, and safeguards your personal information across our website and digital services."
+                />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="600" />
+                <meta property="og:image:alt" content="Fajraan Tech Privacy Policy – Data Protection and Privacy" />
                 <meta property="og:url" content="https://www.fajraan.tech/privacy-policy" />
-                <meta property="og:type" content="website" />
+
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Privacy Policy | Fajraan Tech" />
-                <meta name="twitter:description" content="Learn how Fajraan Tech safeguards your personal data and ensures compliance with global privacy standards." />
-                <meta name="twitter:image" content="https://www.fajraan.tech/assets/img/og-image.jpg" />
+                <meta name="twitter:site" content="@FajraanTech" />
+                <meta name="twitter:creator" content="@FajraanTech" />
+                <meta name="twitter:title" content="Privacy Policy | Fajraan Tech – Your Privacy Matters" />
+                <meta
+                    name="twitter:description"
+                    content="Discover how Fajraan Tech protects your personal information and maintains transparency in the collection and use of data."
+                />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta name="twitter:image:alt" content="Fajraan Tech Privacy Policy – Data Protection and Privacy" />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "WebPage",
+                            name: "Privacy Policy – Fajraan Tech",
+                            url: "https://www.fajraan.tech/privacy-policy",
+                            description: "Learn how Fajraan Tech collects, uses, stores, and protects personal information when providing digital services worldwide.",
+                            provider: {
+                                "@type": "Organization",
+                                name: "Fajraan Tech",
+                                url: "https://www.fajraan.tech",
+                                logo: "https://www.fajraan.tech/images/logo.png",
+                                sameAs: [
+                                    "https://www.linkedin.com/company/fajraan-tech",
+                                    "https://twitter.com/fajraantech",
+                                    "https://www.instagram.com/fajraantech",
+                                    "https://www.facebook.com/fajraantech"
+                                ]
+                            }
+                        })
+                    }}
+                />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            itemListElement: [
+                                {
+                                    "@type": "ListItem",
+                                    position: 1,
+                                    name: "Home",
+                                    item: "https://www.fajraan.tech/"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    position: 2,
+                                    name: "Privacy Policy",
+                                    item: "https://www.fajraan.tech/privacy-policy"
+                                }
+                            ]
+                        })
+                    }}
+                />
             </Head>
 
             <Header />

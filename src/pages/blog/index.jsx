@@ -163,19 +163,80 @@ export default function Blogs({ posts, totalPages, currentPage }) {
     return (
         <>
             <Head>
-                <title>Our Blogs | Fajraan Tech</title>
-                <meta name="description" content="Fajraan Tech builds custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses in Saudi, UAE, Bahrain & beyond." />
-                <meta name="keywords" content="custom web development, mobile app development, UI UX design, SEO services, software company Saudi Arabia, app development UAE, tech company Middle East" />
-                <meta name="author" content="Fajraan Tech" />
-                <meta property="og:title" content="Our Blogs | Fajraan Tech" />
-                <meta property="og:description" content="We deliver scalable custom web, mobile, and desktop applications with UI/UX and SEO for businesses in Saudi, UAE, Bahrain & beyond." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/about/about-img-5.jpg" />
-                <meta property="og:url" content="https://www.fajraan.tech" />
-                <meta property="og:type" content="website" />
+                <title>Blog | Fajraan Tech – Insights on Web, Mobile & Digital Innovation</title>
+
+                <meta name="description" content="Read the Fajraan Tech blog for expert insights, tutorials, and industry trends on web development, mobile apps, UI/UX design, SEO, and digital innovation for businesses worldwide." />
+                <meta name="keywords" content="Fajraan Tech blog, web development blog, mobile app development articles, UI UX design tips, SEO insights, software development tutorials, tech industry trends, digital innovation" />
+
+                <link rel="canonical" href="https://www.fajraan.tech/blog" />
+
+                <link rel="alternate" hrefLang="en" href="https://www.fajraan.tech/blog" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/blog" />
+
+                <meta property="og:title" content="Blog | Fajraan Tech – Insights on Web, Mobile & Digital Innovation" />
+                <meta property="og:description" content="Stay ahead with Fajraan Tech's blog — expert articles on web development, mobile apps, UI/UX design, SEO, and the latest in digital technology." />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="600" />
+                <meta property="og:image:alt" content="Fajraan Tech Blog – Web, Mobile & Digital Insights" />
+                <meta property="og:url" content="https://www.fajraan.tech/blog" />
+
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Our Blogs | Fajraan Tech" />
-                <meta name="twitter:description" content="Scalable and smart digital solutions: web, mobile, desktop apps, UI/UX, SEO and data services across the Middle East." />
-                <meta name="twitter:image" content="https://www.fajraan.tech/your-twitter-image.jpg" />
+                <meta name="twitter:site" content="@FajraanTech" />
+                <meta name="twitter:creator" content="@FajraanTech" />
+                <meta name="twitter:title" content="Blog | Fajraan Tech – Insights on Web, Mobile & Digital Innovation" />
+                <meta name="twitter:description" content="Expert articles on web development, mobile apps, UI/UX design, SEO, and digital innovation — straight from the Fajraan Tech team." />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta name="twitter:image:alt" content="Fajraan Tech Blog – Web, Mobile & Digital Insights" />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Blog",
+                            name: "Fajraan Tech Blog",
+                            url: "https://www.fajraan.tech/blog",
+                            description: "Expert insights, tutorials, and industry trends on web development, mobile apps, UI/UX design, SEO, and digital innovation.",
+                            publisher: {
+                                "@type": "Organization",
+                                name: "Fajraan Tech",
+                                url: "https://www.fajraan.tech",
+                                logo: "https://www.fajraan.tech/images/logo.png",
+                                sameAs: [
+                                    "https://www.linkedin.com/company/fajraan-tech",
+                                    "https://twitter.com/fajraantech",
+                                    "https://www.instagram.com/fajraantech",
+                                    "https://www.facebook.com/fajraantech"
+                                ],
+                            },
+                        }),
+                    }}
+                />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            itemListElement: [
+                                {
+                                    "@type": "ListItem",
+                                    position: 1,
+                                    name: "Home",
+                                    item: "https://www.fajraan.tech/",
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    position: 2,
+                                    name: "Blog",
+                                    item: "https://www.fajraan.tech/blog",
+                                },
+                            ],
+                        }),
+                    }}
+                />
             </Head>
 
             <Header />

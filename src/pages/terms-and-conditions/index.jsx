@@ -9,25 +9,80 @@ export default function TermsAndConditions() {
     return (
         <>
             <Head>
-                <title>Terms & Conditions | Fajraan Tech</title>
-                <meta
-                    name="description"
-                    content="Read the Terms and Conditions governing the use of Fajraan Tech’s website, services, and digital solutions."
-                />
-                <meta
-                    name="keywords"
-                    content="terms and conditions, fajraan tech, website terms, service agreement, uae business policy"
-                />
-                <meta name="author" content="Fajraan Tech" />
-                <meta property="og:title" content="Terms & Conditions | Fajraan Tech" />
-                <meta property="og:description" content="These Terms & Conditions outline your rights and responsibilities when using Fajraan Tech’s services." />
-                <meta property="og:image" content="https://www.fajraan.tech/assets/img/og-image.jpg" />
+                <title>Terms & Conditions | Fajraan Tech – Terms of Service & Website Use</title>
+
+                <meta name="description" content="Read Fajraan Tech's Terms & Conditions governing the use of our website, digital products, software solutions, and professional services worldwide." />
+                <meta name="keywords" content="terms and conditions, terms of service, website terms, service agreement, user responsibilities, legal terms, digital services agreement, Fajraan Tech" />
+
+                <link rel="canonical" href="https://www.fajraan.tech/terms-and-conditions" />
+
+                <link rel="alternate" hrefLang="en" href="https://www.fajraan.tech/terms-and-conditions" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/terms-and-conditions" />
+
+                <meta property="og:title" content="Terms & Conditions | Fajraan Tech – Terms of Service & Website Use" />
+                <meta property="og:description" content="Review the terms governing access to and use of Fajraan Tech's website, software solutions, and digital services." />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="600" />
+                <meta property="og:image:alt" content="Fajraan Tech Terms & Conditions – Website and Service Usage Terms" />
                 <meta property="og:url" content="https://www.fajraan.tech/terms-and-conditions" />
-                <meta property="og:type" content="website" />
+
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Terms & Conditions | Fajraan Tech" />
-                <meta name="twitter:description" content="Understand Fajraan Tech’s terms of use for all services, solutions, and website content." />
-                <meta name="twitter:image" content="https://www.fajraan.tech/assets/img/og-image.jpg" />
+                <meta name="twitter:site" content="@FajraanTech" />
+                <meta name="twitter:creator" content="@FajraanTech" />
+                <meta name="twitter:title" content="Terms & Conditions | Fajraan Tech – Terms of Service & Website Use" />
+                <meta name="twitter:description" content="Understand the rights, responsibilities, and conditions that apply when using Fajraan Tech's website and services." />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta name="twitter:image:alt" content="Fajraan Tech Terms & Conditions – Website and Service Usage Terms" />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "WebPage",
+                            name: "Terms & Conditions – Fajraan Tech",
+                            url: "https://www.fajraan.tech/terms-and-conditions",
+                            description: "Terms and Conditions governing the use of Fajraan Tech's website, software solutions, and professional digital services.",
+                            provider: {
+                                "@type": "Organization",
+                                name: "Fajraan Tech",
+                                url: "https://www.fajraan.tech",
+                                logo: "https://www.fajraan.tech/images/logo.png",
+                                sameAs: [
+                                    "https://www.linkedin.com/company/fajraan-tech",
+                                    "https://twitter.com/fajraantech",
+                                    "https://www.instagram.com/fajraantech",
+                                    "https://www.facebook.com/fajraantech"
+                                ]
+                            }
+                        })
+                    }}
+                />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            itemListElement: [
+                                {
+                                    "@type": "ListItem",
+                                    position: 1,
+                                    name: "Home",
+                                    item: "https://www.fajraan.tech/"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    position: 2,
+                                    name: "Terms & Conditions",
+                                    item: "https://www.fajraan.tech/terms-and-conditions"
+                                }
+                            ]
+                        })
+                    }}
+                />
             </Head>
             <Header />
             <HeroSec title="Terms & Conditions" />

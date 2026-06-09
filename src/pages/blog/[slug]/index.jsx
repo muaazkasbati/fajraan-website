@@ -73,7 +73,7 @@ export default function BlogDetail({ data, morePosts }) {
         hidden: {},
         show: {
             transition: {
-                staggerChildren: 0.25, // controls one-by-one animation timing
+                staggerChildren: 0.25,
                 delayChildren: 0.1,
             },
         },
@@ -83,59 +83,109 @@ export default function BlogDetail({ data, morePosts }) {
         <>
             <Head>
                 <title>{data?.yoast_head_json?.og_title}</title>
+
                 <meta name="description" content={data?.yoast_head_json?.description} />
+                <meta name="keywords" content={data?.seoKeywords?.join(", ") || data?.tags?.map(tag => tag.name).join(", ")} />
+                <meta name="author" content={data?.authorName || "Fajraan Tech"} />
                 <meta name="robots" content={data?.yoast_head_json?.robots} />
+
+                <link rel="canonical" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`} />
+
+                <link rel="alternate" hrefLang="en" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`} />
+                <link rel="alternate" hrefLang="x-default" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`} />
+
                 <meta property="og:locale" content={data?.yoast_head_json?.og_locale} />
-                <meta property="og:type" content={data?.yoast_head_json?.og_type} />
+                <meta property="og:type" content="article" />
                 <meta property="og:title" content={data?.yoast_head_json?.og_title} />
                 <meta property="og:description" content={data?.yoast_head_json?.og_description} />
-                <meta property="og:url" content={data?.yoast_head_json?.og_url} />
-                <meta property="og:site_name" content={data?.yoast_head_json?.og_site_name} />
+                <meta property="og:url" content={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`} />
+                <meta property="og:site_name" content="Fajraan Tech" />
+
                 <meta property="article:published_time" content={data?.yoast_head_json?.article_published_time} />
-                <meta property="og:image" content={data?.yoast_head_json?.og_image[0]?.url} />
-                <meta property="og:image:width" content={data?.yoast_head_json?.og_image[0]?.width} />
-                <meta property="og:image:height" content={data?.yoast_head_json?.og_image[0]?.height} />
-                <meta name="author" content={data?.yoast_head_json?.author} />
-                <meta name="twitter:card" content={data?.yoast_head_json?.twitter_card} />
-                <meta name="twitter:label1" content={data?.yoast_head_json?.twitter_misc?.["Written by"]} />
-                <meta name="twitter:data1" content={data?.yoast_head_json?.twitter_misc?.["Written by"]} />
-                <meta name="twitter:label2" content={data?.yoast_head_json?.twitter_misc?.["Estimated reading time"]} />
+                <meta property="article:modified_time" content={data?.modified} />
+                <meta property="article:author" content={data?.authorName} />
+
+                <meta property="og:image" content={data?.yoast_head_json?.og_image?.[0]?.url} />
+                <meta property="og:image:width" content={data?.yoast_head_json?.og_image?.[0]?.width || 1200} />
+                <meta property="og:image:height" content={data?.yoast_head_json?.og_image?.[0]?.height || 630} />
+                <meta property="og:image:alt" content={data?.yoast_head_json?.og_title} />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="@FajraanTech" />
+                <meta name="twitter:creator" content="@FajraanTech" />
+                <meta name="twitter:title" content={data?.yoast_head_json?.og_title} />
+                <meta name="twitter:description" content={data?.yoast_head_json?.og_description} />
+                <meta name="twitter:image" content={data?.yoast_head_json?.og_image?.[0]?.url} />
+                <meta name="twitter:image:alt" content={data?.yoast_head_json?.og_title} />
+
+                <meta name="twitter:label1" content="Written by" />
+                <meta name="twitter:data1" content={data?.authorName} />
+                <meta name="twitter:label2" content="Reading time" />
                 <meta name="twitter:data2" content={data?.yoast_head_json?.twitter_misc?.["Estimated reading time"]} />
-                <link rel="canonical" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`} />
-                {/* Dublin Core Metadata */}
+
                 <meta name="DC.title" content={data?.yoast_head_json?.og_title} />
                 <meta name="DC.creator" content={data?.authorName} />
                 <meta name="DC.description" content={data?.yoast_head_json?.description} />
                 <meta name="DC.publisher" content="Fajraan Tech" />
                 <meta name="DC.date" content={data?.yoast_head_json?.article_published_time} />
 
-                {/* Article Schema Markup */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "Article",
-                            "headline": data?.yoast_head_json?.og_title,
-                            "image": data?.yoast_head_json?.og_image[0]?.url,
-                            "author": {
+                            headline: data?.yoast_head_json?.og_title,
+                            description: data?.yoast_head_json?.description,
+                            image: [data?.yoast_head_json?.og_image?.[0]?.url],
+                            author: {
                                 "@type": "Person",
-                                "name": data?.authorName
+                                name: data?.authorName
                             },
-                            "publisher": {
+                            publisher: {
                                 "@type": "Organization",
-                                "name": "Fajraan Tech",
-                                "logo": {
+                                name: "Fajraan Tech",
+                                logo: {
                                     "@type": "ImageObject",
-                                    "url": `${process.env.NEXT_PUBLIC_APPFRONTURL}fav-icon.png`
+                                    url: `${process.env.NEXT_PUBLIC_APPFRONTURL}fav-icon.png`
                                 }
                             },
-                            "datePublished": data?.yoast_head_json?.article_published_time,
-                            "dateModified": data?.modified,
-                            "mainEntityOfPage": {
+                            datePublished: data?.yoast_head_json?.article_published_time,
+                            dateModified: data?.modified,
+                            mainEntityOfPage: {
                                 "@type": "WebPage",
                                 "@id": `${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`
                             }
+                        })
+                    }}
+                />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            itemListElement: [
+                                {
+                                    "@type": "ListItem",
+                                    position: 1,
+                                    name: "Home",
+                                    item: process.env.NEXT_PUBLIC_APPFRONTURL
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    position: 2,
+                                    name: "Blog",
+                                    item: `${process.env.NEXT_PUBLIC_APPFRONTURL}blog`
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    position: 3,
+                                    name: data?.title?.rendered || data?.yoast_head_json?.og_title,
+                                    item: `${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`
+                                }
+                            ]
                         })
                     }}
                 />

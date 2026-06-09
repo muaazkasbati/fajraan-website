@@ -51,25 +51,86 @@ export default function About() {
     return (
         <>
             <Head>
-                <title>About Us | Fajraan Tech</title>
-                <meta name="description" content="Fajraan Tech builds custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses in Saudi, UAE, Bahrain & beyond." />
-                <meta name="keywords" content="custom web development, mobile app development, UI UX design, SEO services, software company Saudi Arabia, app development UAE, tech company Middle East" />
-                <meta name="author" content="Fajraan Tech" />
-                <meta property="og:title" content="About Us | Fajraan Tech" />
-                <meta property="og:description" content="We deliver scalable custom web, mobile, and desktop applications with UI/UX and SEO for businesses in Saudi, UAE, Bahrain & beyond." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/about/about-img-5.jpg" />
-                <meta property="og:url" content="https://www.fajraan.tech" />
-                <meta property="og:type" content="website" />
+                <title>About Us | Fajraan Tech – Global Software Development Company</title>
+
+                <meta name="description" content="Learn about Fajraan Tech — a global software development company passionate about building custom web, mobile, and desktop applications with expert UI/UX design, SEO, and data services for businesses worldwide." />
+                <meta name="keywords" content="about Fajraan Tech, software development company, who we are, tech company, web development agency, mobile app developers, UI UX design team, global digital agency" />
+
+                <link rel="canonical" href="https://www.fajraan.tech/about" />
+
+                <link rel="alternate" hrefLang="en" href="https://www.fajraan.tech/about" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/about" />
+
+                <meta property="og:title" content="About Us | Fajraan Tech – Global Software Development Company" />
+                <meta property="og:description" content="Meet the team behind Fajraan Tech — building scalable custom web, mobile, and desktop solutions with UI/UX design, SEO, and data services for businesses around the world." />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="600" />
+                <meta property="og:image:alt" content="The Fajraan Tech team – Global Software Development Company" />
+                <meta property="og:url" content="https://www.fajraan.tech/about" />
+
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="About Us | Fajraan Tech" />
-                <meta name="twitter:description" content="Scalable and smart digital solutions: web, mobile, desktop apps, UI/UX, SEO and data services across the Middle East." />
-                <meta name="twitter:image" content="https://www.fajraan.tech/your-twitter-image.jpg" />
+                <meta name="twitter:site" content="@FajraanTech" />
+                <meta name="twitter:creator" content="@FajraanTech" />
+                <meta name="twitter:title" content="About Us | Fajraan Tech – Global Software Development Company" />
+                <meta name="twitter:description" content="Meet the people behind Fajraan Tech — a global team delivering custom web, mobile & desktop apps, UI/UX design, SEO, and data services worldwide." />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta name="twitter:image:alt" content="The Fajraan Tech team – Global Software Development Company" />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "AboutPage",
+                            name: "About Us – Fajraan Tech",
+                            url: "https://www.fajraan.tech/about",
+                            description:
+                                "Fajraan Tech is a global software development company building custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses worldwide.",
+                            publisher: {
+                                "@type": "Organization",
+                                name: "Fajraan Tech",
+                                url: "https://www.fajraan.tech",
+                                logo: "https://www.fajraan.tech/images/logo.png",
+                                sameAs: [
+                                    "https://www.linkedin.com/company/fajraan-tech",
+                                    "https://twitter.com/fajraantech",
+                                    "https://www.instagram.com/fajraantech",
+                                    "https://www.facebook.com/fajraantech"
+                                ],
+                            },
+                        }),
+                    }}
+                />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            itemListElement: [
+                                {
+                                    "@type": "ListItem",
+                                    position: 1,
+                                    name: "Home",
+                                    item: "https://www.fajraan.tech/",
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    position: 2,
+                                    name: "About Us",
+                                    item: "https://www.fajraan.tech/about",
+                                },
+                            ],
+                        }),
+                    }}
+                />
             </Head>
             <Header />
             <section className="quanto-hero-about-section overflow-hidden">
                 <div className="container custom-container">
                     <div className="row g-4 align-items-end">
-                        {/* Left Text Section */}
                         <div className="col-lg-9 col-xxl-10">
                             <motion.div
                                 initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
@@ -84,7 +145,6 @@ export default function About() {
                             </motion.div>
                         </div>
 
-                        {/* Right Rating Section */}
                         <div className="col-lg-3 col-xxl-2">
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}

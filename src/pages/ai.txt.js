@@ -2,6 +2,8 @@
 
 export async function getServerSideProps({ res }) {
   const hostname = process.env.NEXT_PUBLIC_APPFRONTURL || 'https://www.fajraan.com';
+  // Ensure precise trailing slash connection for the sitemap path
+  const baseSettings = hostname.endsWith('/') ? hostname : `${hostname}/`;
 
   const content = `
 # AI Crawler Access Policy
@@ -30,10 +32,10 @@ Disallow: /admin
 Disallow: /api
 Disallow: /dashboard
 
-Sitemap: ${hostname}sitemap.xml
+Sitemap: ${baseSettings}sitemap.xml
 `;
 
-  res.setHeader('Content-Type', 'text/plain');
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
   res.write(content.trim());
   res.end();
 

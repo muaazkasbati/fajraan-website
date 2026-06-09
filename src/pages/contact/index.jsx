@@ -38,21 +38,87 @@ export default function Contact() {
     return (
         <>
             <Head>
-                <title>Contact Us | Fajraan Tech</title>
-                <meta name="description" content="Fajraan Tech builds custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses in Saudi, UAE, Bahrain & beyond." />
-                <meta name="keywords" content="custom web development, mobile app development, UI UX design, SEO services, software company Saudi Arabia, app development UAE, tech company Middle East" />
-                <meta name="author" content="Fajraan Tech" />
-                <meta property="og:title" content="Contact Us | Fajraan Tech" />
-                <meta property="og:description" content="We deliver scalable custom web, mobile, and desktop applications with UI/UX and SEO for businesses in Saudi, UAE, Bahrain & beyond." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/about/about-img-5.jpg" />
-                <meta property="og:url" content="https://www.fajraan.tech" />
-                <meta property="og:type" content="website" />
+                <title>Contact Us | Fajraan Tech – Let's Build Something Great</title>
+
+                <meta name="description" content="Get in touch with Fajraan Tech. Whether you have a project in mind or just want to say hello, our team is ready to help you build custom web, mobile, and desktop solutions worldwide." />
+                <meta name="keywords" content="contact Fajraan Tech, hire web developers, hire app developers, get a quote, software development inquiry, web development agency contact, tech company contact" />
+
+                <link rel="canonical" href="https://www.fajraan.tech/contact" />
+
+                <link rel="alternate" hrefLang="en" href="https://www.fajraan.tech/contact" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/contact" />
+
+                <meta property="og:title" content="Contact Us | Fajraan Tech – Let's Build Something Great" />
+                <meta property="og:description" content="Have a project in mind? Reach out to Fajraan Tech and let's discuss how we can build your next custom web, mobile, or desktop solution." />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="600" />
+                <meta property="og:image:alt" content="Contact Fajraan Tech – Global Software Development" />
+                <meta property="og:url" content="https://www.fajraan.tech/contact" />
 
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Contact Us | Fajraan Tech" />
-                <meta name="twitter:description" content="Scalable and smart digital solutions: web, mobile, desktop apps, UI/UX, SEO and data services across the Middle East." />
-                <meta name="twitter:image" content="https://www.fajraan.tech/your-twitter-image.jpg" />
+                <meta name="twitter:site" content="@FajraanTech" />
+                <meta name="twitter:creator" content="@FajraanTech" />
+                <meta name="twitter:title" content="Contact Us | Fajraan Tech – Let's Build Something Great" />
+                <meta name="twitter:description" content="Ready to start your next project? Get in touch with the Fajraan Tech team — custom web, mobile & desktop development for businesses worldwide." />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta name="twitter:image:alt" content="Contact Fajraan Tech – Global Software Development" />
 
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "ContactPage",
+                            name: "Contact Us – Fajraan Tech",
+                            url: "https://www.fajraan.tech/contact",
+                            description: "Contact Fajraan Tech to discuss your custom web, mobile, or desktop development project. Our global team is ready to help.",
+                            publisher: {
+                                "@type": "Organization",
+                                name: "Fajraan Tech",
+                                url: "https://www.fajraan.tech",
+                                logo: "https://www.fajraan.tech/images/logo.png",
+                                contactPoint: {
+                                    "@type": "ContactPoint",
+                                    contactType: "customer support",
+                                    areaServed: "Worldwide",
+                                    availableLanguage: ["English", "Arabic"],
+                                },
+                                sameAs: [
+                                    "https://www.linkedin.com/company/fajraan-tech",
+                                    "https://twitter.com/fajraantech",
+                                    "https://www.instagram.com/fajraantech",
+                                    "https://www.facebook.com/fajraantech"
+                                ],
+                            },
+                        }),
+                    }}
+                />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            itemListElement: [
+                                {
+                                    "@type": "ListItem",
+                                    position: 1,
+                                    name: "Home",
+                                    item: "https://www.fajraan.tech/",
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    position: 2,
+                                    name: "Contact Us",
+                                    item: "https://www.fajraan.tech/contact",
+                                },
+                            ],
+                        }),
+                    }}
+                />
             </Head>
             <Header />
             <HeroSec title="We’re just a message away to bring your ideas to life" />
@@ -71,9 +137,9 @@ export default function Contact() {
                     </a>
                     <div className="row">
                         <div className="col-12">
-                            
+
                             <motion.iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.706867964713!2d0.05159407660142838!3d51.5736070718285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a6e6b8f4dd5b%3A0xc0b05abcd40481bd!2sWanstead%20Ln%2C%20Ilford%2C%20UK!5e0!3m2!1sen!2s!4v1770044643021!5m2!1sen!2s"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.706867964713!2d0.05159407660142838!3d51.5736070718285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a6e6b8f4dd5b%3A0xc0b05abcd40481bd!2sWanstead%20Ln%2C%20Ilford%2C%20UK!5e0!3m2!1sen!2s!4v1770044643021!5m2!1sen!2s"
                                 width="600"
                                 height="400"
                                 allowFullScreen=""
