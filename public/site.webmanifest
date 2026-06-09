@@ -1,12 +1,19 @@
 {
-"name": "Fajraan Tech",
+  "name": "Fajraan Tech",
   "short_name": "Fajraan",
   "description": "Fajraan Tech builds modern web, mobile, and desktop applications with UI/UX design, SEO, and digital solutions for businesses in the UAE, Saudi Arabia, and across the Middle East.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#0f172a",
   "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
