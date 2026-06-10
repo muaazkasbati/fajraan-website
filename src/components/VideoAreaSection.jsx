@@ -19,7 +19,7 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
             {video ?
                 <section className="quanto-video-area style-2 overflow-hidden">
                     <div className="container custom-container position-relative">
-                                            <motion.a
+                        <motion.span
                             onClick={() => {
                                 const element = document.getElementById(scrollDownId);
                                 if (element) {
@@ -42,7 +42,7 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
                                 animate={{ y: [0, 8, 0] }}
                                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                             />
-                        </motion.a>
+                        </motion.span>
                         <motion.div
                             className="row"
                             initial={{ opacity: 0, y: 50 }}
@@ -80,7 +80,7 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
                 <div className="quanto-video-area style-2 overflow-hidden">
                     <div className="container custom-container position-relative">
                         {/* Scroll Down Link */}
-                        <motion.a
+                        <motion.span
                             onClick={() => {
                                 const element = document.getElementById(scrollDownId);
                                 if (element) {
@@ -103,7 +103,7 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
                                 animate={{ y: [0, 8, 0] }}
                                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                             />
-                        </motion.a>
+                        </motion.span>
 
                         {/* Image Section */}
                         <div className="row">

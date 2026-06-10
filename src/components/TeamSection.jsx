@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 const teamData = [
     {
@@ -97,52 +98,52 @@ const TeamSection = () => {
                                     <ul className="custom-ul">
                                         {member.facebook && (
                                             <li>
-                                                <a href={member.facebook} target="_blank" rel="noopener noreferrer">
+                                                <Link aria-label="Follow on Facebook" href={member.facebook} target="_blank" rel="noopener noreferrer">
                                                     <i className="fa-brands fa-facebook-f" />
-                                                </a>
+                                                </Link>
                                             </li>
                                         )}
                                         {member.twitter && (
                                             <li>
-                                                <a href={member.twitter} target="_blank" rel="noopener noreferrer">
+                                                <Link aria-label="Follow on X" href={member.twitter} target="_blank" rel="noopener noreferrer">
                                                     <i className="fa-brands fa-x-twitter" />
-                                                </a>
+                                                </Link>
                                             </li>
                                         )}
                                         {member.instagram && (
                                             <li>
-                                                <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+                                                <Link aria-label="Follow on Instagram" href={member.instagram} target="_blank" rel="noopener noreferrer">
                                                     <i className="fa-brands fa-instagram" />
-                                                </a>
+                                                </Link>
                                             </li>
                                         )}
                                         {member.linkedin && (
                                             <li>
-                                                <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                                                <Link aria-label="Follow on LinkedIn" href={member.linkedin} target="_blank" rel="noopener noreferrer">
                                                     <i className="fa-brands fa-linkedin-in" />
-                                                </a>
+                                                </Link>
                                             </li>
                                         )}
                                         {/* <li>
-                                            <a href="#">
+                                            <Link href="#">
                                                 <i className="fa-brands fa-x-twitter" />
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <Link href="#">
                                                 <i className="fa-brands fa-instagram" />
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <Link href="#">
                                                 <i className="fa-brands fa-linkedin-in" />
-                                            </a>
+                                            </Link>
                                         </li> */}
                                     </ul>
                                 </figure>
                                 <div className="team-content">
                                     <h6 className="team-data-name">
-                                        <a href="/team-details">{member.name}</a>
+                                        <span>{member.name}</span>
                                     </h6>
                                     <span className="team-data-position">{member.role}</span>
                                 </div>

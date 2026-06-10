@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const pricingData = [
     {
@@ -113,13 +114,13 @@ const PricingSection = () => {
                                             ))}
                                         </ul>
                                     </div>
-                                    <a className="quanto-link-btn btn-pill" href={`/contact?plan=${plan.title}`}>
+                                    <Link aria-label="Contact" className="quanto-link-btn btn-pill" href={`/contact?plan=${plan.title}`}>
                                         Go with this plan
                                         <span>
                                             <i className="fa-solid fa-arrow-right arry1" />
                                             <i className="fa-solid fa-arrow-right arry2" />
                                         </span>
-                                    </a>
+                                    </Link>
                                 </motion.div>
                             </motion.div>
                         );

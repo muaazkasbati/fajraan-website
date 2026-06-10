@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const PortfolioSection = ({ theme = "dark", projects = [] }) => {
     const imageAnim = {
@@ -21,24 +22,27 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                             {projects.slice(0, Math.ceil(projects.length / 2)).map((proj, index) => (
                                 <div key={index} className="col-md-12 project-row-gap">
                                     <div className="quanto-data-box overflow-hidden">
-                                        <a>
-                                            <motion.div
-                                                className="quanto-project-thumb overflow-hidden"
-                                                {...imageAnim}
-                                                transition={{ ...imageAnim.transition, delay: 0.2 * index }}
-                                            >
-                                                <img
-                                                    src={proj.image}
-                                                    alt={proj.title}
-                                                    className="w-100"
-                                                    loading="eager"
-                                                    decoding="async"
-                                                />
-                                            </motion.div>
-                                        </a>
+                                        {/* <Link> */}
+                                        <motion.div
+                                            className="quanto-project-thumb overflow-hidden"
+                                            {...imageAnim}
+                                            transition={{ ...imageAnim.transition, delay: 0.2 * index }}
+                                        >
+                                            <Image
+                                                src={proj.image}
+                                                alt={proj.title}
+                                                width={800}
+                                                height={600}
+                                                priority
+                                                decoding="async"
+                                                className="w-100"
+                                                style={{ objectFit: 'cover' }}
+                                            />
+                                        </motion.div>
+                                        {/* </Link> */}
                                         <div className="quanto-project-content">
                                             <h5 className={`${theme === "dark" ? "text-color-white" : ""} line-clamp-1`}>
-                                                <a>{proj.title}</a>
+                                                <span>{proj.title}</span>
                                             </h5>
                                             <span className={`quanto-data-date ${theme === "dark" ? "text-color-white" : ""}`}>
                                                 {proj.year} - {proj.category}
@@ -68,24 +72,27 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                             {projects.slice(Math.ceil(projects.length / 2)).map((proj, index) => (
                                 <div key={index} className="col-md-10 mx-auto project-row-gap">
                                     <div className="quanto-data-box overflow-hidden">
-                                        <a>
-                                            <motion.div
-                                                className="quanto-project-thumb overflow-hidden"
-                                                {...imageAnim}
-                                                transition={{ ...imageAnim.transition, delay: 0.2 * index }}
-                                            >
-                                                <img
-                                                    src={proj.image}
-                                                    alt={proj.title}
-                                                    className="w-100"
-                                                    loading="eager"
-                                                    decoding="async"
-                                                />
-                                            </motion.div>
-                                        </a>
+                                        {/* <Link> */}
+                                        <motion.div
+                                            className="quanto-project-thumb overflow-hidden"
+                                            {...imageAnim}
+                                            transition={{ ...imageAnim.transition, delay: 0.2 * index }}
+                                        >
+                                            <Image
+                                                src={proj.image}
+                                                alt={proj.title}
+                                                width={800}
+                                                height={600}
+                                                priority
+                                                decoding="async"
+                                                className="w-100"
+                                                style={{ objectFit: 'cover' }}
+                                            />
+                                        </motion.div>
+                                        {/* </Link> */}
                                         <div className="quanto-project-content">
                                             <h5 className={`${theme === "dark" ? "text-color-white" : ""} line-clamp-1`}>
-                                                <a>{proj.title}</a>
+                                                <span>{proj.title}</span>
                                             </h5>
                                             <span className={`quanto-data-date ${theme === "dark" ? "text-color-white" : ""}`}>
                                                 {proj.year} - {proj.category}

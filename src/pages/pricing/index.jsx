@@ -88,10 +88,12 @@ export default function Pricing() {
                 />
             </Head>
             <Header />
-            <HeroSec title="Clear Plans. Fair Pricing. Built for Your Growth." />
-            <VideoAreaSection imageUrl="/images/hero/pricing-hero-banner.jpg" />
-            <PricingSection />
-            <FaqsSection />
+            <main>
+                <HeroSec title="Clear Plans. Fair Pricing. Built for Your Growth." />
+                <VideoAreaSection imageUrl="/images/hero/pricing-hero-banner.jpg" />
+                <PricingSection />
+                <FaqsSection />
+            </main>
             <Footer />
         </>
     )

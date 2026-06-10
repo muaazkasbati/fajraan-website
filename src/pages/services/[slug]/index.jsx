@@ -106,9 +106,10 @@ export default function ServiceDetail({ serviceData }) {
         />
       </Head>
       <Header />
-      <HeroSec title={serviceData.content.breadcrumb} />
-      <VideoAreaSection imageUrl={serviceData.content?.hero?.image} scrollDownId='service-details' />
-      {/* <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden" id='service-details'>
+      <main>
+        <HeroSec title={serviceData.content.breadcrumb} />
+        <VideoAreaSection imageUrl={serviceData.content?.hero?.image} scrollDownId='service-details' />
+        {/* <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden" id='service-details'>
         <div className="container custom-container">
           <motion.div
             className="row g-4 justify-content-center"
@@ -207,97 +208,97 @@ export default function ServiceDetail({ serviceData }) {
           </motion.div>
         </div>
       </section> */}
-      <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden" id="service-details">
-        <div className="container custom-container">
-          <motion.div
-            className="row g-4 justify-content-center"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="col-xl-8">
-              <motion.div
-                className="quanto-service-details__content"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                {/* Hero Description */}
-                {serviceData.content?.hero?.description?.map((para, i) => (
-                  <p key={i} className="mb-3">{para}</p>
-                ))}
+        <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden" id="service-details">
+          <div className="container custom-container">
+            <motion.div
+              className="row g-4 justify-content-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="col-xl-8">
+                <motion.div
+                  className="quanto-service-details__content"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  {/* Hero Description */}
+                  {serviceData.content?.hero?.description?.map((para, i) => (
+                    <p key={i} className="mb-3">{para}</p>
+                  ))}
 
-                {/* Sub Services */}
-                {serviceData.subServices?.length > 0 && (
-                  <div className="service-benefits mt-4">
-                    <h4>Our Core Services</h4>
-                    <div className="benefits-list">
-                      <div className="row g-3 justify-content-start">
-                        {serviceData.subServices.map((sub, i) => (
-                          <div key={i} className="col-sm-6 col-xl-5">
-                            <div className="d-flex align-items-start gap-3 mb-3">
-                              {/* <img src={sub.icon} alt={sub.title} width={32} height={32} /> */}
-                              <div>
-                                <h6>{sub.title}</h6>
-                                <p>{sub.description}</p>
+                  {/* Sub Services */}
+                  {serviceData.subServices?.length > 0 && (
+                    <div className="service-benefits mt-4">
+                      <h4>Our Core Services</h4>
+                      <div className="benefits-list">
+                        <div className="row g-3 justify-content-start">
+                          {serviceData.subServices.map((sub, i) => (
+                            <div key={i} className="col-sm-6 col-xl-5">
+                              <div className="d-flex align-items-start gap-3 mb-3">
+                                {/* <img src={sub.icon} alt={sub.title} width={32} height={32} /> */}
+                                <div>
+                                  <h6>{sub.title}</h6>
+                                  <p>{sub.description}</p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Detailed Sections */}
-                {serviceData.content.sections?.length > 0 && (
-                  <div className="service-benefits mt-5">
-                    {serviceData.content.sections.map((section, i) => (
-                      <div key={i} className="mb-4">
-                        <h4>{section.title}</h4>
-                        <ul className="custom-ul">
-                          {section.points.map((point, idx) => (
-                            <li key={idx}>{point}</li>
                           ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Approach Section */}
-                {serviceData.content.approach && (
-                  <div className="service-benefits mt-5">
-                    <h4>{serviceData.content.approach.title}</h4>
-                    <p>{serviceData.content.approach.description}</p>
-                    <div className="row g-4 align-items-start mt-3">
-                      <div className="col-lg-7">
-                        {serviceData.content.approach.steps.map((step, i) => (
-                          <div key={i} className="d-flex align-items-start gap-3 mb-3">
-                            {/* <img src={step.icon} alt={step.title} width={32} height={32} /> */}
-                            <div>
-                              <h6>{step.title}</h6>
-                              <ul className="custom-ul">
-                                {step.points.map((p, idx) => (
-                                  <li key={idx}>{p}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-      <VideoAreaSection video videoUrl="https://videos.pexels.com/video-files/3209211/3209211-uhd_2560_1440_25fps.mp4" />
-      {/* <section className="quanto-choose-us-section row-padding-top section-padding-bottom">
+                  )}
+
+                  {/* Detailed Sections */}
+                  {serviceData.content.sections?.length > 0 && (
+                    <div className="service-benefits mt-5">
+                      {serviceData.content.sections.map((section, i) => (
+                        <div key={i} className="mb-4">
+                          <h4>{section.title}</h4>
+                          <ul className="custom-ul">
+                            {section.points.map((point, idx) => (
+                              <li key={idx}>{point}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Approach Section */}
+                  {serviceData.content.approach && (
+                    <div className="service-benefits mt-5">
+                      <h4>{serviceData.content.approach.title}</h4>
+                      <p>{serviceData.content.approach.description}</p>
+                      <div className="row g-4 align-items-start mt-3">
+                        <div className="col-lg-7">
+                          {serviceData.content.approach.steps.map((step, i) => (
+                            <div key={i} className="d-flex align-items-start gap-3 mb-3">
+                              {/* <img src={step.icon} alt={step.title} width={32} height={32} /> */}
+                              <div>
+                                <h6>{step.title}</h6>
+                                <ul className="custom-ul">
+                                  {step.points.map((p, idx) => (
+                                    <li key={idx}>{p}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+        <VideoAreaSection video videoUrl="https://videos.pexels.com/video-files/3209211/3209211-uhd_2560_1440_25fps.mp4" />
+        {/* <section className="quanto-choose-us-section row-padding-top section-padding-bottom">
         <div className="container custom-container">
           <motion.div
             className="row g-4 justify-content-center"
@@ -342,46 +343,47 @@ export default function ServiceDetail({ serviceData }) {
           </motion.div>
         </div>
       </section> */}
-      <section className="quanto-choose-us-section row-padding-top section-padding-bottom">
-        <div className="container custom-container">
-          <motion.div
-            className="row g-4 justify-content-center"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="col-xl-8">
-              <div className="quanto-choose-us__content">
-                <motion.h4
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  Why choose {serviceData.title}?
-                </motion.h4>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                >
-                  {serviceData.description}
-                </motion.p>
-                <motion.p
-                  className="choose-us-text"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  Fajraan Tech focuses on modern, scalable, and performance-driven solutions that
-                  align with your business goals. Every project we deliver is crafted for
-                  long-term growth, user engagement, and technical excellence.
-                </motion.p>
+        <section className="quanto-choose-us-section row-padding-top section-padding-bottom">
+          <div className="container custom-container">
+            <motion.div
+              className="row g-4 justify-content-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="col-xl-8">
+                <div className="quanto-choose-us__content">
+                  <motion.h4
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    Why choose {serviceData.title}?
+                  </motion.h4>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                  >
+                    {serviceData.description}
+                  </motion.p>
+                  <motion.p
+                    className="choose-us-text"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
+                    Fajraan Tech focuses on modern, scalable, and performance-driven solutions that
+                    align with your business goals. Every project we deliver is crafted for
+                    long-term growth, user engagement, and technical excellence.
+                  </motion.p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+            </motion.div>
+          </div>
+        </section>
+      </main>
       <Footer />
     </>
   )

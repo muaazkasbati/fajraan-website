@@ -10,7 +10,7 @@
 //                             <div class="breadcrumb-block">
 //                                 <h1>{page}</h1>
 //                                 <ul class="breadcrumb-nav">
-//                                     <li><a href="/">Home</a></li>
+//                                     <li><Link href="/">Home</Link></li>
 //                                     <li>{page}</li>
 //                                 </ul>
 //                             </div>
@@ -65,9 +65,9 @@ const BreadCrumb = ({ page }) => {
                                         {index === breadcrumbs?.length - 1 ? (
                                             <span>{crumb?.name}</span>
                                         ) : (
-                                            <a href={crumb?.path}>
+                                            <Link aria-label={crumb?.name} href={crumb?.path}>
                                                 {crumb?.name}
-                                            </a>
+                                            </Link>
                                         )}
                                     </li>
                                 ))}

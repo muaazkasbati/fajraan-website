@@ -38,15 +38,15 @@ import BlogSection from "@/components/home/BlogSection";
 
 export async function getStaticProps() {
   try {
-    const timestamp = Date.now();
+    const BASE = "https://blog.devsolsystems.co.uk/wp-json/wp/v2";
 
     const [postsRes, portfolioRes] = await Promise.all([
-      fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3&_=${timestamp}`),
-      fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`)
+      fetch(`${BASE}/posts?per_page=3`),
+      fetch(`${BASE}/portfolio?_embed&per_page=20`)
     ]);
 
     if (!postsRes.ok || !portfolioRes.ok) {
-      throw new Error('Failed to fetch data');
+      throw new Error(`API error: posts=${postsRes.status} portfolio=${portfolioRes.status}`);
     }
 
     const [postsData, portfolioData] = await Promise.all([
@@ -71,7 +71,7 @@ export async function getStaticProps() {
         posts: postsData,
         portfolio: mappedPortfolio,
       },
-      revalidate: 60, // Re-fetch every 60 seconds (adjust as needed)
+      revalidate: 3600, // Re-fetch every hour — no need for 60s on static content
     };
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -80,7 +80,7 @@ export async function getStaticProps() {
         posts: [],
         portfolio: [],
       },
-      revalidate: 60, // Still revalidate even on error to retry later
+      revalidate: 300, // Retry sooner on error (5 min)
     };
   }
 }
@@ -127,7 +127,7 @@ export default function Home({ posts, portfolio }) {
               name: "Fajraan Tech",
               url: "https://www.fajraan.tech",
               logo: "https://www.fajraan.tech/images/logo.png",
-              description:"Fajraan Tech is a global software development company building custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses worldwide.",
+              description: "Fajraan Tech is a global software development company building custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses worldwide.",
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "customer support",
@@ -165,14 +165,16 @@ export default function Home({ posts, portfolio }) {
         />
       </Head>
       <Header />
-      <HeroSection />
-      <AboutSection />
-      <OurAchivementSection />
-      <PortfolioSection projects={portfolio} />
-      <ServiceSection />
-      <TextimonialSection />
-      {/* <ClientsSection /> */}
-      <BlogSection posts={posts} />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <OurAchivementSection />
+        <PortfolioSection projects={portfolio} />
+        <ServiceSection />
+        <TextimonialSection />
+        {/* <ClientsSection /> */}
+        <BlogSection posts={posts} />
+      </main>
       <Footer />
     </>
   );

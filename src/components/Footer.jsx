@@ -34,25 +34,14 @@ const Footer = () => {
                         {Array(6)
                             .fill(null)
                             .map((_, index) => (
-                                <Link href="/contact" key={index} className="marquee-item-container overflow-hidden">
-                                    <div
-                                        className="marquee-item text-color-white overflow-hidden color-secondary"
-                                    >
+                                <Link aria-label="Contact" href="/contact" key={index} className="marquee-item-container overflow-hidden">
+                                    <div className="marquee-item text-color-white overflow-hidden color-secondary">
                                         <h1 className="text-color-white color-secondary">
                                             Empowering your business through innovation
                                         </h1>
 
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="150"
-                                            height="150"
-                                            viewBox="0 0 150 150"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M100.023 58.8388L46.232 112.63L37.3932 103.791L91.1844 50H43.7733V37.5H112.523V106.25H100.023V58.8388Z"
-                                                fill="currentColor"
-                                            />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150" fill="none">
+                                            <path d="M100.023 58.8388L46.232 112.63L37.3932 103.791L91.1844 50H43.7733V37.5H112.523V106.25H100.023V58.8388Z" fill="currentColor" />
                                         </svg>
                                     </div>
                                 </Link>
@@ -81,19 +70,14 @@ const Footer = () => {
                                         <div className="contacts mt-1">
                                             <ul className="custom-ul">
                                                 {/* <li>
-                                                    <a className="email" href="mailto:info@fajraan.com">
+                                                    <Link className="email" href="mailto:info@fajraan.com">
                                                         info@fajraan.com
-                                                    </a>
+                                                    </Link>
                                                 </li> */}
                                                 <li>
-                                                    <a
-                                                        className="mobile"
-                                                        href="https://wa.me/971542259592"
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                    >
+                                                    <Link aria-label="Contact on WhatsApp" className="mobile" href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
                                                         +971 54 225 9592 (WhatsApp)
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -104,23 +88,23 @@ const Footer = () => {
                                         <div className="contacts mt-1">
                                             <ul className="custom-ul">
                                                 <li>
-                                                    <a
+                                                    <Link
                                                         className="mobile"
                                                         href="https://wa.me/447830526752"
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                     >
                                                         +44 7830 526752 (WhatsApp)
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </div> */}
                                         <div className="contacts">
                                             <ul className="custom-ul">
                                                 <li>
-                                                    <a className="email" href="mailto:info@fajraan.com">
+                                                    <Link aria-label="Contact us on Email" className="email" href="mailto:info@fajraan.com">
                                                         info@fajraan.com
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -140,7 +124,7 @@ const Footer = () => {
                                             <ul className="custom-ul">
                                                 {navItems.map((item, index) => (
                                                     <li key={index}>
-                                                        <Link href={item.href}>{item.label}</Link>
+                                                        <Link aria-label={item.label} href={item.href}>{item.label}</Link>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -160,7 +144,7 @@ const Footer = () => {
                                             <ul className="custom-ul">
                                                 {services.slice(0, 5).map((service, index) => (
                                                     <li key={index}>
-                                                        <Link href={`/services/${service.slug}`}>{service.title}</Link>
+                                                        <Link aria-label={service.title} href={`/services/${service.slug}`}>{service.title}</Link>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -176,28 +160,21 @@ const Footer = () => {
                                         viewport={{ once: true }}
                                     >
                                         <div className="social-links">
-                                            {/* <ul className="custom-ul flex gap-3">
-                                                <li><a href="https://x.com/" target="_blank"><i className="fab fa-x-twitter" /></a></li>
-                                                <li><a href="https://instagram.com/" target="_blank"><i className="fab fa-instagram" /></a></li>
-                                                <li><a href="https://linkedin.com/" target="_blank"><i className="fab fa-linkedin" /></a></li>
-                                                <li><a href="https://behance.net/" target="_blank"><i className="fab fa-behance" /></a></li>
-                                                <li><a href="https://dribbble.com/" target="_blank"><i className="fab fa-dribbble" /></a></li>
-                                            </ul> */}
                                             <ul className="custom-ul flex gap-3">
                                                 <li>
-                                                    <a href="https://www.instagram.com/fajraantech" target="_blank">
+                                                    <Link aria-label="Follow us on Instagram" href="https://www.instagram.com/fajraantech" target="_blank">
                                                         <i className="fab fa-instagram" />
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="https://www.facebook.com/fajraantech" target="_blank">
+                                                    <Link aria-label="Follow us on Facebook" href="https://www.facebook.com/fajraantech" target="_blank">
                                                         <i className="fab fa-facebook-f" />
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="https://www.linkedin.com/company/fajraan-tech" target="_blank">
+                                                    <Link aria-label="Follow us on LinkedIn" href="https://www.linkedin.com/company/fajraan-tech" target="_blank">
                                                         <i className="fab fa-linkedin" />
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             </ul>
 
@@ -218,12 +195,12 @@ const Footer = () => {
                                     <div className="copyright-text text-color-white">
                                         All rights reserved — {new Date().getFullYear()} © Fajraan Tech
                                     </div>
-                                    <a
+                                    <span
                                         className="scroll-to-top section-link cursor-pointer"
                                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                                     >
                                         Back to top <i className="fas fa-angle-up" />
-                                    </a>
+                                    </span>
 
                                 </div>
                             </div>

@@ -88,9 +88,11 @@ export default function Faqs() {
                 />
             </Head>
             <Header />
-            <HeroSec title="Quick answers to common questions" />
-            <VideoAreaSection imageUrl="/images/hero/fag-hero-banner.jpg" />
-            <FaqsSection />
+            <main>
+                <HeroSec title="Quick answers to common questions" />
+                <VideoAreaSection imageUrl="/images/hero/fag-hero-banner.jpg" />
+                <FaqsSection />
+            </main>
             <Footer />
         </>
     )

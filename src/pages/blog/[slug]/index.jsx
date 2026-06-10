@@ -13,7 +13,7 @@ export async function getServerSideProps({ params }) {
 
     try {
         // Fetch the current post
-        const response = await fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?slug=${slug}`);
+        const response = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?slug=${slug}`);
         if (!response.ok) return { notFound: true };
         const data = await response.json();
         if (data.length === 0) return { notFound: true };
@@ -22,23 +22,23 @@ export async function getServerSideProps({ params }) {
 
         // Fetch related content in parallel
         const [authorResponse, tagsResponse, categoriesResponse, mediaResponse, morePostsResponse] = await Promise.all([
-            fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/users/${post.author}`),
+            fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/users/${post.author}`),
             Promise.all(
                 post.tags.map(async (tagId) => {
-                    const tagResponse = await fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/tags/${tagId}`);
+                    const tagResponse = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/tags/${tagId}`);
                     const tagData = await tagResponse.json();
                     return tagData.name;
                 })
             ),
             Promise.all(
                 post.categories.map(async (categoryId) => {
-                    const categoryResponse = await fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/categories/${categoryId}`);
+                    const categoryResponse = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/categories/${categoryId}`);
                     const categoryData = await categoryResponse.json();
                     return categoryData.name;
                 })
             ),
-            fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/media/${post.featured_media}`),
-            fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3&page=1&_=${Date.now()}`)
+            fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/media/${post.featured_media}`),
+            fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3&page=1&_=${Date.now()}`)
         ]);
 
         const [authorData, featuredImageData, morePosts] = await Promise.all([
@@ -191,140 +191,133 @@ export default function BlogDetail({ data, morePosts }) {
                 />
             </Head>
             <Header />
-            <section className="blog-page-sec blog-detail-page section-padding-bottom">
-                <div className="container custom-container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="blog-item-wrapper">
-                                <div className="blog-item blog-item-details">
-                                    <div className="row justify-content-center row-padding-bottom">
-                                        <div className="col-xl-9 col-xxl-9">
-                                            {/* Title Animation */}
-                                            <motion.div
-                                                initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
-                                                whileInView={{ opacity: 1, rotateX: 0 }}
-                                                transition={{ duration: 0.8, ease: "easeOut" }}
-                                                viewport={{ once: true }}
-                                            >
-                                                <div className="title-box blog-title">
-                                                    <h2 className="color-primary">
-                                                        {data?.title?.rendered}
-                                                    </h2>
-                                                </div>
-                                            </motion.div>
-
-                                            <div className="meta-box">
-                                                <ul className="custom-ul meta-info d-flex">
-                                                    <li><span><a>{moment(data?.date).format("MMMM DD, YYYY")}</a></span></li>
-                                                    <li><span><a>{data?.categories?.join(', ')}</a></span></li>
-                                                    <li><span><a>by Fajraan Tech</a></span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Image Animation */}
-                                    <motion.div
-                                        className="img-box overflow-hidden"
-                                        initial={{ opacity: 0, y: 60 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                                        viewport={{ once: true }}
-                                    >
-                                        <img
-                                            alt="blog"
-                                            className="w-100 d-block"
-                                            style={{ height: '722px', objectFit: 'cover' }}
-                                            src={`${data?.featured_media?.link}`}
-                                        />
-                                    </motion.div>
-
-                                    {/* Content Animation */}
-                                    <motion.div
-                                        className="content-box row-padding-top"
-                                        initial="hidden"
-                                        whileInView="show"
-                                        viewport={{ once: true }}
-                                        variants={{
-                                            hidden: { opacity: 0, y: 40 },
-                                            show: {
-                                                opacity: 1,
-                                                y: 0,
-                                                transition: {
-                                                    duration: 0.7,
-                                                    ease: "easeOut",
-                                                    staggerChildren: 0.15,
-                                                },
-                                            },
-                                        }}
-                                    >
-                                        {/* <div className="social-links sticky-social">
-                                            <ul className="custom-ul">
-                                                <li><a target="_blank" href="https://x.com/"><i className="fab fa-x-twitter" /></a></li>
-                                                <li><a target="_blank" href="https://instagram.com/"><i className="fab fa-instagram" /></a></li>
-                                                <li><a target="_blank" href="https://linkedin.com/"><i className="fab fa-linkedin" /></a></li>
-                                                <li><a target="_blank" href="https://behance.net/"><i className="fab fa-behance" /></a></li>
-                                                <li><a target="_blank" href="https://dribbble.com/"><i className="fab fa-dribbble" /></a></li>
-                                            </ul>
-                                        </div> */}
-
-                                        <div className="row justify-content-center social-links-scroll position-relative">
-                                            <div className="col-xl-9 col-xxl-8">
+            <main>
+                <section className="blog-page-sec blog-detail-page section-padding-bottom">
+                    <div className="container custom-container">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="blog-item-wrapper">
+                                    <div className="blog-item blog-item-details">
+                                        <div className="row justify-content-center row-padding-bottom">
+                                            <div className="col-xl-9 col-xxl-9">
+                                                {/* Title Animation */}
                                                 <motion.div
-                                                    className="blog-body"
-                                                    variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } }}
-                                                    dangerouslySetInnerHTML={{ __html: data?.content?.rendered }}
-                                                />
+                                                    initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
+                                                    whileInView={{ opacity: 1, rotateX: 0 }}
+                                                    transition={{ duration: 0.8, ease: "easeOut" }}
+                                                    viewport={{ once: true }}
+                                                >
+                                                    <div className="title-box blog-title">
+                                                        <h2 className="color-primary">
+                                                            {data?.title?.rendered}
+                                                        </h2>
+                                                    </div>
+                                                </motion.div>
 
-
-                                                <div className="blog-tags">
-                                                    <ul className="custom-ul">
-                                                        {data?.tags?.map(item => (
-                                                            <li><a>{item}</a></li>
-                                                        ))}
+                                                <div className="meta-box">
+                                                    <ul className="custom-ul meta-info d-flex">
+                                                        <li><span>{moment(data?.date).format("MMMM DD, YYYY")}</span></li>
+                                                        <li><span>{data?.categories?.join(', ')}</span></li>
+                                                        <li><span>by Fajraan Tech</span></li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                    </motion.div>
+
+                                        {/* Image Animation */}
+                                        <motion.div
+                                            className="img-box overflow-hidden"
+                                            initial={{ opacity: 0, y: 60 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                                            viewport={{ once: true }}
+                                        >
+                                            <img
+                                                alt="blog"
+                                                className="w-100 d-block"
+                                                style={{ height: '722px', objectFit: 'cover' }}
+                                                src={`${data?.featured_media?.link}`}
+                                            />
+                                        </motion.div>
+
+                                        {/* Content Animation */}
+                                        <motion.div
+                                            className="content-box row-padding-top"
+                                            initial="hidden"
+                                            whileInView="show"
+                                            viewport={{ once: true }}
+                                            variants={{
+                                                hidden: { opacity: 0, y: 40 },
+                                                show: {
+                                                    opacity: 1,
+                                                    y: 0,
+                                                    transition: {
+                                                        duration: 0.7,
+                                                        ease: "easeOut",
+                                                        staggerChildren: 0.15,
+                                                    },
+                                                },
+                                            }}
+                                        >
+
+                                            <div className="row justify-content-center social-links-scroll position-relative">
+                                                <div className="col-xl-9 col-xxl-8">
+                                                    <motion.div
+                                                        className="blog-body"
+                                                        variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } }}
+                                                        dangerouslySetInnerHTML={{ __html: data?.content?.rendered }}
+                                                    />
+
+
+                                                    <div className="blog-tags">
+                                                        <ul className="custom-ul">
+                                                            {data?.tags?.map(item => (
+                                                                <li><span>{item}</span></li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-            {morePosts?.length > 0 && (
-                <section className="quanto-blog-section section-padding-bottom overflow-hidden">
-                    <div className="container custom-container">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="quanto__header text-center text-md-start row-padding-bottom">
-                                    <motion.h3
-                                        className="title"
-                                        initial={{ opacity: 0, x: -100 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        transition={{ duration: 0.7, ease: "easeOut" }}
-                                        viewport={{ once: true }}
-                                    >
-                                        More articles
-                                    </motion.h3>
-                                </div>
-                            </div>
-                        </div>
-                        <motion.div
-                            className="row gx-4 gy-5"
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true, amount: 0.2 }}
-                        >
-                            {morePosts.map((data, index) => (
-                                <BlogCard data={data} key={index} />
-                            ))}
-                        </motion.div>
                     </div>
                 </section>
-            )}
+                {morePosts?.length > 0 && (
+                    <section className="quanto-blog-section section-padding-bottom overflow-hidden">
+                        <div className="container custom-container">
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="quanto__header text-center text-md-start row-padding-bottom">
+                                        <motion.h3
+                                            className="title"
+                                            initial={{ opacity: 0, x: -100 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 0.7, ease: "easeOut" }}
+                                            viewport={{ once: true }}
+                                        >
+                                            More articles
+                                        </motion.h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <motion.div
+                                className="row gx-4 gy-5"
+                                variants={containerVariants}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true, amount: 0.2 }}
+                            >
+                                {morePosts.map((data, index) => (
+                                    <BlogCard data={data} key={index} />
+                                ))}
+                            </motion.div>
+                        </div>
+                    </section>
+                )}
+            </main>
             <Footer />
         </>
     )

@@ -240,68 +240,68 @@ export default function Blogs({ posts, totalPages, currentPage }) {
             </Head>
 
             <Header />
-            <HeroSec title="Explore latest news and insights" />
+            <main>
+                <HeroSec title="Explore latest news and insights" />
+                <section className="quanto-blog-section section-padding-bottom overflow-hidden">
+                    <div className="container custom-container">
+                        <motion.div
+                            className="row g-4"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true, amount: 0.2 }}
+                        >
+                            {posts?.map((data, index) => (
+                                <BlogCard data={data} key={index} />
+                            ))}
+                        </motion.div>
 
-            <section className="quanto-blog-section section-padding-bottom overflow-hidden">
-                <div className="container custom-container">
-                    <motion.div
-                        className="row g-4"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        {posts?.map((data, index) => (
-                            <BlogCard data={data} key={index} />
-                        ))}
-                    </motion.div>
-
-                    {posts?.length > 18 &&
-                        <div className="row row-padding-top">
-                            <div className="col-12">
-                                <div className="blog-pagination">
-                                    <nav aria-label="Page navigation example">
-                                        <ul className="pagination justify-content-end align-items-center custom-ul">
-                                            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                                                <li
-                                                    key={page}
-                                                    className={`page-item ${page === currentPage ? 'active' : ''}`}
-                                                >
-                                                    <a
-                                                        className="page-link"
-                                                        onClick={(e) => {
-                                                            e.preventDefault();
-                                                            handlePageChange(page);
-                                                        }}
+                        {posts?.length > 18 &&
+                            <div className="row row-padding-top">
+                                <div className="col-12">
+                                    <div className="blog-pagination">
+                                        <nav aria-label="Page navigation example">
+                                            <ul className="pagination justify-content-end align-items-center custom-ul">
+                                                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                                                    <li
+                                                        key={page}
+                                                        className={`page-item ${page === currentPage ? 'active' : ''}`}
                                                     >
-                                                        {page}
-                                                    </a>
-                                                </li>
-                                            ))}
+                                                        <span
+                                                            className="page-link"
+                                                            onClick={(e) => {
+                                                                e.preventDefault();
+                                                                handlePageChange(page);
+                                                            }}
+                                                        >
+                                                            {page}
+                                                        </span>
+                                                    </li>
+                                                ))}
 
-                                            {/* Next button */}
-                                            {currentPage < totalPages && (
-                                                <li className="page-item">
-                                                    <a
-                                                        className="page-link next"
-                                                        onClick={(e) => {
-                                                            e.preventDefault();
-                                                            handlePageChange(currentPage + 1);
-                                                        }}
-                                                    >
-                                                        Next <i className="fa-solid fa-arrow-right"></i>
-                                                    </a>
-                                                </li>
-                                            )}
-                                        </ul>
-                                    </nav>
+                                                {/* Next button */}
+                                                {currentPage < totalPages && (
+                                                    <li className="page-item">
+                                                        <span
+                                                            className="page-link next"
+                                                            onClick={(e) => {
+                                                                e.preventDefault();
+                                                                handlePageChange(currentPage + 1);
+                                                            }}
+                                                        >
+                                                            Next <i className="fa-solid fa-arrow-right"></i>
+                                                        </span>
+                                                    </li>
+                                                )}
+                                            </ul>
+                                        </nav>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    }
-                </div>
-            </section>
-
+                        }
+                    </div>
+                </section>
+            </main>
             <Footer />
         </>
     )
@@ -349,7 +349,7 @@ export async function getServerSideProps(context) {
 
     try {
         const response = await fetch(
-            `http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}&_=${timestamp}`,
+            `https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}&_=${timestamp}`,
             { cache: 'no-store' } // tells Next.js not to cache this request
         );
 

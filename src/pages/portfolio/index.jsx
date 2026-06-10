@@ -8,7 +8,7 @@ import React from 'react'
 export async function getStaticProps() {
     try {
         const res = await fetch(
-            `http://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`
+            `https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`
         );
         if (!res.ok) throw new Error('Failed to fetch portfolio');
         const data = await res.json();
@@ -116,8 +116,10 @@ export default function Portfolio({ projects }) {
                 />
             </Head>
             <Header />
-            <HeroSec title="Creating unforgettable digital impressions" />
-            <PortfolioSection theme='light' projects={projects} />
+            <main>
+                <HeroSec title="Creating unforgettable digital impressions" />
+                <PortfolioSection theme='light' projects={projects} />
+            </main>
             <Footer />
         </>
     )

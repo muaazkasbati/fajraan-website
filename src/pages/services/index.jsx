@@ -126,66 +126,68 @@ export default function Services() {
         />
       </Head>
       <Header />
-      <HeroSec title="Inspiring leadership through design" />
-      <VideoAreaSection imageUrl="/images/service/service-detail-img.jpg" scrollDownId="service-section" />
-      <section className="quanto-service2-section section-padding-top-bottom overflow-hidden" id="service-section">
-        <div className="container custom-container">
-          <div className="row gx-4 gy-5 justify-content-between">
-            <div className="col-12 col-xl-6 col-xxl-5">
-              <div className="quanto__header text-center text-lg-start">
-                <motion.div
-                  initial={{ opacity: 0, rotateX: -80 }}
-                  whileInView={{ opacity: 1, rotateX: 0 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  viewport={{ once: true }}
-                  style={{ transformOrigin: "top center" }}
-                >
-                  <h3 className="title color-primary">We help you to build digital business</h3>
-                </motion.div>
-              </div>
-            </div>
-
-            <div className="col-12 col-xl-6 col-xxl-6">
-              <div className="row g-114 quanto-service2__row">
-                {services.slice(0, 8).map((service, index) => (
+      <main>
+        <HeroSec title="Inspiring leadership through design" />
+        <VideoAreaSection imageUrl="/images/service/service-detail-img.jpg" scrollDownId="service-section" />
+        <section className="quanto-service2-section section-padding-top-bottom overflow-hidden" id="service-section">
+          <div className="container custom-container">
+            <div className="row gx-4 gy-5 justify-content-between">
+              <div className="col-12 col-xl-6 col-xxl-5">
+                <div className="quanto__header text-center text-lg-start">
                   <motion.div
-                    key={index}
-                    className="col-md-6"
-                    initial={{ opacity: 0, x: 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.7,
-                      delay: index * 0.2,
-                      ease: "easeOut",
-                    }}
+                    initial={{ opacity: 0, rotateX: -80 }}
+                    whileInView={{ opacity: 1, rotateX: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true }}
+                    style={{ transformOrigin: "top center" }}
                   >
-                    <div className="quanto-service-box style-2">
-                      <div className="quanto-iconbox-icon">
-                        <img src={service.icon} alt="service-icon" loading="lazy" width="52" height="52" style={{ color: "transparent" }} />
-                      </div>
-                      <div className="quanto-iconbox-data">
-                        <div className="quanto-iconbox-data-wrapper">
-                          <h5>{service.title}</h5>
-                          <p>{service.description}</p>
-                        </div>
-                        <Link className="quanto-link-btn" href={`/services/${service.slug}`}>
-                          View details
-                          <span>
-                            <i className="fa-solid fa-arrow-right arry1"></i>
-                            <i className="fa-solid fa-arrow-right arry2"></i>
-                          </span>
-                        </Link>
-                      </div>
-                    </div>
+                    <h3 className="title color-primary">We help you to build digital business</h3>
                   </motion.div>
-                ))}
+                </div>
+              </div>
+
+              <div className="col-12 col-xl-6 col-xxl-6">
+                <div className="row g-114 quanto-service2__row">
+                  {services.slice(0, 8).map((service, index) => (
+                    <motion.div
+                      key={index}
+                      className="col-md-6"
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.7,
+                        delay: index * 0.2,
+                        ease: "easeOut",
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="quanto-service-box style-2">
+                        <div className="quanto-iconbox-icon">
+                          <img src={service.icon} alt="service-icon" loading="lazy" width="52" height="52" style={{ color: "transparent" }} />
+                        </div>
+                        <div className="quanto-iconbox-data">
+                          <div className="quanto-iconbox-data-wrapper">
+                            <h5>{service.title}</h5>
+                            <p>{service.description}</p>
+                          </div>
+                          <Link className="quanto-link-btn" href={`/services/${service.slug}`}>
+                            View details
+                            <span>
+                              <i className="fa-solid fa-arrow-right arry1"></i>
+                              <i className="fa-solid fa-arrow-right arry2"></i>
+                            </span>
+                          </Link>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <PricingSection />
+        </section>
+        <PricingSection />
+      </main>
       <Footer />
     </>
   )

@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import moment from "moment";
+import Image from "next/image";
 
 export default function BlogSection({ posts = [] }) {
   return (
@@ -54,17 +55,18 @@ export default function BlogSection({ posts = [] }) {
               <div className="quanto-blog-box">
                 <div className="quanto-blog-thumb">
                   <Link href={`/blog/${data.slug}`}>
-                    <img
-                      alt={data?.title?.rendered}
+                    <Image
                       src={
-                        data?.yoast_head_json?.og_image?.[0]?.url
-                          ? data?.yoast_head_json.og_image[0].url
-                          : "https://via.placeholder.com/415x268"
+                        data?.yoast_head_json?.og_image?.[0]?.url ||
+                        '/images/placeholder.webp'
                       }
+                      alt={data?.title?.rendered || 'Blog post'}
+                      width={415}
+                      height={332}
                       loading="lazy"
                       decoding="async"
                       className="img-fluid"
-                      style={{ color: "transparent", aspectRatio: "5 / 4", objectFit: "cover" }}
+                      style={{ aspectRatio: '5 / 4', objectFit: 'cover' }}
                     />
                   </Link>
                 </div>
