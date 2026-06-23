@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/router';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -10,11 +9,11 @@ const Header = () => {
     const closeMenu = () => setMenuOpen(false);
 
     const navItems = [
-        { label: "Home", href: "/" },
-        { label: "About Us", href: "/about" },
-        { label: "Services", href: "/services" },
-        { label: "Portfolio", href: "/portfolio" },
-        { label: "Blog", href: "/blog" },
+        { label: "Home", href: "" },
+        { label: "About Us", href: "about" },
+        { label: "Services", href: "services" },
+        { label: "Portfolio", href: "portfolio" },
+        { label: "Blog", href: "blog" },
     ];
 
     const pathname = usePathname();
@@ -39,7 +38,7 @@ const Header = () => {
                             <div className="row gx-3 align-items-center justify-content-between">
                                 <div className="col-8 col-sm-auto">
                                     <div className="header-logo">
-                                        <Link aria-label="Home" href="/">
+                                        <Link aria-label="Home" href={process.env.NEXT_PUBLIC_APPFRONTURL}>
                                             <img alt="logo" width={177} height={29} decoding="async" data-nimg={1} style={{ color: "transparent" }} src="/images/logo-web.svg" />
                                         </Link>
                                     </div>
@@ -48,8 +47,8 @@ const Header = () => {
                                     <nav className="main-menu menu-style1 d-none d-lg-block">
                                         <ul>
                                             {navItems.map((item) => (
-                                                <li key={item.href} className={`${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "" : ""}`}>
-                                                    <Link aria-label={item.label} href={item.href}>{item.label}</Link>
+                                                <li key={item.href} className={`${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "active" : ""}`}>
+                                                    <Link aria-label={item.label} href={`${process.env.NEXT_PUBLIC_APPFRONTURL}${item.href}`}>{item.label}</Link>
                                                 </li>
                                             ))}
                                         </ul>
@@ -61,7 +60,7 @@ const Header = () => {
                                     </button>
                                 </div>
                                 <div className="col-auto d-none d-lg-block">
-                                    <Link aria-label="Contact" className="quanto-link-btn btn-pill" href="/contact">
+                                    <Link aria-label="Contact" className="quanto-link-btn btn-pill" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact`}>
                                         Get in touch
                                         <span>
                                             <i className="fa-solid fa-arrow-right arry1" />
@@ -78,18 +77,18 @@ const Header = () => {
                 <div className="quanto-menu-area text-center">
                     <div className="quanto-menu-mobile-top">
                         <div className="mobile-logo">
-                            <Link aria-label="Home" href="/">
+                            <Link aria-label="Home" href={process.env.NEXT_PUBLIC_APPFRONTURL}>
                                 <img alt="logo" width={120} height={20} decoding="async" data-nimg={1} style={{ color: "transparent" }} src="/images/logo-web.svg" />
                             </Link>
                         </div>
                         <button onClick={closeMenu} className="quanto-menu-toggle mobile">
-                            <i class="fa-solid fa-xmark"></i>
+                            <i className="fa-solid fa-xmark"></i>
                         </button>
                     </div>
                     <div className="quanto-mobile-menu">
                         <ul>
                             {navItems.map((item) => (
-                                <li aria-label={item.label} key={item.href} className={`menu-item-has-children ${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "" : ""}`}>
+                                <li aria-label={item.label} key={`${process.env.NEXT_PUBLIC_APPFRONTURL}${item.href}`} className={`menu-item-has-children ${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "" : ""}`}>
                                     <Link href={item.href}>{item.label}</Link>
                                 </li>
                             ))}
@@ -98,16 +97,10 @@ const Header = () => {
                     <div className="quanto-mobile-menu-btn">
                         <div className="sidebar-wrap">
                             <h6>Dubai, United Arab Emirates</h6>
-                            {/* <h6>NY 10002, USA</h6> */}
                         </div>
                         <div className="sidebar-wrap">
                             <h6>
-                                <Link
-                                    aria-label="Contact Us on WhatsApp"
-                                    href="https://wa.me/971542259592"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
+                                <Link aria-label="Contact Us on WhatsApp" href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
                                     +971 54 225 9592 (WhatsApp)
                                 </Link>
                             </h6>
@@ -155,6 +148,38 @@ const Header = () => {
                                     </span>
                                     <span className="effect-1">
                                         <i className="fab fa-facebook-f" />
+                                    </span>
+                                </span>
+                            </Link>
+                            <Link aria-label="Follow us on X" href="https://x.com/fajraantech">
+                                <span className="link-effect">
+                                    <span className="effect-1">
+                                        <i className="fab fa-x-twitter" />
+                                    </span>
+                                    <span className="effect-1">
+                                        <i className="fab fa-x-twitter" />
+                                    </span>
+                                </span>
+                            </Link>
+
+                            <Link aria-label="Follow us on GitHub" href="https://github.com/fajraantech">
+                                <span className="link-effect">
+                                    <span className="effect-1">
+                                        <i className="fab fa-github" />
+                                    </span>
+                                    <span className="effect-1">
+                                        <i className="fab fa-github" />
+                                    </span>
+                                </span>
+                            </Link>
+
+                            <Link aria-label="Follow us on Behance" href="https://www.behance.net/fajraantech">
+                                <span className="link-effect">
+                                    <span className="effect-1">
+                                        <i className="fab fa-behance" />
+                                    </span>
+                                    <span className="effect-1">
+                                        <i className="fab fa-behance" />
                                     </span>
                                 </span>
                             </Link>

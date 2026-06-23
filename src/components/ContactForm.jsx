@@ -57,25 +57,25 @@ const ContactForm = ({ contactPage = false }) => {
     return (
         <>
             {contactPage ?
-                <form onSubmit={handleSubmit} class="flex flex-col gap-y-6 rounded-[30px] border border-black p-[30px]">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-y-6 rounded-[30px] border border-black p-[30px]">
                     <div>
-                        <label for="contact-name" class="mb-3 block pl-6 text-base font-bold">Your name</label>
-                        <input type="text" name="name" value={formData.name} onChange={handleChange} id="contact-name" class="w-full rounded-[50px] border border-black bg-white outline-0 px-8 py-4 text-base font-bold" required />
+                        <label for="contact-name" className="mb-3 block pl-6 text-base font-bold">Your name</label>
+                        <input type="text" name="name" value={formData.name} onChange={handleChange} id="contact-name" className="w-full rounded-[50px] border border-black bg-white outline-0 px-8 py-4 text-base font-bold" required />
                     </div>
                     <div>
-                        <label for="contact-email" class="mb-3 block pl-6 text-base font-bold">Email Address</label>
-                        <input type="email" name="email" value={formData.email} onChange={handleChange} id="contact-email" class="w-full rounded-[50px] border border-black bg-white outline-0 px-8 py-4 text-base font-bold" required />
+                        <label for="contact-email" className="mb-3 block pl-6 text-base font-bold">Email Address</label>
+                        <input type="email" name="email" value={formData.email} onChange={handleChange} id="contact-email" className="w-full rounded-[50px] border border-black bg-white outline-0 px-8 py-4 text-base font-bold" required />
                     </div>
                     <div>
-                        <label for="contact-phone" class="mb-3 block pl-6 text-base font-bold">Phone No</label>
-                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} id="contact-phone" class="w-full rounded-[50px] border border-black bg-white outline-0 px-8 py-4 text-base font-bold" required />
+                        <label for="contact-phone" className="mb-3 block pl-6 text-base font-bold">Phone No</label>
+                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} id="contact-phone" className="w-full rounded-[50px] border border-black bg-white outline-0 px-8 py-4 text-base font-bold" required />
                     </div>
                     <div>
-                        <label for="contact-massage" class="mb-3 block pl-6 text-base font-bold">Write your message here...</label>
-                        <textarea name="message" value={formData.message} onChange={handleChange} id="contact-massage" class="min-h-52 w-full rounded-[20px] border border-black bg-white px-8 py-4 text-base font-bold"></textarea>
+                        <label for="contact-massage" className="mb-3 block pl-6 text-base font-bold">Write your message here...</label>
+                        <textarea name="message" value={formData.message} onChange={handleChange} id="contact-massage" className="min-h-52 w-full rounded-[20px] border border-black bg-white px-8 py-4 text-base font-bold"></textarea>
                     </div>
                     <div>
-                        <button type="submit" class="btn-black">
+                        <button type="submit" className="btn-black">
                             Send Message
                         </button>
                     </div>

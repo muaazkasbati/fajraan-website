@@ -48,7 +48,7 @@ export default function Custom404() {
                                 </svg>
                                 <h1 className="title">Sorry there’s nothing here</h1>
                                 <p>The page you are looking for was moved, removed, renamed or never existed.</p>
-                                <Link className="quanto-link-btn btn-pill" href="/">
+                                <Link className="quanto-link-btn btn-pill" href={process.env.NEXT_PUBLIC_APPFRONTURL}>
                                     <span>
                                         <i className="fa-solid fa-arrow-left arry1" />
                                         <i className="fa-solid fa-arrow-left arry2" />

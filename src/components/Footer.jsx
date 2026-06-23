@@ -7,11 +7,11 @@ import services from "@/utils/servicesNew.json";
 
 const Footer = () => {
     const navItems = [
-        { label: "About Us", href: "/about" },
-        { label: "Services", href: "/services" },
-        { label: "Portfolio", href: "/portfolio" },
-        { label: "Blog", href: "/blog" },
-        { label: "Contact", href: "/contact" },
+        { label: "About Us", href: "about" },
+        { label: "Services", href: "services" },
+        { label: "Portfolio", href: "portfolio" },
+        { label: "Blog", href: "blog" },
+        { label: "Contact", href: "contact" },
     ];
     return (
         <>
@@ -34,7 +34,7 @@ const Footer = () => {
                         {Array(6)
                             .fill(null)
                             .map((_, index) => (
-                                <Link aria-label="Contact" href="/contact" key={index} className="marquee-item-container overflow-hidden">
+                                <Link aria-label="Contact" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact`} key={index} className="marquee-item-container overflow-hidden">
                                     <div className="marquee-item text-color-white overflow-hidden color-secondary">
                                         <h1 className="text-color-white color-secondary">
                                             Empowering your business through innovation
@@ -124,7 +124,7 @@ const Footer = () => {
                                             <ul className="custom-ul">
                                                 {navItems.map((item, index) => (
                                                     <li key={index}>
-                                                        <Link aria-label={item.label} href={item.href}>{item.label}</Link>
+                                                        <Link aria-label={item.label} href={`${process.env.NEXT_PUBLIC_APPFRONTURL}${item.href}`}>{item.label}</Link>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -144,7 +144,7 @@ const Footer = () => {
                                             <ul className="custom-ul">
                                                 {services.slice(0, 5).map((service, index) => (
                                                     <li key={index}>
-                                                        <Link aria-label={service.title} href={`/services/${service.slug}`}>{service.title}</Link>
+                                                        <Link aria-label={service.title} href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>{service.title}</Link>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -159,6 +159,7 @@ const Footer = () => {
                                         transition={{ delay: 0.3, duration: 0.6 }}
                                         viewport={{ once: true }}
                                     >
+                                        <h6 className="widget-title text-color-white">Socials</h6>
                                         <div className="social-links">
                                             <ul className="custom-ul flex gap-3">
                                                 <li>
@@ -174,6 +175,21 @@ const Footer = () => {
                                                 <li>
                                                     <Link aria-label="Follow us on LinkedIn" href="https://www.linkedin.com/company/fajraan-tech" target="_blank">
                                                         <i className="fab fa-linkedin" />
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link aria-label="Follow us on X" href="https://x.com/fajraantech" target="_blank">
+                                                        <i className="fab fa-x-twitter" />
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link aria-label="Follow us on GitHub" href="https://github.com/fajraantech" target="_blank">
+                                                        <i className="fab fa-github" />
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link aria-label="Follow us on Behance" href="https://www.behance.net/fajraantech" target="_blank">
+                                                        <i className="fab fa-behance" />
                                                     </Link>
                                                 </li>
                                             </ul>

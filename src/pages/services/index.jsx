@@ -170,7 +170,7 @@ export default function Services() {
                             <h5>{service.title}</h5>
                             <p>{service.description}</p>
                           </div>
-                          <Link className="quanto-link-btn" href={`/services/${service.slug}`}>
+                          <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
                             View details
                             <span>
                               <i className="fa-solid fa-arrow-right arry1"></i>

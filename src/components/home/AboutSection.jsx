@@ -39,7 +39,7 @@ const AboutSection = () => {
                     skill, and full focus on quality results.
                   </p>
 
-                  <Link className="quanto-link-btn" href="/about">
+                  <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}about`}>
                     More about us
                     <span>
                       <i className="fa-solid fa-arrow-right arry1" />

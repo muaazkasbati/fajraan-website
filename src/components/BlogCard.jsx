@@ -24,7 +24,7 @@ export default function BlogCard({ data }) {
             >
                 <div className="quanto-blog-box">
                     <div className="quanto-blog-thumb">
-                        <Link href={`/blog/${data.slug}`}>
+                        <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
                             <img
                                 alt={data?.title?.rendered}
                                 src={
@@ -41,7 +41,7 @@ export default function BlogCard({ data }) {
                     </div>
                     <div className="quanto-blog-content">
                         <h5 className="line-clamp-2">
-                            <Link href={`/blog/${data.slug}`}>
+                            <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
                                 {data?.title?.rendered || "Default Blog Title"}
                             </Link>
                         </h5>

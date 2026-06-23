@@ -31,8 +31,8 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                             <Image
                                                 src={proj.image}
                                                 alt={proj.title}
-                                                width={800}
-                                                height={600}
+                                                width={573}
+                                                height={717}
                                                 priority
                                                 decoding="async"
                                                 className="w-100"
@@ -59,7 +59,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                         <div className="row">
                             <div className="col-12">
                                 <div className="quanto__header text-center text-md-end mb-4">
-                                    <Link className="quanto-link-btn btn-dark" href="/portfolio">
+                                    <Link className="quanto-link-btn btn-dark" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}portfolio`}>
                                         View more works
                                         <span>
                                             <i className="fa-solid fa-arrow-right arry1" />
@@ -81,8 +81,8 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                             <Image
                                                 src={proj.image}
                                                 alt={proj.title}
-                                                width={800}
-                                                height={600}
+                                                width={573}
+                                                height={717}
                                                 priority
                                                 decoding="async"
                                                 className="w-100"

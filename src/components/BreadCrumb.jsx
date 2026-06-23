@@ -1,29 +1,3 @@
-// import React from 'react'
-
-// const BreadCrumb = ({ page }) => {
-//     return (
-//         <>
-//             <section class="section-breadcrumb">
-//                 <div class="bg-gradient-to-b from-[#092a54] via-[#092a54] to-[#00839f]">
-//                     <div class="breadcrumb-space">
-//                         <div class="container">
-//                             <div class="breadcrumb-block">
-//                                 <h1>{page}</h1>
-//                                 <ul class="breadcrumb-nav">
-//                                     <li><Link href="/">Home</Link></li>
-//                                     <li>{page}</li>
-//                                 </ul>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </section>
-//         </>
-//     )
-// }
-
-// export default BreadCrumb
-
 import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';

@@ -26,7 +26,7 @@ export default function BlogSection({ posts = [] }) {
           </div>
           <div className="col-12 col-lg-3 col-xl-5">
             <div className="quanto__headerr d-flex justify-content-center justify-content-lg-end">
-              <Link className="quanto-link-btn" href="/blog">
+              <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog`}>
                 View all articles
                 <span>
                   <i className="fa-solid fa-arrow-right arry1" />
@@ -54,7 +54,7 @@ export default function BlogSection({ posts = [] }) {
             >
               <div className="quanto-blog-box">
                 <div className="quanto-blog-thumb">
-                  <Link href={`/blog/${data.slug}`}>
+                  <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
                     <Image
                       src={
                         data?.yoast_head_json?.og_image?.[0]?.url ||
@@ -72,7 +72,7 @@ export default function BlogSection({ posts = [] }) {
                 </div>
                 <div className="quanto-blog-content">
                   <h5 className="line-clamp-2">
-                    <Link href={`/blog/${data.slug}`}>
+                    <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
                       {data?.title?.rendered || "Default Blog Title"}
                     </Link>
                   </h5>
