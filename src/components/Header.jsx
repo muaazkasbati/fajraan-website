@@ -41,11 +41,11 @@ const Header = () => {
                                 <div className="col-8 col-sm-auto">
                                     <div className="header-logo">
                                         <Link aria-label="Home" href={process.env.NEXT_PUBLIC_APPFRONTURL}>
-                                            <img alt="Fajraan Tech" width={177} height={29} decoding="async" data-nimg={1} style={{ color: "transparent" }} src="/images/logo-web.svg" />
+                                            <img alt="Fajraan Tech" width={177} height={67} decoding="async" src="/images/logo-web.svg" />
                                         </Link>
                                     </div>
                                 </div>
-                                <div className="col text-end text-lg-center">
+                                <div className="quanto-navbar col text-end text-lg-center">
                                     <nav className="main-menu menu-style1 d-none d-lg-block">
                                         <ul>
                                             {navItems.map((item) => (

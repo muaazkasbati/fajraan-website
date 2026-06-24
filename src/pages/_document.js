@@ -20,7 +20,15 @@ export default function Document() {
         <link rel="icon" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}favicon.svg`} type="image/svg+xml" />
         <link rel="apple-touch-icon" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}apple-touch-icon.png`} />
         <link rel="manifest" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}site.webmanifest`} />
-        
+
+        <link
+          rel="preload"
+          href="/fonts/InstrumentSans-VariableFont_wdth,wght.ttf"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+
         <link rel="preload" href="/images/hero/hero-video-poster.webp" as="image" fetchPriority="high" />
         {/* <link rel="preload" href="/videos/hero-video.webm" as="video" /> */}
       </Head>

@@ -1116,6 +1116,20 @@ body::-webkit-scrollbar-thumb {
   padding: 15px 0
 }
 
+.header-logo img {
+  width: 177px;
+  height: 67px;
+  display: block;
+}
+
+.quanto-navbar {
+  min-height: 72px;
+}
+
+.quanto-navbar .col {
+  min-width: 0;
+}
+
 .main-menu a {
   color: var(--color-primary);
   font-weight: 600;
@@ -2216,9 +2230,16 @@ a.quanto-default-btn.sm-size {
     flex-direction: column
   }
 
-  .quanto-hero__info .client-data h6 {
+  .quanto-hero__info .client-data p {
     justify-content: center
   }
+}
+
+.quanto-hero__info .client-data p {
+  font-weight: 600;
+  letter-spacing: -.24px;
+  font-size: 24px;
+  line-height: 141.667%;
 }
 
 .quanto-hero__info .client-data>span {
@@ -2826,6 +2847,11 @@ a.quanto-default-btn.sm-size {
   }
 }
 
+.quanto-about-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+}
+
 .quanto-about__content {
   max-width: 1088px;
   margin-left: auto
@@ -3292,14 +3318,14 @@ a.quanto-default-btn.sm-size {
 .quanto-project-thumb {
   position: relative;
   width: 100%;
-  aspect-ratio: 573 / 458; 
+  aspect-ratio: 573 / 458;
   overflow: hidden;
 }
 
 .quanto-project-thumb .thumb-2 {
   position: relative;
   width: 100%;
-  aspect-ratio: 573 / 458; 
+  aspect-ratio: 573 / 458;
   overflow: hidden;
 }
 
@@ -3318,6 +3344,13 @@ a.quanto-default-btn.sm-size {
 
 .quanto-project-content {
   margin-top: 20px
+}
+
+.quanto-project-content>p {
+  letter-spacing: -.28px;
+  font-size: 28px;
+  line-height: 135.714%;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:991.98px) {
@@ -3575,8 +3608,12 @@ a.quanto-default-btn.sm-size {
   justify-content: space-between
 }
 
-.quanto-iconbox-data h5 {
-  margin-bottom: 16px
+.quanto-iconbox-data p.title {
+  margin-bottom: 16px;
+  letter-spacing: -.28px;
+  font-size: 28px;
+  line-height: 135.714%;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:991.98px) {
@@ -4555,6 +4592,13 @@ a.quanto-default-btn.sm-size {
   letter-spacing: -.36px
 }
 
+.testimonial-content p.author-title {
+  letter-spacing: -.28px;
+  font-size: 28px;
+  line-height: 135.714%;
+  font-weight: 600;
+}
+
 @media only screen and (max-width:1199.98px) {
   .testimonial-content p {
     font-size: 30px
@@ -4614,6 +4658,15 @@ a.quanto-default-btn.sm-size {
   font-weight: 400;
   line-height: 133.333%;
   letter-spacing: -.36px
+}
+
+.testimonial3-content p.client-name {
+  color: var(--color-black);
+  margin-bottom: 0;
+  font-weight: 600;
+  letter-spacing: -.28px;
+  font-size: 28px;
+  line-height: 135.714%;
 }
 
 @media only screen and (min-width:1200px) {

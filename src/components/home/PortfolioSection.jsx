@@ -50,9 +50,9 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                         </motion.div>
                                         {/* </Link> */}
                                         <div className="quanto-project-content">
-                                            <h5 className={`${theme === "dark" ? "text-color-white" : ""} line-clamp-1`}>
+                                            <p className={`${theme === "dark" ? "text-color-white" : ""} line-clamp-1`}>
                                                 <span>{proj.title}</span>
-                                            </h5>
+                                            </p>
                                             <span className={`quanto-data-date ${theme === "dark" ? "text-color-white" : ""}`}>
                                                 {proj.year} - {proj.category}
                                             </span>
@@ -107,9 +107,9 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                         </motion.div>
                                         {/* </Link> */}
                                         <div className="quanto-project-content">
-                                            <h5 className={`${theme === "dark" ? "text-color-white" : ""} line-clamp-1`}>
+                                            <p className={`${theme === "dark" ? "text-color-white" : ""} line-clamp-1`}>
                                                 <span>{proj.title}</span>
-                                            </h5>
+                                            </p>
                                             <span className={`quanto-data-date ${theme === "dark" ? "text-color-white" : ""}`}>
                                                 {proj.year} - {proj.category}
                                             </span>

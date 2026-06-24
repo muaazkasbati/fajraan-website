@@ -91,7 +91,7 @@ export default function TestimonialSection({ aboutPage = false }) {
                       <div className="testimonial3-content">
                         <p>{item.text}</p>
                         <div className="client-info">
-                          <h5 className="client-name">{item.author}</h5>
+                          <p className="client-name">{item.author}</p>
                           <span className="client-designation">
                             {item.role}
                           </span>
@@ -131,7 +131,7 @@ export default function TestimonialSection({ aboutPage = false }) {
               // modules
               modules={[Autoplay, EffectFade, Controller]}
               effect="fade"
-              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              // autoplay={{ delay: 4000, disableOnInteraction: false }}
               loop={true}
               onSwiper={(swiper) => {
                 imgSwiperRef.current = swiper;
@@ -164,7 +164,7 @@ export default function TestimonialSection({ aboutPage = false }) {
                 nextEl: ".next-slide",
                 prevEl: ".prev-slide",
               }}
-              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              // autoplay={{ delay: 5000, disableOnInteraction: false }}
               loop={true}
               onSwiper={(swiper) => {
                 textSwiperRef.current = swiper;
@@ -178,7 +178,7 @@ export default function TestimonialSection({ aboutPage = false }) {
                   <div className="testimonial-content">
                     <p>{t.text}</p>
                     <div className="author">
-                      <h5 className="author-title color-primary">{t.author}</h5>
+                      <p className="author-title color-primary">{t.author}</p>
                       <span className="author-designation">{t.role}</span>
                     </div>
                   </div>

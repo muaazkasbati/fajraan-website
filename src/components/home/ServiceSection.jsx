@@ -42,7 +42,7 @@ const ServiceSection = () => {
                                 </div>
                                 <div className="quanto-iconbox-data">
                                     <div className="quanto-iconbox-data-wrapper">
-                                        <h5>{service.title}</h5>
+                                        <p className="title">{service.title}</p>
                                         <p>{service.description}</p>
                                     </div>
                                     <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
