@@ -5,13 +5,15 @@ import Footer from "@/components/Footer";
 import ServiceSection from "@/components/home/ServiceSection";
 import AboutSection from "@/components/home/AboutSection";
 import PortfolioSection from "@/components/home/PortfolioSection";
-import TextimonialSection from "@/components/home/TextimonialSection";
+// import TextimonialSection from "@/components/home/TextimonialSection";
 import OurAchivementSection from "@/components/home/OurAchivementSection";
 import ClientsSection from "@/components/home/ClientsSection";
-import BlogSection from "@/components/home/BlogSection";
+// import BlogSection from "@/components/home/BlogSection";
 import dynamic from 'next/dynamic';
 
 const HeroSection = dynamic(() => import('@/components/home/HeroSection'), { ssr: true });
+const BlogSection = dynamic(() => import("@/components/home/BlogSection"));
+const TextimonialSection = dynamic(() => import("@/components/home/TextimonialSection"));
 
 export async function getStaticProps() {
   try {

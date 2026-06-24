@@ -64,7 +64,7 @@ const Footer = () => {
                                         transition={{ duration: 0.6 }}
                                         viewport={{ once: true }}
                                     >
-                                        <h6 className="widget-title text-color-white">Contact</h6>
+                                        <p className="widget-title text-color-white">Contact</p>
                                         <p className="address">
                                             Dubai, United Arab Emirates
                                         </p>
@@ -120,7 +120,7 @@ const Footer = () => {
                                         transition={{ delay: 0.1, duration: 0.6 }}
                                         viewport={{ once: true }}
                                     >
-                                        <h6 className="widget-title text-color-white">Agency</h6>
+                                        <p className="widget-title text-color-white">Agency</p>
                                         <div className="widget-links">
                                             <ul className="custom-ul">
                                                 {navItems.map((item, index) => (
@@ -140,7 +140,7 @@ const Footer = () => {
                                         transition={{ delay: 0.2, duration: 0.6 }}
                                         viewport={{ once: true }}
                                     >
-                                        <h6 className="widget-title text-color-white">Services</h6>
+                                        <p className="widget-title text-color-white">Services</p>
                                         <div className="widget-links">
                                             <ul className="custom-ul">
                                                 {services.slice(0, 5).map((service, index) => (
@@ -160,7 +160,7 @@ const Footer = () => {
                                         transition={{ delay: 0.3, duration: 0.6 }}
                                         viewport={{ once: true }}
                                     >
-                                        <h6 className="widget-title text-color-white">Socials</h6>
+                                        <p className="widget-title text-color-white">Socials</p>
                                         <div className="social-links">
                                             <ul className="custom-ul flex gap-3">
                                                 <li>
