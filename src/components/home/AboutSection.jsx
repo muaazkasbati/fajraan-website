@@ -19,11 +19,11 @@ const AboutSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
               >
-                <h4 className="text_invert">
+                <p className="text_invert title">
                   We build smart digital strategies and creative designs that help social
                   brands, modern startups, and green companies grow. Our aim is to inspire
                   people to choose better, sustainable options with trust and confidence.
-                </h4>
+                </p>
               </motion.div>
 
               {/* About Info Section */}

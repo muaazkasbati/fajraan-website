@@ -5,6 +5,7 @@ import Link from "next/link";
 import moment from "moment";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { toWebP } from "@/utils/data";
 
 export default function BlogSection({ posts = [] }) {
   return (
@@ -57,10 +58,7 @@ export default function BlogSection({ posts = [] }) {
                 <div className="quanto-blog-thumb">
                   <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
                     <Image
-                      src={
-                        data?.yoast_head_json?.og_image?.[0]?.url ||
-                        '/images/placeholder.webp'
-                      }
+                      src={toWebP(data?.yoast_head_json?.og_image?.[0]?.url ||'/images/placeholder.webp')}
                       alt={data?.title?.rendered || 'Blog post'}
                       width={415}
                       height={332}
@@ -72,11 +70,11 @@ export default function BlogSection({ posts = [] }) {
                   </Link>
                 </div>
                 <div className="quanto-blog-content">
-                  <h5 className="line-clamp-2">
+                  <p className="line-clamp-2">
                     <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
                       {data?.title?.rendered || "Default Blog Title"}
                     </Link>
-                  </h5>
+                  </p>
                   <span className="quanto-blog-date">{moment(data?.date).format("MMMM DD, YYYY")}</span>
                 </div>
               </div>

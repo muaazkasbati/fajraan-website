@@ -45,7 +45,7 @@ const ServiceSection = () => {
                                         <p className="title">{service.title}</p>
                                         <p>{service.description}</p>
                                     </div>
-                                    <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
+                                    <Link aria-label={`Follow to ${service.title}`} className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
                                         View details
                                         <span>
                                             <ArrowRight className="arry1" size={22} />

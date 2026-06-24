@@ -56,7 +56,7 @@ const HeroSection = () => {
 
                 <div className="client-data">
                   <p className="counter-item d-flex align-items-center">
-                    <div>9</div>
+                    <span>9</span>
                     <em>+ Satisfied Clients</em>
                   </p>
                   <span>Trusted Web & App Development Agency</span>

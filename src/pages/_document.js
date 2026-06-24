@@ -26,7 +26,7 @@ export default function Document() {
           href="/fonts/InstrumentSans-VariableFont_wdth,wght.ttf"
           as="font"
           type="font/woff2"
-          crossorigin
+          crossOrigin="anonymous"
         />
 
         <link rel="preload" href="/images/hero/hero-video-poster.webp" as="image" fetchPriority="high" />

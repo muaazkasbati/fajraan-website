@@ -41,7 +41,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                                 style={{ objectFit: "cover" }}
                                             /> */}
                                             <Image
-                                                src={toWebP(proj.image)}
+                                                src={toWebP(proj?.image)}
                                                 alt={proj.title}
                                                 fill
                                                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -51,10 +51,10 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                         {/* </Link> */}
                                         <div className="quanto-project-content">
                                             <p className={`${theme === "dark" ? "text-color-white" : ""} line-clamp-1`}>
-                                                <span>{proj.title}</span>
+                                                <span>{proj?.title}</span>
                                             </p>
                                             <span className={`quanto-data-date ${theme === "dark" ? "text-color-white" : ""}`}>
-                                                {proj.year} - {proj.category}
+                                                {proj?.year} - {proj?.category}
                                             </span>
                                         </div>
                                     </div>
@@ -98,8 +98,8 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                                 style={{ objectFit: 'cover', }}
                                             /> */}
                                             <Image
-                                                src={toWebP(proj.image)}
-                                                alt={proj.title}
+                                                src={toWebP(proj?.image)}
+                                                alt={proj?.title}
                                                 fill
                                                 sizes="(max-width: 768px) 100vw, 33vw"
                                                 style={{ objectFit: "cover" }}
@@ -108,10 +108,10 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                         {/* </Link> */}
                                         <div className="quanto-project-content">
                                             <p className={`${theme === "dark" ? "text-color-white" : ""} line-clamp-1`}>
-                                                <span>{proj.title}</span>
+                                                <span>{proj?.title}</span>
                                             </p>
                                             <span className={`quanto-data-date ${theme === "dark" ? "text-color-white" : ""}`}>
-                                                {proj.year} - {proj.category}
+                                                {proj?.year} - {proj?.category}
                                             </span>
                                         </div>
                                     </div>
