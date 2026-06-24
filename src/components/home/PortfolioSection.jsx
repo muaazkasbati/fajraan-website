@@ -36,7 +36,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                                 priority
                                                 decoding="async"
                                                 className="w-100"
-                                                style={{ objectFit: 'cover' }}
+                                                style={{ objectFit: 'cover', height:'auto', width:'auto' }}
                                             />
                                         </motion.div>
                                         {/* </Link> */}
@@ -86,7 +86,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                                 priority
                                                 decoding="async"
                                                 className="w-100"
-                                                style={{ objectFit: 'cover' }}
+                                                style={{ objectFit: 'cover', height:'auto', width:'auto' }}
                                             />
                                         </motion.div>
                                         {/* </Link> */}

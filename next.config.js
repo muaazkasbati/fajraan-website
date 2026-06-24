@@ -11,7 +11,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withBundleAnalyzer({
-  swcMinify: true,
   compress: true,
 
   images: {
@@ -20,22 +19,27 @@ module.exports = withBundleAnalyzer({
     minimumCacheTTL: 60,
     remotePatterns: [
       {
-        // Allow images from your WordPress blog
         protocol: 'https',
         hostname: 'blog.devsolsystems.co.uk',
       },
     ],
   },
+
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-experimental: {
+
+  experimental: {
+    optimizeCss: true,           // Keep this
     optimizePackageImports: [
       'framer-motion',
       'gsap',
       '@studio-freight/lenis',
+      '@fortawesome/fontawesome-free'
     ],
     scrollRestoration: true,
   },
 
-})
+  productionBrowserSourceMaps: false,
+  reactStrictMode: true,
+});

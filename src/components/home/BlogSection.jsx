@@ -66,7 +66,7 @@ export default function BlogSection({ posts = [] }) {
                       loading="lazy"
                       decoding="async"
                       className="img-fluid"
-                      style={{ aspectRatio: '5 / 4', objectFit: 'cover' }}
+                      style={{ aspectRatio: '5 / 4', objectFit: 'cover', height:'auto', width:'auto' }}
                     />
                   </Link>
                 </div>

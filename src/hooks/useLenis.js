@@ -67,21 +67,19 @@
 //   }, []);
 // }
 
+// hooks/useLenis.js
 import { useEffect } from "react";
-import dynamic from 'next/dynamic';
-
-const Lenis = dynamic(() => import('@studio-freight/lenis'), { ssr: false });
 
 export default function useLenis() {
   useEffect(() => {
-    // Best possible guard
+    if (typeof window === "undefined") return;
+
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
     if (isTouchDevice) return;
 
     let lenisInstance;
     let rafId;
 
-    // Properly handle dynamic import
     import('@studio-freight/lenis').then(({ default: Lenis }) => {
       lenisInstance = new Lenis({
         duration: 0.35,
@@ -96,7 +94,7 @@ export default function useLenis() {
         rafId = requestAnimationFrame(raf);
       };
       rafId = requestAnimationFrame(raf);
-    });
+    }).catch(console.error);
 
     window.history.scrollRestoration = "manual";
 

@@ -35,7 +35,7 @@ export default function Document() {
         /> */}
 
         {/* Icons — preconnect to CDN for faster load */}
-        {/* <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
         <link
           rel="stylesheet"
@@ -43,14 +43,14 @@ export default function Document() {
           integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
-        /> */}
+        />
         {/* <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
         /> */}
 
         <link rel="preload" href="/images/hero/hero-video-poster.jpeg" as="image" fetchPriority="high" />
-        <link rel="preload" href="/videos/hero-video.webm" as="video" />
+        {/* <link rel="preload" href="/videos/hero-video.webm" as="video" /> */}
       </Head>
       <body>
         <Main />
