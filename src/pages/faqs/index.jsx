@@ -23,7 +23,7 @@ export default function Faqs() {
 
                 <meta property="og:title" content="FAQs | Fajraan Tech – Frequently Asked Questions" />
                 <meta property="og:description" content="Get answers to common questions about our web development, mobile applications, UI/UX design, SEO, and digital services." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
                 <meta property="og:image:alt" content="Fajraan Tech Frequently Asked Questions" />
@@ -34,7 +34,7 @@ export default function Faqs() {
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="FAQs | Fajraan Tech – Frequently Asked Questions" />
                 <meta name="twitter:description" content="Browse answers to common questions about our services, development process, pricing, timelines, and support." />
-                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Frequently Asked Questions" />
 
                 <script
@@ -51,7 +51,7 @@ export default function Faqs() {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
                                 url: "https://www.fajraan.tech",
-                                logo: "https://www.fajraan.tech/images/logo.png",
+                                logo: "https://www.fajraan.tech/images/logo.webp",
                                 sameAs: [
                                     "https://www.linkedin.com/company/fajraan-tech",
                                     "https://twitter.com/fajraantech",
@@ -90,7 +90,7 @@ export default function Faqs() {
             <Header />
             <main>
                 <HeroSec title="Quick answers to common questions" />
-                <VideoAreaSection imageUrl="/images/hero/fag-hero-banner.jpg" />
+                <VideoAreaSection imageUrl="/images/hero/fag-hero-banner.webp" />
                 <FaqsSection />
             </main>
             <Footer />

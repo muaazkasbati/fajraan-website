@@ -98,14 +98,14 @@
 //                 <meta name="author" content="Fajraan Tech" />
 //                 <meta property="og:title" content="Our Blogs | Fajraan Tech" />
 //                 <meta property="og:description" content="We deliver scalable custom web, mobile, and desktop applications with UI/UX and SEO for businesses in Saudi, UAE, Bahrain & beyond." />
-//                 <meta property="og:image" content="https://www.fajraan.tech/images/about/about-img-5.jpg" />
+//                 <meta property="og:image" content="https://www.fajraan.tech/images/about/about-img-5.webp" />
 //                 <meta property="og:url" content="https://www.fajraan.tech" />
 //                 <meta property="og:type" content="website" />
 
 //                 <meta name="twitter:card" content="summary_large_image" />
 //                 <meta name="twitter:title" content="Our Blogs | Fajraan Tech" />
 //                 <meta name="twitter:description" content="Scalable and smart digital solutions: web, mobile, desktop apps, UI/UX, SEO and data services across the Middle East." />
-//                 <meta name="twitter:image" content="https://www.fajraan.tech/your-twitter-image.jpg" />
+//                 <meta name="twitter:image" content="https://www.fajraan.tech/your-twitter-image.webp" />
 
 //             </Head>
 //             <Header />
@@ -137,6 +137,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import HeroSec from '@/components/HeroSec'
 import BlogCard from '@/components/BlogCard'
+import { ArrowRight } from 'lucide-react';
 
 export default function Blogs({ posts, totalPages, currentPage }) {
     const router = useRouter();
@@ -175,7 +176,7 @@ export default function Blogs({ posts, totalPages, currentPage }) {
 
                 <meta property="og:title" content="Blog | Fajraan Tech – Insights on Web, Mobile & Digital Innovation" />
                 <meta property="og:description" content="Stay ahead with Fajraan Tech's blog — expert articles on web development, mobile apps, UI/UX design, SEO, and the latest in digital technology." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
                 <meta property="og:image:alt" content="Fajraan Tech Blog – Web, Mobile & Digital Insights" />
@@ -186,7 +187,7 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Blog | Fajraan Tech – Insights on Web, Mobile & Digital Innovation" />
                 <meta name="twitter:description" content="Expert articles on web development, mobile apps, UI/UX design, SEO, and digital innovation — straight from the Fajraan Tech team." />
-                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Blog – Web, Mobile & Digital Insights" />
 
                 <script
@@ -202,7 +203,7 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
                                 url: "https://www.fajraan.tech",
-                                logo: "https://www.fajraan.tech/images/logo.png",
+                                logo: "https://www.fajraan.tech/images/logo.webp",
                                 sameAs: [
                                     "https://www.linkedin.com/company/fajraan-tech",
                                     "https://twitter.com/fajraantech",
@@ -289,7 +290,7 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                                                                 handlePageChange(currentPage + 1);
                                                             }}
                                                         >
-                                                            Next <i className="fa-solid fa-arrow-right"></i>
+                                                            Next <ArrowRight size={18} />
                                                         </span>
                                                     </li>
                                                 )}

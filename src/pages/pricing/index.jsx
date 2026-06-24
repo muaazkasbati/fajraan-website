@@ -24,7 +24,7 @@ export default function Pricing() {
 
                 <meta property="og:title" content="Pricing | Fajraan Tech – Transparent Plans for Every Business" />
                 <meta property="og:description" content="Flexible and transparent pricing for custom web development, mobile apps, UI/UX design, SEO, and data services. Find the right plan for your business at Fajraan Tech." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
                 <meta property="og:image:alt" content="Fajraan Tech Pricing – Flexible Plans for Every Business" />
@@ -35,7 +35,7 @@ export default function Pricing() {
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Pricing | Fajraan Tech – Transparent Plans for Every Business" />
                 <meta name="twitter:description" content="Transparent, flexible pricing for web development, mobile apps, UI/UX design, SEO, and data services — built to fit businesses of every size." />
-                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Pricing – Flexible Plans for Every Business" />
 
                 <script
@@ -51,7 +51,7 @@ export default function Pricing() {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
                                 url: "https://www.fajraan.tech",
-                                logo: "https://www.fajraan.tech/images/logo.png",
+                                logo: "https://www.fajraan.tech/images/logo.webp",
                                 sameAs: [
                                     "https://www.linkedin.com/company/fajraan-tech",
                                     "https://twitter.com/fajraantech",
@@ -90,7 +90,7 @@ export default function Pricing() {
             <Header />
             <main>
                 <HeroSec title="Clear Plans. Fair Pricing. Built for Your Growth." />
-                <VideoAreaSection imageUrl="/images/hero/pricing-hero-banner.jpg" />
+                <VideoAreaSection imageUrl="/images/hero/pricing-hero-banner.webp" />
                 <PricingSection />
                 <FaqsSection />
             </main>

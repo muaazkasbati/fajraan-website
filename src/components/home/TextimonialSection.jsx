@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function TestimonialSection({ aboutPage = false }) {
   const imgSwiperRef = useRef(null);
@@ -19,19 +20,19 @@ export default function TestimonialSection({ aboutPage = false }) {
       text: `"Working with Fajraan Tech was a game-changer. They delivered a sleek, animated website that not only elevated our brand presence but also made our online experience more engaging for customers. The team was professional, fast, and exceeded our expectations."`,
       author: "Maaz Khawaja",
       role: "Founder at Meem Products",
-      image: "images/testimonial/Testimonial-1.jpg",
+      image: "images/testimonial/Testimonial-1.webp",
     },
     {
       text: `"This was a complex project involving booking management, payment integration, and multiple advanced features—and Fajraan Tech nailed it. They built a powerful, user-friendly platform that streamlined our operations and impressed our clients. Truly reliable and skilled."`,
       author: "Ahmed Al Qureshi",
       role: "AB Limousine",
-      image: "images/testimonial/Testimonial-2.jpg",
+      image: "images/testimonial/Testimonial-2.webp",
     },
     {
       text: `"Fajraan Tech developed a stunning animated website for us that perfectly captured our brand’s personality. The creativity, smooth functionality, and attention to detail were outstanding. We couldn’t be happier with the results."`,
       author: "Layla Al Rashid",
       role: "TheForCollective",
-      image: "images/testimonial/Testimonial-3.jpg",
+      image: "images/testimonial/Testimonial-3.webp",
     },
   ];
 
@@ -102,15 +103,13 @@ export default function TestimonialSection({ aboutPage = false }) {
               </Swiper>
 
               {/* Navigation Buttons */}
-              <div
-                className="testimonial3-navigation"
-                style={{ cursor: "pointer" }}
-              >
+
+              <div className="testimonial3-navigation" style={{ cursor: "pointer" }}>
                 <div className="prev-btn bg-color-white">
-                  <i className="fa-solid fa-angle-left"></i>
+                  <ChevronLeft size={22} />
                 </div>
                 <div className="next-btn bg-color-white">
-                  <i className="fa-solid fa-angle-right"></i>
+                  <ChevronRight size={22} />
                 </div>
               </div>
             </motion.div>
@@ -119,73 +118,6 @@ export default function TestimonialSection({ aboutPage = false }) {
       </div>
     </section>
     :
-    // <section className="quanto-testimonial-section section-padding-top overflow-hidden">
-    //   <div className="container custom-container">
-    //     <div className="quanto__header text-center mb-10">
-    //       <h3 className="title">Client Testimonials</h3>
-    //     </div>
-
-    //     <div className="row g-4 justify-content-between">
-    //       <div className="col-12 col-lg-6 col-xl-5">
-    //         <Swiper
-    //           modules={[Autoplay, EffectFade]}
-    //           effect="fade"
-    //           autoplay={{ delay: 4000 }}
-    //           loop
-    //           className="h-100"
-    //         >
-    //           {testimonials.map((t, index) => (
-    //             <SwiperSlide key={index}>
-    //               <div
-    //                 className="testimonial-img rounded-xl"
-    //                 style={{
-    //                   backgroundImage: `url(${t.image})`,
-    //                   backgroundPosition: "center",
-    //                   backgroundSize: "cover",
-    //                   height: "100%",
-    //                 }}
-    //               />
-    //             </SwiperSlide>
-    //           ))}
-    //         </Swiper>
-    //       </div>
-
-    //       <div className="col-12 col-lg-6 col-xl-6">
-    //         <Swiper
-    //           modules={[Navigation, Autoplay]}
-    //           navigation={{
-    //             nextEl: ".next-slide",
-    //             prevEl: ".prev-slide",
-    //           }}
-    //           autoplay={{ delay: 4000 }}
-    //           loop
-    //           className="testimonial-text-slider"
-    //         >
-    //           {testimonials.map((t, index) => (
-    //             <SwiperSlide key={index}>
-    //               <div className="testimonial-content">
-    //                 <p>{t.text}</p>
-    //                 <div className="author">
-    //                   <h5 className="author-title color-primary">{t.author}</h5>
-    //                   <span className="author-designation">{t.role}</span>
-    //                 </div>
-    //               </div>
-    //             </SwiperSlide>
-    //           ))}
-    //         </Swiper>
-
-    //         <div className="quanto-testimonial__navigation flex gap-4 mt-4">
-    //           <div className="quanto-testimonial__prev prev-slide cursor-pointer">
-    //             <i className="fa-solid fa-arrow-left" />
-    //           </div>
-    //           <div className="quanto-testimonial__next next-slide cursor-pointer">
-    //             <i className="fa-solid fa-arrow-right" />
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </section>
     <section className="quanto-testimonial-section section-padding-top overflow-hidden">
       <div className="container custom-container">
         <div className="quanto__header text-center mb-10">
@@ -256,10 +188,10 @@ export default function TestimonialSection({ aboutPage = false }) {
 
             <div className="quanto-testimonial__navigation flex gap-4 mt-4">
               <div className="quanto-testimonial__prev prev-slide cursor-pointer">
-                <i className="fa-solid fa-arrow-left" />
+                <ArrowLeft size={22} />
               </div>
               <div className="quanto-testimonial__next next-slide cursor-pointer">
-                <i className="fa-solid fa-arrow-right" />
+                <ArrowRight size={22} />
               </div>
             </div>
           </div>

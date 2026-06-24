@@ -79,7 +79,7 @@ export default function Home({ posts, portfolio }) {
 
         <meta property="og:title" content="Fajraan Tech | Custom Web & Mobile App Development Company" />
         <meta property="og:description" content="We build scalable custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses around the world." />
-        <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+        <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Fajraan Tech – Global Software Development Company" />
@@ -90,7 +90,7 @@ export default function Home({ posts, portfolio }) {
         <meta name="twitter:creator" content="@FajraanTech" />
         <meta name="twitter:title" content="Fajraan Tech | Custom Web & Mobile App Development Company" />
         <meta name="twitter:description" content="Global software development agency delivering custom web, mobile & desktop apps, UI/UX design, SEO, and data services for businesses worldwide." />
-        <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+        <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta name="twitter:image:alt" content="Fajraan Tech – Global Software Development Company" />
 
         <script
@@ -101,7 +101,7 @@ export default function Home({ posts, portfolio }) {
               "@type": "Organization",
               name: "Fajraan Tech",
               url: "https://www.fajraan.tech",
-              logo: "https://www.fajraan.tech/images/logo.png",
+              logo: "https://www.fajraan.tech/images/logo.webp",
               description: "Fajraan Tech is a global software development company building custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses worldwide.",
               contactPoint: {
                 "@type": "ContactPoint",

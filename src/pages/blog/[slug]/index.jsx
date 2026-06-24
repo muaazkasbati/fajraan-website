@@ -147,7 +147,7 @@ export default function BlogDetail({ data, morePosts }) {
                                 name: "Fajraan Tech",
                                 logo: {
                                     "@type": "ImageObject",
-                                    url: `${process.env.NEXT_PUBLIC_APPFRONTURL}fav-icon.png`
+                                    url: `${process.env.NEXT_PUBLIC_APPFRONTURL}/images/logo.webp`
                                 }
                             },
                             datePublished: data?.yoast_head_json?.article_published_time,

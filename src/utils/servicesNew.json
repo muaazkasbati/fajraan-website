@@ -52,7 +52,7 @@
         "content": {
             "breadcrumb": "Web Development Service",
             "hero": {
-                "image": "/images/service/web-development-service-img.jpg",
+                "image": "/images/service/web-development-service-img.webp",
                 "title": "Web Development for",
                 "highlight": "modern",
                 "subtitle": "business solutions",
@@ -105,7 +105,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img.webp"
             }
         }
     },
@@ -151,7 +151,7 @@
         "content": {
             "breadcrumb": "Mobile & Desktop Application Development",
             "hero": {
-                "image": "/images/service/mobile-desktop-application-development-service.jpg",
+                "image": "/images/service/mobile-desktop-application-development-service.webp",
                 "title": "Mobile & Desktop Apps for",
                 "highlight": "seamless",
                 "subtitle": "user experiences",
@@ -204,7 +204,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img-mobile.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-mobile.webp"
             }
         }
     }

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { motion } from "framer-motion";
 
-export default function VideoAreaSection({ video = false, videoUrl = "https://videos.pexels.com/video-files/3192305/3192305-uhd_2560_1440_25fps.mp4", imageUrl = "/images/hero/common-hero-thumb.png", scrollDownId = "service-section" }) {
+export default function VideoAreaSection({ video = false, videoUrl = "https://videos.pexels.com/video-files/3192305/3192305-uhd_2560_1440_25fps.mp4", imageUrl = "/images/hero/common-hero-thumb.webp", scrollDownId = "service-section" }) {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
 

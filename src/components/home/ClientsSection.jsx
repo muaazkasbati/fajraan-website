@@ -12,7 +12,7 @@ const clientLogos = [
     "/images/clients/logo-7.webp",
     "/images/clients/logo-8.webp",
     "/images/clients/logo-9.webp",
-    "/images/clients/logo-10.png",
+    "/images/clients/logo-10.webp",
 ];
 
 export default function ClientsSection() {

@@ -6,6 +6,7 @@ import Head from 'next/head'
 import React from 'react'
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function Contact() {
     const router = useRouter()
@@ -51,7 +52,7 @@ export default function Contact() {
 
                 <meta property="og:title" content="Contact Us | Fajraan Tech – Let's Build Something Great" />
                 <meta property="og:description" content="Have a project in mind? Reach out to Fajraan Tech and let's discuss how we can build your next custom web, mobile, or desktop solution." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
                 <meta property="og:image:alt" content="Contact Fajraan Tech – Global Software Development" />
@@ -62,7 +63,7 @@ export default function Contact() {
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Contact Us | Fajraan Tech – Let's Build Something Great" />
                 <meta name="twitter:description" content="Ready to start your next project? Get in touch with the Fajraan Tech team — custom web, mobile & desktop development for businesses worldwide." />
-                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Contact Fajraan Tech – Global Software Development" />
 
 
@@ -79,7 +80,7 @@ export default function Contact() {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
                                 url: "https://www.fajraan.tech",
-                                logo: "https://www.fajraan.tech/images/logo.png",
+                                logo: "https://www.fajraan.tech/images/logo.webp",
                                 contactPoint: {
                                     "@type": "ContactPoint",
                                     contactType: "customer support",
@@ -273,8 +274,8 @@ export default function Contact() {
                                             <button id="submit-form" aria-label="Submit" type="submit" className="quanto-link-btn btn-pill">
                                                 Submit
                                                 <span>
-                                                    <i className="fa-solid fa-arrow-right arry1"></i>
-                                                    <i className="fa-solid fa-arrow-right arry2"></i>
+                                                    <ArrowRight className="arry1" size={22} />
+                                                    <ArrowRight className="arry2" size={22} />
                                                 </span>
                                             </button>
                                         </div>

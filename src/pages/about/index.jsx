@@ -13,6 +13,7 @@ import TeamSection from '@/components/TeamSection';
 import TestimonialSection from '@/components/home/TextimonialSection';
 import VideoAreaSection from '@/components/VideoAreaSection';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export default function About() {
     const awards = [
@@ -63,7 +64,7 @@ export default function About() {
 
                 <meta property="og:title" content="About Us | Fajraan Tech – Global Software Development Company" />
                 <meta property="og:description" content="Meet the team behind Fajraan Tech — building scalable custom web, mobile, and desktop solutions with UI/UX design, SEO, and data services for businesses around the world." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
                 <meta property="og:image:alt" content="The Fajraan Tech team – Global Software Development Company" />
@@ -74,7 +75,7 @@ export default function About() {
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="About Us | Fajraan Tech – Global Software Development Company" />
                 <meta name="twitter:description" content="Meet the people behind Fajraan Tech — a global team delivering custom web, mobile & desktop apps, UI/UX design, SEO, and data services worldwide." />
-                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="The Fajraan Tech team – Global Software Development Company" />
 
                 <script
@@ -91,7 +92,7 @@ export default function About() {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
                                 url: "https://www.fajraan.tech",
-                                logo: "https://www.fajraan.tech/images/logo.png",
+                                logo: "https://www.fajraan.tech/images/logo.webp",
                                 sameAs: [
                                     "https://www.linkedin.com/company/fajraan-tech",
                                     "https://twitter.com/fajraantech",
@@ -244,7 +245,7 @@ export default function About() {
                                         loading="lazy"
                                         className="w-100"
                                         style={{ height: '563px', objectFit: 'cover' }}
-                                        src="/images/about/about-img-5.jpg"
+                                        src="/images/about/about-img-5.webp"
                                     />
                                 </motion.div>
                             </div>
@@ -286,8 +287,8 @@ export default function About() {
                                     <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}about`}>
                                         More about us
                                         <span>
-                                            <i className="fa-solid fa-arrow-right arry1"></i>
-                                            <i className="fa-solid fa-arrow-right arry2"></i>
+                                            <ArrowRight className="arry1" size={22} />
+                                            <ArrowRight className="arry2" size={22} />
                                         </span>
                                     </Link>
 
@@ -307,7 +308,7 @@ export default function About() {
                                                 height="350"
                                                 className="w-100"
                                                 style={{ aspectRatio: "1.08", objectFit: 'cover' }}
-                                                src="/images/about/about-img-2.jpg"
+                                                src="/images/about/about-img-2.webp"
                                             />
                                         </motion.div>
                                     </figure>
@@ -328,7 +329,7 @@ export default function About() {
                                         loading="lazy"
                                         className="w-100"
                                         style={{ height: '295px', objectFit: 'cover' }}
-                                        src="/images/about/about-img-1.jpg"
+                                        src="/images/about/about-img-1.webp"
                                     />
                                 </motion.div>
                             </div>

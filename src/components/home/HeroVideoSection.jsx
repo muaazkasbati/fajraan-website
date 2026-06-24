@@ -193,7 +193,7 @@ export default function HeroVideoSection() {
                 autoPlay
                 playsInline
                 preload="metadata"           // Don't use "auto"
-                poster="/images/hero/hero-video-poster.jpeg"   // ← VERY IMPORTANT
+                poster="/images/hero/hero-video-poster.webp"   // ← VERY IMPORTANT
                 className="hero-video"
                 aria-hidden="true"
               >

@@ -49,7 +49,7 @@ const HeroSection = () => {
                 transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
               >
                 <div className="client-images">
-                  <Image alt="avatar-add" loading="lazy" width={52} height={52} src="/images/hero/avatar-add.png" />
+                  <Image alt="avatar-add" loading="lazy" width={52} height={52} src="/images/hero/avatar-add.webp" />
                   <Image alt="avatar-1" loading="lazy" width={52} height={52} src="/images/hero/avatar-1.webp" />
                   <Image alt="avatar-2" loading="lazy" width={52} height={52} src="/images/hero/avatar-2.webp" />
                 </div>

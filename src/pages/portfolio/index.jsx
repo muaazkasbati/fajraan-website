@@ -52,7 +52,7 @@ export default function Portfolio({ projects }) {
 
                 <meta property="og:title" content="Portfolio | Fajraan Tech – Our Work & Case Studies" />
                 <meta property="og:description" content="Explore Fajraan Tech's portfolio — real projects, real results. Custom web apps, mobile solutions, UI/UX design, and more for clients worldwide." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
                 <meta property="og:image:alt" content="Fajraan Tech Portfolio – Web & Mobile Projects" />
@@ -63,7 +63,7 @@ export default function Portfolio({ projects }) {
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Portfolio | Fajraan Tech – Our Work & Case Studies" />
                 <meta name="twitter:description" content="See what we've built — Fajraan Tech's portfolio of custom web, mobile & desktop projects for businesses around the world." />
-                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Portfolio – Web & Mobile Projects" />
 
                 <script
@@ -79,7 +79,7 @@ export default function Portfolio({ projects }) {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
                                 url: "https://www.fajraan.tech",
-                                logo: "https://www.fajraan.tech/images/logo.png",
+                                logo: "https://www.fajraan.tech/images/logo.webp",
                                 sameAs: [
                                     "https://www.linkedin.com/company/fajraan-tech",
                                     "https://twitter.com/fajraantech",

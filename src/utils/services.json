@@ -52,7 +52,7 @@
         "content": {
             "breadcrumb": "Web Development Service",
             "hero": {
-                "image": "/images/service/web-development-service-img.jpg",
+                "image": "/images/service/web-development-service-img.webp",
                 "title": "Web Development for",
                 "highlight": "modern",
                 "subtitle": "business solutions",
@@ -105,7 +105,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img.webp"
             }
         }
     },
@@ -151,7 +151,7 @@
         "content": {
             "breadcrumb": "Mobile & Desktop Application Development",
             "hero": {
-                "image": "/images/service/mobile-desktop-application-development-service.jpg",
+                "image": "/images/service/mobile-desktop-application-development-service.webp",
                 "title": "Mobile & Desktop Apps for",
                 "highlight": "seamless",
                 "subtitle": "user experiences",
@@ -204,7 +204,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img-mobile.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-mobile.webp"
             }
         }
     },
@@ -301,7 +301,7 @@
         "content": {
             "breadcrumb": "Design Services",
             "hero": {
-                "image": "/images/service/design-services.jpg",
+                "image": "/images/service/design-services.webp",
                 "title": "Design Services for",
                 "highlight": "creative",
                 "subtitle": "digital & print solutions",
@@ -354,7 +354,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img-design.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-design.webp"
             }
         }
     },
@@ -410,7 +410,7 @@
         "content": {
             "breadcrumb": "Media & Animation Services",
             "hero": {
-                "image": "/images/service/media-animation-service.jpg",
+                "image": "/images/service/media-animation-service.webp",
                 "title": "Media & Animation for",
                 "highlight": "engaging",
                 "subtitle": "brand storytelling",
@@ -463,7 +463,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img-media.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-media.webp"
             }
         }
     },
@@ -524,7 +524,7 @@
         "content": {
             "breadcrumb": "Digital Marketing & Content Services",
             "hero": {
-                "image": "/images/service/digital-marketing-content-service.jpg",
+                "image": "/images/service/digital-marketing-content-service.webp",
                 "title": "Digital Marketing for",
                 "highlight": "amplified",
                 "subtitle": "brand visibility",
@@ -577,7 +577,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img-marketing.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-marketing.webp"
             }
         }
     },
@@ -627,7 +627,7 @@
         "content": {
             "breadcrumb": "Data & Admin Services",
             "hero": {
-                "image": "/images/service/data-admin-service.jpg",
+                "image": "/images/service/data-admin-service.webp",
                 "title": "Data & Admin Services for",
                 "highlight": "efficient",
                 "subtitle": "business operations",
@@ -680,7 +680,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img-data.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-data.webp"
             }
         }
     },
@@ -737,7 +737,7 @@
         "content": {
             "breadcrumb": "Cloud & DevOps Service",
             "hero": {
-                "image": "/images/service/cloud-devops-solutions-service.jpg",
+                "image": "/images/service/cloud-devops-solutions-service.webp",
                 "title": "Cloud & DevOps for",
                 "highlight": "scalable",
                 "subtitle": "infrastructure solutions",
@@ -790,7 +790,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img.webp"
             }
         }
     },
@@ -847,7 +847,7 @@
         "content": {
             "breadcrumb": "AI & Automation Service",
             "hero": {
-                "image": "/images/service/ai-automation-service-img.jpg",
+                "image": "/images/service/ai-automation-service-img.webp",
                 "title": "AI & Automation for",
                 "highlight": "smart",
                 "subtitle": "business efficiency",
@@ -900,7 +900,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img.webp"
             }
         }
     },
@@ -957,7 +957,7 @@
         "content": {
             "breadcrumb": "Cybersecurity & IT Support Service",
             "hero": {
-                "image": "/images/service/cybersecurity-service-img.jpg",
+                "image": "/images/service/cybersecurity-service-img.webp",
                 "title": "Cybersecurity & IT Support for",
                 "highlight": "secure",
                 "subtitle": "business operations",
@@ -1010,7 +1010,7 @@
                         ]
                     }
                 ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img.jpg"
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img.webp"
             }
         }
     }

@@ -21,7 +21,7 @@ export default function TermsAndConditions() {
 
                 <meta property="og:title" content="Terms & Conditions | Fajraan Tech – Terms of Service & Website Use" />
                 <meta property="og:description" content="Review the terms governing access to and use of Fajraan Tech's website, software solutions, and digital services." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
                 <meta property="og:image:alt" content="Fajraan Tech Terms & Conditions – Website and Service Usage Terms" />
@@ -32,7 +32,7 @@ export default function TermsAndConditions() {
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Terms & Conditions | Fajraan Tech – Terms of Service & Website Use" />
                 <meta name="twitter:description" content="Understand the rights, responsibilities, and conditions that apply when using Fajraan Tech's website and services." />
-                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Terms & Conditions – Website and Service Usage Terms" />
 
                 <script
@@ -48,7 +48,7 @@ export default function TermsAndConditions() {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
                                 url: "https://www.fajraan.tech",
-                                logo: "https://www.fajraan.tech/images/logo.png",
+                                logo: "https://www.fajraan.tech/images/logo.webp",
                                 sameAs: [
                                     "https://www.linkedin.com/company/fajraan-tech",
                                     "https://twitter.com/fajraantech",

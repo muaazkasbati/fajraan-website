@@ -2,6 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { motion } from "framer-motion";
 import Link from 'next/link';
+import { toWebP } from '@/utils/data';
 
 export default function BlogCard({ data }) {
     const cardVariants = {
@@ -27,7 +28,7 @@ export default function BlogCard({ data }) {
                         <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
                             <img
                                 alt={data?.title?.rendered}
-                                src={data?.yoast_head_json?.og_image?.[0]?.url ? data?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268"}
+                                src={toWebP(data?.yoast_head_json?.og_image?.[0]?.url ? data?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268")}
                                 loading="lazy"
                                 decoding="async"
                                 className="img-fluid"

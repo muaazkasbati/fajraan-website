@@ -35,7 +35,6 @@ module.exports = withBundleAnalyzer({
       'framer-motion',
       'gsap',
       '@studio-freight/lenis',
-      '@fortawesome/fontawesome-free'
     ],
     scrollRestoration: true,
   },

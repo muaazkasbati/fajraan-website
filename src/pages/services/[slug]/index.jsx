@@ -35,7 +35,7 @@ export default function ServiceDetail({ serviceData }) {
 
         <meta property="og:title" content={serviceData.seoTitle} />
         <meta property="og:description" content={serviceData.seoDescription} />
-        <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+        <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="600" />
         <meta property="og:image:alt" content={serviceData.title} />
@@ -47,7 +47,7 @@ export default function ServiceDetail({ serviceData }) {
         <meta name="twitter:creator" content="@FajraanTech" />
         <meta name="twitter:title" content={serviceData.seoTitle} />
         <meta name="twitter:description" content={serviceData.seoDescription} />
-        <meta name="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+        <meta name="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta name="twitter:image:alt" content={serviceData.title} />
 
         <script
@@ -63,7 +63,7 @@ export default function ServiceDetail({ serviceData }) {
                 "@type": "Organization",
                 name: "Fajraan Tech",
                 url: "https://www.fajraan.tech",
-                logo: "https://www.fajraan.tech/images/logo.png",
+                logo: "https://www.fajraan.tech/images/logo.webp",
                 sameAs: [
                   "https://www.linkedin.com/company/fajraan-tech",
                   "https://twitter.com/fajraantech",

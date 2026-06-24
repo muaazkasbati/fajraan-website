@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import services from "@/utils/servicesNew.json";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const ServiceSection = () => {
     const fadeInUp = {
@@ -47,8 +48,8 @@ const ServiceSection = () => {
                                     <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
                                         View details
                                         <span>
-                                            <i className="fa-solid fa-arrow-right arry1" />
-                                            <i className="fa-solid fa-arrow-right arry2" />
+                                            <ArrowRight className="arry1" size={22} />
+                                            <ArrowRight className="arry2" size={22} />
                                         </span>
                                     </Link>
                                 </div>

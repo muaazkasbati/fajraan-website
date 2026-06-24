@@ -1,36 +1,36 @@
 export const slides = [
   {
-    img: "assets/img/new/image-Full-Stack-Web-Development.jpeg",
+    img: "assets/img/new/image-Full-Stack-Web-Development.webp",
     title: "Full-Stack Web Development",
     description:
       "Building scalable web applications using the MERN stack with clean code architecture and dynamic functionality.",
   },
   {
-    img: "assets/img/new/image-UI-UX-Design.jpeg",
+    img: "assets/img/new/image-UI-UX-Design.webp",
     title: "UI/UX Design to Code",
     description:
       "Converting Figma designs into pixel-perfect, responsive React interfaces with modern UI/UX practices.",
   },
   {
-    img: "assets/img/new/image-Multilingual-Platforms.jpeg",
+    img: "assets/img/new/image-Multilingual-Platforms.webp",
     title: "Multilingual Platforms",
     description:
       "Developing systems with dynamic content translation and localization for global reach and user accessibility.",
   },
   {
-    img: "assets/img/new/image-custom-dashboard.jpeg",
+    img: "assets/img/new/image-custom-dashboard.webp",
     title: "Custom Dashboards & Admin Panels",
     description:
       "Creating robust admin panels, user dashboards, and CMS tools tailored for startups, vendors, and content creators.",
   },
   {
-    img: "assets/img/new/image-cloud-integration.jpeg",
+    img: "assets/img/new/image-cloud-integration.webp",
     title: "Cloud Integration & APIs",
     description:
       "Integrating with Cloudinary, Firebase, Stripe, and third-party APIs to supercharge your apps and workflows.",
   },
   {
-    img: "assets/img/new/image-ecommerce.jpeg",
+    img: "assets/img/new/image-ecommerce.webp",
     title: "E-commerce & Booking Systems",
     description:
       "Building custom multi-vendor shops, booking systems, and payment-enabled platforms optimized for conversions.",
@@ -66,4 +66,8 @@ export const accordionData = [
   },
 ];
 
+export const toWebP = (url = "") => {
+  if (!url || typeof url !== "string") return url;
 
+  return url.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+};

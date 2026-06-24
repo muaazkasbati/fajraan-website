@@ -8,6 +8,7 @@ import PricingSection from '@/components/PricingSection'
 import services from "@/utils/servicesNew.json";
 import Link from 'next/link'
 import VideoAreaSection from '@/components/VideoAreaSection'
+import { ArrowRight } from 'lucide-react'
 
 export default function Services() {
   return (
@@ -24,7 +25,7 @@ export default function Services() {
 
         <meta property="og:title" content="Our Services | Fajraan Tech – Web, Mobile & Digital Solutions" />
         <meta property="og:description" content="From custom web and mobile apps to UI/UX design, SEO, and data services — Fajraan Tech delivers end-to-end digital solutions for businesses worldwide." />
-        <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+        <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="600" />
         <meta property="og:image:alt" content="Fajraan Tech Services – Web, Mobile & Digital Solutions" />
@@ -35,7 +36,7 @@ export default function Services() {
         <meta name="twitter:creator" content="@FajraanTech" />
         <meta name="twitter:title" content="Our Services | Fajraan Tech – Web, Mobile & Digital Solutions" />
         <meta name="twitter:description" content="Custom web apps, mobile development, desktop solutions, UI/UX design, SEO, and data services — explore everything Fajraan Tech offers for businesses worldwide." />
-        <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+        <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta name="twitter:image:alt" content="Fajraan Tech Services – Web, Mobile & Digital Solutions" />
 
         <script
@@ -51,7 +52,7 @@ export default function Services() {
                 "@type": "Organization",
                 name: "Fajraan Tech",
                 url: "https://www.fajraan.tech",
-                logo: "https://www.fajraan.tech/images/logo.png",
+                logo: "https://www.fajraan.tech/images/logo.webp",
                 sameAs: [
                   "https://www.linkedin.com/company/fajraan-tech",
                   "https://twitter.com/fajraantech",
@@ -128,7 +129,7 @@ export default function Services() {
       <Header />
       <main>
         <HeroSec title="Inspiring leadership through design" />
-        <VideoAreaSection imageUrl="/images/service/service-detail-img.jpg" scrollDownId="service-section" />
+        <VideoAreaSection imageUrl="/images/service/service-detail-img.webp" scrollDownId="service-section" />
         <section className="quanto-service2-section section-padding-top-bottom overflow-hidden" id="service-section">
           <div className="container custom-container">
             <div className="row gx-4 gy-5 justify-content-between">
@@ -173,8 +174,8 @@ export default function Services() {
                           <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
                             View details
                             <span>
-                              <i className="fa-solid fa-arrow-right arry1"></i>
-                              <i className="fa-solid fa-arrow-right arry2"></i>
+                              <ArrowRight className="arry1" size={22} />
+                              <ArrowRight className="arry2" size={22} />
                             </span>
                           </Link>
                         </div>

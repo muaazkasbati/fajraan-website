@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 export default function Custom404() {
     return (
@@ -12,14 +13,14 @@ export default function Custom404() {
                 <meta name="author" content="Fajraan Tech" />
                 <meta property="og:title" content="404 | Fajraan Tech" />
                 <meta property="og:description" content="We deliver scalable custom web, mobile, and desktop applications with UI/UX and SEO for businesses in Saudi, UAE, Bahrain & beyond." />
-                <meta property="og:image" content="https://www.fajraan.tech/images/about/about-img-5.jpg" />
+                <meta property="og:image" content="https://www.fajraan.tech/images/about/about-img-5.webp" />
                 <meta property="og:url" content="https://www.fajraan.tech" />
                 <meta property="og:type" content="website" />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="404 | Fajraan Tech" />
                 <meta name="twitter:description" content="Scalable and smart digital solutions: web, mobile, desktop apps, UI/UX, SEO and data services across the Middle East." />
-                <meta name="twitter:image" content="https://www.fajraan.tech/your-twitter-image.jpg" />
+                <meta name="twitter:image" content="https://www.fajraan.tech/your-twitter-image.webp" />
 
             </Head>
 
@@ -50,8 +51,8 @@ export default function Custom404() {
                                 <p>The page you are looking for was moved, removed, renamed or never existed.</p>
                                 <Link className="quanto-link-btn btn-pill" href={process.env.NEXT_PUBLIC_APPFRONTURL}>
                                     <span>
-                                        <i className="fa-solid fa-arrow-left arry1" />
-                                        <i className="fa-solid fa-arrow-left arry2" />
+                                        <ArrowRight className="arry1" size={22} />
+                                        <ArrowRight className="arry2" size={22} />
                                     </span>
                                     Home
                                 </Link>

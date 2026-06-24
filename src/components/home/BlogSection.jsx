@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import moment from "moment";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 export default function BlogSection({ posts = [] }) {
   return (
@@ -29,8 +30,8 @@ export default function BlogSection({ posts = [] }) {
               <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog`}>
                 View all articles
                 <span>
-                  <i className="fa-solid fa-arrow-right arry1" />
-                  <i className="fa-solid fa-arrow-right arry2" />
+                  <ArrowRight className="arry1" size={22} />
+                  <ArrowRight className="arry2" size={22} />
                 </span>
               </Link>
             </div>
@@ -66,7 +67,7 @@ export default function BlogSection({ posts = [] }) {
                       loading="lazy"
                       decoding="async"
                       className="img-fluid"
-                      style={{ aspectRatio: '5 / 4', objectFit: 'cover', height:'auto', width:'auto' }}
+                      style={{ aspectRatio: '5 / 4', objectFit: 'cover', height: 'auto', width: 'auto' }}
                     />
                   </Link>
                 </div>

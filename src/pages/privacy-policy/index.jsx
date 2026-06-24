@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
                     property="og:description"
                     content="Learn how Fajraan Tech collects, uses, stores, and safeguards your personal information across our website and digital services."
                 />
-                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
                 <meta property="og:image:alt" content="Fajraan Tech Privacy Policy – Data Protection and Privacy" />
@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
                     name="twitter:description"
                     content="Discover how Fajraan Tech protects your personal information and maintains transparency in the collection and use of data."
                 />
-                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.jpg" />
+                <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Privacy Policy – Data Protection and Privacy" />
 
                 <script
@@ -60,7 +60,7 @@ export default function PrivacyPolicy() {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
                                 url: "https://www.fajraan.tech",
-                                logo: "https://www.fajraan.tech/images/logo.png",
+                                logo: "https://www.fajraan.tech/images/logo.webp",
                                 sameAs: [
                                     "https://www.linkedin.com/company/fajraan-tech",
                                     "https://twitter.com/fajraantech",

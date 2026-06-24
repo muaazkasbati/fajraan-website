@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { toWebP } from "@/utils/data";
 
 const PortfolioSection = ({ theme = "dark", projects = [] }) => {
     const imageAnim = {
@@ -28,7 +30,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                             {...imageAnim}
                                             transition={{ ...imageAnim.transition, delay: 0.2 * index }}
                                         >
-                                            <Image
+                                            {/* <Image
                                                 src={proj.image}
                                                 alt={proj.title}
                                                 width={573}
@@ -36,7 +38,14 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                                 priority
                                                 decoding="async"
                                                 className="w-100"
-                                                style={{ objectFit: 'cover', height:'auto', width:'auto' }}
+                                                style={{ objectFit: "cover" }}
+                                            /> */}
+                                            <Image
+                                                src={toWebP(proj.image)}
+                                                alt={proj.title}
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 33vw"
+                                                style={{ objectFit: "cover" }}
                                             />
                                         </motion.div>
                                         {/* </Link> */}
@@ -62,8 +71,8 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                     <Link className="quanto-link-btn btn-dark" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}portfolio`}>
                                         View more works
                                         <span>
-                                            <i className="fa-solid fa-arrow-right arry1" />
-                                            <i className="fa-solid fa-arrow-right arry2" />
+                                            <ArrowRight className="arry1" size={22} />
+                                            <ArrowRight className="arry2" size={22} />
                                         </span>
                                     </Link>
                                 </div>
@@ -78,7 +87,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                             {...imageAnim}
                                             transition={{ ...imageAnim.transition, delay: 0.2 * index }}
                                         >
-                                            <Image
+                                            {/* <Image
                                                 src={proj.image}
                                                 alt={proj.title}
                                                 width={573}
@@ -86,7 +95,14 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                                                 priority
                                                 decoding="async"
                                                 className="w-100"
-                                                style={{ objectFit: 'cover', height:'auto', width:'auto' }}
+                                                style={{ objectFit: 'cover', }}
+                                            /> */}
+                                            <Image
+                                                src={toWebP(proj.image)}
+                                                alt={proj.title}
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 33vw"
+                                                style={{ objectFit: "cover" }}
                                             />
                                         </motion.div>
                                         {/* </Link> */}
