@@ -1,8 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import HeroVideoSection from "./HeroVideoSection";
+// import HeroVideoSection from "./HeroVideoSection";
+import dynamic from 'next/dynamic';
 import Image from "next/image";
-
+const HeroVideoSection = dynamic(() => import('./HeroVideoSection'), { ssr: false }); // Video can be client-only
 
 const HeroSection = () => {
 
@@ -11,10 +12,15 @@ const HeroSection = () => {
       <div className="container custom-container">
         <div className="row">
           <div className="col-12 position-relative">
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
               animate={{ opacity: 1, rotateX: 0 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.45 }}
+            > */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
             >
               <div className="quanto-hero__content move-anim">
                 <h1 className="title color-primary">
@@ -59,24 +65,6 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-
-        {/* Video Section */}
-        {/* <div className="row">
-          <div className="col-lg-12">
-            <motion.div
-              className="quanto-hero__thumb section-margin-top"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
-            >
-              <div className="video-wrapper">
-                <video loop muted autoPlay playsInline>
-                  <source src="https://videos.pexels.com/video-files/8940171/8940171-hd_1920_1080_25fps.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </motion.div>
-          </div>
-        </div> */}
         <HeroVideoSection />
       </div>
     </section>

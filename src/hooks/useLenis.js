@@ -31,8 +31,46 @@
 // }
 
 "use client";
+// import { useEffect } from "react";
+// // import Lenis from "@studio-freight/lenis";
+// import dynamic from 'next/dynamic';
+
+// const Lenis = dynamic(() => import('@studio-freight/lenis'), { ssr: false });
+
+// export default function useLenis() {
+//   useEffect(() => {
+//     // Best possible guard
+//     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+//     if (isTouchDevice) return;
+
+//     const lenis = new Lenis({
+//       duration: 0.35,
+//       easing: (t) => t * (2 - t),
+//       smoothWheel: true,
+//       smoothTouch: false,
+//       lerp: 0.08,
+//     });
+
+//     let rafId;
+//     const raf = (time) => {
+//       lenis.raf(time);
+//       rafId = requestAnimationFrame(raf);
+//     };
+//     rafId = requestAnimationFrame(raf);
+
+//     window.history.scrollRestoration = "manual";
+
+//     return () => {
+//       cancelAnimationFrame(rafId);
+//       lenis.destroy();
+//     };
+//   }, []);
+// }
+
 import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
+import dynamic from 'next/dynamic';
+
+const Lenis = dynamic(() => import('@studio-freight/lenis'), { ssr: false });
 
 export default function useLenis() {
   useEffect(() => {
@@ -40,26 +78,31 @@ export default function useLenis() {
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
     if (isTouchDevice) return;
 
-    const lenis = new Lenis({
-      duration: 0.35,
-      easing: (t) => t * (2 - t),
-      smoothWheel: true,
-      smoothTouch: false,
-      lerp: 0.08,
-    });
-
+    let lenisInstance;
     let rafId;
-    const raf = (time) => {
-      lenis.raf(time);
+
+    // Properly handle dynamic import
+    import('@studio-freight/lenis').then(({ default: Lenis }) => {
+      lenisInstance = new Lenis({
+        duration: 0.35,
+        easing: (t) => t * (2 - t),
+        smoothWheel: true,
+        smoothTouch: false,
+        lerp: 0.08,
+      });
+
+      const raf = (time) => {
+        lenisInstance.raf(time);
+        rafId = requestAnimationFrame(raf);
+      };
       rafId = requestAnimationFrame(raf);
-    };
-    rafId = requestAnimationFrame(raf);
+    });
 
     window.history.scrollRestoration = "manual";
 
     return () => {
-      cancelAnimationFrame(rafId);
-      lenis.destroy();
+      if (rafId) cancelAnimationFrame(rafId);
+      if (lenisInstance) lenisInstance.destroy();
     };
   }, []);
 }

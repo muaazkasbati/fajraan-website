@@ -26,13 +26,16 @@ module.exports = withBundleAnalyzer({
       },
     ],
   },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+experimental: {
+    optimizePackageImports: [
+      'framer-motion',
+      'gsap',
+      '@studio-freight/lenis',
+    ],
+    scrollRestoration: true,
+  },
 
-  // experimental: {
-  //   optimizeCss: true,
-  //   optimizePackageImports: [
-  //     'framer-motion',
-  //     'lucide-react',
-  //     '@heroicons/react',
-  //   ],
-  // },
 })

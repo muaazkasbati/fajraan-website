@@ -49,6 +49,8 @@ export default function Document() {
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
         /> */}
 
+        <link rel="preload" href="/images/hero/hero-video-poster.jpeg" as="image" fetchPriority="high" />
+        <link rel="preload" href="/videos/hero-video.webm" as="video" />
       </Head>
       <body>
         <Main />

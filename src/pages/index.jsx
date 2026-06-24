@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/home/HeroSection";
+// import HeroSection from "@/components/home/HeroSection";
 import ServiceSection from "@/components/home/ServiceSection";
 import AboutSection from "@/components/home/AboutSection";
 import PortfolioSection from "@/components/home/PortfolioSection";
@@ -9,6 +9,9 @@ import TextimonialSection from "@/components/home/TextimonialSection";
 import OurAchivementSection from "@/components/home/OurAchivementSection";
 import ClientsSection from "@/components/home/ClientsSection";
 import BlogSection from "@/components/home/BlogSection";
+import dynamic from 'next/dynamic';
+
+const HeroSection = dynamic(() => import('@/components/home/HeroSection'), { ssr: true });
 
 export async function getStaticProps() {
   try {
