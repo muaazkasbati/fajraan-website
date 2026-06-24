@@ -2847,10 +2847,10 @@ a.quanto-default-btn.sm-size {
   }
 }
 
-.quanto-about-section {
+/* .quanto-about-section {
   content-visibility: auto;
   contain-intrinsic-size: 800px;
-}
+} */
 
 .quanto-about__content {
   max-width: 1088px;
