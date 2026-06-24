@@ -10,32 +10,6 @@ import OurAchivementSection from "@/components/home/OurAchivementSection";
 import ClientsSection from "@/components/home/ClientsSection";
 import BlogSection from "@/components/home/BlogSection";
 
-// export async function getStaticProps() {
-//   try {
-//     const response = await fetch(
-//       'http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3'
-//     );
-//     if (!response.ok) throw new Error('Failed to fetch latest posts');
-
-//     const data = await response.json();
-
-//     return {
-//       props: {
-//         posts: data,
-//       },
-//       revalidate: 300, // Rebuild every 5 minutes (ISR)
-//     };
-//   } catch (error) {
-//     console.error('Home page fetch error:', error);
-//     return {
-//       props: {
-//         posts: [],
-//       },
-//       revalidate: 300,
-//     };
-//   }
-// }
-
 export async function getStaticProps() {
   try {
     const BASE = "https://blog.devsolsystems.co.uk/wp-json/wp/v2";
@@ -84,8 +58,6 @@ export async function getStaticProps() {
     };
   }
 }
-
-
 
 export default function Home({ posts, portfolio }) {
   return (

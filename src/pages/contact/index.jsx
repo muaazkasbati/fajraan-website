@@ -126,20 +126,8 @@ export default function Contact() {
                 <HeroSec title="We’re just a message away to bring your ideas to life" />
                 <div className="quanto-map-area style-2 overflow-hidden">
                     <div className="container custom-container position-relative">
-                        {/* <span className="scroll-down section-link" href="#service-section">
-                        Scroll down
-                        <img
-                            src="/images/icons/scroll-down.svg"
-                            alt="Scroll down"
-                            width="16"
-                            height="28"
-                            loading="lazy"
-                            style={{ color: "transparent" }}
-                        />
-                    </span> */}
                         <div className="row">
                             <div className="col-12">
-
                                 <motion.iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.706867964713!2d0.05159407660142838!3d51.5736070718285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a6e6b8f4dd5b%3A0xc0b05abcd40481bd!2sWanstead%20Ln%2C%20Ilford%2C%20UK!5e0!3m2!1sen!2s!4v1770044643021!5m2!1sen!2s"
                                     width="600"
@@ -207,6 +195,7 @@ export default function Contact() {
 
                             <div className="col-lg-6 col-xxl-6">
                                 <motion.form
+                                    id="contact-form"
                                     onSubmit={handleSubmit}
                                     action="#"
                                     className="quanto-contact__form"
@@ -226,6 +215,7 @@ export default function Contact() {
                                                 title="Please enter only alphabets and spaces"
                                                 type="text"
                                                 name="name"
+                                                id="name"
                                             />
                                         </div>
                                         <div className="col-md-6">
@@ -234,6 +224,7 @@ export default function Contact() {
                                                 className="form-control"
                                                 type="text"
                                                 name="company"
+                                                id="company"
                                             />
                                         </div>
                                         <div className="col-12">
@@ -243,6 +234,7 @@ export default function Contact() {
                                                 className="form-control"
                                                 type="tel"
                                                 name="phone"
+                                                id="phone"
                                                 pattern="^\+?[0-9]{7,15}$"
                                                 title="Please enter a valid phone number (digits only, with optional + and 7–15 digits)"
                                             />
@@ -255,6 +247,7 @@ export default function Contact() {
                                                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                                 title="Please enter a valid email address"
                                                 type="email"
+                                                id="email"
                                                 name="email"
                                             />
                                         </div>
@@ -264,10 +257,12 @@ export default function Contact() {
                                                 className="form-control"
                                                 type="text"
                                                 name="subject"
+                                                id="subject"
                                             />
                                         </div>
                                         <div className="col-12">
                                             <textarea
+                                                id="message"
                                                 name="message"
                                                 rows="6"
                                                 placeholder="Describe about your project"
@@ -275,7 +270,7 @@ export default function Contact() {
                                             ></textarea>
                                         </div>
                                         <div className="col-12 mt-5">
-                                            <button type="submit" className="quanto-link-btn btn-pill">
+                                            <button id="submit-form" aria-label="Submit" type="submit" className="quanto-link-btn btn-pill">
                                                 Submit
                                                 <span>
                                                     <i className="fa-solid fa-arrow-right arry1"></i>

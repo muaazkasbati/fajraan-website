@@ -48,9 +48,9 @@ const ProcessSection = () => {
                                             className="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold"
                                             onClick={() => handleToggle(index)}
                                         >
-                                            <button className="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
+                                            <span className="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
                                                 {item.title}
-                                            </button>
+                                            </span>
                                             <div className="accordion-icon">
                                                 <img
                                                     src="assets/img/icons/icon-black-arrow-less-down.svg"

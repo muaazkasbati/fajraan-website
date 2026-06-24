@@ -79,12 +79,14 @@ const FaqsSection = () => {
                                 >
                                     <h6 className="accordion-header">
                                         <button
+                                            aria-label={item.question}
                                             className="accordion-button collapsed"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target={`#collapse${index}`}
                                             aria-expanded={index === 0 ? "true" : "false"}
                                             aria-controls={`collapse${index}`}
+                                            id={`collapse${index}`}
                                         >
                                             {item.question}
                                         </button>

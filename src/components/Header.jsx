@@ -39,7 +39,7 @@ const Header = () => {
                                 <div className="col-8 col-sm-auto">
                                     <div className="header-logo">
                                         <Link aria-label="Home" href={process.env.NEXT_PUBLIC_APPFRONTURL}>
-                                            <img alt="logo" width={177} height={29} decoding="async" data-nimg={1} style={{ color: "transparent" }} src="/images/logo-web.svg" />
+                                            <img alt="Fajraan Tech" width={177} height={29} decoding="async" data-nimg={1} style={{ color: "transparent" }} src="/images/logo-web.svg" />
                                         </Link>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@ const Header = () => {
                                             ))}
                                         </ul>
                                     </nav>
-                                    <button onClick={toggleMenu} className="menuBar-toggle quanto-menu-toggle d-inline-block d-lg-none">
+                                    <button id="open-menu" role="button" type="button" aria-label="Menu Open" onClick={toggleMenu} className="menuBar-toggle quanto-menu-toggle d-inline-block d-lg-none">
                                         <svg xmlns="http://www.w3.org/2000/svg" width={40} height={40} viewBox="0 0 40 40" fill="none">
                                             <path d="M24.4444 26V28H0V26H24.4444ZM40 19V21H0V19H40ZM40 12V14H15.5556V12H40Z" fill="currentColor" />
                                         </svg>
@@ -78,10 +78,10 @@ const Header = () => {
                     <div className="quanto-menu-mobile-top">
                         <div className="mobile-logo">
                             <Link aria-label="Home" href={process.env.NEXT_PUBLIC_APPFRONTURL}>
-                                <img alt="logo" width={120} height={20} decoding="async" data-nimg={1} style={{ color: "transparent" }} src="/images/logo-web.svg" />
+                                <img alt="Fajraan Tech" width={120} height={20} decoding="async" data-nimg={1} style={{ color: "transparent" }} src="/images/logo-web.svg" />
                             </Link>
                         </div>
-                        <button onClick={closeMenu} className="quanto-menu-toggle mobile">
+                        <button id="close-menu" role="button" type="button" aria-label="Close Menu" onClick={closeMenu} className="quanto-menu-toggle mobile">
                             <i className="fa-solid fa-xmark"></i>
                         </button>
                     </div>
@@ -96,21 +96,21 @@ const Header = () => {
                     </div>
                     <div className="quanto-mobile-menu-btn">
                         <div className="sidebar-wrap">
-                            <h6>Dubai, United Arab Emirates</h6>
+                            <p>Dubai, United Arab Emirates</p>
                         </div>
                         <div className="sidebar-wrap">
-                            <h6>
+                            <p>
                                 <Link aria-label="Contact Us on WhatsApp" href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
                                     +971 54 225 9592 (WhatsApp)
                                 </Link>
-                            </h6>
-                            <h6>
+                            </p>
+                            <p>
                                 <Link aria-label="Contact Us on Email" href="mailto:info@fajraan.com">
                                     info@fajraan.com
                                 </Link>
-                            </h6>
+                            </p>
                         </div>
-                        <div className="social-btn style-3">
+                        <div className="social-btn flex-wrap style-3">
                             <Link aria-label="Follow us on X" href="https://x.com/fajraantech">
                                 <span className="link-effect">
                                     <span className="effect-1">
