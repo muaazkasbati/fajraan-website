@@ -88,15 +88,15 @@ export default function TermsAndConditions() {
             <main>
                 <HeroSec title="Terms & Conditions" />
                 <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden">
-                    <div className="container custom-container">
+                    <div className="container mx-auto px-4 custom-container">
                         <motion.div
-                            className="row g-4 justify-content-center"
+                            className="grid gap-4 justify-items-center"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="col-xl-8">
+                            <div className="w-full xl:w-8/12">
                                 <motion.div
                                     className="blog-body"
                                     initial={{ opacity: 0, y: 20 }}

@@ -25,38 +25,30 @@ const Footer = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true }}
                 >
-                    <Marquee
-                        gradient={false}
-                        speed={60}
-                        pauseOnHover
-                        pauseOnClick
-                        className="py-2"
-                    >
-                        {Array(6)
-                            .fill(null)
-                            .map((_, index) => (
-                                <Link aria-label="Contact" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact`} key={index} className="marquee-item-container overflow-hidden">
-                                    <div className="marquee-item text-color-white overflow-hidden color-secondary">
-                                        <h1 className="text-color-white color-secondary">
-                                            Empowering your business through innovation
-                                        </h1>
+                    <Marquee gradient={false} speed={60} pauseOnHover pauseOnClick className="py-2">
+                        {Array(6).fill(null).map((_, index) => (
+                            <Link aria-label="Contact" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact`} key={index} className="marquee-item-container overflow-hidden">
+                                <div className="marquee-item text-color-white overflow-hidden color-secondary">
+                                    <h1 className="text-color-white color-secondary">
+                                        Empowering your business through innovation
+                                    </h1>
 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150" fill="none">
-                                            <path d="M100.023 58.8388L46.232 112.63L37.3932 103.791L91.1844 50H43.7733V37.5H112.523V106.25H100.023V58.8388Z" fill="currentColor" />
-                                        </svg>
-                                    </div>
-                                </Link>
-                            ))}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150" fill="none">
+                                        <path d="M100.023 58.8388L46.232 112.63L37.3932 103.791L91.1844 50H43.7733V37.5H112.523V106.25H100.023V58.8388Z" fill="currentColor" />
+                                    </svg>
+                                </div>
+                            </Link>
+                        ))}
                     </Marquee>
                 </motion.div>
 
-                {/* === Footer Content === */}
+
                 <div className="footer__center section-padding-top-bottom">
-                    <div className="container custom-container">
-                        <div className="row">
-                            <div className="col-12">
+                    <div className="container mx-auto px-4 custom-container">
+                        <div className="flex flex-wrap">
+                            <div className="w-full">
                                 <div className="footer-widgets-wrapper">
-                                    {/* Contact Section */}
+                         
                                     <motion.div
                                         className="footer-widgets contact text-color-white"
                                         initial={{ opacity: 0, y: 60 }}
@@ -68,7 +60,7 @@ const Footer = () => {
                                         <p className="address">
                                             Dubai, United Arab Emirates
                                         </p>
-                                        <div className="contacts mt-1">
+                                        <div className="contacts mb-3">
                                             <ul className="custom-ul">
                                                 {/* <li>
                                                     <Link className="email" href="mailto:info@fajraan.com">
@@ -222,9 +214,9 @@ const Footer = () => {
 
                 {/* === Footer Bottom === */}
                 <div className="footer__bottom has-bodder">
-                    <div className="container custom-container p-xxl-0 overflow-hidden">
-                        <div className="row">
-                            <div className="col-12">
+                    <div className="container mx-auto px-4 custom-container p-xxl-0 overflow-hidden">
+                        <div className="flex flex-wrap">
+                            <div className="w-full">
                                 <div className="footer__bottom-content row-padding-bottom">
                                     <div className="copyright-text text-color-white">
                                         All rights reserved — {new Date().getFullYear()} © Fajraan Tech

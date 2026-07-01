@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react";
 const AboutSection = () => {
   return (
     <section className="quanto-about-section section-padding-top overflow-hidden">
-      <div className="container custom-container">
-        <div className="row justify-content-end">
-          <div className="col-lg-10 col-xl-9 col-xxl-10">
+      <div className="container mx-auto px-4 custom-container">
+        <div className="flex justify-end">
+          <div className="w-full lg:w-10/12 xl:w-9/12 2xl:w-10/12">
             <div className="quanto-about__content">
 
               {/* Top Paragraph Animation */}

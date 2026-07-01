@@ -48,10 +48,10 @@ const faqData = [
 const FaqsSection = () => {
     return (
         <section className="quanto-faq-area bg-color-white overflow-hidden section-padding-bottom section-padding-top-bottom">
-            <div className="container custom-container">
-                <div className="row g-4 justify-content-between">
+            <div className="container mx-auto px-4 custom-container">
+                <div className="flex flex-wrap gap-4 justify-between">
                     <motion.div
-                        className="col-lg-6 col-xl-5 col-xxl-4 gsap-sticky"
+                        className="w-full lg:w-1/2 xl:w-5/12 2xl:w-4/12 gsap-sticky"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
@@ -66,7 +66,7 @@ const FaqsSection = () => {
 
                     </motion.div>
 
-                    <div className="col-lg-6 col-xl-7 col-xxl-7 gsap-scroll">
+                    <div className="w-full lg:w-1/2 xl:w-7/12 2xl:w-7/12 gsap-scroll">
                         <div className="accordion quanto-faq-accordion" id="accordionExample">
                             {faqData.map((item, index) => (
                                 <motion.div

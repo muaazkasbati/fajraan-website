@@ -126,9 +126,9 @@ export default function Contact() {
             <main>
                 <HeroSec title="We’re just a message away to bring your ideas to life" />
                 <div className="quanto-map-area style-2 overflow-hidden">
-                    <div className="container custom-container position-relative">
-                        <div className="row">
-                            <div className="col-12">
+                    <div className="container mx-auto px-4 custom-container relative">
+                        <div className="flex">
+                            <div className="w-full">
                                 <motion.iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.706867964713!2d0.05159407660142838!3d51.5736070718285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a6e6b8f4dd5b%3A0xc0b05abcd40481bd!2sWanstead%20Ln%2C%20Ilford%2C%20UK!5e0!3m2!1sen!2s!4v1770044643021!5m2!1sen!2s"
                                     width="600"
@@ -136,7 +136,7 @@ export default function Contact() {
                                     allowFullScreen=""
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
-                                    className="d-block w-100"
+                                    className="block w-full"
                                     style={{ border: 0 }}
                                     initial={{ opacity: 0, y: 80 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -151,9 +151,9 @@ export default function Contact() {
                     id="quanto-contact-section"
                     className="quanto-contact-section bg-color-white section-padding-top-bottom"
                 >
-                    <div className="container custom-container">
-                        <div className="row g-4 justify-content-between">
-                            <div className="col-lg-6 col-xxl-5">
+                    <div className="container mx-auto px-4 custom-container">
+                        <div className="grid md:grid-cols-2 gap-6">
+                            <div className="pr-20">
                                 <motion.div
                                     className="quanto-contact__content"
                                     initial={{ opacity: 0, y: 40 }}
@@ -194,7 +194,7 @@ export default function Contact() {
                                 </motion.div>
                             </div>
 
-                            <div className="col-lg-6 col-xxl-6">
+                            <div className="">
                                 <motion.form
                                     id="contact-form"
                                     onSubmit={handleSubmit}
@@ -206,33 +206,35 @@ export default function Contact() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
                                 >
-                                    <div className="row g-3 g-xl-4">
-                                        <div className="col-md-6">
-                                            <input
-                                                placeholder="Your name"
-                                                required
-                                                className="form-control"
-                                                pattern="[A-Za-z\s]+"
-                                                title="Please enter only alphabets and spaces"
-                                                type="text"
-                                                name="name"
-                                                id="name"
-                                            />
+                                    <div className="space-y-4">
+                                        <div className="grid md:grid-col-2 gap-3">
+                                            <div className="">
+                                                <input
+                                                    placeholder="Your name"
+                                                    required
+                                                    className="w-full rounded border border-gray-200 px-4 py-3 focus:outline-none focus:border-slate-400"
+                                                    pattern="[A-Za-z\s]+"
+                                                    title="Please enter only alphabets and spaces"
+                                                    type="text"
+                                                    name="name"
+                                                    id="name"
+                                                />
+                                            </div>
+                                            <div className="">
+                                                <input
+                                                    placeholder="Company name"
+                                                    className="w-full rounded border border-gray-200 px-4 py-3 focus:outline-none focus:border-slate-400"
+                                                    type="text"
+                                                    name="company"
+                                                    id="company"
+                                                />
+                                            </div>
                                         </div>
-                                        <div className="col-md-6">
-                                            <input
-                                                placeholder="Company name"
-                                                className="form-control"
-                                                type="text"
-                                                name="company"
-                                                id="company"
-                                            />
-                                        </div>
-                                        <div className="col-12">
+                                        <div className="">
                                             <input
                                                 placeholder="Enter your phone number"
                                                 required
-                                                className="form-control"
+                                                className="w-full rounded border border-gray-200 px-4 py-3 focus:outline-none focus:border-slate-400"
                                                 type="tel"
                                                 name="phone"
                                                 id="phone"
@@ -240,11 +242,11 @@ export default function Contact() {
                                                 title="Please enter a valid phone number (digits only, with optional + and 7–15 digits)"
                                             />
                                         </div>
-                                        <div className="col-12">
+                                        <div className="">
                                             <input
                                                 placeholder="Enter your e-mail address"
                                                 required
-                                                className="form-control"
+                                                className="w-full rounded border border-gray-200 px-4 py-3 focus:outline-none focus:border-slate-400"
                                                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                                 title="Please enter a valid email address"
                                                 type="email"
@@ -252,25 +254,25 @@ export default function Contact() {
                                                 name="email"
                                             />
                                         </div>
-                                        <div className="col-12">
+                                        <div className="">
                                             <input
                                                 placeholder="What is the subject of your query?"
-                                                className="form-control"
+                                                className="w-full rounded border border-gray-200 px-4 py-3 focus:outline-none focus:border-slate-400"
                                                 type="text"
                                                 name="subject"
                                                 id="subject"
                                             />
                                         </div>
-                                        <div className="col-12">
+                                        <div className="">
                                             <textarea
                                                 id="message"
                                                 name="message"
                                                 rows="6"
                                                 placeholder="Describe about your project"
-                                                className="form-control"
+                                                className="w-full rounded border border-gray-200 px-4 py-3 focus:outline-none focus:border-slate-400"
                                             ></textarea>
                                         </div>
-                                        <div className="col-12 mt-5">
+                                        <div className="w-full mt-5">
                                             <button id="submit-form" aria-label="Submit" type="submit" className="quanto-link-btn btn-pill">
                                                 Submit
                                                 <span>

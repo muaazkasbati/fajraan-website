@@ -18,7 +18,7 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
         <>
             {video ?
                 <section className="quanto-video-area style-2 overflow-hidden">
-                    <div className="container custom-container position-relative">
+                    <div className="container mx-auto px-4 custom-container relative">
                         <motion.span
                             onClick={() => {
                                 const element = document.getElementById(scrollDownId);
@@ -26,7 +26,7 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
                                     element.scrollIntoView({ behavior: 'smooth' });
                                 }
                             }}
-                            className="scroll-down section-link d-inline-flex align-items-center cursor-pointer z-10"
+                            className="scroll-down section-link inline-flex items-center cursor-pointer z-10"
                             initial={{ opacity: 0, y: -20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -44,13 +44,13 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
                             />
                         </motion.span>
                         <motion.div
-                            className="row"
+                            className="flex"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="col-12 position-relative">
+                            <div className="w-full relative">
                                 <motion.video
                                     ref={videoRef}
                                     className="quanto-video"
@@ -78,7 +78,7 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
                 </section>
                 :
                 <div className="quanto-video-area style-2 overflow-hidden">
-                    <div className="container custom-container position-relative">
+                    <div className="container mx-auto px-4 custom-container relative">
                         {/* Scroll Down Link */}
                         <motion.span
                             onClick={() => {
@@ -87,7 +87,7 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
                                     element.scrollIntoView({ behavior: 'smooth' });
                                 }
                             }}
-                            className="scroll-down section-link d-inline-flex align-items-center cursor-pointer"
+                            className="scroll-down section-link inline-flex items-center cursor-pointer"
                             initial={{ opacity: 0, y: -20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -106,8 +106,8 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
                         </motion.span>
 
                         {/* Image Section */}
-                        <div className="row">
-                            <div className="col-12">
+                        <div className="flex">
+                            <div className="w-full">
                                 <motion.div
                                     className="quanto-hero__thumb text-end"
                                     initial={{ opacity: 0, x: 100 }}
@@ -118,7 +118,7 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
                                     <img
                                         alt="hero-thumb"
                                         loading="lazy"
-                                        className="w-100"
+                                        className="w-full"
                                         src={imageUrl}
                                         style={{ color: "transparent", height: '600px', objectFit: 'cover' }}
                                     />

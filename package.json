@@ -11,8 +11,6 @@
   "dependencies": {
     "@next/bundle-analyzer": "^16.2.9",
     "@studio-freight/lenis": "^1.0.42",
-    "bootstrap": "^5.3.8",
-    "bootstrap-icons": "^1.13.1",
     "critters": "^0.0.23",
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",

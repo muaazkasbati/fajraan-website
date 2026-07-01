@@ -36,17 +36,17 @@ const Header = () => {
             <header className={`quanto-header main-header bg-color-white ${isScrolled ? "sticky-menu" : ""}`}>
                 <nav className="sticky-wrap">
                     <div className="sticky-active">
-                        <div className="container custom-container">
-                            <div className="row gx-3 align-items-center justify-content-between">
-                                <div className="col-8 col-sm-auto">
+                        <div className="container mx-auto px-4 custom-container">
+                            <div className="flex flex-wrap items-center justify-between gap-3">
+                                <div className="w-8/12 sm:w-auto">
                                     <div className="header-logo">
                                         <Link aria-label="Home" href={process.env.NEXT_PUBLIC_APPFRONTURL}>
                                             <img alt="Fajraan Tech" width={177} height={67} decoding="async" src="/images/logo-web.svg" />
                                         </Link>
                                     </div>
                                 </div>
-                                <div className="quanto-navbar col text-end text-lg-center">
-                                    <nav className="main-menu menu-style1 d-none d-lg-block">
+                                <div className="quanto-navbar text-right lg:text-center">
+                                    <nav className="main-menu menu-style1 hidden lg:block">
                                         <ul>
                                             {navItems.map((item) => (
                                                 <li key={item.href} className={`${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "active" : ""}`}>
@@ -55,13 +55,13 @@ const Header = () => {
                                             ))}
                                         </ul>
                                     </nav>
-                                    <button id="open-menu" role="button" type="button" aria-label="Menu Open" onClick={toggleMenu} className="menuBar-toggle quanto-menu-toggle d-inline-block d-lg-none">
+                                    <button id="open-menu" role="button" type="button" aria-label="Menu Open" onClick={toggleMenu} className="menuBar-toggle quanto-menu-toggle inline-block lg:hidden">
                                         <svg xmlns="http://www.w3.org/2000/svg" width={40} height={40} viewBox="0 0 40 40" fill="none">
                                             <path d="M24.4444 26V28H0V26H24.4444ZM40 19V21H0V19H40ZM40 12V14H15.5556V12H40Z" fill="currentColor" />
                                         </svg>
                                     </button>
                                 </div>
-                                <div className="col-auto d-none d-lg-block">
+                                <div className="w-auto hidden lg:block">
                                     <Link aria-label="Contact" className="quanto-link-btn btn-pill" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact`}>
                                         Get in touch
                                         <span>
@@ -90,8 +90,8 @@ const Header = () => {
                     <div className="quanto-mobile-menu">
                         <ul>
                             {navItems.map((item) => (
-                                <li aria-label={item.label} key={`${process.env.NEXT_PUBLIC_APPFRONTURL}${item.href}`} className={`menu-item-has-children ${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "" : ""}`}>
-                                    <Link href={item.href}>{item.label}</Link>
+                                <li aria-label={item.label} key={item.href} className={`menu-item-has-children ${pathname === item.href || (item.href.includes("#") && pathname === "/") ? "" : ""}`}>
+                                    <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}${item.href}`}>{item.label}</Link>
                                 </li>
                             ))}
                         </ul>

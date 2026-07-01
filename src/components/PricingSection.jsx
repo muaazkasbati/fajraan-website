@@ -51,9 +51,9 @@ const pricingData = [
 const PricingSection = () => {
     return (
         <section className="quanto-pricing-area section-padding-top-bottom bg-color-2">
-            <div className="container custom-container">
-                <div className="row">
-                    <div className="col-12">
+            <div className="container mx-auto px-4 custom-container">
+                <div className="flex">
+                    <div className="w-full">
                         <div className="quanto__header">
                             <motion.h3
                                 className="title text-center text-lg-start color-primary"
@@ -68,7 +68,7 @@ const PricingSection = () => {
                     </div>
                 </div>
 
-                <div className="row g-4 row-padding-top">
+                <div className="grid gap-4 row-padding-top md:grid-cols-2 xl:grid-cols-3">
                     {pricingData.map((plan, index) => {
                         const overlayVariants = {
                             initial: { x: "-100%", opacity: 0, visibility: "hidden" },
@@ -78,7 +78,7 @@ const PricingSection = () => {
                         return (
                             <motion.div
                                 key={index}
-                                className="col-md-6 col-xl-4 h-100"
+                                className="w-full h-full"
                                 initial={{ opacity: 0, x: 100 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{

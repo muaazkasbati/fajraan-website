@@ -64,9 +64,9 @@ export default function OurAchievementSection() {
       className="quanto-funfacts-section overflow-hidden section-padding-top-bottom"
       id="our-achievement-01"
     >
-      <div className="container custom-container">
-        <div className="row">
-          <div className="col-12">
+      <div className="container mx-auto px-4 custom-container">
+        <div className="flex flex-wrap">
+          <div className="w-full">
             <div className="quanto-funfacts__wrapper">
               {achievements.map((item, index) => (
                 <AnimatedCounterBox
@@ -125,7 +125,7 @@ function AnimatedCounterBox({ value, suffix, label, delay }) {
       initial={{ opacity: 0, x: 100 }}
       animate={controls}
     >
-      <h2 className="counter-item d-inline-flex align-items-center color-secondary">
+      <h2 className="counter-item inline-flex items-center gap-2 color-secondary">
         <div>{displayValue}</div>
         <em>{suffix}</em>
       </h2>

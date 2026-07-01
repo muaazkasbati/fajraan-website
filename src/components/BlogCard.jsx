@@ -19,7 +19,7 @@ export default function BlogCard({ data }) {
     return (
         <>
             <motion.div
-                className="col-md-6 col-lg-4"
+                className=""
                 variants={cardVariants}
                 style={{ opacity: 1, transform: "none" }}
             >
@@ -31,7 +31,7 @@ export default function BlogCard({ data }) {
                                 src={toWebP(data?.yoast_head_json?.og_image?.[0]?.url ? data?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268")}
                                 loading="lazy"
                                 decoding="async"
-                                className="img-fluid"
+                                className="w-full h-auto"
                                 style={{ color: "transparent", aspectRatio: "5 / 4", objectFit: "cover" }}
                             />
                         </Link>

@@ -40,12 +40,12 @@ export default function TestimonialSection({ aboutPage = false }) {
 
   return aboutPage ?
     <section className="quanto-testimonial3-section bg-color-2 section-padding-top-bottom">
-      <div className="container custom-container">
-        <div className="row g-4 justify-content-between overflow-hidden">
+      <div className="container mx-auto px-4 custom-container">
+        <div className="grid md:grid-cols-12 grid-cols-1 gap-4 overflow-hidden">
           {/* Left Title */}
-          <div className="col-lg-6 col-xxl-5 pe-xxl-0">
+          <div className="md:col-span-5 col-span-1">
             <motion.div
-              className="quanto__header h-100"
+              className="quanto__header md:h-100 pr-27!"
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -56,7 +56,7 @@ export default function TestimonialSection({ aboutPage = false }) {
           </div>
 
           {/* Right Slider */}
-          <div className="col-lg-6 col-xxl-5">
+          <div className="md:col-span-5 md:col-start-8 col-span-1">
             <motion.div
               className="fade-anim"
               initial={{ opacity: 0, x: 100 }}
@@ -119,26 +119,26 @@ export default function TestimonialSection({ aboutPage = false }) {
     </section>
     :
     <section className="quanto-testimonial-section section-padding-top overflow-hidden">
-      <div className="container custom-container">
+      <div className="container mx-auto px-4 custom-container">
         <div className="quanto__header text-center mb-10">
           <h3 className="title">Client Testimonials</h3>
         </div>
 
-        <div className="row g-4 justify-content-between">
+        <div className="grid md:grid-cols-12 grid-cols-1 md:gap-4 gap-8">
           {/* IMAGE SLIDER */}
-          <div className="col-12 col-lg-6 col-xl-5">
+          <div className="md:col-span-5 col-span-1">
             <Swiper
               // modules
               modules={[Autoplay, EffectFade, Controller]}
               effect="fade"
-              // autoplay={{ delay: 4000, disableOnInteraction: false }}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
               loop={true}
               onSwiper={(swiper) => {
                 imgSwiperRef.current = swiper;
                 setImgController(swiper);
               }}
               controller={{ control: textController }}
-              className="h-100"
+              className="md:h-195 h-100"
             >
               {testimonials.map((t, index) => (
                 <SwiperSlide key={index}>
@@ -157,14 +157,14 @@ export default function TestimonialSection({ aboutPage = false }) {
           </div>
 
           {/* TEXT SLIDER */}
-          <div className="col-12 col-lg-6 col-xl-6">
+          <div className="md:col-span-6 md:col-start-7 col-span-1">
             <Swiper
               modules={[Navigation, Autoplay, Controller]}
               navigation={{
                 nextEl: ".next-slide",
                 prevEl: ".prev-slide",
               }}
-              // autoplay={{ delay: 5000, disableOnInteraction: false }}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
               loop={true}
               onSwiper={(swiper) => {
                 textSwiperRef.current = swiper;

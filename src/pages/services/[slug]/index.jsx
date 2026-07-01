@@ -110,15 +110,15 @@ export default function ServiceDetail({ serviceData }) {
         <HeroSec title={serviceData.content.breadcrumb} />
         <VideoAreaSection imageUrl={serviceData.content?.hero?.image} scrollDownId='service-details' />
         {/* <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden" id='service-details'>
-        <div className="container custom-container">
+        <div className="container mx-auto px-4 custom-container">
           <motion.div
-            className="row g-4 justify-content-center"
+            className="grid gap-4 justify-items-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="col-xl-8">
+            <div className="w-full xl:w-8/12">
               <motion.div
                 className="quanto-service-details__content"
                 initial={{ opacity: 0, y: 20 }}
@@ -153,8 +153,8 @@ export default function ServiceDetail({ serviceData }) {
                   </p>
 
                   <div className="benefits-list">
-                    <div className="row g-3 justify-content-start">
-                      <div className="col-sm-6 col-xl-5">
+                    <div className="grid gap-3 justify-items-start sm:grid-cols-2 xl:grid-cols-2">
+                      <div className="w-full sm:w-1/2 xl:w-5/12">
                         <ul className="custom-ul">
                           {benefitsLeft.map((benefit, index) => (
                             <li key={index}>
@@ -177,7 +177,7 @@ export default function ServiceDetail({ serviceData }) {
                           ))}
                         </ul>
                       </div>
-                      <div className="col-sm-6 col-xl-5">
+                      <div className="w-full sm:w-1/2 xl:w-5/12">
                         <ul className="custom-ul">
                           {benefitsRight.map((benefit, index) => (
                             <li key={index}>
@@ -209,15 +209,15 @@ export default function ServiceDetail({ serviceData }) {
         </div>
       </section> */}
         <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden" id="service-details">
-          <div className="container custom-container">
+          <div className="container mx-auto px-4 custom-container">
             <motion.div
-              className="row g-4 justify-content-center"
+              className="grid gap-4 justify-items-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="col-xl-8">
+              <div className="w-full xl:w-8/12">
                 <motion.div
                   className="quanto-service-details__content"
                   initial={{ opacity: 0, y: 20 }}
@@ -226,19 +226,21 @@ export default function ServiceDetail({ serviceData }) {
                   viewport={{ once: true }}
                 >
                   {/* Hero Description */}
-                  {serviceData.content?.hero?.description?.map((para, i) => (
-                    <p key={i} className="mb-3">{para}</p>
-                  ))}
+                  <div className="space-y-3!">
+                    {serviceData.content?.hero?.description?.map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
 
+                  </div>
                   {/* Sub Services */}
                   {serviceData.subServices?.length > 0 && (
-                    <div className="service-benefits mt-4">
+                    <div className="service-benefits mt-4!">
                       <h4>Our Core Services</h4>
                       <div className="benefits-list">
-                        <div className="row g-3 justify-content-start">
+                        <div className="grid gap-3 justify-items-start sm:grid-cols-2 xl:grid-cols-2 max-w-3xl">
                           {serviceData.subServices.map((sub, i) => (
-                            <div key={i} className="col-sm-6 col-xl-5">
-                              <div className="d-flex align-items-start gap-3 mb-3">
+                            <div key={i} className="">
+                              <div className="flex items-start gap-3 mb-3">
                                 {/* <img src={sub.icon} alt={sub.title} width={32} height={32} /> */}
                                 <div>
                                   <h6>{sub.title}</h6>
@@ -273,10 +275,10 @@ export default function ServiceDetail({ serviceData }) {
                     <div className="service-benefits mt-5">
                       <h4>{serviceData.content.approach.title}</h4>
                       <p>{serviceData.content.approach.description}</p>
-                      <div className="row g-4 align-items-start mt-3">
-                        <div className="col-lg-7">
+                      <div className="grid gap-4 items-start mt-3">
+                        <div className="w-full lg:w-7/12">
                           {serviceData.content.approach.steps.map((step, i) => (
-                            <div key={i} className="d-flex align-items-start gap-3 mb-3">
+                            <div key={i} className="flex items-start gap-3 mb-3">
                               {/* <img src={step.icon} alt={step.title} width={32} height={32} /> */}
                               <div>
                                 <h6>{step.title}</h6>
@@ -299,15 +301,15 @@ export default function ServiceDetail({ serviceData }) {
         </section>
         <VideoAreaSection video videoUrl="https://videos.pexels.com/video-files/3209211/3209211-uhd_2560_1440_25fps.mp4" />
         {/* <section className="quanto-choose-us-section row-padding-top section-padding-bottom">
-        <div className="container custom-container">
+        <div className="container mx-auto px-4 custom-container">
           <motion.div
-            className="row g-4 justify-content-center"
+            className="grid gap-4 justify-items-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="col-xl-8">
+            <div className="w-full xl:w-8/12">
               <div className="quanto-choose-us__content">
                 <motion.h4
                   initial={{ opacity: 0, y: 20 }}
@@ -344,15 +346,15 @@ export default function ServiceDetail({ serviceData }) {
         </div>
       </section> */}
         <section className="quanto-choose-us-section row-padding-top section-padding-bottom">
-          <div className="container custom-container">
+          <div className="container mx-auto px-4 custom-container">
             <motion.div
-              className="row g-4 justify-content-center"
+              className="grid gap-4 justify-items-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="col-xl-8">
+              <div className="w-full xl:w-8/12">
                 <div className="quanto-choose-us__content">
                   <motion.h4
                     initial={{ opacity: 0, y: 20 }}

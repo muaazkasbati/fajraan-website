@@ -45,10 +45,10 @@ const teamData = [
 const TeamSection = () => {
     return (
         <section className="quanto-team-area section-padding-bottom">
-            <div className="container custom-container">
+            <div className="container mx-auto px-4 custom-container">
                 {/* Header Row */}
-                <div className="row gx-4 gy-2 align-items-end">
-                    <div className="col-md-12">
+                <div className="flex flex-wrap gap-x-4 gap-y-2 items-end">
+                    <div className="w-full">
                         <motion.div
                             className="quanto__header"
                             initial={{ opacity: 0, x: -100 }}
@@ -56,7 +56,7 @@ const TeamSection = () => {
                             transition={{ duration: 0.6, ease: "easeOut" }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="title text-center text-md-start color-primary">
+                            <h3 className="title text-center md:text-left color-primary">
                                 We are a Team of Creative Minds
                             </h3>
                         </motion.div>
@@ -64,11 +64,11 @@ const TeamSection = () => {
                 </div>
 
                 {/* Team Members */}
-                <div className="row g-4 g-sm-3 g-md-4 row-padding-top">
+                <div className="grid gap-6 row-padding-top sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {teamData.map((member, index) => (
                         <motion.div
                             key={index}
-                            className="col-sm-6 col-md-6 col-lg-4 col-xl-3"
+                            className="w-full"
                             initial={{ opacity: 0, x: 100 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{
@@ -83,7 +83,7 @@ const TeamSection = () => {
                                     <img
                                         loading="lazy"
                                         decoding="async"
-                                        className="w-100"
+                                        className="w-full"
                                         src={member.image}
                                         alt={member.name}
                                         style={{ color: "transparent", height: '466px', objectFit: 'cover' }}
@@ -91,7 +91,7 @@ const TeamSection = () => {
                                     <img
                                         loading="lazy"
                                         decoding="async"
-                                        className="w-100"
+                                        className="w-full"
                                         src={member.image}
                                         alt={member.name}
                                         style={{ color: "transparent", height: '466px', objectFit: 'cover' }}

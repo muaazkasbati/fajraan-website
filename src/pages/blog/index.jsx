@@ -244,9 +244,9 @@ export default function Blogs({ posts, totalPages, currentPage }) {
             <main>
                 <HeroSec title="Explore latest news and insights" />
                 <section className="quanto-blog-section section-padding-bottom overflow-hidden">
-                    <div className="container custom-container">
+                    <div className="container mx-auto px-4 custom-container">
                         <motion.div
-                            className="row g-4"
+                            className="grid md:grid-cols-3 gap-6"
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="show"
@@ -258,18 +258,18 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                         </motion.div>
 
                         {posts?.length > 18 &&
-                            <div className="row row-padding-top">
-                                <div className="col-12">
+                            <div className="grid row-padding-top">
+                                <div className="w-full">
                                     <div className="blog-pagination">
                                         <nav aria-label="Page navigation example">
-                                            <ul className="pagination justify-content-end align-items-center custom-ul">
+                                            <ul className="flex flex-wrap justify-end items-center custom-ul gap-2">
                                                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                                                     <li
                                                         key={page}
-                                                        className={`page-item ${page === currentPage ? 'active' : ''}`}
+                                                        className={`${page === currentPage ? 'active' : ''}`}
                                                     >
                                                         <span
-                                                            className="page-link"
+                                                            className="inline-flex px-3 py-2 text-sm leading-tight rounded-md"
                                                             onClick={(e) => {
                                                                 e.preventDefault();
                                                                 handlePageChange(page);
@@ -282,9 +282,9 @@ export default function Blogs({ posts, totalPages, currentPage }) {
 
                                                 {/* Next button */}
                                                 {currentPage < totalPages && (
-                                                    <li className="page-item">
+                                                    <li className="inline-block">
                                                         <span
-                                                            className="page-link next"
+                                                            className="inline-flex px-3 py-2 text-sm leading-tight rounded-md next"
                                                             onClick={(e) => {
                                                                 e.preventDefault();
                                                                 handlePageChange(currentPage + 1);

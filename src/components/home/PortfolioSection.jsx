@@ -16,13 +16,13 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
 
     return (
         <section className={`quanto-project-section ${theme === "dark" ? "bg-color-primary" : ""} section-padding-top-bottom overflow-hidden`}>
-            <div className="container custom-container">
-                <div className="row g-0 gy-4 gy-md-0 justify-content-between">
+            <div className="container mx-auto px-4 custom-container">
+                <div className="flex flex-wrap gap-x-0 gap-y-4 md:gap-y-0 justify-between">
                     {/* Left Column */}
-                    <div className="col-12 col-md-5 order-1 order-md-0">
-                        <div className="row g-0">
+                    <div className="w-full md:w-5/12 order-1 md:order-0">
+                        <div className="flex flex-wrap gap-0">
                             {projects.slice(0, Math.ceil(projects.length / 2)).map((proj, index) => (
-                                <div key={index} className="col-md-12 project-row-gap">
+                                <div key={index} className="w-full project-row-gap">
                                     <div className="quanto-data-box overflow-hidden">
                                         {/* <Link> */}
                                         <motion.div
@@ -64,10 +64,10 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                     </div>
 
                     {/* Right Column */}
-                    <div className="col-12 col-md-6 order-0 order-md-1">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="quanto__header text-center text-md-end mb-4">
+                    <div className="w-full md:w-6/12 order-0 md:order-1">
+                        <div className="flex flex-wrap">
+                            <div className="w-full">
+                                <div className="quanto__header text-center md:text-right mb-4">
                                     <Link className="quanto-link-btn btn-dark" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}portfolio`}>
                                         View more works
                                         <span>
@@ -79,7 +79,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                             </div>
 
                             {projects.slice(Math.ceil(projects.length / 2)).map((proj, index) => (
-                                <div key={index} className="col-md-10 mx-auto project-row-gap">
+                                <div key={index} className="w-full md:w-10/12 mx-auto project-row-gap">
                                     <div className="quanto-data-box overflow-hidden">
                                         {/* <Link> */}
                                         <motion.div

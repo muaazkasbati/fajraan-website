@@ -120,26 +120,6 @@ export default function Home({ posts, portfolio }) {
             }),
           }}
         />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Fajraan Tech",
-              url: "https://www.fajraan.tech",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: {
-                  "@type": "EntryPoint",
-                  urlTemplate: "https://www.fajraan.tech/search?q={search_term_string}",
-                },
-                "query-input": "required name=search_term_string",
-              },
-            }),
-          }}
-        />
       </Head>
       <Header />
       <main>

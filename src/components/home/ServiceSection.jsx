@@ -22,10 +22,10 @@ const ServiceSection = () => {
 
     return (
         <section className="quanto-service-section section-padding-top-bottom overflow-hidden">
-            <div className="container custom-container">
+            <div className="container mx-auto px-4 custom-container">
                 {/* Header */}
-                <div className="row">
-                    <div className="col-12 col-lg-9 col-xl-7">
+                <div className="flex">
+                    <div className="w-full lg:w-9/12 xl:w-7/12">
                         <motion.div className="quanto__header" {...headerAnim}>
                             <h3 className="title color-primary">We help you build your online success</h3>
                         </motion.div>
@@ -33,9 +33,9 @@ const ServiceSection = () => {
                 </div>
 
                 {/* Services */}
-                <div className="row g-4 row-padding-top">
+                <div className="grid gap-4 row-padding-top md:grid-cols-2">
                     {services.slice(0, 8).map((service, index) => (
-                        <div key={index} className="col-md-6">
+                        <div key={index} className="w-full">
                             <motion.div className="quanto-service-box" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.15 * index }}>
                                 <div className="quanto-iconbox-icon mb-3">
                                     <img src={service.icon} alt={`${service.title} icon`} width={52} height={52} loading="lazy" />

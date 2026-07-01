@@ -18,13 +18,13 @@ const clientLogos = [
 export default function ClientsSection() {
     return (
         <div className="clients-area overflow-hidden section-padding-top">
-            <div className="container custom-container">
+            <div className="container mx-auto px-4 custom-container">
                 {/* Header Section */}
-                <div className="row align-items-end">
-                    <div className="col-md-6">
-                        <div className="quanto__header text-center text-md-start">
+                <div className="flex flex-wrap items-end">
+                    <div className="w-full md:w-1/2">
+                        <div className="quanto__header text-center md:text-left">
                             <motion.p
-                                className="title mx-auto mx-md-0"
+                                className="title mx-auto md:mx-0"
                                 initial={{ opacity: 0, x: -100 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -35,7 +35,7 @@ export default function ClientsSection() {
                         </div>
                     </div>
 
-                    <div className="col-md-6 ps-md-0">
+                    <div className="w-full md:w-1/2 md:pl-0">
                         <motion.div
                             className="quanto__header logo"
                             initial={{ opacity: 0, x: 100 }}
@@ -49,7 +49,7 @@ export default function ClientsSection() {
                                     <img
                                         src={logo}
                                         alt={`client-logo-${i + 1}`}
-                                        className="img-fluid"
+                                        className="max-w-full h-auto"
                                         style={{ height: "auto", width: "auto" }}
                                     />
                                 </div>
@@ -60,13 +60,13 @@ export default function ClientsSection() {
 
                 {/* Clients Grid */}
                 <motion.div
-                    className="row"
+                    className="flex flex-wrap"
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
                 >
                     <motion.div
-                        className="col-12 clients__box-wrapper"
+                        className="w-full clients__box-wrapper"
                         variants={{
                             hidden: { opacity: 0, y: 50 },
                             show: {
@@ -92,7 +92,7 @@ export default function ClientsSection() {
                                 <img
                                     src={logo}
                                     alt={`client-logo-${index + 3}`}
-                                    className="img-fluid"
+                                    className="max-w-full h-auto"
                                     style={{ height: "auto", width: "auto" }}
                                 />
                             </motion.div>

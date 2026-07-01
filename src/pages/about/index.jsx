@@ -131,9 +131,9 @@ export default function About() {
             <Header />
             <main>
                 <section className="quanto-hero-about-section overflow-hidden">
-                    <div className="container custom-container">
-                        <div className="row g-4 align-items-end">
-                            <div className="col-lg-9 col-xxl-10">
+                    <div className="container mx-auto px-4 custom-container">
+                        <div className="grid md:grid-cols-12 grid-cols-1 gap-8 items-end">
+                            <div className="xl:col-span-10 md:col-span-9 col-span-1">
                                 <motion.div
                                     initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
                                     whileInView={{ opacity: 1, rotateX: 0 }}
@@ -147,7 +147,7 @@ export default function About() {
                                 </motion.div>
                             </div>
 
-                            <div className="col-lg-3 col-xxl-2">
+                            <div className="xl:col-span-2 md:col-span-3 col-span-1">
                                 <motion.div
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -210,11 +210,11 @@ export default function About() {
                 <VideoAreaSection video videoUrl="https://videos.pexels.com/video-files/5057529/5057529-uhd_2560_1440_25fps.mp4" scrollDownId='about-section' />
                 <OurAchievementSection />
                 <section className="quanto-about-area2 section-padding-top bg-color-white" id='about-section'>
-                    <div className="container custom-container">
+                    <div className="container mx-auto px-4 custom-container">
                         {/* Header */}
-                        <div className="row">
-                            <div className="col-xl-9 col-xxl-8 mx-auto">
-                                <div className="quanto__header text-center text-lg-start">
+                        <div className="flex">
+                            <div className="w-full xl:w-8/12 2xl:w-8/12 mx-auto">
+                                <div className="quanto__header">
                                     <motion.div
                                         initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
                                         whileInView={{ opacity: 1, rotateX: 0 }}
@@ -230,11 +230,11 @@ export default function About() {
                         </div>
 
                         {/* About Content */}
-                        <div className="row g-4 justify-content-between row-padding-top overflow-hidden">
+                        <div className="grid grid-cols-12 row-padding-top overflow-hidden">
                             {/* Left Image */}
-                            <div className="col-md-6 col-xl-5 col-xxl-4 d-flex align-items-xl-center order-1 order-xl-0 overflow-hidden">
+                            <div className="md:col-span-6 xl:col-span-4 col-span-12 self-center order-1 xl:order-0 overflow-hidden">
                                 <motion.div
-                                    className="overflow-hidden w-100"
+                                    className="overflow-hidden"
                                     initial={{ opacity: 0, x: -150 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -243,7 +243,7 @@ export default function About() {
                                     <img
                                         alt="about-thumb"
                                         loading="lazy"
-                                        className="w-100"
+                                        className=""
                                         style={{ height: '563px', objectFit: 'cover' }}
                                         src="/images/about/about-img-5.webp"
                                     />
@@ -251,7 +251,7 @@ export default function About() {
                             </div>
 
                             {/* Right Text */}
-                            <div className="col-xl-5 col-xxl-4 order-0 order-xl-1">
+                            <div className="md:col-span-5 xl:col-span-4 xl:col-start-6 col-span-12 order-0 xl:order-1">
                                 <div className="section-content">
                                     {/* Paragraph 1 */}
                                     <motion.div
@@ -316,7 +316,7 @@ export default function About() {
                             </div>
 
                             {/* Right Image */}
-                            <div className="col-md-6 col-xl-2 d-flex align-items-xl-center order-xl-2 overflow-hidden">
+                            <div className="md:col-span-6 xl:col-span-2 xl:col-start-11 col-span-12 self-center xl:order-2 overflow-hidden">
                                 <motion.div
                                     className="overflow-hidden w-100"
                                     initial={{ opacity: 0, x: -100 }}

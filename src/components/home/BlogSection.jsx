@@ -10,24 +10,24 @@ import { toWebP } from "@/utils/data";
 export default function BlogSection({ posts = [] }) {
   return (
     <section className="quanto-blog-section section-padding-top-bottom overflow-hidden">
-      <div className="container custom-container">
+      <div className="container mx-auto px-4 custom-container">
         {/* Section Header */}
         <motion.div
-          className="row g-3 align-items-end"
+          className="grid md:grid-cols-12 grid-cols-1 gap-3 items-end"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="col-12 col-lg-9 col-xl-7">
-            <div className="quanto__header text-center text-md-start">
+          <div className="xl:col-span-7 lg:col-span-9 col-span-1">
+            <div className="quanto__header text-center md:text-left">
               <h3 className="title color-primary">
                 Latest blogs to level up your business
               </h3>
             </div>
           </div>
-          <div className="col-12 col-lg-3 col-xl-5">
-            <div className="quanto__headerr d-flex justify-content-center justify-content-lg-end">
+          <div className="xl:col-span-5 lg:col-span-3 col-span-1">
+            <div className="quanto__headerr flex justify-center lg:justify-end">
               <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog`}>
                 View all articles
                 <span>
@@ -40,11 +40,11 @@ export default function BlogSection({ posts = [] }) {
         </motion.div>
 
         {/* Blog Grid */}
-        <div className="row g-4 row-padding-top">
+        <div className="grid gap-6 row-padding-top md:grid-cols-2 xl:grid-cols-3">
           {posts.map((data, index) => (
             <motion.div
               key={index}
-              className="col-md-6 col-lg-4"
+              className="w-full"
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -64,7 +64,7 @@ export default function BlogSection({ posts = [] }) {
                       height={332}
                       loading="lazy"
                       decoding="async"
-                      className="img-fluid"
+                      className="w-full h-auto"
                       style={{ aspectRatio: '5 / 4', objectFit: 'cover', height: 'auto', width: 'auto' }}
                     />
                   </Link>

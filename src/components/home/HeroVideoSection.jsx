@@ -145,7 +145,7 @@ export default function HeroVideoSection() {
 
     // Auto-play handling
     if (video) {
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     }
 
     const mm = gsap.matchMedia();
@@ -181,26 +181,24 @@ export default function HeroVideoSection() {
   }, []);
 
   return (
-    <div className="row" ref={sectionRef}>
-      <div className="col-lg-12">
-        <div className="pin-spacer">
-          <div className="quanto-hero__thumb section-margin-top">
-            <div ref={wrapperRef} className="video-wrapper" style={{ width: "100%" }}>
-              <video
-                ref={videoRef}
-                loop
-                muted
-                autoPlay
-                playsInline
-                preload="metadata"           // Don't use "auto"
-                poster="/images/hero/hero-video-poster.webp"   // ← VERY IMPORTANT
-                className="hero-video"
-                aria-hidden="true"
-              >
-                <source src="/videos/hero-video.webm" type="video/webm" />
-                <source src="/videos/hero-video.mp4" type="video/mp4" />
-              </video>
-            </div>
+    <div className="w-full" ref={sectionRef}>
+      <div className="pin-spacer">
+        <div className="quanto-hero__thumb section-margin-top">
+          <div ref={wrapperRef} className="video-wrapper" style={{ width: "100%" }}>
+            <video
+              ref={videoRef}
+              loop
+              muted
+              autoPlay
+              playsInline
+              preload="metadata"           // Don't use "auto"
+              poster="/images/hero/hero-video-poster.webp"   // ← VERY IMPORTANT
+              className="hero-video"
+              aria-hidden="true"
+            >
+              <source src="/videos/hero-video.webm" type="video/webm" />
+              <source src="/videos/hero-video.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>

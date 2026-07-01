@@ -1,4 +1,3 @@
-import BreadCrumb from '@/components/BreadCrumb'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import moment from 'moment';
@@ -193,13 +192,13 @@ export default function BlogDetail({ data, morePosts }) {
             <Header />
             <main>
                 <section className="blog-page-sec blog-detail-page section-padding-bottom">
-                    <div className="container custom-container">
-                        <div className="row">
-                            <div className="col-12">
+                    <div className="container mx-auto px-4 custom-container">
+                        <div className="flex">
+                            <div className="w-full">
                                 <div className="blog-item-wrapper">
                                     <div className="blog-item blog-item-details">
-                                        <div className="row justify-content-center row-padding-bottom">
-                                            <div className="col-xl-9 col-xxl-9">
+                                        <div className="flex justify-center row-padding-bottom">
+                                            <div className="w-full xl:w-9/12 2xl:w-9/12">
                                                 {/* Title Animation */}
                                                 <motion.div
                                                     initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
@@ -215,7 +214,7 @@ export default function BlogDetail({ data, morePosts }) {
                                                 </motion.div>
 
                                                 <div className="meta-box">
-                                                    <ul className="custom-ul meta-info d-flex">
+                                                    <ul className="custom-ul meta-info flex gap-4 flex-wrap">
                                                         <li><span>{moment(data?.date).format("MMMM DD, YYYY")}</span></li>
                                                         <li><span>{data?.categories?.join(', ')}</span></li>
                                                         <li><span>by Fajraan Tech</span></li>
@@ -234,7 +233,7 @@ export default function BlogDetail({ data, morePosts }) {
                                         >
                                             <img
                                                 alt="blog"
-                                                className="w-100 d-block"
+                                                className="w-full block"
                                                 style={{ height: '722px', objectFit: 'cover' }}
                                                 src={`${data?.featured_media?.link}`}
                                             />
@@ -260,8 +259,8 @@ export default function BlogDetail({ data, morePosts }) {
                                             }}
                                         >
 
-                                            <div className="row justify-content-center social-links-scroll position-relative">
-                                                <div className="col-xl-9 col-xxl-8">
+                                            <div className="flex justify-center social-links-scroll position-relative">
+                                                <div className="w-full xl:w-9/12 2xl:w-8/12">
                                                     <motion.div
                                                         className="blog-body"
                                                         variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } }}
@@ -287,10 +286,10 @@ export default function BlogDetail({ data, morePosts }) {
                 </section>
                 {morePosts?.length > 0 && (
                     <section className="quanto-blog-section section-padding-bottom overflow-hidden">
-                        <div className="container custom-container">
-                            <div className="row">
-                                <div className="col-12">
-                                    <div className="quanto__header text-center text-md-start row-padding-bottom">
+                        <div className="container mx-auto px-4 custom-container">
+                            <div className="flex">
+                                <div className="w-full">
+                                    <div className="quanto__header text-center md:text-left row-padding-bottom">
                                         <motion.h3
                                             className="title"
                                             initial={{ opacity: 0, x: -100 }}
@@ -304,7 +303,7 @@ export default function BlogDetail({ data, morePosts }) {
                                 </div>
                             </div>
                             <motion.div
-                                className="row gx-4 gy-5"
+                                className="grid grid-cols-3 gap-6"
                                 variants={containerVariants}
                                 initial="hidden"
                                 whileInView="show"

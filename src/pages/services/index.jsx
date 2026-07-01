@@ -131,10 +131,10 @@ export default function Services() {
         <HeroSec title="Inspiring leadership through design" />
         <VideoAreaSection imageUrl="/images/service/service-detail-img.webp" scrollDownId="service-section" />
         <section className="quanto-service2-section section-padding-top-bottom overflow-hidden" id="service-section">
-          <div className="container custom-container">
-            <div className="row gx-4 gy-5 justify-content-between">
-              <div className="col-12 col-xl-6 col-xxl-5">
-                <div className="quanto__header text-center text-lg-start">
+          <div className="container mx-auto px-4 custom-container">
+            <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
+              <div className="w-full xl:w-5/12">
+                <div className="quanto__header text-center xl:text-left">
                   <motion.div
                     initial={{ opacity: 0, rotateX: -80 }}
                     whileInView={{ opacity: 1, rotateX: 0 }}
@@ -147,12 +147,12 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="col-12 col-xl-6 col-xxl-6">
-                <div className="row g-114 quanto-service2__row">
+              <div className="w-full xl:w-6/12">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 g-114 quanto-service2__row">
                   {services.slice(0, 8).map((service, index) => (
                     <motion.div
                       key={index}
-                      className="col-md-6"
+                      className="w-full"
                       initial={{ opacity: 0, x: 100 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{

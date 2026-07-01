@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: "Instrument Sans";
   src: url("/fonts/InstrumentSans-VariableFont_wdth,wght.ttf") format("truetype");
@@ -41,13 +43,13 @@ body {
   overflow-x: hidden;
 }
 
-@media (pointer: coarse) {
+/* @media (pointer: coarse) {
 
   html,
   body {
     scroll-behavior: smooth !important;
   }
-}
+} */
 
 
 body {
@@ -6736,7 +6738,7 @@ a.quanto-default-btn.sm-size {
 }
 
 .footer-widgets .contacts {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   line-height: 166.667%
 }
 
