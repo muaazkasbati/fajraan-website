@@ -8,14 +8,21 @@ import services from '@/utils/servicesNew'
 import VideoAreaSection from '@/components/VideoAreaSection'
 
 export async function getServerSideProps(context) {
-  const { slug } = context.params
-  const serviceData = services.find(service => service.slug === slug) || null
+  const { slug } = context.params;
+
+  const serviceData = services.find(service => service.slug === slug);
+
+  if (!serviceData) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
       serviceData,
     },
-  }
+  };
 }
 
 
