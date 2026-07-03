@@ -7,21 +7,17 @@ import { motion } from "framer-motion";
 import services from '@/utils/servicesNew'
 import VideoAreaSection from '@/components/VideoAreaSection'
 
-export async function getServerSideProps(context) {
-  const { slug } = context.params;
+export async function getServerSideProps({ params }) {
+  const slug = params?.slug;
 
-  const serviceData = services.find(service => service.slug === slug);
+  const serviceData = services.find(s => s.slug === slug);
 
   if (!serviceData) {
-    return {
-      notFound: true,
-    };
+    return { notFound: true };
   }
 
   return {
-    props: {
-      serviceData,
-    },
+    props: { serviceData },
   };
 }
 
