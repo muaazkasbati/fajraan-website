@@ -7,9 +7,7 @@ import React from 'react'
 
 export async function getStaticProps() {
     try {
-        const res = await fetch(
-            `https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`
-        );
+        const res = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`);
         if (!res.ok) throw new Error('Failed to fetch portfolio');
         const data = await res.json();
 
@@ -20,9 +18,7 @@ export async function getStaticProps() {
             link: item.link,
             year: item.meta?.year || '—',
             category: item._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
-            image:
-                item._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
-                '/images/default.webp',
+            image: item._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/default.webp',
         }));
 
         return {

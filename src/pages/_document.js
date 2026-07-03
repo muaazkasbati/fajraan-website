@@ -25,7 +25,7 @@ export default function Document() {
           rel="preload"
           href="/fonts/InstrumentSans-VariableFont_wdth,wght.ttf"
           as="font"
-          type="font/woff2"
+          type="font/ttf"
           crossOrigin="anonymous"
         />
 
