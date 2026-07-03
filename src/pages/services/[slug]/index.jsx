@@ -2,9 +2,9 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import HeroSec from '@/components/HeroSec'
 import Head from 'next/head'
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import { motion } from "framer-motion";
-import services from '@/utils/services'
+import services from '@/utils/servicesNew'
 import VideoAreaSection from '@/components/VideoAreaSection'
 
 export async function getServerSideProps(context) {
