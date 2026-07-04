@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const faqData = [
@@ -46,6 +46,11 @@ const faqData = [
 
 
 const FaqsSection = () => {
+    const [openIndex, setOpenIndex] = useState(0);
+
+    const toggleAccordion = (index) => {
+        setOpenIndex((prev) => (prev === index ? null : index));
+    };
     return (
         <section className="quanto-faq-area bg-color-white overflow-hidden section-padding-bottom section-padding-top-bottom">
             <div className="container mx-auto px-4 custom-container">
@@ -66,7 +71,7 @@ const FaqsSection = () => {
 
                     </motion.div>
 
-                    <div className="w-full lg:w-1/2 xl:w-7/12 2xl:w-7/12 gsap-scroll">
+                    {/* <div className="w-full lg:w-1/2 xl:w-7/12 2xl:w-7/12 gsap-scroll">
                         <div className="accordion quanto-faq-accordion" id="accordionExample">
                             {faqData.map((item, index) => (
                                 <motion.div
@@ -100,6 +105,46 @@ const FaqsSection = () => {
                                     </div>
                                 </motion.div>
                             ))}
+                        </div>
+                    </div> */}
+                    <div className="w-full lg:w-1/2 xl:w-7/12 2xl:w-7/12 gsap-scroll">
+                        <div className="accordion quanto-faq-accordion">
+                            {faqData.map((item, index) => {
+                                const isOpen = openIndex === index;
+
+                                return (
+                                    <motion.div
+                                        key={index}
+                                        className="accordion-item"
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <h6 className="accordion-header">
+                                            <button
+                                                aria-label={item.question}
+                                                type="button"
+                                                aria-expanded={isOpen}
+                                                onClick={() => toggleAccordion(index)}
+                                                className={`accordion-button w-full text-left cursor-pointer ${isOpen ? "" : "collapsed"
+                                                    }`}
+                                            >
+                                                {item.question}
+                                            </button>
+                                        </h6>
+
+                                        <div
+                                            className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                                                }`}
+                                        >
+                                            <div className="accordion-body">
+                                                {item.answer}
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
