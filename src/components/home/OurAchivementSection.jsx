@@ -1,52 +1,3 @@
-// "use client";
-// import React from "react";
-// import { motion } from "framer-motion";
-
-// export default function OurAchievementSection() {
-//   const achievements = [
-//     { id: 1, value: "3", suffix: "+", label: "Years of work experience" },
-//     { id: 2, value: "8", suffix: "+", label: "Projects completed successfully" },
-//     { id: 3, value: "10", suffix: "+", label: "Team members worldwide" },
-//     { id: 4, value: "95", suffix: "%", label: "Happy clients & repeat rate" },
-//   ];
-
-//   return (
-//     <section
-//       className="quanto-funfacts-section overflow-hidden section-padding-top-bottom"
-//       id="our-achievement-01"
-//     >
-//       <div className="container custom-container">
-//         <div className="row">
-//           <div className="col-12">
-//             <div className="quanto-funfacts__wrapper">
-//               {achievements.map((item, index) => (
-//                 <motion.div
-//                   key={item.id}
-//                   className="quanto-funfact-box"
-//                   initial={{ opacity: 0, x: 100 }}
-//                   whileInView={{ opacity: 1, x: 0 }}
-//                   viewport={{ once: true }}
-//                   transition={{
-//                     duration: 0.8,
-//                     ease: "easeOut",
-//                     delay: 0.2 * index,
-//                   }}
-//                 >
-//                   <h2 className="counter-item d-inline-flex align-items-center color-secondary">
-//                     <div>{item.value}</div>
-//                     <em>{item.suffix}</em>
-//                   </h2>
-//                   <span className="funfact-info">{item.label}</span>
-//                 </motion.div>
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
@@ -61,24 +12,20 @@ export default function OurAchievementSection() {
 
   return (
     <section
-      className="quanto-funfacts-section overflow-hidden section-padding-top-bottom"
-      id="our-achievement-01"
+      className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden"
+      id="our-achievement"
     >
-      <div className="container mx-auto px-4 custom-container">
-        <div className="flex flex-wrap">
-          <div className="w-full">
-            <div className="quanto-funfacts__wrapper">
-              {achievements.map((item, index) => (
-                <AnimatedCounterBox
-                  key={item.id}
-                  value={item.value}
-                  suffix={item.suffix}
-                  label={item.label}
-                  delay={0.2 * index}
-                />
-              ))}
-            </div>
-          </div>
+      <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+        <div className="grid sm:grid-cols-4 items-center gap-5">
+          {achievements.map((item, index) => (
+            <AnimatedCounterBox
+              key={item.id}
+              value={item.value}
+              suffix={item.suffix}
+              label={item.label}
+              delay={0.2 * index}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -121,15 +68,14 @@ function AnimatedCounterBox({ value, suffix, label, delay }) {
   return (
     <motion.div
       ref={ref}
-      className="quanto-funfact-box"
+      className="sm:border-l border-1 sm:pl-7 sm:text-left text-center"
       initial={{ opacity: 0, x: 100 }}
       animate={controls}
     >
-      <h2 className="counter-item inline-flex items-center gap-2 color-secondary">
-        <div>{displayValue}</div>
-        <em>{suffix}</em>
+      <h2 className="sm:text-[100px] text-[60px] tracking-[-2.5px] font-semibold text-secondary leading-none">
+        <span>{displayValue}</span><span>{suffix}</span>
       </h2>
-      <span className="funfact-info">{label}</span>
+      <p className="text-[18px]">{label}</p>
     </motion.div>
   );
 }

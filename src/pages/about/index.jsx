@@ -14,6 +14,7 @@ import TestimonialSection from '@/components/home/TextimonialSection';
 import VideoAreaSection from '@/components/VideoAreaSection';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import Button from '@/components/Button';
 
 export default function About() {
     const awards = [
@@ -130,8 +131,8 @@ export default function About() {
             </Head>
             <Header />
             <main>
-                <section className="quanto-hero-about-section overflow-hidden">
-                    <div className="container mx-auto px-4 custom-container">
+                <section className="pt-27.5 pb-16.25 md:pt-32.5 md:pb-25 xl:pt-50 xl:pb-32.5 overflow-hidden">
+                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
                         <div className="grid md:grid-cols-12 grid-cols-1 gap-8 items-end">
                             <div className="xl:col-span-10 md:col-span-9 col-span-1">
                                 <motion.div
@@ -139,9 +140,9 @@ export default function About() {
                                     whileInView={{ opacity: 1, rotateX: 0 }}
                                     transition={{ duration: 0.8, ease: "easeOut" }}
                                     viewport={{ once: true }}
-                                    className="quanto-hero-about__content"
+                                    className=""
                                 >
-                                    <h1 className="title color-primary">
+                                    <h1 className="text-[55px] md:text-[65px] lg:text-[85px] xl:text-[130px] leading-[107.143%] tracking-[-4.2px] font-semibold text-primary">
                                         Empowering brands to grow with digital innovation
                                     </h1>
                                 </motion.div>
@@ -153,10 +154,10 @@ export default function About() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                                     viewport={{ once: true }}
-                                    className="quanto-hero-about__info"
+                                    className=""
                                 >
                                     <motion.h4
-                                        className="rating-point color-primary"
+                                        className="text-[30px] md:text-[40px] lg:text-[50px] xl:text-[60px] leading-[116.667%] tracking-[-1.5px] font-semibold text-primary"
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.6, delay: 0.4 }}
@@ -166,28 +167,17 @@ export default function About() {
                                     </motion.h4>
 
                                     <motion.div
-                                        className="stars color-secondary"
+                                        className="my-1.5 text-secondary"
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.6, delay: 0.6 }}
                                         viewport={{ once: true }}
                                     >
-                                        <ul className="custom-ul">
+                                        <ul className="flex items-center gap-1">
                                             {[...Array(5)].map((_, i) => (
                                                 <li key={i}>
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="24"
-                                                        height="24"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                    >
-                                                        <path
-                                                            fillRule="evenodd"
-                                                            clipRule="evenodd"
-                                                            d="M14.8328 9.16783L12 0L9.16718 9.16783H0L7.41641 14.8339L4.58359 24.0017L12 18.3357L19.4164 24.0017L16.9734 16.0956L12.6545 17.7925L16.5841 14.8355L16.5836 14.8339L24 9.16783H14.8328Z"
-                                                            fill="currentColor"
-                                                        />
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path fillRule="evenodd" clipRule="evenodd" d="M14.8328 9.16783L12 0L9.16718 9.16783H0L7.41641 14.8339L4.58359 24.0017L12 18.3357L19.4164 24.0017L16.9734 16.0956L12.6545 17.7925L16.5841 14.8355L16.5836 14.8339L24 9.16783H14.8328Z" fill="currentColor" />
                                                     </svg>
                                                 </li>
                                             ))}
@@ -199,6 +189,7 @@ export default function About() {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.6, delay: 0.8 }}
                                         viewport={{ once: true }}
+                                        className="text-[20px]"
                                     >
                                         10+ reviews from clients worldwide
                                     </motion.p>
@@ -209,29 +200,22 @@ export default function About() {
                 </section>
                 <VideoAreaSection video videoUrl="https://videos.pexels.com/video-files/5057529/5057529-uhd_2560_1440_25fps.mp4" scrollDownId='about-section' />
                 <OurAchievementSection />
-                <section className="quanto-about-area2 section-padding-top bg-color-white" id='about-section'>
-                    <div className="container mx-auto px-4 custom-container">
-                        {/* Header */}
-                        <div className="flex">
-                            <div className="w-full xl:w-8/12 2xl:w-8/12 mx-auto">
-                                <div className="quanto__header">
-                                    <motion.div
-                                        initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
-                                        whileInView={{ opacity: 1, rotateX: 0 }}
-                                        transition={{ duration: 0.9, ease: "easeOut" }}
-                                        viewport={{ once: true }}
-                                    >
-                                        <h3 className="title color-primary">
-                                            We create seamless digital experiences that help businesses grow
-                                        </h3>
-                                    </motion.div>
-                                </div>
-                            </div>
+                <section className="lg:pt-32.5 md:pt-20 pt-16.25 bg-white" id='about-section'>
+                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+                        <div className="w-full xl:w-8/12 2xl:w-8/12 mx-auto">
+                            <motion.div
+                                initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
+                                whileInView={{ opacity: 1, rotateX: 0 }}
+                                transition={{ duration: 0.9, ease: "easeOut" }}
+                                viewport={{ once: true }}
+                            >
+                                <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-primary">
+                                    We create seamless digital experiences that help businesses grow
+                                </h3>
+                            </motion.div>
                         </div>
 
-                        {/* About Content */}
-                        <div className="grid grid-cols-12 row-padding-top overflow-hidden">
-                            {/* Left Image */}
+                        <div className="grid grid-cols-12 lg:pt-32.5 md:pt-20 pt-16.25 overflow-hidden">
                             <div className="md:col-span-6 xl:col-span-4 col-span-12 self-center order-1 xl:order-0 overflow-hidden">
                                 <motion.div
                                     className="overflow-hidden"
@@ -240,82 +224,66 @@ export default function About() {
                                     transition={{ duration: 0.8, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                 >
-                                    <img
-                                        alt="about-thumb"
-                                        loading="lazy"
-                                        className=""
-                                        style={{ height: '563px', objectFit: 'cover' }}
-                                        src="/images/about/about-img-5.webp"
-                                    />
+                                    <img alt="about-thumb" loading="lazy" className="h-140.75 object-cover" src="/images/about/about-img-5.webp" />
                                 </motion.div>
                             </div>
 
-                            {/* Right Text */}
                             <div className="md:col-span-5 xl:col-span-4 xl:col-start-6 col-span-12 order-0 xl:order-1">
-                                <div className="section-content">
-                                    {/* Paragraph 1 */}
+                                <motion.div
+                                    initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
+                                    whileInView={{ opacity: 1, rotateX: 0 }}
+                                    transition={{ duration: 0.9, ease: "easeOut" }}
+                                    viewport={{ once: true }}
+                                    className="mb-7"
+                                >
+                                    <p className="text-[20px]">
+                                        At Fajraan Tech, we blend creativity with technology to craft digital
+                                        solutions that make an impact. From web and mobile apps to branding and
+                                        design, we focus on simplicity, usability, and performance—turning your
+                                        ideas into real business results.
+                                    </p>
+                                </motion.div>
+
+                                <motion.div
+                                    initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
+                                    whileInView={{ opacity: 1, rotateX: 0 }}
+                                    transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+                                    viewport={{ once: true }}
+                                    className="mb-7"
+                                >
+                                    <p className="text-[20px]">
+                                        Our team brings together developers, designers, and strategists who work
+                                        closely to build innovative solutions that help brands scale. Every project
+                                        we deliver is guided by passion, precision, and a shared vision for
+                                        excellence.
+                                    </p>
+                                </motion.div>
+
+                                <Button link ariaLabel="Follow to about" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}about`}>
+                                    More about us
+                                </Button>
+
+                                <figure className="overflow-hidden w-100 mt-7">
                                     <motion.div
-                                        initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
-                                        whileInView={{ opacity: 1, rotateX: 0 }}
-                                        transition={{ duration: 0.9, ease: "easeOut" }}
+                                        className="overflow-hidden"
+                                        initial={{ opacity: 0, x: -150 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                                         viewport={{ once: true }}
                                     >
-                                        <p>
-                                            At Fajraan Tech, we blend creativity with technology to craft digital
-                                            solutions that make an impact. From web and mobile apps to branding and
-                                            design, we focus on simplicity, usability, and performance—turning your
-                                            ideas into real business results.
-                                        </p>
+                                        <img
+                                            alt="about-thumb"
+                                            loading="lazy"
+                                            width="380"
+                                            height="350"
+                                            className="w-100 object-cover"
+                                            style={{ aspectRatio: "1.08" }}
+                                            src="/images/about/about-img-2.webp"
+                                        />
                                     </motion.div>
-
-                                    {/* Paragraph 2 */}
-                                    <motion.div
-                                        initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
-                                        whileInView={{ opacity: 1, rotateX: 0 }}
-                                        transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-                                        viewport={{ once: true }}
-                                    >
-                                        <p>
-                                            Our team brings together developers, designers, and strategists who work
-                                            closely to build innovative solutions that help brands scale. Every project
-                                            we deliver is guided by passion, precision, and a shared vision for
-                                            excellence.
-                                        </p>
-                                    </motion.div>
-
-                                    {/* Link */}
-                                    <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}about`}>
-                                        More about us
-                                        <span>
-                                            <ArrowRight className="arry1" size={22} />
-                                            <ArrowRight className="arry2" size={22} />
-                                        </span>
-                                    </Link>
-
-                                    {/* Middle Image */}
-                                    <figure className="overflow-hidden w-100">
-                                        <motion.div
-                                            className="overflow-hidden"
-                                            initial={{ opacity: 0, x: -150 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                                            viewport={{ once: true }}
-                                        >
-                                            <img
-                                                alt="about-thumb"
-                                                loading="lazy"
-                                                width="380"
-                                                height="350"
-                                                className="w-100"
-                                                style={{ aspectRatio: "1.08", objectFit: 'cover' }}
-                                                src="/images/about/about-img-2.webp"
-                                            />
-                                        </motion.div>
-                                    </figure>
-                                </div>
+                                </figure>
                             </div>
 
-                            {/* Right Image */}
                             <div className="md:col-span-6 xl:col-span-2 xl:col-start-11 col-span-12 self-center xl:order-2 overflow-hidden">
                                 <motion.div
                                     className="overflow-hidden w-100"
@@ -324,20 +292,14 @@ export default function About() {
                                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                 >
-                                    <img
-                                        alt="about-thumb"
-                                        loading="lazy"
-                                        className="w-100"
-                                        style={{ height: '295px', objectFit: 'cover' }}
-                                        src="/images/about/about-img-1.webp"
-                                    />
+                                    <img alt="about-thumb" loading="lazy" className="w-100 h-73.75 object-cover" src="/images/about/about-img-1.webp" />
                                 </motion.div>
                             </div>
                         </div>
                     </div>
 
                     <motion.div
-                        className="marquee-container section-margin-top overflow-hidden"
+                        className="lg:mt-32.5 md:mt-20 mt-16.25 overflow-hidden"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
@@ -352,81 +314,15 @@ export default function About() {
                         >
                             {items.map((text, idx) => (
                                 <div key={idx} className="marquee-item overflow-hidden">
-                                    <h1 className="color-secondary overflow-hidden">{text}</h1>
+                                    <h1 className="text-[65px] md:text-[75px] lg:text-[95px] xl:text-[140px] leading-[107.143%] tracking-[-4.2px] font-semibold text-secondary overflow-hidden">{text}</h1>
                                 </div>
                             ))}
                         </Marquee>
 
                     </motion.div>
                 </section>
-                {/* <section className="quanto-awards-area section-padding-top-bottom overflow-hidden">
-                <div className="container custom-container">
-                    <div className="row justify-content-end">
-                        <div className="col-lg-10 col-xl-8 col-xxl-7">
-                            {awards.map((award, index) => (
-                                <motion.div
-                                    key={index}
-                                    className="quanto-awards-box mb-4"
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.6,
-                                        delay: index * 0.2, // stagger effect
-                                        ease: "easeOut",
-                                    }}
-                                    viewport={{ once: true }}
-                                >
-                                    <h6 className="awards-title">{award.title}</h6>
-                                    <span className="awards-info">{award.info}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section> */}
                 <TeamSection />
                 <TestimonialSection aboutPage />
-                {/* <div className="quanto-lients-area bg-color-2 section-padding-bottom">
-                <div className="container custom-container">
-                    <div className="row g-4">
-                        <div className="col-12">
-                            <motion.p
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, ease: "easeOut" }}
-                                viewport={{ once: true }}
-                            >
-                                We worked with the largest global brands
-                            </motion.p>
-                        </div>
-
-                        <div className="col-12 clients__box-wrapper">
-                            {clients.map((logo, index) => (
-                                <motion.div
-                                    key={index}
-                                    className="client-box"
-                                    initial={{ opacity: 0, x: 50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{
-                                        duration: 0.7,
-                                        delay: index * 0.15,
-                                        ease: "easeOut",
-                                    }}
-                                    viewport={{ once: true }}
-                                >
-                                    <img
-                                        src={logo}
-                                        alt={`client-logo-${index + 3}`}
-                                        className="client-logo w-100 h-100"
-                                        loading="lazy"
-                                        style={{ objectFit: "contain", maxWidth: 160, height: "auto" }}
-                                    />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div> */}
             </main>
             <Footer />
         </>

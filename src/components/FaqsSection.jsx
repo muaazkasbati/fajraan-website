@@ -52,93 +52,50 @@ const FaqsSection = () => {
         setOpenIndex((prev) => (prev === index ? null : index));
     };
     return (
-        <section className="quanto-faq-area bg-color-white overflow-hidden section-padding-bottom section-padding-top-bottom">
-            <div className="container mx-auto px-4 custom-container">
+        <section className="bg-white overflow-hidden lg:py-32.5 md:py-20 py-16.25">
+            <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
                 <div className="flex flex-wrap gap-4 justify-between">
                     <motion.div
-                        className="w-full lg:w-1/2 xl:w-5/12 2xl:w-4/12 gsap-sticky"
+                        className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <div className="quanto__header">
-                            <h3 className="title color-primary">Frequently Asked Questions</h3>
-                            <p className="subtitle text-gray-500 mt-2">
-                                Everything you need to know about working with Fajraan Tech — from project flow to support.
-                            </p>
-                        </div>
-
+                        <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-primary">Frequently Asked Questions</h3>
+                        <p className="text-[20px] text-3 mt-2">
+                            Everything you need to know about working with Fajraan Tech — from project flow to support.
+                        </p>
                     </motion.div>
 
-                    {/* <div className="w-full lg:w-1/2 xl:w-7/12 2xl:w-7/12 gsap-scroll">
-                        <div className="accordion quanto-faq-accordion" id="accordionExample">
-                            {faqData.map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    className="accordion-item"
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    viewport={{ once: true }}
-                                >
-                                    <h6 className="accordion-header">
-                                        <button
-                                            aria-label={item.question}
-                                            className="accordion-button collapsed"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target={`#collapse${index}`}
-                                            aria-expanded={index === 0 ? "true" : "false"}
-                                            aria-controls={`collapse${index}`}
-                                            id={`collapse${index}`}
-                                        >
-                                            {item.question}
-                                        </button>
-                                    </h6>
-                                    <div
-                                        id={`collapse${index}`}
-                                        className={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}
-                                        data-bs-parent="#accordionExample"
-                                    >
-                                        <div className="accordion-body">{item.answer}</div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div> */}
-                    <div className="w-full lg:w-1/2 xl:w-7/12 2xl:w-7/12 gsap-scroll">
-                        <div className="accordion quanto-faq-accordion">
+                    <div className="w-full md:w-1/2 lg:w-7/12 xl:w-7/12">
+                        <div className="">
                             {faqData.map((item, index) => {
                                 const isOpen = openIndex === index;
 
                                 return (
                                     <motion.div
                                         key={index}
-                                        className="accordion-item"
+                                        className="border-t border-1"
                                         initial={{ opacity: 0, y: 30 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
                                         viewport={{ once: true }}
                                     >
-                                        <h6 className="accordion-header">
+                                        <h6 className="text-[20px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold">
                                             <button
                                                 aria-label={item.question}
                                                 type="button"
                                                 aria-expanded={isOpen}
                                                 onClick={() => toggleAccordion(index)}
-                                                className={`accordion-button w-full text-left cursor-pointer ${isOpen ? "" : "collapsed"
-                                                    }`}
+                                                className={`pt-9 pb-4 w-full text-left cursor-pointer ${isOpen ? "" : "collapsed"}`}
                                             >
                                                 {item.question}
                                             </button>
                                         </h6>
 
-                                        <div
-                                            className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                                                }`}
-                                        >
-                                            <div className="accordion-body">
+                                        <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
+                                            <div className="pb-8">
                                                 {item.answer}
                                             </div>
                                         </div>

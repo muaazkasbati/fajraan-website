@@ -2,8 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Button from "./Button";
 
 const pricingData = [
     {
@@ -50,25 +49,19 @@ const pricingData = [
 
 const PricingSection = () => {
     return (
-        <section className="quanto-pricing-area section-padding-top-bottom bg-color-2">
-            <div className="container mx-auto px-4 custom-container">
-                <div className="flex">
-                    <div className="w-full">
-                        <div className="quanto__header">
-                            <motion.h3
-                                className="title text-center text-lg-start color-primary"
-                                initial={{ opacity: 0, x: -100 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
-                                viewport={{ once: true }}
-                            >
-                                Choose the perfect plan for your business
-                            </motion.h3>
-                        </div>
-                    </div>
-                </div>
+        <section className="lg:py-32.5 md:py-20 py-16.25 bg-2">
+            <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+                <motion.h3
+                    className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-center lg:text-start text-primary"
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                >
+                    Choose the perfect plan for your business
+                </motion.h3>
 
-                <div className="grid gap-4 row-padding-top md:grid-cols-2 xl:grid-cols-3">
+                <div className="grid gap-4 pt-15 md:grid-cols-2 xl:grid-cols-3">
                     {pricingData.map((plan, index) => {
                         const overlayVariants = {
                             initial: { x: "-100%", opacity: 0, visibility: "hidden" },
@@ -78,7 +71,7 @@ const PricingSection = () => {
                         return (
                             <motion.div
                                 key={index}
-                                className="w-full h-full"
+                                className="h-full w-full"
                                 initial={{ opacity: 0, x: 100 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{
@@ -88,40 +81,42 @@ const PricingSection = () => {
                                 }}
                                 viewport={{ once: true }}
                             >
-                                {/* Parent box */}
                                 <motion.div
-                                    className="quanto-pricing-box bg-white"
-                                    style={{ position: "relative", overflow: "hidden", height: "100%" }}
-                                    whileHover="hover" // triggers children variants
+                                    className="group hover:text-white relative z-0 h-full overflow-hidden bg-white p-6.25 sm:p-7.5 md:p-10 xl:px-15 xl:pt-13.5 xl:pb-12"
+                                    whileHover="hover"
                                     initial="initial"
                                 >
-                                    <motion.div className="hover-overlay" variants={overlayVariants} transition={{ duration: 0.5, ease: "easeOut" }} />
+                                    <motion.div
+                                        className="absolute inset-0 -z-10 bg-primary opacity-0"
+                                        variants={overlayVariants}
+                                        transition={{ duration: 0.5, ease: "easeOut" }}
+                                    />
 
-                                    <h5 className="pricing-title">{plan.title}</h5>
-                                    <p className="pricing-info">{plan.info}</p>
-                                    <h3 className="pricing color-secondary">$ {plan.price} 
-                                        {/* <small style={{ fontSize: '30px' }}>USD</small> */}
-                                        </h3>
+                                    <h5 className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold mb-1.5 transition-all duration-300">
+                                        {plan.title}
+                                    </h5>
 
-                                    <div className="pricing-list">
-                                        <ul className="custom-ul">
-                                            {plan.features.map((feature, i) => (
-                                                <li key={i}>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                        <path fillRule="evenodd" clipRule="evenodd" d="M8.26686 17.2517L23.3996 2.09009C18.5966 8.6869 13.7937 15.2841 9.01958 21.9098L0.599609 11.6671C3.17479 13.5188 5.72074 15.3708 8.2673 17.2513L8.26686 17.2517Z" fill="currentColor" />
-                                                    </svg>
-                                                    {feature}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <Link aria-label="Contact" className="quanto-link-btn btn-pill" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact?plan=${plan.title}`}>
+                                    <p className="text-[20px] mb-3.75 md:mb-5 lg:mb-8">
+                                        {plan.info}
+                                    </p>
+
+                                    <h3 className="mb-3.75 text-[40px] text-secondary transition-all duration-300 md:mb-5 lg:mb-8 lg:text-[66px] leading-none font-semibold">
+                                        $ {plan.price}
+                                    </h3>
+
+                                    <ul className="mb-5 space-y-2.5 text-[19px]">
+                                        {plan.features.map((feature, i) => (
+                                            <li key={i} className="flex items-center gap-1.5">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className="h-5 w-5 shrink-0 md:h-6 md:w-6">
+                                                    <path fillRule="evenodd" clipRule="evenodd" d="M8.26686 17.2517L23.3996 2.09009C18.5966 8.6869 13.7937 15.2841 9.01958 21.9098L0.599609 11.6671C3.17479 13.5188 5.72074 15.3708 8.2673 17.2513L8.26686 17.2517Z" fill="currentColor" />
+                                                </svg>
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <Button link ariaLabel={`Follow to Contact`} href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact?plan=${plan.title}`}>
                                         Go with this plan
-                                        <span>
-                                            <ArrowRight className="arry1" size={22} />
-                                            <ArrowRight className="arry2" size={22} />
-                                        </span>
-                                    </Link>
+                                    </Button>
                                 </motion.div>
                             </motion.div>
                         );

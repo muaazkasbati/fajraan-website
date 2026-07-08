@@ -39,26 +39,23 @@ export default function TestimonialSection({ aboutPage = false }) {
 
 
   return aboutPage ?
-    <section className="quanto-testimonial3-section bg-color-2 section-padding-top-bottom">
-      <div className="container mx-auto px-4 custom-container">
+    <section className="bg-2 lg:py-32.5 md:py-20 py-16.25">
+      <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
         <div className="grid md:grid-cols-12 grid-cols-1 gap-4 overflow-hidden">
-          {/* Left Title */}
           <div className="md:col-span-5 col-span-1">
             <motion.div
-              className="quanto__header md:h-100 pr-27!"
+              className="border-r border-1 md:h-100 pr-27"
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <h3 className="title color-primary">What clients say about Fajraan Tech</h3>
+              <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-primary">What clients say about Fajraan Tech</h3>
             </motion.div>
           </div>
 
-          {/* Right Slider */}
           <div className="md:col-span-5 md:col-start-8 col-span-1">
             <motion.div
-              className="fade-anim"
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -88,11 +85,11 @@ export default function TestimonialSection({ aboutPage = false }) {
                       }}
                       viewport={{ once: true }}
                     >
-                      <div className="testimonial3-content">
-                        <p>{item.text}</p>
-                        <div className="client-info">
-                          <p className="client-name">{item.author}</p>
-                          <span className="client-designation">
+                      <div className="">
+                        <p className="font-normal leading-[133.333%] tracking-[-0.36px] text-primary md:text-[25px]">{item.text}</p>
+                        <div className="mt-8">
+                          <p className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold text-black">{item.author}</p>
+                          <span className="text-[18px] text-primary mt-4">
                             {item.role}
                           </span>
                         </div>
@@ -102,13 +99,12 @@ export default function TestimonialSection({ aboutPage = false }) {
                 ))}
               </Swiper>
 
-              {/* Navigation Buttons */}
 
-              <div className="testimonial3-navigation" style={{ cursor: "pointer" }}>
-                <div className="prev-btn bg-color-white">
+              <div className="mt-5 flex items-center justify-start gap-2 xl:mt-12">
+                <div className="flex items-center justify-center h-12.5 w-12.5 rounded-full text-primary md:h-15 md:w-15 md:text-[18px] lg:h-17.5 lg:w-17.5 prev-btn bg-white cursor-pointer">
                   <ChevronLeft size={22} />
                 </div>
-                <div className="next-btn bg-color-white">
+                <div className="flex items-center justify-center h-12.5 w-12.5 rounded-full text-primary md:h-15 md:w-15 md:text-[18px] lg:h-17.5 lg:w-17.5 next-btn bg-white cursor-pointer">
                   <ChevronRight size={22} />
                 </div>
               </div>
@@ -118,10 +114,10 @@ export default function TestimonialSection({ aboutPage = false }) {
       </div>
     </section>
     :
-    <section className="quanto-testimonial-section section-padding-top overflow-hidden">
-      <div className="container mx-auto px-4 custom-container">
-        <div className="quanto__header text-center mb-10">
-          <h3 className="title">Client Testimonials</h3>
+    <section className="lg:pt-32.5 md:pt-20 pt-16.25 overflow-hidden">
+      <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+        <div className="text-center mb-10">
+          <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold z-3 translate-y-[calc(100%+40px)] text-center text-white mix-blend-difference 2xl:translate-y-[calc(100%+60px)] relative">Client Testimonials</h3>
         </div>
 
         <div className="grid md:grid-cols-12 grid-cols-1 md:gap-4 gap-8">
@@ -143,7 +139,7 @@ export default function TestimonialSection({ aboutPage = false }) {
               {testimonials.map((t, index) => (
                 <SwiperSlide key={index}>
                   <div
-                    className="testimonial-img rounded-xl"
+                    className="rounded-xl"
                     style={{
                       backgroundImage: `url(${t.image})`,
                       backgroundPosition: "center",
@@ -171,26 +167,26 @@ export default function TestimonialSection({ aboutPage = false }) {
                 setTextController(swiper);
               }}
               controller={{ control: imgController }}
-              className="testimonial-text-slider"
+              className=""
             >
               {testimonials.map((t, index) => (
                 <SwiperSlide key={index}>
-                  <div className="testimonial-content">
-                    <p>{t.text}</p>
-                    <div className="author">
-                      <p className="author-title color-primary">{t.author}</p>
-                      <span className="author-designation">{t.role}</span>
+                  <div className="sm:mt-45">
+                    <p className="font-normal leading-[133.333%] tracking-[-0.36px] text-black md:text-[25px] xl:text-[36px]">{t.text}</p>
+                    <div className="mt-8">
+                      <p className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold text-primary">{t.author}</p>
+                      <span className="text-[18px] mt-4">{t.role}</span>
                     </div>
                   </div>
                 </SwiperSlide>
               ))}
             </Swiper>
 
-            <div className="quanto-testimonial__navigation flex gap-4 mt-4">
-              <div className="quanto-testimonial__prev prev-slide cursor-pointer">
+            <div className="mt-3.75 flex items-center gap-2 md:mt-7.5 lg:gap-4 lg:mt-12">
+              <div className="flex h-11.25 w-11.25 items-center justify-center gap-2 rounded-full bg-2 md:h-12.5 md:w-12.5 lg:h-17.5 lg:w-17.5 prev-slide cursor-pointer">
                 <ArrowLeft size={22} />
               </div>
-              <div className="quanto-testimonial__next next-slide cursor-pointer">
+              <div className="flex h-11.25 w-11.25 items-center justify-center gap-2 rounded-full bg-2 md:h-12.5 md:w-12.5 lg:h-17.5 lg:w-17.5 next-slide cursor-pointer">
                 <ArrowRight size={22} />
               </div>
             </div>

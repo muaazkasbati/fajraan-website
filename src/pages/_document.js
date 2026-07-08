@@ -30,9 +30,8 @@ export default function Document() {
         />
 
         <link rel="preload" href="/images/hero/hero-video-poster.webp" as="image" fetchPriority="high" />
-        {/* <link rel="preload" href="/videos/hero-video.webm" as="video" /> */}
       </Head>
-      <body>
+      <body className="text-[20px] font-normal leading-[160%] bg-white text-black font-instrument-sans">
         <Main />
         <NextScript />
       </body>

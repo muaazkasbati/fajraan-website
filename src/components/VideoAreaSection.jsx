@@ -17,116 +17,107 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
     return (
         <>
             {video ?
-                <section className="quanto-video-area style-2 overflow-hidden">
-                    <div className="container mx-auto px-4 custom-container relative">
+                <section className="relative overflow-hidden">
+                    <div className="container relative mx-auto px-4 md:max-w-180 lg:max-w-242.5 xl:max-w-350">
                         <motion.span
                             onClick={() => {
                                 const element = document.getElementById(scrollDownId);
                                 if (element) {
-                                    element.scrollIntoView({ behavior: 'smooth' });
+                                    element.scrollIntoView({ behavior: "smooth" });
                                 }
                             }}
-                            className="scroll-down section-link inline-flex items-center cursor-pointer z-10"
+                            className="section-link absolute -right-7.5 top-0 z-10 flex cursor-pointer items-center gap-3 [writing-mode:vertical-lr] [text-orientation:mixed]"
                             initial={{ opacity: 0, y: -20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                             viewport={{ once: true }}
                         >
                             Scroll down
-                            <motion.img
+                            <img
                                 src="/images/icons/scroll-down.svg"
                                 alt="Scroll down"
                                 width="16"
                                 height="28"
                                 loading="lazy"
-                                animate={{ y: [0, 8, 0] }}
-                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="animate-[upDown_1.5s_ease-in-out_infinite_alternate]"
                             />
                         </motion.span>
+
                         <motion.div
-                            className="flex"
+                            className="relative w-full"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="w-full relative">
-                                <motion.video
-                                    ref={videoRef}
-                                    className="quanto-video"
-                                    src={videoUrl}
-                                    loop
-                                    playsInline
-                                    data-speed="0.8"
-                                    initial={{ scale: 0.95, opacity: 0 }}
-                                    whileInView={{ scale: 1, opacity: 1 }}
-                                    transition={{ duration: 0.8 }}
-                                />
-                                <motion.button
-                                    type="button"
-                                    className="play-btn"
-                                    aria-label="Play video"
-                                    onClick={handlePlayPause}
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    {isPlaying ? "Pause" : "Play"}
-                                </motion.button>
-                            </div>
+                            <motion.video
+                                ref={videoRef}
+                                src={videoUrl}
+                                loop
+                                playsInline
+                                data-speed="0.8"
+                                className={`block max-h-200 w-full object-cover object-center ${!isPlaying ? "cursor-pointer" : ""}`}
+                                initial={{ scale: 0.95, opacity: 0 }}
+                                whileInView={{ scale: 1, opacity: 1 }}
+                                transition={{ duration: 0.8 }}
+                            />
+
+                            <motion.button
+                                type="button"
+                                aria-label="Play video"
+                                onClick={handlePlayPause}
+                                whileHover={{ scale: isPlaying ? 1 : 1.1 }}
+                                whileTap={{ scale: isPlaying ? 1 : 0.95 }}
+                                className="absolute left-1/2 top-1/2 grid place-content-center rounded-full bg-primary font-semibold tracking-[-0.18px] text-white transition-all duration-500 cursor-pointer -translate-x-1/2 -translate-y-1/2 opacity-100 visible h-20 w-20 text-[15px] sm:h-25 sm:w-25 sm:text-[18px] md:h-30 md:w-30 lg:h-45 lg:w-45 leading-[144.444%]"
+                            >
+                                {isPlaying ? "Pause" : "Play"}
+                            </motion.button>
                         </motion.div>
                     </div>
                 </section>
                 :
-                <div className="quanto-video-area style-2 overflow-hidden">
-                    <div className="container mx-auto px-4 custom-container relative">
-                        {/* Scroll Down Link */}
+                <section className="relative overflow-hidden">
+                    <div className="container relative mx-auto px-4 md:max-w-180 lg:max-w-242.5 xl:max-w-350">
                         <motion.span
                             onClick={() => {
                                 const element = document.getElementById(scrollDownId);
                                 if (element) {
-                                    element.scrollIntoView({ behavior: 'smooth' });
+                                    element.scrollIntoView({ behavior: "smooth" });
                                 }
                             }}
-                            className="scroll-down section-link inline-flex items-center cursor-pointer"
+                            className="section-link absolute -right-7.5 top-0 z-10 flex cursor-pointer items-center gap-3 [writing-mode:vertical-lr] [text-orientation:mixed]"
                             initial={{ opacity: 0, y: -20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                             viewport={{ once: true }}
                         >
                             Scroll down
-                            <motion.img
+                            <img
                                 src="/images/icons/scroll-down.svg"
                                 alt="Scroll down"
                                 width="16"
                                 height="28"
                                 loading="lazy"
-                                animate={{ y: [0, 8, 0] }}
-                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="animate-[upDown_1.5s_ease-in-out_infinite_alternate]"
                             />
                         </motion.span>
 
-                        {/* Image Section */}
-                        <div className="flex">
-                            <div className="w-full">
-                                <motion.div
-                                    className="quanto-hero__thumb text-end"
-                                    initial={{ opacity: 0, x: 100 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.8, ease: "easeOut" }}
-                                    viewport={{ once: true }}
-                                >
-                                    <img
-                                        alt="hero-thumb"
-                                        loading="lazy"
-                                        className="w-full"
-                                        src={imageUrl}
-                                        style={{ color: "transparent", height: '600px', objectFit: 'cover' }}
-                                    />
-                                </motion.div>
-                            </div>
-                        </div>
+                        <motion.div
+                            className=""
+                            initial={{ opacity: 0, x: 100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                        >
+                            <img
+                                alt="hero-thumb"
+                                loading="lazy"
+                                className="w-full h-150 object-cover"
+                                src={imageUrl}
+                            />
+                        </motion.div>
                     </div>
-                </div>
+                </section>
             }
         </>
     )

@@ -1,8 +1,8 @@
 import React from 'react'
-import moment from 'moment'
 import { motion } from "framer-motion";
 import Link from 'next/link';
 import { toWebP } from '@/utils/data';
+import formatDate from '@/utils/formatDate';
 
 export default function BlogCard({ data }) {
     const cardVariants = {
@@ -23,26 +23,27 @@ export default function BlogCard({ data }) {
                 variants={cardVariants}
                 style={{ opacity: 1, transform: "none" }}
             >
-                <div className="quanto-blog-box">
-                    <div className="quanto-blog-thumb">
+                <div className="">
+                    <div className="overflow-hidden">
                         <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
                             <img
                                 alt={data?.title?.rendered}
                                 src={toWebP(data?.yoast_head_json?.og_image?.[0]?.url ? data?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268")}
                                 loading="lazy"
                                 decoding="async"
-                                className="w-full h-auto"
-                                style={{ color: "transparent", aspectRatio: "5 / 4", objectFit: "cover" }}
+                                className="w-full h-auto aspect-5/4 object-cover transition-all duration-150"
                             />
                         </Link>
                     </div>
-                    <div className="quanto-blog-content">
-                        <h5 className="line-clamp-2">
+                    <div className="pt-6">
+                        <h5 className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] line-clamp-2 font-semibold">
                             <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
                                 {data?.title?.rendered || "Default Blog Title"}
                             </Link>
                         </h5>
-                        <span className="quanto-blog-date">{moment(data?.date).format("MMMM DD, YYYY")}</span>
+                        <span className="relative mt-2.5 block pl-10.5 text-[18px] font-normal leading-[144.444%] before:absolute before:left-0 before:top-1/2 before:h-px before:w-7.5 before:-translate-y-1/2 before:bg-primary before:content-['']">
+                            {formatDate(data?.date)}
+                        </span>
                     </div>
                 </div>
             </motion.div>

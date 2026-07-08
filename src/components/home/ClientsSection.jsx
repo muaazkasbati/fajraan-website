@@ -17,27 +17,24 @@ const clientLogos = [
 
 export default function ClientsSection() {
     return (
-        <div className="clients-area overflow-hidden section-padding-top">
-            <div className="container mx-auto px-4 custom-container">
-                {/* Header Section */}
-                <div className="flex flex-wrap items-end">
-                    <div className="w-full md:w-1/2">
-                        <div className="quanto__header text-center md:text-left">
-                            <motion.p
-                                className="title mx-auto md:mx-0"
-                                initial={{ opacity: 0, x: -100 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.6, ease: "easeOut" }}
-                                viewport={{ once: true }}
-                            >
-                                We worked with the largest global brands
-                            </motion.p>
-                        </div>
+        <div className="lg:pt-32.5 md:pt-20 pt-16.25 overflow-hidden">
+            <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+                <div className="grid md:grid-cols-2 items-end">
+                    <div className="text-center md:text-left">
+                        <motion.p
+                            className="text-[24px] max-w-60 tracking-[-.18px] font-semibold mb-12 mx-auto md:mx-0"
+                            initial={{ opacity: 0, x: -100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                        >
+                            We worked with the largest global brands
+                        </motion.p>
                     </div>
 
-                    <div className="w-full md:w-1/2 md:pl-0">
+                    <div className="md:pl-0">
                         <motion.div
-                            className="quanto__header logo"
+                            className="grid grid-cols-3"
                             initial={{ opacity: 0, x: 100 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -45,12 +42,11 @@ export default function ClientsSection() {
                         >
                             {/* Top Two Logos */}
                             {clientLogos.slice(0, 2).map((logo, i) => (
-                                <div className="client-box" key={i}>
+                                <div className="aspect-square border border-1 grid place-content-center" key={i}>
                                     <img
                                         src={logo}
                                         alt={`client-logo-${i + 1}`}
                                         className="max-w-full h-auto"
-                                        style={{ height: "auto", width: "auto" }}
                                     />
                                 </div>
                             ))}
@@ -60,13 +56,13 @@ export default function ClientsSection() {
 
                 {/* Clients Grid */}
                 <motion.div
-                    className="flex flex-wrap"
+                    className=""
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
                 >
                     <motion.div
-                        className="w-full clients__box-wrapper"
+                        className="grid grid-cols-6"
                         variants={{
                             hidden: { opacity: 0, y: 50 },
                             show: {
@@ -83,7 +79,7 @@ export default function ClientsSection() {
                         {clientLogos.slice(2).map((logo, index) => (
                             <motion.div
                                 key={index}
-                                className="client-box"
+                                className="aspect-square border border-1 grid place-content-center"
                                 variants={{
                                     hidden: { opacity: 0, y: 30 },
                                     show: { opacity: 1, y: 0 },
@@ -93,7 +89,6 @@ export default function ClientsSection() {
                                     src={logo}
                                     alt={`client-logo-${index + 3}`}
                                     className="max-w-full h-auto"
-                                    style={{ height: "auto", width: "auto" }}
                                 />
                             </motion.div>
                         ))}

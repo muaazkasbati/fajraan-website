@@ -3,7 +3,7 @@ import Header from '@/components/Header'
 import moment from 'moment';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { motion } from "framer-motion";
 import BlogCard from '@/components/BlogCard';
 
@@ -191,119 +191,91 @@ export default function BlogDetail({ data, morePosts }) {
             </Head>
             <Header />
             <main>
-                <section className="blog-page-sec blog-detail-page section-padding-bottom">
-                    <div className="container mx-auto px-4 custom-container">
-                        <div className="flex">
-                            <div className="w-full">
-                                <div className="blog-item-wrapper">
-                                    <div className="blog-item blog-item-details">
-                                        <div className="flex justify-center row-padding-bottom">
-                                            <div className="w-full xl:w-9/12 2xl:w-9/12">
-                                                {/* Title Animation */}
-                                                <motion.div
-                                                    initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
-                                                    whileInView={{ opacity: 1, rotateX: 0 }}
-                                                    transition={{ duration: 0.8, ease: "easeOut" }}
-                                                    viewport={{ once: true }}
-                                                >
-                                                    <div className="title-box blog-title">
-                                                        <h2 className="color-primary">
-                                                            {data?.title?.rendered}
-                                                        </h2>
-                                                    </div>
-                                                </motion.div>
+                <section className="lg:pt-50 md:pt-32.5 pt-28 lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
+                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+                        <div className="w-full xl:w-9/12 2xl:w-9/12 mx-auto">
+                            <motion.div
+                                initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
+                                whileInView={{ opacity: 1, rotateX: 0 }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                viewport={{ once: true }}
+                            >
+                                <h2 className="text-[60px] md:text-[70px] lg:text-[90px] xl:text-[100px] leading-[110%] font-semibold text-primary">
+                                    {data?.title?.rendered}
+                                </h2>
+                            </motion.div>
 
-                                                <div className="meta-box">
-                                                    <ul className="custom-ul meta-info flex gap-4 flex-wrap">
-                                                        <li><span>{moment(data?.date).format("MMMM DD, YYYY")}</span></li>
-                                                        <li><span>{data?.categories?.join(', ')}</span></li>
-                                                        <li><span>by Fajraan Tech</span></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Image Animation */}
-                                        <motion.div
-                                            className="img-box overflow-hidden"
-                                            initial={{ opacity: 0, y: 60 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                                            viewport={{ once: true }}
-                                        >
-                                            <img
-                                                alt="blog"
-                                                className="w-full block"
-                                                style={{ height: '722px', objectFit: 'cover' }}
-                                                src={`${data?.featured_media?.link}`}
-                                            />
-                                        </motion.div>
-
-                                        {/* Content Animation */}
-                                        <motion.div
-                                            className="content-box row-padding-top"
-                                            initial="hidden"
-                                            whileInView="show"
-                                            viewport={{ once: true }}
-                                            variants={{
-                                                hidden: { opacity: 0, y: 40 },
-                                                show: {
-                                                    opacity: 1,
-                                                    y: 0,
-                                                    transition: {
-                                                        duration: 0.7,
-                                                        ease: "easeOut",
-                                                        staggerChildren: 0.15,
-                                                    },
-                                                },
-                                            }}
-                                        >
-
-                                            <div className="flex justify-center social-links-scroll position-relative">
-                                                <div className="w-full xl:w-9/12 2xl:w-8/12">
-                                                    <motion.div
-                                                        className="blog-body"
-                                                        variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } }}
-                                                        dangerouslySetInnerHTML={{ __html: data?.content?.rendered }}
-                                                    />
-
-
-                                                    <div className="blog-tags">
-                                                        <ul className="custom-ul">
-                                                            {data?.tags?.map(item => (
-                                                                <li><span>{item}</span></li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </motion.div>
-                                    </div>
-                                </div>
-                            </div>
+                            <ul className="text-[20px] flex gap-4 flex-wrap mt-6">
+                                <li className="pr-6 border-r border-1">{moment(data?.date).format("MMMM DD, YYYY")}</li>
+                                <li className="pr-6 border-r border-1">{data?.categories?.join(', ')}</li>
+                                <li>by Fajraan Tech</li>
+                            </ul>
                         </div>
+                        <motion.div
+                            className="overflow-hidden mt-22.5"
+                            initial={{ opacity: 0, y: 60 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                        >
+                            <img
+                                alt="blog"
+                                className="w-full block"
+                                style={{ height: '722px', objectFit: 'cover' }}
+                                src={`${data?.featured_media?.link}`}
+                            />
+                        </motion.div>
+                        <motion.div
+                            className="pt-15"
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            variants={{
+                                hidden: { opacity: 0, y: 40 },
+                                show: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        duration: 0.7,
+                                        ease: "easeOut",
+                                        staggerChildren: 0.15,
+                                    },
+                                },
+                            }}
+                        >
+                            <div className="w-full xl:w-9/12 2xl:w-8/12 mx-auto">
+                                <motion.div
+                                    className="blog-body"
+                                    variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } }}
+                                    dangerouslySetInnerHTML={{ __html: data?.content?.rendered }}
+                                />
+
+                                <ul className="flex gap-2 flex-wrap text-[20px]">
+                                    {data?.tags?.map(item => (
+                                        <li>#{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </motion.div>
                     </div>
                 </section>
                 {morePosts?.length > 0 && (
-                    <section className="quanto-blog-section section-padding-bottom overflow-hidden">
-                        <div className="container mx-auto px-4 custom-container">
-                            <div className="flex">
-                                <div className="w-full">
-                                    <div className="quanto__header text-center md:text-left row-padding-bottom">
-                                        <motion.h3
-                                            className="title"
-                                            initial={{ opacity: 0, x: -100 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.7, ease: "easeOut" }}
-                                            viewport={{ once: true }}
-                                        >
-                                            More articles
-                                        </motion.h3>
-                                    </div>
-                                </div>
+                    <section className="lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
+                        <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+                            <div className="text-center md:text-left pb-15">
+                                <motion.h3
+                                    className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold"
+                                    initial={{ opacity: 0, x: -100 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.7, ease: "easeOut" }}
+                                    viewport={{ once: true }}
+                                >
+                                    More articles
+                                </motion.h3>
                             </div>
+
                             <motion.div
-                                className="grid grid-cols-3 gap-6"
+                                className="grid sm:grid-cols-3 gap-6"
                                 variants={containerVariants}
                                 initial="hidden"
                                 whileInView="show"

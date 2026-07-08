@@ -9,6 +9,7 @@ import services from "@/utils/servicesNew.json";
 import Link from 'next/link'
 import VideoAreaSection from '@/components/VideoAreaSection'
 import { ArrowRight } from 'lucide-react'
+import Button from '@/components/Button'
 
 export default function Services() {
   return (
@@ -130,29 +131,28 @@ export default function Services() {
       <main>
         <HeroSec title="Inspiring leadership through design" />
         <VideoAreaSection imageUrl="/images/service/service-detail-img.webp" scrollDownId="service-section" />
-        <section className="quanto-service2-section section-padding-top-bottom overflow-hidden" id="service-section">
-          <div className="container mx-auto px-4 custom-container">
+        <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden" id="service-section">
+          <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
             <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
               <div className="w-full xl:w-5/12">
-                <div className="quanto__header text-center xl:text-left">
-                  <motion.div
-                    initial={{ opacity: 0, rotateX: -80 }}
-                    whileInView={{ opacity: 1, rotateX: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true }}
-                    style={{ transformOrigin: "top center" }}
-                  >
-                    <h3 className="title color-primary">We help you to build digital business</h3>
-                  </motion.div>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, rotateX: -80 }}
+                  whileInView={{ opacity: 1, rotateX: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  style={{ transformOrigin: "top center" }}
+                  className="sm:text-left text-center mb-3"
+                >
+                  <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-primary">We help you to build digital business</h3>
+                </motion.div>
               </div>
 
               <div className="w-full xl:w-6/12">
-                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 g-114 quanto-service2__row">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                   {services.slice(0, 8).map((service, index) => (
                     <motion.div
                       key={index}
-                      className="w-full"
+                      className="w-full border-l border-1 sm:pl-10 pl-8"
                       initial={{ opacity: 0, x: 100 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{
@@ -162,23 +162,17 @@ export default function Services() {
                       }}
                       viewport={{ once: true }}
                     >
-                      <div className="quanto-service-box style-2">
-                        <div className="quanto-iconbox-icon">
-                          <img src={service.icon} alt="service-icon" loading="lazy" width="52" height="52" style={{ color: "transparent" }} />
+                      <div className="sm:mb-15 mb-5">
+                        <img src={service.icon} alt="service-icon" loading="lazy" width="52" height="52" />
+                      </div>
+                      <div>
+                        <div className="sm:mb-22.5 mb-3">
+                          <h5 className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold">{service.title}</h5>
+                          <p className="text-[20px]">{service.description}</p>
                         </div>
-                        <div className="quanto-iconbox-data">
-                          <div className="quanto-iconbox-data-wrapper">
-                            <h5>{service.title}</h5>
-                            <p>{service.description}</p>
-                          </div>
-                          <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
-                            View details
-                            <span>
-                              <ArrowRight className="arry1" size={22} />
-                              <ArrowRight className="arry2" size={22} />
-                            </span>
-                          </Link>
-                        </div>
+                        <Button link ariaLabel={`Follow to ${service.title}`} href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
+                          View details
+                        </Button>
                       </div>
                     </motion.div>
                   ))}

@@ -87,60 +87,57 @@ export default function TermsAndConditions() {
             <Header />
             <main>
                 <HeroSec title="Terms & Conditions" />
-                <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden">
-                    <div className="container mx-auto px-4 custom-container">
+                <section className="pb-15 overflow-hidden">
+                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
                         <motion.div
-                            className="grid gap-4 justify-items-center"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="w-full xl:w-8/12">
-                                <motion.div
-                                    className="blog-body"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8, delay: 0.2 }}
-                                    viewport={{ once: true }}
-                                >
-                                    <p>
-                                        Welcome to Fajraan Tech. By accessing our website or using our services, you agree to the following terms and conditions.
-                                        Please read them carefully before proceeding.
-                                    </p>
+                            <motion.div
+                                className="blog-body"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                viewport={{ once: true }}
+                            >
+                                <p>
+                                    Welcome to Fajraan Tech. By accessing our website or using our services, you agree to the following terms and conditions.
+                                    Please read them carefully before proceeding.
+                                </p>
 
-                                    <h3>1. Use of Services</h3>
-                                    <p>
-                                        Our services are provided for lawful purposes only. You agree not to misuse our website or engage in any activity that disrupts or harms other users.
-                                    </p>
+                                <h3>1. Use of Services</h3>
+                                <p>
+                                    Our services are provided for lawful purposes only. You agree not to misuse our website or engage in any activity that disrupts or harms other users.
+                                </p>
 
-                                    <h3>2. Intellectual Property</h3>
-                                    <p>
-                                        All content, designs, and code on this website are the intellectual property of Fajraan Tech and may not be copied, distributed, or reproduced without permission.
-                                    </p>
+                                <h3>2. Intellectual Property</h3>
+                                <p>
+                                    All content, designs, and code on this website are the intellectual property of Fajraan Tech and may not be copied, distributed, or reproduced without permission.
+                                </p>
 
-                                    <h3>3. Payment & Refund Policy</h3>
-                                    <p>
-                                        Payment terms are agreed upon before project initiation. Refunds are subject to review based on project stage and deliverables.
-                                    </p>
+                                <h3>3. Payment & Refund Policy</h3>
+                                <p>
+                                    Payment terms are agreed upon before project initiation. Refunds are subject to review based on project stage and deliverables.
+                                </p>
 
-                                    <h3>4. Limitation of Liability</h3>
-                                    <p>
-                                        Fajraan Tech shall not be held responsible for any direct or indirect damages arising from the use of our website or services.
-                                    </p>
+                                <h3>4. Limitation of Liability</h3>
+                                <p>
+                                    Fajraan Tech shall not be held responsible for any direct or indirect damages arising from the use of our website or services.
+                                </p>
 
-                                    <h3>5. Modifications</h3>
-                                    <p>
-                                        We reserve the right to modify or update these terms at any time. Continued use of the website implies acceptance of any revisions.
-                                    </p>
+                                <h3>5. Modifications</h3>
+                                <p>
+                                    We reserve the right to modify or update these terms at any time. Continued use of the website implies acceptance of any revisions.
+                                </p>
 
-                                    <h3>6. Governing Law</h3>
-                                    <p>
-                                        These Terms & Conditions are governed by the laws of the United Arab Emirates.
-                                        Any disputes will be resolved under UAE jurisdiction.
-                                    </p>
-                                </motion.div>
-                            </div>
+                                <h3>6. Governing Law</h3>
+                                <p>
+                                    These Terms & Conditions are governed by the laws of the United Arab Emirates.
+                                    Any disputes will be resolved under UAE jurisdiction.
+                                </p>
+                            </motion.div>
                         </motion.div>
                     </div>
                 </section>

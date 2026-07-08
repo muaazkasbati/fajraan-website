@@ -100,63 +100,60 @@ export default function PrivacyPolicy() {
             <Header />
             <main>
                 <HeroSec title="Privacy Policy" />
-                <section className="quanto-service-details-section row-padding-top row-padding-bottom overflow-hidden">
-                    <div className="container mx-auto px-4 custom-container">
+                <section className="pb-15 overflow-hidden">
+                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
                         <motion.div
-                            className="flex flex-wrap gap-4 justify-center"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="w-full xl:w-8/12">
-                                <motion.div
-                                    className="blog-body"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8, delay: 0.2 }}
-                                    viewport={{ once: true }}
-                                >
-                                    <p className="">
-                                        At Fajraan Tech, we value your privacy and are committed to protecting your personal information.
-                                        This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or use our services.
-                                    </p>
+                            <motion.div
+                                className="blog-body"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                viewport={{ once: true }}
+                            >
+                                <p>
+                                    At Fajraan Tech, we value your privacy and are committed to protecting your personal information.
+                                    This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or use our services.
+                                </p>
 
-                                    <h3 className="">1. Information We Collect</h3>
-                                    <p className="">
-                                        We may collect personal information such as your name, email address, phone number, and business details when you
-                                        contact us, fill out forms, or subscribe to our services.
-                                    </p>
+                                <h3>1. Information We Collect</h3>
+                                <p>
+                                    We may collect personal information such as your name, email address, phone number, and business details when you
+                                    contact us, fill out forms, or subscribe to our services.
+                                </p>
 
-                                    <h3 className="">2. How We Use Your Information</h3>
-                                    <p className="">
-                                        Your data is used to provide services, respond to inquiries, improve our website, and send relevant updates.
-                                        We do not sell or share your personal information with third parties.
-                                    </p>
+                                <h3>2. How We Use Your Information</h3>
+                                <p>
+                                    Your data is used to provide services, respond to inquiries, improve our website, and send relevant updates.
+                                    We do not sell or share your personal information with third parties.
+                                </p>
 
-                                    <h3 className="">3. Cookies</h3>
-                                    <p className="">
-                                        Our website uses cookies to enhance your browsing experience and analyze traffic. You can disable cookies in your browser settings.
-                                    </p>
+                                <h3>3. Cookies</h3>
+                                <p>
+                                    Our website uses cookies to enhance your browsing experience and analyze traffic. You can disable cookies in your browser settings.
+                                </p>
 
-                                    <h3 className="">4. Data Security</h3>
-                                    <p className="">
-                                        We implement industry-standard security measures to protect your information against unauthorized access, alteration, or disclosure.
-                                    </p>
+                                <h3>4. Data Security</h3>
+                                <p>
+                                    We implement industry-standard security measures to protect your information against unauthorized access, alteration, or disclosure.
+                                </p>
 
-                                    <h3 className="">5. Changes to This Policy</h3>
-                                    <p className="">
-                                        Fajraan Tech reserves the right to update this policy periodically. Updates will be posted on this page with a revised effective date.
-                                    </p>
+                                <h3>5. Changes to This Policy</h3>
+                                <p>
+                                    Fajraan Tech reserves the right to update this policy periodically. Updates will be posted on this page with a revised effective date.
+                                </p>
 
-                                    <h3 className="">6. Contact Us</h3>
-                                    <p>
-                                        If you have any questions about our Privacy Policy, contact us at:
-                                        <br />
-                                        <strong>Email:</strong> info@fajraan.com
-                                    </p>
-                                </motion.div>
-                            </div>
+                                <h3>6. Contact Us</h3>
+                                <p>
+                                    If you have any questions about our Privacy Policy, contact us at:
+                                    <br />
+                                    <strong>Email:</strong> info@fajraan.com
+                                </p>
+                            </motion.div>
                         </motion.div>
                     </div>
                 </section>

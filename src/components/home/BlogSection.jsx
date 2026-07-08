@@ -1,84 +1,39 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import moment from "moment";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import { toWebP } from "@/utils/data";
+import BlogCard from "../BlogCard";
+import Button from "../Button";
 
 export default function BlogSection({ posts = [] }) {
   return (
-    <section className="quanto-blog-section section-padding-top-bottom overflow-hidden">
-      <div className="container mx-auto px-4 custom-container">
-        {/* Section Header */}
+    <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden">
+      <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
         <motion.div
-          className="grid md:grid-cols-12 grid-cols-1 gap-3 items-end"
+          className="grid lg:grid-cols-12 grid-cols-1 gap-3 items-end"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <div className="xl:col-span-7 lg:col-span-9 col-span-1">
-            <div className="quanto__header text-center md:text-left">
-              <h3 className="title color-primary">
+            <div className="text-center md:text-left">
+              <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-primary">
                 Latest blogs to level up your business
               </h3>
             </div>
           </div>
           <div className="xl:col-span-5 lg:col-span-3 col-span-1">
-            <div className="quanto__headerr flex justify-center lg:justify-end">
-              <Link className="quanto-link-btn" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog`}>
+            <div className="flex justify-center lg:justify-end">
+              <Button link ariaLabel="Follow to articles" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog`}>
                 View all articles
-                <span>
-                  <ArrowRight className="arry1" size={22} />
-                  <ArrowRight className="arry2" size={22} />
-                </span>
-              </Link>
+              </Button>
             </div>
           </div>
         </motion.div>
 
-        {/* Blog Grid */}
-        <div className="grid gap-6 row-padding-top md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 pt-15 md:grid-cols-2 xl:grid-cols-3">
           {posts.map((data, index) => (
-            <motion.div
-              key={index}
-              className="w-full"
-              initial={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.2,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="quanto-blog-box">
-                <div className="quanto-blog-thumb">
-                  <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
-                    <Image
-                      src={toWebP(data?.yoast_head_json?.og_image?.[0]?.url ||'/images/placeholder.webp')}
-                      alt={data?.title?.rendered || 'Blog post'}
-                      width={415}
-                      height={332}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-auto"
-                      style={{ aspectRatio: '5 / 4', objectFit: 'cover', height: 'auto', width: 'auto' }}
-                    />
-                  </Link>
-                </div>
-                <div className="quanto-blog-content">
-                  <p className="line-clamp-2">
-                    <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
-                      {data?.title?.rendered || "Default Blog Title"}
-                    </Link>
-                  </p>
-                  <span className="quanto-blog-date">{moment(data?.date).format("MMMM DD, YYYY")}</span>
-                </div>
-              </div>
-            </motion.div>
+            <BlogCard data={data} key={index} />
           ))}
         </div>
       </div>
