@@ -67,40 +67,87 @@
 //   }, []);
 // }
 
-// hooks/useLenis.js
+// // hooks/useLenis.js
+// import { useEffect } from "react";
+
+// export default function useLenis() {
+//   useEffect(() => {
+//     if (typeof window === "undefined") return;
+
+//     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+//     if (isTouchDevice) return;
+
+//     let lenisInstance;
+//     let rafId;
+
+//     import('@studio-freight/lenis').then(({ default: Lenis }) => {
+//       lenisInstance = new Lenis({
+//         duration: 0.35,
+//         easing: (t) => t * (2 - t),
+//         smoothWheel: true,
+//         smoothTouch: false,
+//         lerp: 0.08,
+//       });
+
+//       const raf = (time) => {
+//         lenisInstance.raf(time);
+//         rafId = requestAnimationFrame(raf);
+//       };
+//       rafId = requestAnimationFrame(raf);
+//     }).catch(console.error);
+
+//     window.history.scrollRestoration = "manual";
+
+//     return () => {
+//       if (rafId) cancelAnimationFrame(rafId);
+//       if (lenisInstance) lenisInstance.destroy();
+//     };
+//   }, []);
+// }
+
 import { useEffect } from "react";
 
 export default function useLenis() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-    if (isTouchDevice) return;
+    if (window.matchMedia("(pointer: coarse)").matches) return;
 
-    let lenisInstance;
+    let lenis;
     let rafId;
 
-    import('@studio-freight/lenis').then(({ default: Lenis }) => {
-      lenisInstance = new Lenis({
-        duration: 0.35,
-        easing: (t) => t * (2 - t),
-        smoothWheel: true,
-        smoothTouch: false,
-        lerp: 0.08,
-      });
+    const initLenis = async () => {
+      try {
+        const { default: Lenis } = await import("lenis");
 
-      const raf = (time) => {
-        lenisInstance.raf(time);
+        lenis = new Lenis({
+          duration: 0.35,
+          lerp: 0.08,
+          smoothWheel: true,
+          syncTouch: false,
+          easing: (t) => t * (2 - t),
+        });
+
+        const raf = (time) => {
+          lenis.raf(time);
+          rafId = requestAnimationFrame(raf);
+        };
+
         rafId = requestAnimationFrame(raf);
-      };
-      rafId = requestAnimationFrame(raf);
-    }).catch(console.error);
+      } catch (err) {
+        console.error("Failed to initialize Lenis:", err);
+      }
+    };
 
-    window.history.scrollRestoration = "manual";
+    initLenis();
+
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
 
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
-      if (lenisInstance) lenisInstance.destroy();
+      lenis?.destroy();
     };
   }, []);
 }

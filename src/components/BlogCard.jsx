@@ -36,11 +36,11 @@ export default function BlogCard({ data }) {
                         </Link>
                     </div>
                     <div className="pt-6">
-                        <h5 className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] line-clamp-2 font-semibold">
+                        <p className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] line-clamp-2 font-semibold">
                             <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${data.slug}`}>
                                 {data?.title?.rendered || "Default Blog Title"}
                             </Link>
-                        </h5>
+                        </p>
                         <span className="relative mt-2.5 block pl-10.5 text-[18px] font-normal leading-[144.444%] before:absolute before:left-0 before:top-1/2 before:h-px before:w-7.5 before:-translate-y-1/2 before:bg-primary before:content-['']">
                             {formatDate(data?.date)}
                         </span>

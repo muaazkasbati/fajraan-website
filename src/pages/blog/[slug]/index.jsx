@@ -1,6 +1,5 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import moment from 'moment';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react'
@@ -206,7 +205,15 @@ export default function BlogDetail({ data, morePosts }) {
                             </motion.div>
 
                             <ul className="text-[20px] flex gap-4 flex-wrap mt-6">
-                                <li className="pr-6 border-r border-1">{moment(data?.date).format("MMMM DD, YYYY")}</li>
+                                <li className="pr-6 border-r border-1">
+                                    {data?.date
+                                        ? new Intl.DateTimeFormat("en-US", {
+                                            month: "long",
+                                            day: "2-digit",
+                                            year: "numeric",
+                                        }).format(new Date(data.date))
+                                        : ""}
+                                </li>
                                 <li className="pr-6 border-r border-1">{data?.categories?.join(', ')}</li>
                                 <li>by Fajraan Tech</li>
                             </ul>

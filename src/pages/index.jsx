@@ -1,19 +1,16 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-// import HeroSection from "@/components/home/HeroSection";
-import ServiceSection from "@/components/home/ServiceSection";
-import AboutSection from "@/components/home/AboutSection";
-import PortfolioSection from "@/components/home/PortfolioSection";
-// import TextimonialSection from "@/components/home/TextimonialSection";
-import OurAchivementSection from "@/components/home/OurAchivementSection";
-import ClientsSection from "@/components/home/ClientsSection";
-// import BlogSection from "@/components/home/BlogSection";
-import dynamic from 'next/dynamic';
+import HeroSection from "@/components/home/HeroSection";
 
-const HeroSection = dynamic(() => import('@/components/home/HeroSection'), { ssr: true });
-const BlogSection = dynamic(() => import("@/components/home/BlogSection"));
-const TextimonialSection = dynamic(() => import("@/components/home/TextimonialSection"));
+const AboutSection = dynamic(() => import("@/components/home/AboutSection"));
+const OurAchivementSection = dynamic(() => import("@/components/home/OurAchivementSection"), { ssr: false });
+const PortfolioSection = dynamic(() => import("@/components/home/PortfolioSection"), { ssr: false });
+const ServiceSection = dynamic(() => import("@/components/home/ServiceSection"));
+const TextimonialSection = dynamic(() => import("@/components/home/TextimonialSection"), { ssr: false });
+const BlogSection = dynamic(() => import("@/components/home/BlogSection"), { ssr: false });
 
 export async function getStaticProps() {
   try {
@@ -129,7 +126,6 @@ export default function Home({ posts, portfolio }) {
         <PortfolioSection projects={portfolio} />
         <ServiceSection />
         <TextimonialSection />
-        {/* <ClientsSection /> */}
         <BlogSection posts={posts} />
       </main>
       <Footer />

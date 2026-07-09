@@ -1,17 +1,17 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import dynamic from 'next/dynamic';
 import Image from "next/image";
 const HeroVideoSection = dynamic(() => import('./HeroVideoSection'), { ssr: false }); // Video can be client-only
 
 const HeroSection = () => {
-
+const shouldReduceMotion = useReducedMotion();
   return (
     <section className="lg:pt-50 md:pt-37.5 pt-32.5 overflow-hidden">
       <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
         <div className="w-full relative">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
           >
