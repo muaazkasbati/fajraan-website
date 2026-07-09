@@ -23,7 +23,7 @@ export default function Document() {
 
         <link
           rel="preload"
-          href="/fonts/InstrumentSans-VariableFont_wdth,wght.ttf"
+          href="/fonts/InstrumentSansFont.ttf"
           as="font"
           type="font/ttf"
           crossOrigin="anonymous"

@@ -1,4 +1,4 @@
-"use client";
+
 import { motion, useReducedMotion } from "framer-motion";
 import dynamic from 'next/dynamic';
 import Image from "next/image";

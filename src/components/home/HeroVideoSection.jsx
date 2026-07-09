@@ -80,7 +80,7 @@
 //   );
 // }
 
-"use client";
+
 
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";

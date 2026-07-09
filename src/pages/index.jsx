@@ -17,8 +17,8 @@ export async function getStaticProps() {
     const BASE = "https://blog.devsolsystems.co.uk/wp-json/wp/v2";
 
     const [postsRes, portfolioRes] = await Promise.all([
-      fetch(`${BASE}/posts?per_page=3`),
-      fetch(`${BASE}/portfolio?_embed&per_page=20`)
+      fetch(`${BASE}/posts?per_page=3&_=${Date.now()}`),
+      fetch(`${BASE}/portfolio?_embed&per_page=20&_=${Date.now()}`)
     ]);
 
     if (!postsRes.ok || !portfolioRes.ok) {
@@ -37,9 +37,7 @@ export async function getStaticProps() {
       link: item?.link,
       year: item?.meta?.year || '—',
       category: item?._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
-      image:
-        item?._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
-        '/images/default.webp',
+      image: item?._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/default.webp',
     }));
 
     return {
