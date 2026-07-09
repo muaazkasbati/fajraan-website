@@ -17,6 +17,7 @@ export async function getStaticProps() {
             slug: item.slug,
             link: item.link,
             year: item.meta?.year || '—',
+            link: item?.meta?.custom_link || '#',
             category: item._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
             image: item._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/default.webp',
         }));

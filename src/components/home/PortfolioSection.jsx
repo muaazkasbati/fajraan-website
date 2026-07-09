@@ -33,8 +33,22 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                             />
                         </motion.div>
                         <div className="mt-5">
-                            <p className={`text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold ${theme === "dark" ? "text-white" : "text-primary"} line-clamp-1`}>
+                            {/* <p className={`text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold ${theme === "dark" ? "text-white" : "text-primary"} line-clamp-1`}>
                                 <span>{proj?.title}</span>
+                            </p> */}
+                            <p
+                                className={`text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold ${theme === "dark" ? "text-white" : "text-primary"
+                                    } line-clamp-1`}
+                            >
+                                <Link
+                                    href={proj?.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    referrerPolicy="no-referrer"
+                                    className="transition-all duration-300 hover:opacity-70 hover:underline underline-offset-4"
+                                >
+                                    {proj?.title}
+                                </Link>
                             </p>
                             <span className={`text-[20px] ${theme === "dark" ? "text-white" : ""}`}>
                                 {proj?.year} - {proj?.category}

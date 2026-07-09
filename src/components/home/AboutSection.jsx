@@ -5,7 +5,7 @@ import Button from "../Button";
 
 const AboutSection = () => {
   return (
-    <section className="lg:pt-32.5 md:pt-20 pt-16.25 overflow-hidden">
+    <section className="lg:pt-32.5 md:pt-20 pt-16.25 overflow-hidden min-h-135">
       <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
         <div className="flex justify-end">
           <div className="w-full md:w-10/12 lg:w-9/12 xl:w-10/12">
