@@ -10,10 +10,13 @@ const Footer = () => {
     const navItems = [
         { label: "About Us", href: "about" },
         { label: "Services", href: "services" },
-        { label: "Portfolio", href: "portfolio" },
+        // { label: "Portfolio", href: "portfolio" },
         { label: "Blog", href: "blog" },
-        { label: "Contact", href: "contact" },
+        // { label: "Contact", href: "contact" },
+        { label: "Privacy Policy", href: "privacy-policy" },
+        { label: "Terms & Conditions", href: "terms-and-conditions" },
     ];
+
     const socialLinks = [
         {
             name: "Instagram",
