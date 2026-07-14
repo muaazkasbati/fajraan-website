@@ -10,6 +10,7 @@ import Link from 'next/link'
 import VideoAreaSection from '@/components/VideoAreaSection'
 import { ArrowRight } from 'lucide-react'
 import Button from '@/components/Button'
+import IndustrySpotlightSection from '@/components/IndustrySpotlightSection'
 
 export default function Services() {
   return (
@@ -181,6 +182,7 @@ export default function Services() {
             </div>
           </div>
         </section>
+        <IndustrySpotlightSection />
         <PricingSection />
       </main>
       <Footer />

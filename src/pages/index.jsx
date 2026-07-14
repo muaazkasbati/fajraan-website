@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/home/HeroSection";
+import IndustrySpotlightSection from "@/components/IndustrySpotlightSection";
 
 const AboutSection = dynamic(() => import("@/components/home/AboutSection"));
 const OurAchivementSection = dynamic(() => import("@/components/home/OurAchivementSection"), { ssr: false });
@@ -121,6 +122,7 @@ export default function Home({ posts, portfolio }) {
       <main>
         <HeroSection />
         <AboutSection />
+        <IndustrySpotlightSection />
         <OurAchivementSection />
         <PortfolioSection projects={portfolio} />
         <ServiceSection />

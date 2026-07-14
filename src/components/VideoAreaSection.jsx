@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { motion } from "framer-motion";
 
-export default function VideoAreaSection({ video = false, videoUrl = "https://videos.pexels.com/video-files/3192305/3192305-uhd_2560_1440_25fps.mp4", imageUrl = "/images/hero/common-hero-thumb.webp", scrollDownId = "service-section" }) {
+export default function VideoAreaSection({ video = false, videoUrl = "https://videos.pexels.com/video-files/3192305/3192305-uhd_2560_1440_25fps.mp4", imageUrl = "/images/hero/common-hero-thumb.webp", scrollDownId = "service-section", fullImage = false }) {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -112,7 +112,7 @@ export default function VideoAreaSection({ video = false, videoUrl = "https://vi
                             <img
                                 alt="hero-thumb"
                                 loading="lazy"
-                                className="w-full h-150 object-cover"
+                                className={`w-full object-cover ${fullImage ? "h-full" : "h-150"}`}
                                 src={imageUrl}
                             />
                         </motion.div>

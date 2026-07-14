@@ -37,7 +37,8 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                             </p> */}
                             <p className={`text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold ${theme === "dark" ? "text-white" : "text-primary"} line-clamp-1`}>
                                 <Link
-                                    href={proj?.link}
+                                    // href={`/portfolio/${proj?.slug}`}
+                                    href={proj.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     referrerPolicy="no-referrer"
