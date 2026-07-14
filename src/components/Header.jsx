@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
-import { ArrowRight, X } from "lucide-react";
+import { X } from "lucide-react";
+import Button from './Button';
 
 
 const Header = () => {
@@ -15,6 +16,7 @@ const Header = () => {
         { label: "About Us", href: "about" },
         { label: "Services", href: "services" },
         { label: "Portfolio", href: "portfolio" },
+        { label: "Case Studies", href: "case-studies/empire-chauffeurs-australia" },
         { label: "Blog", href: "blog" },
     ];
 
@@ -60,17 +62,9 @@ const Header = () => {
                             </button>
                         </div>
                         <div className="w-auto hidden lg:block">
-                            <Link
-                                aria-label="Contact"
-                                href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact`}
-                                className="group inline-flex w-max items-center gap-2 rounded-[40px] border border-primary bg-primary px-5 py-2.5 text-[18px] font-semibold leading-[144.444%] tracking-[-0.18px] text-white transition-all duration-500 ease-in-out md:px-5 md:py-2.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3.5 cursor-pointer"
-                            >
+                            <Button link ariaLabel="Contact" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact`}>
                                 Get in touch
-                                <span className="relative inline-block h-5.5 w-5.5 overflow-hidden text-white">
-                                    <ArrowRight size={22} className="absolute left-0 top-0 -rotate-45 transition-all duration-300 ease-[cubic-bezier(0.37,0.08,0.02,0.93)] group-hover:left-5.5 group-hover:-top-5.5" />
-                                    <ArrowRight size={22} className="absolute -left-5.5 top-5.5 -rotate-45 opacity-80 transition-all duration-300 ease-[cubic-bezier(0.37,0.08,0.02,0.93)] group-hover:left-0 group-hover:top-0" />
-                                </span>
-                            </Link>
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -83,35 +77,18 @@ const Header = () => {
                                 <img alt="Fajraan Tech" width={120} height={20} decoding="async" data-nimg={1} style={{ color: "transparent" }} src="/images/logo-web.svg" />
                             </Link>
                         </div>
-                        <button
-                            id="close-menu"
-                            role="button"
-                            type="button"
-                            aria-label="Close Menu"
-                            onClick={closeMenu}
-                            className="flex h-13.75 w-13.75 items-center justify-center border-0 border-l border-black/10 bg-transparent p-0 text-[18px] leading-13.75 text-black outline-none cursor-pointer"
-                        >
+                        <button id="close-menu" role="button" type="button" aria-label="Close Menu" onClick={closeMenu} className="flex h-13.75 w-13.75 items-center justify-center border-0 border-l border-black/10 bg-transparent p-0 text-[18px] leading-13.75 text-black outline-none cursor-pointer">
                             <X size={24} />
                         </button>
                     </div>
                     <div className="max-h-[calc(100vh-200px)] overflow-y-auto text-left scrollbar-thin [scrollbar-color:#0a165e_#000] [&::-webkit-scrollbar]:w-0.5 [&::-webkit-scrollbar-track]:bg-black [&::-webkit-scrollbar-track]:shadow-[inset_0_0_2px_rgba(232,6,60,0.2)] [&::-webkit-scrollbar-thumb]:bg-[#0a165e]">
                         <ul className="m-0 p-0">
                             {navItems.map((item) => {
-                                const isActive =
-                                    pathname === item.href ||
-                                    (item.href.includes("#") && pathname === "/");
+                                const isActive = pathname === item.href || (item.href.includes("#") && pathname === "/");
 
                                 return (
-                                    <li
-                                        key={item.href}
-                                        aria-label={item.label}
-                                        className="list-none border-b border-black/10 first:border-t"
-                                    >
-                                        <Link
-                                            href={`${process.env.NEXT_PUBLIC_APPFRONTURL}${item.href}`}
-                                            className={`block px-4.5 py-4.5 text-[16px] leading-none font-semibold capitalize transition-colors ${isActive ? "text-[#2b4dff]" : "text-primary"
-                                                }`}
-                                        >
+                                    <li key={item.href} aria-label={item.label} className="list-none border-b border-black/10 first:border-t">
+                                        <Link href={`${process.env.NEXT_PUBLIC_APPFRONTURL}${item.href}`} className={`block px-4.5 py-4.5 text-[16px] leading-none font-semibold capitalize transition-colors ${isActive ? "text-[#2b4dff]" : "text-primary"}`}>
                                             {item.label}
                                         </Link>
                                     </li>
@@ -121,7 +98,6 @@ const Header = () => {
                     </div>
                     <div className="px-3.75 py-5">
                         <div className="mb-5">
-                            <p className="text-[18px] font-semibold text-primary leading-none mb-4">Dubai, United Arab Emirates</p>
                             <p className="text-[18px] font-semibold text-primary leading-none mb-1">
                                 <Link aria-label="Contact Us on WhatsApp" href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
                                     +971 54 225 9592 (WhatsApp)

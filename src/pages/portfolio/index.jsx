@@ -39,8 +39,8 @@ export default function Portfolio({ projects }) {
             <Head>
                 <title>Portfolio | Fajraan Tech – Our Work & Case Studies</title>
 
-                <meta name="description" content="Browse Fajraan Tech's portfolio of custom web, mobile, and desktop applications. See how we've helped businesses worldwide with UI/UX design, SEO, and data-driven digital solutions." />
-                <meta name="keywords" content="Fajraan Tech portfolio, web development projects, mobile app case studies, UI UX design work, software development examples, digital agency work, tech company projects" />
+                <meta name="description" content="Browse Fajraan Tech's portfolio of web, mobile, and AI-powered projects, including our chauffeur & fleet management software case studies, built for businesses worldwide." />
+                <meta name="keywords" content="Fajraan Tech portfolio, web development projects, mobile app case studies, AI automation projects, chauffeur software case study, fleet management software, software development examples, digital agency work" />
 
                 <link rel="canonical" href="https://www.fajraan.tech/portfolio" />
 
@@ -48,7 +48,7 @@ export default function Portfolio({ projects }) {
                 <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/portfolio" />
 
                 <meta property="og:title" content="Portfolio | Fajraan Tech – Our Work & Case Studies" />
-                <meta property="og:description" content="Explore Fajraan Tech's portfolio — real projects, real results. Custom web apps, mobile solutions, UI/UX design, and more for clients worldwide." />
+                <meta property="og:description" content="Browse Fajraan Tech's portfolio of web, mobile, and AI-powered projects, including our chauffeur & fleet management software case studies, built for businesses worldwide." />
                 <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
@@ -59,7 +59,7 @@ export default function Portfolio({ projects }) {
                 <meta name="twitter:site" content="@FajraanTech" />
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Portfolio | Fajraan Tech – Our Work & Case Studies" />
-                <meta name="twitter:description" content="See what we've built — Fajraan Tech's portfolio of custom web, mobile & desktop projects for businesses around the world." />
+                <meta name="twitter:description" content="Browse Fajraan Tech's portfolio of web, mobile, and AI-powered projects, including our chauffeur & fleet management software case studies, built for businesses worldwide." />
                 <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Portfolio – Web & Mobile Projects" />
 
@@ -71,7 +71,7 @@ export default function Portfolio({ projects }) {
                             "@type": "CollectionPage",
                             name: "Portfolio – Fajraan Tech",
                             url: "https://www.fajraan.tech/portfolio",
-                            description: "A showcase of Fajraan Tech's custom web, mobile, and desktop application projects for businesses worldwide.",
+                            description: "Browse Fajraan Tech's portfolio of web, mobile, and AI-powered projects, including our chauffeur & fleet management software case studies, built for businesses worldwide.",
                             publisher: {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",

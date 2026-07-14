@@ -31,7 +31,7 @@ export default function BlogCard({ data }) {
                                 src={toWebP(data?.yoast_head_json?.og_image?.[0]?.url ? data?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268")}
                                 loading="lazy"
                                 decoding="async"
-                                className="w-full h-auto aspect-5/4 object-cover transition-all duration-150"
+                                className="w-full h-auto aspect-5/4 object-cover hover:scale-110 ease-out transition-transform duration-500"
                             />
                         </Link>
                     </div>

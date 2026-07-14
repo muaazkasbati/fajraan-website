@@ -11,14 +11,8 @@ export default function PrivacyPolicy() {
             <Head>
                 <title>Privacy Policy | Fajraan Tech – Your Privacy Matters</title>
 
-                <meta
-                    name="description"
-                    content="Read Fajraan Tech's Privacy Policy to understand how we collect, use, store, and protect your personal information when you use our website, products, and services worldwide."
-                />
-                <meta
-                    name="keywords"
-                    content="privacy policy, data protection, personal information, website privacy, cookies policy, user data protection, privacy practices, Fajraan Tech"
-                />
+                <meta name="description" content="Read Fajraan Tech's Privacy Policy to understand how we collect, use, store, and protect your personal information when you use our website, products, and services worldwide." />
+                <meta name="keywords" content="privacy policy, data protection, personal information, website privacy, cookies policy, user data protection, privacy practices, Fajraan Tech" />
 
                 <link rel="canonical" href="https://www.fajraan.tech/privacy-policy" />
 
@@ -26,10 +20,7 @@ export default function PrivacyPolicy() {
                 <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/privacy-policy" />
 
                 <meta property="og:title" content="Privacy Policy | Fajraan Tech – Your Privacy Matters" />
-                <meta
-                    property="og:description"
-                    content="Learn how Fajraan Tech collects, uses, stores, and safeguards your personal information across our website and digital services."
-                />
+                <meta property="og:description" content="Read Fajraan Tech's Privacy Policy to understand how we collect, use, store, and protect your personal information when you use our website, products, and services worldwide." />
                 <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
@@ -40,10 +31,7 @@ export default function PrivacyPolicy() {
                 <meta name="twitter:site" content="@FajraanTech" />
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Privacy Policy | Fajraan Tech – Your Privacy Matters" />
-                <meta
-                    name="twitter:description"
-                    content="Discover how Fajraan Tech protects your personal information and maintains transparency in the collection and use of data."
-                />
+                <meta name="twitter:description" content="Read Fajraan Tech's Privacy Policy to understand how we collect, use, store, and protect your personal information when you use our website, products, and services worldwide." />
                 <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Privacy Policy – Data Protection and Privacy" />
 
@@ -55,7 +43,7 @@ export default function PrivacyPolicy() {
                             "@type": "WebPage",
                             name: "Privacy Policy – Fajraan Tech",
                             url: "https://www.fajraan.tech/privacy-policy",
-                            description: "Learn how Fajraan Tech collects, uses, stores, and protects personal information when providing digital services worldwide.",
+                            description: "Read Fajraan Tech's Privacy Policy to understand how we collect, use, store, and protect your personal information when you use our website, products, and services worldwide.",
                             provider: {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
@@ -116,20 +104,17 @@ export default function PrivacyPolicy() {
                                 viewport={{ once: true }}
                             >
                                 <p>
-                                    At Fajraan Tech, we value your privacy and are committed to protecting your personal information.
-                                    This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or use our services.
+                                    At Fajraan Tech, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or use our services.
                                 </p>
 
                                 <h3>1. Information We Collect</h3>
                                 <p>
-                                    We may collect personal information such as your name, email address, phone number, and business details when you
-                                    contact us, fill out forms, or subscribe to our services.
+                                    We may collect personal information such as your name, email address, phone number, and business details when you contact us, fill out forms, or subscribe to our services.
                                 </p>
 
                                 <h3>2. How We Use Your Information</h3>
                                 <p>
-                                    Your data is used to provide services, respond to inquiries, improve our website, and send relevant updates.
-                                    We do not sell or share your personal information with third parties.
+                                    Your data is used to provide services, respond to inquiries, improve our website, and send relevant updates. We do not sell or share your personal information with third parties.
                                 </p>
 
                                 <h3>3. Cookies</h3>
@@ -149,7 +134,10 @@ export default function PrivacyPolicy() {
 
                                 <h3>6. Contact Us</h3>
                                 <p>
-                                    If you have any questions about our Privacy Policy, contact us at:
+                                    If you have any questions about our Privacy Policy, 
+                                    <br />
+                                    contact us at:
+                                    Fajraan Tech, 1001 S Main St Ste 5965, Kalispell, Montana 59901-1498, United States
                                     <br />
                                     <strong>Email:</strong> info@fajraan.com
                                 </p>

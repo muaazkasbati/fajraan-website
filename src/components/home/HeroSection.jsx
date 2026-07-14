@@ -1,11 +1,10 @@
-
 import { motion, useReducedMotion } from "framer-motion";
 import dynamic from 'next/dynamic';
 import Image from "next/image";
 const HeroVideoSection = dynamic(() => import('./HeroVideoSection'), { ssr: false }); // Video can be client-only
 
 const HeroSection = () => {
-const shouldReduceMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
   return (
     <section className="lg:pt-50 md:pt-37.5 pt-32.5 overflow-hidden">
       <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
@@ -29,7 +28,7 @@ const shouldReduceMotion = useReducedMotion();
           <div className="lg:max-w-95 lg:absolute -right-4 bottom-0 sm:mt-0 mt-4">
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut", delay: 1 }}>
               <p className="text-[20px]">
-                Fajraan Tech is your digital partner for custom web development, mobile apps, UI/UX design, and digital marketing solutions.
+                Fajraan Tech is your digital partner for web development, mobile & desktop apps, and AI automation solutions — built for businesses worldwide.
               </p>
             </motion.div>
 
@@ -49,7 +48,7 @@ const shouldReduceMotion = useReducedMotion();
                 <p className="text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold">
                   <span>9</span>+ Satisfied Clients
                 </p>
-                <p className="text-[18px] leading-relaxed">Trusted Web & App Development Agency</p>
+                <p className="text-[18px] leading-relaxed">Trusted Web, App & AI Development Agency — Serving Clients Worldwide</p>
               </div>
             </motion.div>
           </div>

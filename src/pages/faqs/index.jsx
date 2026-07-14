@@ -13,8 +13,8 @@ export default function Faqs() {
             <Head>
                 <title>FAQs | Fajraan Tech – Frequently Asked Questions</title>
 
-                <meta name="description" content="Find answers to frequently asked questions about Fajraan Tech's web development, mobile app development, UI/UX design, SEO, digital solutions, pricing, and project processes." />
-                <meta name="keywords" content="Fajraan Tech FAQs, frequently asked questions, web development FAQ, mobile app development FAQ, UI UX design questions, SEO services FAQ, software development support" />
+                <meta name="description" content="Find answers to frequently asked questions about Fajraan Tech's web development, mobile app development, AI automation, chatbot development, pricing, and project processes." />
+                <meta name="keywords" content="Fajraan Tech FAQs, frequently asked questions, web development FAQ, mobile app development FAQ, AI automation FAQ, AI chatbot FAQ, software development support" />
 
                 <link rel="canonical" href="https://www.fajraan.tech/faqs" />
 
@@ -22,7 +22,7 @@ export default function Faqs() {
                 <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/faqs" />
 
                 <meta property="og:title" content="FAQs | Fajraan Tech – Frequently Asked Questions" />
-                <meta property="og:description" content="Get answers to common questions about our web development, mobile applications, UI/UX design, SEO, and digital services." />
+                <meta property="og:description" content="Find answers to frequently asked questions about Fajraan Tech's web development, mobile app development, AI automation, chatbot development, pricing, and project processes." />
                 <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
@@ -33,7 +33,7 @@ export default function Faqs() {
                 <meta name="twitter:site" content="@FajraanTech" />
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="FAQs | Fajraan Tech – Frequently Asked Questions" />
-                <meta name="twitter:description" content="Browse answers to common questions about our services, development process, pricing, timelines, and support." />
+                <meta name="twitter:description" content="Find answers to frequently asked questions about Fajraan Tech's web development, mobile app development, AI automation, chatbot development, pricing, and project processes." />
                 <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Frequently Asked Questions" />
 
@@ -46,7 +46,7 @@ export default function Faqs() {
                             name: "Frequently Asked Questions",
                             url: "https://www.fajraan.tech/faqs",
                             description:
-                                "Frequently asked questions about Fajraan Tech's web development, mobile app development, UI/UX design, SEO, and digital services.",
+                                "Find answers to frequently asked questions about Fajraan Tech's web development, mobile app development, AI automation, chatbot development, pricing, and project processes.",
                             provider: {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",

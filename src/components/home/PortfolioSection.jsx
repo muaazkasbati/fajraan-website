@@ -1,10 +1,9 @@
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { toWebP } from "@/utils/data";
+import Button from "../Button";
 
 const PortfolioSection = ({ theme = "dark", projects = [] }) => {
     const imageAnim = {
@@ -36,10 +35,7 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                             {/* <p className={`text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold ${theme === "dark" ? "text-white" : "text-primary"} line-clamp-1`}>
                                 <span>{proj?.title}</span>
                             </p> */}
-                            <p
-                                className={`text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold ${theme === "dark" ? "text-white" : "text-primary"
-                                    } line-clamp-1`}
-                            >
+                            <p className={`text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold ${theme === "dark" ? "text-white" : "text-primary"} line-clamp-1`}>
                                 <Link
                                     href={proj?.link}
                                     target="_blank"
@@ -76,17 +72,9 @@ const PortfolioSection = ({ theme = "dark", projects = [] }) => {
                         <div className="flex flex-wrap">
                             <div className="w-full">
                                 <div className="mb-22.5 text-center md:text-right">
-                                    <Link
-                                        href={`${process.env.NEXT_PUBLIC_APPFRONTURL}portfolio`}
-                                        className={`group inline-flex w-max items-center gap-2 border-b border-primary pb-0 text-[18px] font-semibold leading-[144.444%] tracking-[-0.18px] transition-all duration-500 ease-in-out sm:pb-1 ${theme === "dark" ? "bg-primary text-white border-white" : "text-primary"}`}
-                                    >
+                                    <Button variant={theme === "dark" ? "white-text" : "text"} link ariaLabel="Follow to Portfolio" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}portfolio`}>
                                         View more works
-
-                                        <span className={`relative inline-block h-5.5 w-5.5 overflow-hidden ${theme === "dark" ? "text-white" : "text-primary"}`}>
-                                            <ArrowRight size={22} className="absolute left-0 top-0 -rotate-45 transition-all duration-300 ease-[cubic-bezier(0.37,0.08,0.02,0.93)] group-hover:left-5.5 group-hover:-top-5.5" />
-                                            <ArrowRight size={22} className="absolute -left-5.5 top-5.5 -rotate-45 opacity-80 transition-all duration-300 ease-[cubic-bezier(0.37,0.08,0.02,0.93)] group-hover:left-0 group-hover:top-0" />
-                                        </span>
-                                    </Link>
+                                    </Button>
                                 </div>
                             </div>
 

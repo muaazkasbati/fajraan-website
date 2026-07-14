@@ -32,9 +32,9 @@ export default function Blogs({ posts, totalPages, currentPage }) {
     return (
         <>
             <Head>
-                <title>Blog | Fajraan Tech – Insights on Web, Mobile & Digital Innovation</title>
+                <title>Blog | Fajraan Tech – Insights on Web, Mobile & AI Innovation</title>
 
-                <meta name="description" content="Read the Fajraan Tech blog for expert insights, tutorials, and industry trends on web development, mobile apps, UI/UX design, SEO, and digital innovation for businesses worldwide." />
+                <meta name="description" content="Read the Fajraan Tech blog for expert insights, tutorials, and industry trends on web development, mobile apps, AI automation, and digital innovation for businesses worldwide." />
                 <meta name="keywords" content="Fajraan Tech blog, web development blog, mobile app development articles, UI UX design tips, SEO insights, software development tutorials, tech industry trends, digital innovation" />
 
                 <link rel="canonical" href="https://www.fajraan.tech/blog" />
@@ -42,8 +42,8 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                 <link rel="alternate" hrefLang="en" href="https://www.fajraan.tech/blog" />
                 <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/blog" />
 
-                <meta property="og:title" content="Blog | Fajraan Tech – Insights on Web, Mobile & Digital Innovation" />
-                <meta property="og:description" content="Stay ahead with Fajraan Tech's blog — expert articles on web development, mobile apps, UI/UX design, SEO, and the latest in digital technology." />
+                <meta property="og:title" content="Blog | Fajraan Tech – Insights on Web, Mobile & AI Innovation" />
+                <meta property="og:description" content="Read the Fajraan Tech blog for expert insights, tutorials, and industry trends on web development, mobile apps, AI automation, and digital innovation for businesses worldwide." />
                 <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
@@ -53,8 +53,8 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@FajraanTech" />
                 <meta name="twitter:creator" content="@FajraanTech" />
-                <meta name="twitter:title" content="Blog | Fajraan Tech – Insights on Web, Mobile & Digital Innovation" />
-                <meta name="twitter:description" content="Expert articles on web development, mobile apps, UI/UX design, SEO, and digital innovation — straight from the Fajraan Tech team." />
+                <meta name="twitter:title" content="Blog | Fajraan Tech – Insights on Web, Mobile & AI Innovation" />
+                <meta name="twitter:description" content="Read the Fajraan Tech blog for expert insights, tutorials, and industry trends on web development, mobile apps, AI automation, and digital innovation for businesses worldwide." />
                 <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Blog – Web, Mobile & Digital Insights" />
 
@@ -66,7 +66,7 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                             "@type": "Blog",
                             name: "Fajraan Tech Blog",
                             url: "https://www.fajraan.tech/blog",
-                            description: "Expert insights, tutorials, and industry trends on web development, mobile apps, UI/UX design, SEO, and digital innovation.",
+                            description: "Read the Fajraan Tech blog for expert insights, tutorials, and industry trends on web development, mobile apps, AI automation, and digital innovation for businesses worldwide.",
                             publisher: {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",

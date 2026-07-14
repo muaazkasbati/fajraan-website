@@ -114,12 +114,17 @@ const Footer = () => {
                             viewport={{ once: true }}
                         >
                             <p className="text-[20px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold mb-5 text-white">Contact</p>
+                            <p className="text-[20px] mb-3">
+                                1001 S Main St Ste 5965, Kalispell, Montana 59901-1498, United States
+                            </p>
                             <p className="text-[20px]">
-                                Dubai, United Arab Emirates
+                                <Link aria-label="Contact on WhatsApp" className="hover:underline transition-all duration-200 underline-offset-3 decoration-2" href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
+                                    +971 54 225 9592 (WhatsApp)
+                                </Link>
                             </p>
                             <p className="text-[20px] mb-3">
-                                <Link aria-label="Contact on WhatsApp" className="mobile" href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
-                                    +971 54 225 9592 (WhatsApp)
+                                <Link aria-label="Contact Us on Number" className="hover:underline transition-all duration-200 underline-offset-3 decoration-2" href="tel:+14062299260">
+                                    +1 (406) 229-9260
                                 </Link>
                             </p>
                             <p className="text-[20px]">

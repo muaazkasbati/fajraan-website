@@ -16,9 +16,7 @@ const AboutSection = () => {
               transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
             >
               <p className="text-[30px] md:text-[38px] lg:text-[42px] xl:text-[44px] leading-[116.667%] tracking-[-1.5px] font-semibold">
-                We build smart digital strategies and creative designs that help social
-                brands, modern startups, and green companies grow. Our aim is to inspire
-                people to choose better, sustainable options with trust and confidence.
+                We build smart digital strategies and creative designs that help startups, growing businesses, and enterprises scale. Our aim is to give every client a focused, high-quality result rather than a scattered list of services.
               </p>
             </motion.div>
 
@@ -30,11 +28,9 @@ const AboutSection = () => {
             >
               <div className="mt-15 max-w-163 ml-auto">
                 <p className="text-[20px] mb-4">
-                  From shaping a unique brand image to creating smooth digital experiences
-                  and running smart marketing campaigns, we handle every project with care,
-                  skill, and full focus on quality results.
+                  From web and mobile development to AI-powered automation, we handle every project with care, technical depth, and full focus on quality results — wherever in the world our clients are.
                 </p>
-                <Button link ariaLabel="Follow to about" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}about`}>
+                <Button variant="text" link ariaLabel="Follow to about" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}about`}>
                   More about us
                 </Button>
               </div>

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
@@ -11,10 +10,7 @@ export default function OurAchievementSection() {
   ];
 
   return (
-    <section
-      className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden"
-      id="our-achievement"
-    >
+    <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden" id="our-achievement">
       <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
         <div className="grid sm:grid-cols-4 items-center gap-5">
           {achievements.map((item, index) => (
@@ -32,9 +28,6 @@ export default function OurAchievementSection() {
   );
 }
 
-// --------------------
-// 🔢 Animated Counter
-// --------------------
 function AnimatedCounterBox({ value, suffix, label, delay }) {
   const controls = useAnimation();
   const ref = useRef(null);

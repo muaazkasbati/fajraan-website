@@ -20,7 +20,7 @@ export default function TermsAndConditions() {
                 <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/terms-and-conditions" />
 
                 <meta property="og:title" content="Terms & Conditions | Fajraan Tech – Terms of Service & Website Use" />
-                <meta property="og:description" content="Review the terms governing access to and use of Fajraan Tech's website, software solutions, and digital services." />
+                <meta property="og:description" content="Read Fajraan Tech's Terms & Conditions governing the use of our website, digital products, software solutions, and professional services worldwide." />
                 <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
@@ -31,7 +31,7 @@ export default function TermsAndConditions() {
                 <meta name="twitter:site" content="@FajraanTech" />
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Terms & Conditions | Fajraan Tech – Terms of Service & Website Use" />
-                <meta name="twitter:description" content="Understand the rights, responsibilities, and conditions that apply when using Fajraan Tech's website and services." />
+                <meta name="twitter:description" content="Read Fajraan Tech's Terms & Conditions governing the use of our website, digital products, software solutions, and professional services worldwide." />
                 <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Terms & Conditions – Website and Service Usage Terms" />
 
@@ -43,7 +43,7 @@ export default function TermsAndConditions() {
                             "@type": "WebPage",
                             name: "Terms & Conditions – Fajraan Tech",
                             url: "https://www.fajraan.tech/terms-and-conditions",
-                            description: "Terms and Conditions governing the use of Fajraan Tech's website, software solutions, and professional digital services.",
+                            description: "Read Fajraan Tech's Terms & Conditions governing the use of our website, digital products, software solutions, and professional services worldwide.",
                             provider: {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
@@ -103,8 +103,7 @@ export default function TermsAndConditions() {
                                 viewport={{ once: true }}
                             >
                                 <p>
-                                    Welcome to Fajraan Tech. By accessing our website or using our services, you agree to the following terms and conditions.
-                                    Please read them carefully before proceeding.
+                                    Welcome to Fajraan Tech. By accessing our website or using our services, you agree to the following terms and conditions. Please read them carefully before proceeding.
                                 </p>
 
                                 <h3>1. Use of Services</h3>
@@ -119,7 +118,7 @@ export default function TermsAndConditions() {
 
                                 <h3>3. Payment & Refund Policy</h3>
                                 <p>
-                                    Payment terms are agreed upon before project initiation. Refunds are subject to review based on project stage and deliverables.
+                                    Payment terms are agreed upon before project initiation, in USD. Refunds are subject to review based on project stage and deliverables.
                                 </p>
 
                                 <h3>4. Limitation of Liability</h3>
@@ -134,8 +133,7 @@ export default function TermsAndConditions() {
 
                                 <h3>6. Governing Law</h3>
                                 <p>
-                                    These Terms & Conditions are governed by the laws of the United Arab Emirates.
-                                    Any disputes will be resolved under UAE jurisdiction.
+                                    These Terms & Conditions shall be governed by and construed in accordance with the laws of the State of Wyoming, United States, without regard to its conflict of law principles. Any disputes arising out of or relating to these Terms & Conditions shall be subject to the exclusive jurisdiction of the state and federal courts located in Wyoming.
                                 </p>
                             </motion.div>
                         </motion.div>

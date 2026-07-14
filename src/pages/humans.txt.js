@@ -1,16 +1,21 @@
 export async function getServerSideProps({ res }) {
-  const content = `
-/* TEAM */
-Founder & CEO: Muaaz Kasbati
+const content = `
+/* COMPANY */
 Company: Fajraan Tech
+Founder & CEO: Muaaz Kasbati
+Co-Founder: Talha Ahmed
 Website: https://www.fajraan.tech
 Email: info@fajraan.com
 Founded: June 2025
-Headquarters: Dubai, UAE
+Headquarters: Wyoming, United States
+
+/* MAILING ADDRESS */
+1001 S Main St Ste 5965
+Kalispell, Montana 59901-1498
+United States
 
 /* ABOUT */
-Fajraan Tech is a full-stack digital agency delivering innovative solutions across
-Web Development, Mobile Apps, UI/UX Design, Media Production, Digital Marketing, and Data Services.
+Fajraan Tech is a full-stack digital agency delivering innovative solutions across Web Development, Mobile Apps, UI/UX Design, Media Production, Digital Marketing, and Data Services.
 
 /* TECHNOLOGY STACK */
 Frontend: Next.js, React.js, Tailwind CSS
@@ -20,10 +25,10 @@ Design: Figma, Adobe Creative Suite
 Deployment: Vercel, Cloudflare, Firebase Hosting
 
 /* REGIONS SERVED */
-UAE, Middle East, and Global Clients
+United States, North America, Middle East, and Global Clients
 
 /* CREDITS */
-Crafted with ❤️ by Fajraan Tech Team
+Crafted with ❤️ by the Fajraan Tech Team
 `;
 
   res.setHeader('Content-Type', 'text/plain');

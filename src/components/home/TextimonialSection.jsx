@@ -24,15 +24,21 @@ export default function TestimonialSection({ aboutPage = false }) {
     },
     {
       text: `"This was a complex project involving booking management, payment integration, and multiple advanced features—and Fajraan Tech nailed it. They built a powerful, user-friendly platform that streamlined our operations and impressed our clients. Truly reliable and skilled."`,
-      author: "Ahmed Al Qureshi",
-      role: "AB Limousine",
+      author: "James Anderson",
+      role: "Founder at AB Limousine",
       image: "images/testimonial/Testimonial-2.webp",
     },
     {
       text: `"Fajraan Tech developed a stunning animated website for us that perfectly captured our brand’s personality. The creativity, smooth functionality, and attention to detail were outstanding. We couldn’t be happier with the results."`,
-      author: "Layla Al Rashid",
-      role: "TheForCollective",
+      author: "Sophia Bennett",
+      role: "Founder at TheForCollective",
       image: "images/testimonial/Testimonial-3.webp",
+    },
+    {
+      text: `"Fajraan Tech transformed the way we manage our chauffeur business. They delivered a complete booking and fleet management platform with real-time dispatching, driver management, Stripe payments, reporting, and countless custom features tailored to our operations. The attention to detail, technical expertise, and ongoing support have been exceptional. They truly became a trusted technology partner for our business."`,
+      author: "Hass Gill",
+      role: "Co-Founder at Empire Chauffeurs Australia",
+      image: "images/testimonial/Testimonial-4.webp",
     },
   ];
 
@@ -121,7 +127,6 @@ export default function TestimonialSection({ aboutPage = false }) {
         </div>
 
         <div className="grid md:grid-cols-12 grid-cols-1 md:gap-4 gap-8">
-          {/* IMAGE SLIDER */}
           <div className="md:col-span-5 col-span-1">
             <Swiper
               // modules
@@ -152,7 +157,6 @@ export default function TestimonialSection({ aboutPage = false }) {
             </Swiper>
           </div>
 
-          {/* TEXT SLIDER */}
           <div className="md:col-span-6 md:col-start-7 col-span-1">
             <Swiper
               modules={[Navigation, Autoplay, Controller]}

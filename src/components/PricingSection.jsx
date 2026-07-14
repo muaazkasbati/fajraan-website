@@ -4,12 +4,54 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
 
+// const pricingData = [
+//     {
+//         title: "Launch",
+//         info: "Perfect for startups or small businesses needing a professional online presence.",
+//         price: "6,000",
+//         // price: "AED 3,500 - AED 6,000",
+//         features: [
+//             "Custom responsive website (up to 7 pages)",
+//             "Mobile-friendly design",
+//             "Basic CMS integration",
+//             "Basic functionality",
+//             "Standard UI/UX design",
+//             "Basic on-page SEO setup",
+//             "1 month of post-launch support",
+//         ],
+//     },
+//     {
+//         title: "Scale",
+//         info: "Best for growing businesses ready to scale with advanced features or e-commerce.",
+//         price: "15,000",
+//         // price: "AED 9,000 - AED 15,000",
+//         features: [
+//             "Custom web app or e-commerce platform",
+//             "Advanced UI/UX design & prototyping",
+//             "CMS or Admin panel for content management",
+//             "SEO setup + Google Analytics integration",
+//             "3 months of free support",
+//         ],
+//     },
+//     {
+//         title: "Transform",
+//         info: "Ideal for established companies or startups building large-scale digital platforms.",
+//         price: "25,000+",
+//         features: [
+//             "Full-stack web or mobile platform (scalable architecture)",
+//             "Payment gateways & API integrations",
+//             "Complete UI/UX strategy with user testing",
+//             "Branding & localization support",
+//             "12 months of maintenance & technical support",
+//         ],
+//     },
+// ];
+
 const pricingData = [
     {
         title: "Launch",
         info: "Perfect for startups or small businesses needing a professional online presence.",
-        price: "6,000",
-        // price: "AED 3,500 - AED 6,000",
+        price: "$6,000",
         features: [
             "Custom responsive website (up to 7 pages)",
             "Mobile-friendly design",
@@ -18,34 +60,39 @@ const pricingData = [
             "Standard UI/UX design",
             "Basic on-page SEO setup",
             "1 month of post-launch support",
+            "Optional: basic AI chatbot add-on (custom quote)",
         ],
     },
     {
         title: "Scale",
         info: "Best for growing businesses ready to scale with advanced features or e-commerce.",
-        price: "15,000",
-        // price: "AED 9,000 - AED 15,000",
+        price: "$15,000",
         features: [
             "Custom web app or e-commerce platform",
             "Advanced UI/UX design & prototyping",
             "CMS or Admin panel for content management",
             "SEO setup + Google Analytics integration",
             "3 months of free support",
+            "Optional: AI chatbot or workflow automation add-on (custom quote)",
         ],
     },
     {
         title: "Transform",
         info: "Ideal for established companies or startups building large-scale digital platforms.",
-        price: "25,000+",
+        price: "$25,000+",
         features: [
             "Full-stack web or mobile platform (scalable architecture)",
             "Payment gateways & API integrations",
             "Complete UI/UX strategy with user testing",
-            "Branding & localization support",
             "12 months of maintenance & technical support",
+            "Optional: custom AI automation & chatbot system, scoped and quoted separately",
         ],
     },
 ];
+
+// Note: AI Automation & AI Chatbot work is priced as a custom, scoped add-on
+// (not a fixed tier) since scope varies widely — from a simple support chatbot
+// to a full multi-step automation system. Quote separately per project after discovery.
 
 const PricingSection = () => {
     return (
@@ -58,7 +105,7 @@ const PricingSection = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true }}
                 >
-                    Choose the perfect plan for your business
+                    Choose the perfect plan for your business.
                 </motion.h3>
 
                 <div className="grid gap-4 pt-15 md:grid-cols-2 xl:grid-cols-3">
@@ -114,7 +161,7 @@ const PricingSection = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <Button link ariaLabel={`Follow to Contact`} href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact?plan=${plan.title}`}>
+                                    <Button variant="white" link ariaLabel={`Follow to Contact`} href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact?plan=${plan.title}`}>
                                         Go with this plan
                                     </Button>
                                 </motion.div>

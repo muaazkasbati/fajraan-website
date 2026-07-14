@@ -207,5 +207,105 @@
                 "sideImage": "/assets/img/images/th-1/service-details-inner-img-mobile.webp"
             }
         }
+    },
+    {
+        "icon": "/images/service/service-icon-3.svg",
+        "title": "AI Automation & AI Chatbot",
+        "slug": "ai-automation-ai-chatbot",
+        "seoTitle": "AI Automation & AI Chatbot Development Services - Fajraan Tech",
+        "seoDescription": "Fajraan Tech builds custom AI chatbots, AI-powered customer support systems, and business process automation using modern LLMs and automation tools to help businesses save time and scale faster.",
+        "seoKeywords": [
+            "AI automation",
+            "AI chatbot development",
+            "business process automation",
+            "AI customer support",
+            "workflow automation",
+            "LLM integration",
+            "conversational AI",
+            "Fajraan Tech"
+        ],
+        "category": "AI & Automation",
+        "description": "Custom AI automation and chatbot solutions that streamline operations, cut manual work, and give your business round-the-clock intelligent support.",
+        "subServices": [
+            {
+                "title": "AI Chatbot Development",
+                "description": "Custom AI chatbots for websites, apps, and messaging platforms, built on modern LLMs to handle support, FAQs, and lead capture around the clock.",
+                "icon": "/assets/img/icons/icon-ai-chatbot.svg"
+            },
+            {
+                "title": "Business Process Automation",
+                "description": "Automating repetitive workflows and connecting your tools and systems so your team spends less time on manual, repetitive tasks.",
+                "icon": "/assets/img/icons/icon-automation.svg"
+            },
+            {
+                "title": "AI-Powered Customer Support Systems",
+                "description": "Intelligent support systems that triage tickets, answer common questions instantly, and escalate complex issues to your team.",
+                "icon": "/assets/img/icons/icon-ai-support.svg"
+            },
+            {
+                "title": "Custom AI & LLM Integrations",
+                "description": "Integrating AI models and APIs into your existing website, app, or internal tools to add smart, data-driven features.",
+                "icon": "/assets/img/icons/icon-ai-integration.svg"
+            }
+        ],
+        "content": {
+            "breadcrumb": "AI Automation & AI Chatbot Service",
+            "hero": {
+                "image": "/images/service/ai-automation-service-img.webp",
+                "title": "AI Automation & Chatbots for",
+                "highlight": "intelligent",
+                "subtitle": "business growth",
+                "description": [
+                    "AI automation and chatbots help your business respond faster, work smarter, and cut down on repetitive manual tasks.",
+                    "At Fajraan Tech, we design and build custom AI solutions that plug directly into how your business already operates."
+                ]
+            },
+            "sections": [
+                {
+                    "title": "1/ AI Chatbot Development:",
+                    "points": [
+                        "We build custom chatbots powered by modern LLMs, trained on your business data to give accurate, on-brand answers.",
+                        "Our chatbots handle customer support, lead qualification, and FAQs across web, mobile, and messaging channels.",
+                        "Key aspects include natural conversation flow, handoff to human agents, and continuous improvement based on real usage."
+                    ]
+                },
+                {
+                    "title": "2/ Workflow & Process Automation:",
+                    "points": [
+                        "We map out your repetitive, manual processes and automate them using modern automation tools and custom scripts.",
+                        "Our team connects your existing apps, CRMs, and internal tools so data flows automatically between them.",
+                        "Key aspects include reduced manual effort, fewer errors, and faster turnaround on routine business tasks."
+                    ]
+                }
+            ],
+            "approach": {
+                "title": "Our Approach",
+                "description": "We follow a focused process to deliver AI automation and chatbot solutions that create real, measurable impact:",
+                "steps": [
+                    {
+                        "icon": "/assets/img/icons/icon-black-search.svg",
+                        "title": "Discovery & Planning:",
+                        "points": [
+                            "Identifying the repetitive tasks, support bottlenecks, and business processes best suited for AI and automation."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-edit.svg",
+                        "title": "Design & Development:",
+                        "points": [
+                            "Building and training your chatbot or automation workflow, then testing it against real business scenarios."
+                        ]
+                    },
+                    {
+                        "icon": "/assets/img/icons/icon-black-rocket.svg",
+                        "title": "Launch & Optimization:",
+                        "points": [
+                            "Deploying your AI solution, monitoring performance, and refining it based on real usage and feedback."
+                        ]
+                    }
+                ],
+                "sideImage": "/assets/img/images/th-1/service-details-inner-img-ai.webp"
+            }
+        }
     }
 ]

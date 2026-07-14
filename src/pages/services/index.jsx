@@ -15,17 +15,17 @@ export default function Services() {
   return (
     <>
       <Head>
-        <title>Our Services | Fajraan Tech – Web, Mobile & Digital Solutions</title>
-        <meta name="description" content="Explore Fajraan Tech's full range of services — custom web development, mobile app development, desktop applications, UI/UX design, SEO, and data services for businesses worldwide." />
-        <meta name="keywords" content="web development services, mobile app development services, desktop application development, UI UX design services, SEO services, data services, software development agency, digital solutions company" />
+        <title>Our Services | Fajraan Tech – Web, Mobile & AI Automation Solutions</title>
+        <meta name="description" content="Explore Fajraan Tech's core services — custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
+        <meta name="keywords" content="web development services, mobile app development services, desktop application development, AI automation services, AI chatbot development, software development agency, digital solutions company" />
 
         <link rel="canonical" href="https://www.fajraan.tech/services" />
 
         <link rel="alternate" hrefLang="en" href="https://www.fajraan.tech/services" />
         <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/services" />
 
-        <meta property="og:title" content="Our Services | Fajraan Tech – Web, Mobile & Digital Solutions" />
-        <meta property="og:description" content="From custom web and mobile apps to UI/UX design, SEO, and data services — Fajraan Tech delivers end-to-end digital solutions for businesses worldwide." />
+        <meta property="og:title" content="Our Services | Fajraan Tech – Web, Mobile & AI Automation Solutions" />
+        <meta property="og:description" content="Explore Fajraan Tech's core services — custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
         <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="600" />
@@ -35,8 +35,8 @@ export default function Services() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FajraanTech" />
         <meta name="twitter:creator" content="@FajraanTech" />
-        <meta name="twitter:title" content="Our Services | Fajraan Tech – Web, Mobile & Digital Solutions" />
-        <meta name="twitter:description" content="Custom web apps, mobile development, desktop solutions, UI/UX design, SEO, and data services — explore everything Fajraan Tech offers for businesses worldwide." />
+        <meta name="twitter:title" content="Our Services | Fajraan Tech – Web, Mobile & AI Automation Solutions" />
+        <meta name="twitter:description" content="Explore Fajraan Tech's core services — custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
         <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta name="twitter:image:alt" content="Fajraan Tech Services – Web, Mobile & Digital Solutions" />
 
@@ -48,7 +48,7 @@ export default function Services() {
               "@type": "WebPage",
               name: "Our Services – Fajraan Tech",
               url: "https://www.fajraan.tech/services",
-              description: "Fajraan Tech offers custom web development, mobile app development, desktop applications, UI/UX design, SEO, and data services for businesses worldwide.",
+              description: "Explore Fajraan Tech's core services — custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide.",
               provider: {
                 "@type": "Organization",
                 name: "Fajraan Tech",
@@ -170,7 +170,7 @@ export default function Services() {
                           <h5 className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold">{service.title}</h5>
                           <p className="text-[20px]">{service.description}</p>
                         </div>
-                        <Button link ariaLabel={`Follow to ${service.title}`} href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
+                        <Button variant="text" link ariaLabel={`Follow to ${service.title}`} href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
                           View details
                         </Button>
                       </div>

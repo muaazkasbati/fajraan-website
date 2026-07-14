@@ -14,8 +14,8 @@ export default function Pricing() {
             <Head>
                 <title>Pricing | Fajraan Tech – Transparent Plans for Every Business</title>
 
-                <meta name="description" content="View Fajraan Tech's pricing plans for custom web development, mobile app development, UI/UX design, SEO, and data services. Transparent and flexible pricing for businesses of all sizes worldwide." />
-                <meta name="keywords" content="Fajraan Tech pricing, web development cost, mobile app development pricing, UI UX design packages, SEO pricing plans, software development rates, digital agency pricing" />
+                <meta name="description" content="View Fajraan Tech's pricing plans for web development, mobile & desktop application development, and AI automation & chatbot solutions. Transparent, USD pricing for businesses of all sizes worldwide." />
+                <meta name="keywords" content="Fajraan Tech pricing, web development cost, mobile app development pricing, AI automation pricing, AI chatbot pricing, software development rates, digital agency pricing" />
 
                 <link rel="canonical" href="https://www.fajraan.tech/pricing" />
 
@@ -23,7 +23,7 @@ export default function Pricing() {
                 <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/pricing" />
 
                 <meta property="og:title" content="Pricing | Fajraan Tech – Transparent Plans for Every Business" />
-                <meta property="og:description" content="Flexible and transparent pricing for custom web development, mobile apps, UI/UX design, SEO, and data services. Find the right plan for your business at Fajraan Tech." />
+                <meta property="og:description" content="View Fajraan Tech's pricing plans for web development, mobile & desktop application development, and AI automation & chatbot solutions. Transparent, USD pricing for businesses of all sizes worldwide." />
                 <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
@@ -34,7 +34,7 @@ export default function Pricing() {
                 <meta name="twitter:site" content="@FajraanTech" />
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Pricing | Fajraan Tech – Transparent Plans for Every Business" />
-                <meta name="twitter:description" content="Transparent, flexible pricing for web development, mobile apps, UI/UX design, SEO, and data services — built to fit businesses of every size." />
+                <meta name="twitter:description" content="View Fajraan Tech's pricing plans for web development, mobile & desktop application development, and AI automation & chatbot solutions. Transparent, USD pricing for businesses of all sizes worldwide." />
                 <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Pricing – Flexible Plans for Every Business" />
 
@@ -46,7 +46,7 @@ export default function Pricing() {
                             "@type": "WebPage",
                             name: "Pricing – Fajraan Tech",
                             url: "https://www.fajraan.tech/pricing",
-                            description: "Transparent and flexible pricing plans for custom web development, mobile apps, UI/UX design, SEO, and data services for businesses worldwide.",
+                            description: "View Fajraan Tech's pricing plans for web development, mobile & desktop application development, and AI automation & chatbot solutions. Transparent, USD pricing for businesses of all sizes worldwide.",
                             provider: {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",

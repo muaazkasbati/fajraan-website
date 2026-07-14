@@ -1,12 +1,9 @@
-import { ArrowRight } from 'lucide-react';
-import { useRouter } from 'next/router';
 import React from 'react'
 import Input from './Input';
 import Button from './Button';
-import Textarea from './Textarea';
+import Select from './Select';
 
-export default function ContactForm() {
-    const router = useRouter()
+export default function LeadForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -19,7 +16,7 @@ export default function ContactForm() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ ...data, plan: router.query.plan ? router.query.plan : '' }),
+                body: JSON.stringify({ ...data, }),
             });
 
             // Check response status
@@ -33,41 +30,44 @@ export default function ContactForm() {
             console.error('Error submitting form:', error);
         }
     };
+
+    const fleetSizeOptions = [
+        { value: "1-10", label: "1-10" },
+        { value: "10-50", label: "10-50" },
+        { value: "50+", label: "50+" }
+    ];
+
+    const bookingMethodOptions = [
+        { value: "Spreadsheets", label: "Spreadsheets" },
+        { value: "WhatsApp/phone", label: "WhatsApp/phone" },
+        { value: "Third-party software", label: "Third-party software" },
+        { value: "Other", label: "Other" }
+    ];
     return (
         <>
             <form autoComplete="off" id="contact-form"
                 onSubmit={handleSubmit}
                 className="space-y-4">
-                <div className="grid grid-cols-2 gap-3">
-                    <Input
-                        placeholder="Your name"
-                        required
-                        pattern="[A-Za-z\s]+"
-                        title="Please enter only alphabets and spaces"
-                        type="text"
-                        name="name"
-                        id="name"
-                    />
 
-                    <Input
-                        placeholder="Company name"
-                        type="text"
-                        name="company"
-                        id="company"
-                    />
-                </div>
                 <Input
-                    placeholder="Enter your phone number"
+                    placeholder="Name"
                     required
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    pattern="^\+?[0-9]{7,15}$"
-                    title="Please enter a valid phone number (digits only, with optional + and 7–15 digits)"
+                    pattern="[A-Za-z\s]+"
+                    title="Please enter only alphabets and spaces"
+                    type="text"
+                    name="name"
+                    id="name"
                 />
 
                 <Input
-                    placeholder="Enter your e-mail address"
+                    placeholder="Company Name"
+                    type="text"
+                    name="company"
+                    id="company"
+                />
+
+                <Input
+                    placeholder="Email Address"
                     required
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     title="Please enter a valid email address"
@@ -76,20 +76,22 @@ export default function ContactForm() {
                     name="email"
                 />
 
-
-                <Input
-                    placeholder="What is the subject of your query?"
-                    type="text"
-                    name="subject"
-                    id="subject"
+                <Select
+                    id="fleetSize"
+                    name="fleetSize"
+                    required
+                    placeholder="Fleet Size"
+                    options={fleetSizeOptions}
                 />
 
-                <Textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    placeholder="Describe about your project"
+                <Select
+                    id="bookingMethod"
+                    name="bookingMethod"
+                    required
+                    placeholder="Current Booking Method"
+                    options={bookingMethodOptions}
                 />
+
                 <div className="w-full mt-5">
                     <Button variant="primary" id="submit-form" ariaLabel="Submit" type="submit">
                         Submit

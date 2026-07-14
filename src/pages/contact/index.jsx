@@ -13,8 +13,8 @@ export default function Contact() {
             <Head>
                 <title>Contact Us | Fajraan Tech – Let's Build Something Great</title>
 
-                <meta name="description" content="Get in touch with Fajraan Tech. Whether you have a project in mind or just want to say hello, our team is ready to help you build custom web, mobile, and desktop solutions worldwide." />
-                <meta name="keywords" content="contact Fajraan Tech, hire web developers, hire app developers, get a quote, software development inquiry, web development agency contact, tech company contact" />
+                <meta name="description" content="Get in touch with Fajraan Tech. Whether you have a project in mind or just want to say hello, our team is ready to help you build web, mobile, and AI-powered solutions worldwide." />
+                <meta name="keywords" content="contact Fajraan Tech, hire web developers, hire app developers, hire AI automation experts, get a quote, software development inquiry, web development agency contact, tech company contact" />
 
                 <link rel="canonical" href="https://www.fajraan.tech/contact" />
 
@@ -22,7 +22,7 @@ export default function Contact() {
                 <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/contact" />
 
                 <meta property="og:title" content="Contact Us | Fajraan Tech – Let's Build Something Great" />
-                <meta property="og:description" content="Have a project in mind? Reach out to Fajraan Tech and let's discuss how we can build your next custom web, mobile, or desktop solution." />
+                <meta property="og:description" content="Get in touch with Fajraan Tech. Whether you have a project in mind or just want to say hello, our team is ready to help you build web, mobile, and AI-powered solutions worldwide." />
                 <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
@@ -33,7 +33,7 @@ export default function Contact() {
                 <meta name="twitter:site" content="@FajraanTech" />
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Contact Us | Fajraan Tech – Let's Build Something Great" />
-                <meta name="twitter:description" content="Ready to start your next project? Get in touch with the Fajraan Tech team — custom web, mobile & desktop development for businesses worldwide." />
+                <meta name="twitter:description" content="Get in touch with Fajraan Tech. Whether you have a project in mind or just want to say hello, our team is ready to help you build web, mobile, and AI-powered solutions worldwide." />
                 <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Contact Fajraan Tech – Global Software Development" />
 
@@ -46,7 +46,7 @@ export default function Contact() {
                             "@type": "ContactPage",
                             name: "Contact Us – Fajraan Tech",
                             url: "https://www.fajraan.tech/contact",
-                            description: "Contact Fajraan Tech to discuss your custom web, mobile, or desktop development project. Our global team is ready to help.",
+                            description: "Get in touch with Fajraan Tech. Whether you have a project in mind or just want to say hello, our team is ready to help you build web, mobile, and AI-powered solutions worldwide.",
                             publisher: {
                                 "@type": "Organization",
                                 name: "Fajraan Tech",
@@ -95,11 +95,11 @@ export default function Contact() {
             </Head>
             <Header />
             <main>
-                <HeroSec title="We’re just a message away to bring your ideas to life" />
+                <HeroSec title="We're just a message away to bring your ideas to life" />
                 <section className="overflow-hidden">
                     <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180 relative">
                         <motion.iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.706867964713!2d0.05159407660142838!3d51.5736070718285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a6e6b8f4dd5b%3A0xc0b05abcd40481bd!2sWanstead%20Ln%2C%20Ilford%2C%20UK!5e0!3m2!1sen!2s!4v1770044643021!5m2!1sen!2s"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.9225075315762!2d-114.31232502374964!3d48.18884454759078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x536650c2d7daf13f%3A0x1ffd14811eec8fbe!2s1001%20S%20Main%20St%20%235965%2C%20Kalispell%2C%20MT%2059901%2C%20USA!5e0!3m2!1sen!2s!4v1784015785330!5m2!1sen!2s"
                             width="600"
                             height="400"
                             allowFullScreen=""
@@ -124,17 +124,15 @@ export default function Contact() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.8, ease: "easeOut" }}
                                 >
-                                    <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] mb-7 text-primary font-semibold">Let’s build something amazing together!</h3>
+                                    <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] mb-7 text-primary font-semibold">Let's build something amazing together!</h3>
                                     <p className="text-[20px]">
-                                        At Fajraan Tech, we’re always ready to discuss your next digital project — whether it’s a website, app,
-                                        design, or marketing campaign. Reach out to our team and let’s turn your vision into reality.
+                                        At Fajraan Tech, we're always ready to discuss your next digital project — whether it's a website, app, AI automation, or chatbot. Reach out to our team and let's turn your vision into reality.
                                     </p>
 
                                     <div className="mt-12 mb-8">
-                                        <h6 className="text-[20px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold">Address:</h6>
+                                        <h6 className="text-[20px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold">Headquarters:</h6>
                                         <p className="text-[20px]">
-                                            Sheikh Zayed Road, <br />
-                                            Dubai, United Arab Emirates
+                                            1001 S Main St Ste 5965,<br />Kalispell, MT 59901-1498
                                         </p>
                                     </div>
 
@@ -142,9 +140,16 @@ export default function Contact() {
                                         <p className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold">
                                             <Link aria-label="Contact Us on Email" href="mailto:info@fajraan.com" className="underline underline-offset-3 decoration-2">info@fajraan.com</Link>
                                         </p>
-                                        <Link aria-label="Contact Us on WhatsApp" href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
-                                            +971 54 225 9592 (WhatsApp UAE)
-                                        </Link>
+                                        <p>
+                                            <Link aria-label="Contact Us on Number" href="tel:+14062299260">
+                                                +1 (406) 229-9260
+                                            </Link>
+                                        </p>
+                                        <p>
+                                            <Link aria-label="Contact Us on WhatsApp" href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
+                                                +971 54 225 9592 (WhatsApp UAE)
+                                            </Link>
+                                        </p>
                                     </div>
                                 </motion.div>
                             </div>

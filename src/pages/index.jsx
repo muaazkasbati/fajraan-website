@@ -64,10 +64,10 @@ export default function Home({ posts, portfolio }) {
   return (
     <>
       <Head>
-        <title>Fajraan Tech | Custom Web & Mobile App Development Company</title>
+        <title>Fajraan Tech | Web Development, Mobile Apps & AI Automation Company</title>
 
-        <meta name="description" content="Fajraan Tech is a global software development company building custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses worldwide." />
-        <meta name="keywords" content="custom web development, mobile app development, UI UX design, SEO services, software development company, app development agency, web design company, digital solutions, tech company" />
+        <meta name="description" content="Fajraan Tech is a global software development company building custom web, mobile, and desktop applications, plus AI automation and AI chatbot solutions for businesses worldwide." />
+        <meta name="keywords" content="custom web development, mobile app development, AI automation, AI chatbot development, chauffeur software, fleet management software, software development company, app development agency, digital solutions, tech company" />
 
         <link rel="canonical" href="https://www.fajraan.tech/" />
 
@@ -75,8 +75,8 @@ export default function Home({ posts, portfolio }) {
         <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/" />
 
 
-        <meta property="og:title" content="Fajraan Tech | Custom Web & Mobile App Development Company" />
-        <meta property="og:description" content="We build scalable custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses around the world." />
+        <meta property="og:title" content="Fajraan Tech | Web Development, Mobile Apps & AI Automation Company" />
+        <meta property="og:description" content="Fajraan Tech is a global software development company building custom web, mobile, and desktop applications, plus AI automation and AI chatbot solutions for businesses worldwide." />
         <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -86,7 +86,7 @@ export default function Home({ posts, portfolio }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FajraanTech" />
         <meta name="twitter:creator" content="@FajraanTech" />
-        <meta name="twitter:title" content="Fajraan Tech | Custom Web & Mobile App Development Company" />
+        <meta name="twitter:title" content="Fajraan Tech | Web Development, Mobile Apps & AI Automation Company" />
         <meta name="twitter:description" content="Global software development agency delivering custom web, mobile & desktop apps, UI/UX design, SEO, and data services for businesses worldwide." />
         <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta name="twitter:image:alt" content="Fajraan Tech – Global Software Development Company" />
@@ -100,7 +100,7 @@ export default function Home({ posts, portfolio }) {
               name: "Fajraan Tech",
               url: "https://www.fajraan.tech",
               logo: "https://www.fajraan.tech/images/logo.webp",
-              description: "Fajraan Tech is a global software development company building custom web, mobile, and desktop applications with UI/UX design, SEO, and data services for businesses worldwide.",
+              description: "Fajraan Tech is a global software development company building custom web, mobile, and desktop applications, plus AI automation and AI chatbot solutions for businesses worldwide.",
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "customer support",

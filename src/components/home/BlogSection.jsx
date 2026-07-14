@@ -24,7 +24,7 @@ export default function BlogSection({ posts = [] }) {
           </div>
           <div className="xl:col-span-5 lg:col-span-3 col-span-1">
             <div className="flex justify-center lg:justify-end">
-              <Button link ariaLabel="Follow to articles" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog`}>
+              <Button variant="text" link ariaLabel="Follow to articles" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog`}>
                 View all articles
               </Button>
             </div>

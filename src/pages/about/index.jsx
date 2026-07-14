@@ -55,8 +55,8 @@ export default function About() {
             <Head>
                 <title>About Us | Fajraan Tech – Global Software Development Company</title>
 
-                <meta name="description" content="Learn about Fajraan Tech — a global software development company passionate about building custom web, mobile, and desktop applications with expert UI/UX design, SEO, and data services for businesses worldwide." />
-                <meta name="keywords" content="about Fajraan Tech, software development company, who we are, tech company, web development agency, mobile app developers, UI UX design team, global digital agency" />
+                <meta name="description" content="Learn about Fajraan Tech — a global software development company building custom web, mobile, and desktop applications, along with AI automation and chatbot solutions, for businesses worldwide." />
+                <meta name="keywords" content="about Fajraan Tech, software development company, who we are, tech company, web development agency, mobile app developers, AI automation company, AI chatbot developers, global digital agency" />
 
                 <link rel="canonical" href="https://www.fajraan.tech/about" />
 
@@ -237,10 +237,7 @@ export default function About() {
                                     className="mb-7"
                                 >
                                     <p className="text-[20px]">
-                                        At Fajraan Tech, we blend creativity with technology to craft digital
-                                        solutions that make an impact. From web and mobile apps to branding and
-                                        design, we focus on simplicity, usability, and performance—turning your
-                                        ideas into real business results.
+                                        At Fajraan Tech, we blend creativity with technology to craft digital solutions that make an impact. We deliberately focus on a small set of services we do exceptionally well — web development, mobile & desktop applications, and AI automation & chatbots — rather than spreading thin across everything.
                                     </p>
                                 </motion.div>
 
@@ -252,16 +249,13 @@ export default function About() {
                                     className="mb-7"
                                 >
                                     <p className="text-[20px]">
-                                        Our team brings together developers, designers, and strategists who work
-                                        closely to build innovative solutions that help brands scale. Every project
-                                        we deliver is guided by passion, precision, and a shared vision for
-                                        excellence.
+                                        Our team brings together developers, designers, and AI specialists who work closely to build solutions that help brands scale. We've also developed a specialty in chauffeur and fleet management software, giving us practical, real-world experience in that industry. Every project we deliver is guided by passion, precision, and a shared vision for excellence.
                                     </p>
                                 </motion.div>
 
-                                <Button link ariaLabel="Follow to about" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}about`}>
+                                {/* <Button variant="text" link ariaLabel="Follow to about" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}about`}>
                                     More about us
-                                </Button>
+                                </Button> */}
 
                                 <figure className="overflow-hidden w-100 mt-7">
                                     <motion.div
