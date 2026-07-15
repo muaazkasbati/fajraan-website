@@ -61,7 +61,7 @@ function AnimatedCounterBox({ value, suffix, label, delay }) {
   return (
     <motion.div
       ref={ref}
-      className="sm:border-l border-1 sm:pl-7 sm:text-left text-center"
+      className="sm:border-l border-1 sm:pl-7 first:sm:border-l-0  sm:text-left text-center"
       initial={{ opacity: 0, x: 100 }}
       animate={controls}
     >

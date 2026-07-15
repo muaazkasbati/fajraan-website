@@ -14,6 +14,9 @@ const Button = ({
     children,
     fullwidth = false,
     link = false,
+    target,
+    rel,
+    referrerPolicy
 }) => {
     const classes = {
         primary: "group inline-flex w-max items-center gap-2 rounded-[40px] border border-primary bg-primary px-5 py-2.5 text-[18px] font-semibold leading-[144.444%] tracking-[-0.18px] text-white transition-all duration-500 ease-in-out md:px-5 md:py-2.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3.5 cursor-pointer",
@@ -37,14 +40,8 @@ const Button = ({
                     {children}
 
                     <span className={`relative inline-block h-5.5 w-5.5 overflow-hidden ${arrowColor}`}>
-                        <ArrowRight
-                            size={22}
-                            className="absolute left-0 top-0 -rotate-45 transition-all duration-300 ease-[cubic-bezier(0.37,0.08,0.02,0.93)] group-hover:left-5.5 group-hover:-top-5.5"
-                        />
-                        <ArrowRight
-                            size={22}
-                            className="absolute -left-5.5 top-5.5 -rotate-45 opacity-80 transition-all duration-300 ease-[cubic-bezier(0.37,0.08,0.02,0.93)] group-hover:left-0 group-hover:top-0"
-                        />
+                        <ArrowRight size={22} className="absolute left-0 top-0 -rotate-45 transition-all duration-300 ease-[cubic-bezier(0.37,0.08,0.02,0.93)] group-hover:left-5.5 group-hover:-top-5.5" />
+                        <ArrowRight size={22} className="absolute -left-5.5 top-5.5 -rotate-45 opacity-80 transition-all duration-300 ease-[cubic-bezier(0.37,0.08,0.02,0.93)] group-hover:left-0 group-hover:top-0" />
                     </span>
                 </>
             )}
@@ -57,6 +54,9 @@ const Button = ({
                 id={id}
                 href={href}
                 aria-label={ariaLabel}
+                target={target}
+                rel={rel}
+                referrerPolicy={referrerPolicy}
                 className={`${classes[variant]} ${fullwidth ? "w-full justify-center" : ""}`}
             >
                 {content}

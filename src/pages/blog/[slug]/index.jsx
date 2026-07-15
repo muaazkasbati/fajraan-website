@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import React from 'react'
 import { motion } from "framer-motion";
 import BlogCard from '@/components/BlogCard';
+import formatDate from '@/utils/formatDate';
 
 export async function getServerSideProps({ params }) {
     const { slug } = params;
@@ -196,7 +197,7 @@ export default function BlogDetail({ data, morePosts }) {
 
                             <ul className="text-[20px] flex gap-4 flex-wrap mt-6">
                                 <li className="pr-6 border-r border-1">
-                                    {data?.date ? new Intl.DateTimeFormat("en-US", { month: "long", day: "2-digit", year: "numeric", }).format(new Date(data.date)) : ""}
+                                    {formatDate(data?.date)}
                                 </li>
                                 <li className="pr-6 border-r border-1">{data?.categories?.join(', ')}</li>
                                 <li>by Fajraan Tech</li>

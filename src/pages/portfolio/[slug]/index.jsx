@@ -4,11 +4,9 @@ import HeroSec from '@/components/HeroSec'
 import VideoAreaSection from '@/components/VideoAreaSection'
 import Head from 'next/head'
 import React from 'react'
-import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
 import Button from '@/components/Button'
+import formatDate from '@/utils/formatDate'
 
 export async function getServerSideProps({ params }) {
   const { slug } = params;
@@ -21,6 +19,8 @@ export async function getServerSideProps({ params }) {
     if (!result || result.length === 0) return { notFound: true };
 
     const item = result[0];
+    const terms = item?._embedded?.['wp:term']?.flat() || [];
+    const categories = terms.filter(term => term.taxonomy === 'portfolio_category').map(term => term.name);
 
     const data = {
       id: item.id,
@@ -32,10 +32,13 @@ export async function getServerSideProps({ params }) {
       excerpt: item.excerpt?.rendered || '',
       year: item.meta?.year || null,
       client: item.meta?.client || null,
+      service: item.meta?.service || null,
+      stack: item.meta?.stack || null,
       externalLink: item.meta?.custom_link || null,
       category: item._embedded?.['wp:term']?.[0]?.[0]?.name || null,
       image: item._embedded?.['wp:featuredmedia']?.[0]?.source_url || null,
       yoast: item.yoast_head_json || null,
+      categories: categories
     };
 
     return {
@@ -50,21 +53,8 @@ export async function getServerSideProps({ params }) {
 export default function PortfolioDetail({ data }) {
   const seoTitle = data?.yoast?.og_title || data?.title || 'Portfolio | Fajraan Tech';
   const seoDescription = data?.yoast?.description || data?.yoast?.og_description || data?.excerpt?.replace(/<[^>]*>/g, '') || '';
-  const ogImage = data?.yoast?.og_image?.[0]?.url || data?.image || 'https://www.fajraan.tech/images/og/og-image.webp';
-  const canonicalUrl = `https://www.fajraan.tech/portfolio/${data?.slug}`;
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (delay = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    }),
-  };
+  const ogImage = data?.yoast?.og_image?.[0]?.url || data?.image || `${process.env.NEXT_PUBLIC_APPFRONTURL}images/og/og-image.webp`;
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_APPFRONTURL}portfolio/${data?.slug}`;
 
   const images = [
     'https://quanto-next.vercel.app/images/portfolio-details/portfolio-details-fig-1.png',
@@ -73,11 +63,11 @@ export default function PortfolioDetail({ data }) {
   ];
 
   const details = [
-    { title: 'Category', value: 'Branding' },
-    { title: 'Service', value: 'Brand Strategy' },
-    { title: 'Date', value: 'March 6, 2024' },
-    { title: 'Client', value: 'MirrorTheme' },
-    { title: 'Software', value: 'Webflow, Figma' },
+    { title: 'Category', value: data?.categories?.join(", ") },
+    { title: 'Service', value: data?.service },
+    { title: 'Date', value: formatDate(data?.date) },
+    { title: 'Client', value: data?.client },
+    { title: 'Stack', value: data?.stack },
   ];
 
   return (
@@ -86,8 +76,7 @@ export default function PortfolioDetail({ data }) {
         <title>{seoTitle}</title>
 
         <meta name="description" content={seoDescription} />
-        {data?.yoast?.robots && <meta name="robots" content={data.yoast.robots} />}
-
+        <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href={canonicalUrl} />
 
         <link rel="alternate" hrefLang="en" href={canonicalUrl} />
@@ -177,10 +166,10 @@ export default function PortfolioDetail({ data }) {
           <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
             <div className="grid sm:grid-cols-2">
               <motion.div
-                initial="hidden"
-                whileInView="visible"
+                initial={{ opacity: 0, rotateX: -80, transformPerspective: 400, transformOrigin: "center top", }}
+                whileInView={{ opacity: 1, rotateX: 0, transformPerspective: 400, transformOrigin: "center top", }}
                 viewport={{ once: true, amount: 0.3 }}
-                variants={fadeUp}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.3, }}
               >
                 <h2 className="text-[60px] md:text-[70px] lg:text-[90px] xl:text-[100px] leading-[110%] font-semibold">
                   Project Overview
@@ -188,45 +177,22 @@ export default function PortfolioDetail({ data }) {
               </motion.div>
 
               <div className="space-y-8">
-                <motion.p
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  custom={0.1}
-                  variants={fadeUp}
-                  className="text-[20px]"
-                >
-                  Tasked with revamping the branding and corporate website for Bit
-                  Weaver Studio, a forward-thinking creative agency, our team
-                  explored their vision and transformed it into a modern digital
-                  experience. Every interaction, color palette, and visual element
-                  was designed to reflect their creativity while delivering an
-                  intuitive user experience.
-                </motion.p>
-
-                <motion.p
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  custom={0.2}
-                  variants={fadeUp}
-                  className="text-[20px]"
-                >
-                  This package is ideal for businesses launching new products,
-                  refreshing their brand, or building a stronger market presence.
-                  Through strategic thinking, modern UI/UX, and scalable design
-                  systems, we create memorable digital products that deliver real
-                  business value.
-                </motion.p>
-
                 <motion.div
-                  initial="hidden"
-                  whileInView="visible"
+                  key={data?.id}
+                  initial={{ opacity: 0, rotateX: -80, transformPerspective: 400, transformOrigin: "center top", }}
+                  whileInView={{ opacity: 1, rotateX: 0, transformPerspective: 400, transformOrigin: "center top", }}
                   viewport={{ once: true }}
-                  custom={0.3}
-                  variants={fadeUp}
+                  transition={{ duration: 1, ease: "easeOut", delay: 0.3, }}
+                  className="text-[20px] space-y-4"
+                  dangerouslySetInnerHTML={{ __html: data?.content }}
+                />
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                  <Button variant="text" link href="/">
+                  <Button variant="text" link href={data?.externalLink} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer">
                     Visit Live Website
                   </Button>
                 </motion.div>
@@ -235,13 +201,16 @@ export default function PortfolioDetail({ data }) {
                   className="grid gap-5 pt-10 sm:grid-cols-2"
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   {details.map((item, index) => (
                     <motion.div
                       key={item.title}
-                      custom={0.15 + index * 0.08}
-                      variants={fadeUp}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: index * 0.12, ease: [0.22, 1, 0.36, 1], }}
+                      className="space-y-1"
                     >
                       <span className="text-[18px] leading-[144.444%]">
                         {item.title}
@@ -302,7 +271,7 @@ export default function PortfolioDetail({ data }) {
             </div> */}
           </div>
         </section>
-      </main>
+      </main >
       <Footer />
     </>
   )
