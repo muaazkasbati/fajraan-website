@@ -253,29 +253,29 @@ export default function Blogs({ posts, totalPages, currentPage }) {
 //     }
 // }
 
-export async function getStaticPaths() {
-    try {
-        const response = await fetch(
-            "https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18"
-        );
+// export async function getStaticPaths() {
+//     try {
+//         const response = await fetch(
+//             "https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18"
+//         );
 
-        const totalPages = parseInt(response.headers.get("X-WP-TotalPages")) || 1;
+//         const totalPages = parseInt(response.headers.get("X-WP-TotalPages")) || 1;
 
-        return {
-            paths: Array.from({ length: totalPages }, (_, i) => ({
-                params: { page: String(i + 1) },
-            })),
-            fallback: "blocking",
-        };
-    } catch (error) {
-        console.error("Blog pagination paths error:", error);
+//         return {
+//             paths: Array.from({ length: totalPages }, (_, i) => ({
+//                 params: { page: String(i + 1) },
+//             })),
+//             fallback: "blocking",
+//         };
+//     } catch (error) {
+//         console.error("Blog pagination paths error:", error);
 
-        return {
-            paths: [],
-            fallback: "blocking",
-        };
-    }
-}
+//         return {
+//             paths: [],
+//             fallback: "blocking",
+//         };
+//     }
+// }
 
 export async function getStaticProps({ params }) {
     const page = parseInt(params?.page || "1", 10);
