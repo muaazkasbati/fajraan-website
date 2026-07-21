@@ -1,23 +1,33 @@
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
-import HeroSec from '@/components/HeroSec'
-import Head from 'next/head'
-import React from 'react'
-import { motion } from "framer-motion";
-import services from '@/utils/servicesNew'
-import VideoAreaSection from '@/components/VideoAreaSection'
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import HeroSec from '@/components/HeroSec';
+import Head from 'next/head';
+import React from 'react';
+import { motion } from 'framer-motion';
+import services from '@/utils/servicesNew';
+import VideoAreaSection from '@/components/VideoAreaSection';
 
-export async function getServerSideProps({ params }) {
-  const slug = params?.slug;
+export async function getStaticPaths() {
+  return {
+    paths: services.map(service => ({
+      params: { slug: service.slug }
+    })),
+    fallback: false
+  };
+}
 
-  const serviceData = services.find(s => s.slug === slug);
+export async function getStaticProps({ params }) {
+  const serviceData = services.find(service => service.slug === params.slug);
 
   if (!serviceData) {
-    return { notFound: true };
+    return {
+      notFound: true
+    };
   }
 
   return {
     props: { serviceData },
+    revalidate: 86400 // Regenerate once every 24 hours
   };
 }
 
@@ -27,7 +37,7 @@ export default function ServiceDetail({ serviceData }) {
     <>
       <Head>
         <title>{serviceData.seoTitle}</title>
-
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
         <meta name="description" content={serviceData.seoDescription} />
         <meta name="keywords" content={serviceData.seoKeywords.join(", ")} />
 
@@ -59,20 +69,16 @@ export default function ServiceDetail({ serviceData }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Service",
+              serviceType: serviceData.title,
               name: serviceData.title,
               description: serviceData.seoDescription,
               url: `https://www.fajraan.tech/services/${serviceData.slug}`,
+              areaServed: "Worldwide",
               provider: {
                 "@type": "Organization",
                 name: "Fajraan Tech",
                 url: "https://www.fajraan.tech",
-                logo: "https://www.fajraan.tech/images/logo.webp",
-                sameAs: [
-                  "https://www.linkedin.com/company/fajraan-tech",
-                  "https://twitter.com/fajraantech",
-                  "https://www.instagram.com/fajraantech",
-                  "https://www.facebook.com/fajraantech"
-                ]
+                logo: "https://www.fajraan.tech/images/logo.webp"
               }
             })
           }}
