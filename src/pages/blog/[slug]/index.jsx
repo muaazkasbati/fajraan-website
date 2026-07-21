@@ -7,50 +7,135 @@ import { motion } from "framer-motion";
 import BlogCard from '@/components/BlogCard';
 import formatDate from '@/utils/formatDate';
 
-export async function getServerSideProps({ params }) {
+// export async function getServerSideProps({ params }) {
+//     const { slug } = params;
+
+//     try {
+//         // Fetch the current post
+//         const response = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?_embed&slug=${slug}`);
+//         if (!response.ok) return { notFound: true };
+//         const data = await response.json();
+//         if (data.length === 0) return { notFound: true };
+
+//         const post = data[0];
+//         const terms = post?._embedded?.['wp:term']?.flat() || [];
+
+//         const categories = terms.filter(term => term.taxonomy === 'category').map(term => term.name);
+//         const tags = terms.filter(term => term.taxonomy === 'post_tag').map(term => term.name);
+
+//         const morePostsResponse = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3&page=1&_=${Date.now()}`);
+//         const morePosts = await morePostsResponse.json();
+
+//         return {
+//             props: {
+//                 data: {
+//                     authorName: post?._embedded?.author.name || "",
+//                     tags: tags || [],
+//                     categories: categories || [],
+//                     featured_media: post?._embedded?.['wp:featuredmedia']?.[0] || null,
+//                     title: post?.title?.rendered,
+//                     content: post?.content?.rendered,
+//                     date: post?.date,
+//                     ogTitle: post?.yoast_head_json?.og_title,
+//                     ogDescription: post?.yoast_head_json?.og_description,
+//                     ogImage: post?.yoast_head_json?.og_image?.[0],
+//                     metaDescription: post?.yoast_head_json?.description,
+//                     locale: post?.yoast_head_json?.og_locale,
+//                     published_time: post?.yoast_head_json?.article_published_time,
+//                     modified: post?.modified,
+//                     readingTime: post?.yoast_head_json?.twitter_misc?.["Estimated reading time"] || ''
+//                 },
+//                 morePosts: morePosts.filter(p => p.id !== post.id)
+//             }
+//         };
+//     } catch (error) {
+//         console.error('Error fetching blog detail:', error);
+//         return { notFound: true };
+//     }
+// }
+
+export async function getStaticPaths() {
+    try {
+        const response = await fetch("https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=100");
+
+        const posts = await response.json();
+
+        return {
+            paths: posts.map((post) => ({
+                params: { slug: post.slug },
+            })),
+            fallback: "blocking",
+        };
+    } catch (error) {
+        console.error("Error fetching blog paths:", error);
+
+        return {
+            paths: [],
+            fallback: "blocking",
+        };
+    }
+}
+
+export async function getStaticProps({ params }) {
     const { slug } = params;
 
     try {
-        // Fetch the current post
         const response = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?_embed&slug=${slug}`);
+
         if (!response.ok) return { notFound: true };
+
         const data = await response.json();
-        if (data.length === 0) return { notFound: true };
+
+        if (!data || data.length === 0) {
+            return { notFound: true };
+        }
 
         const post = data[0];
-        const terms = post?._embedded?.['wp:term']?.flat() || [];
+        const terms = post?._embedded?.["wp:term"]?.flat() || [];
 
-        const categories = terms.filter(term => term.taxonomy === 'category').map(term => term.name);
-        const tags = terms.filter(term => term.taxonomy === 'post_tag').map(term => term.name);
+        const categories = terms
+            .filter((term) => term.taxonomy === "category")
+            .map((term) => term.name);
 
-        const morePostsResponse = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3&page=1&_=${Date.now()}`);
+        const tags = terms
+            .filter((term) => term.taxonomy === "post_tag")
+            .map((term) => term.name);
+
+        const morePostsResponse = await fetch(
+            "https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3&page=1"
+        );
+
         const morePosts = await morePostsResponse.json();
 
         return {
             props: {
                 data: {
-                    authorName: post?._embedded?.author.name || "",
-                    tags: tags || [],
-                    categories: categories || [],
-                    featured_media: post?._embedded?.['wp:featuredmedia']?.[0] || null,
-                    title: post?.title?.rendered,
-                    content: post?.content?.rendered,
-                    date: post?.date,
-                    ogTitle: post?.yoast_head_json?.og_title,
-                    ogDescription: post?.yoast_head_json?.og_description,
-                    ogImage: post?.yoast_head_json?.og_image?.[0],
-                    metaDescription: post?.yoast_head_json?.description,
-                    locale: post?.yoast_head_json?.og_locale,
-                    published_time: post?.yoast_head_json?.article_published_time,
-                    modified: post?.modified,
-                    readingTime: post?.yoast_head_json?.twitter_misc?.["Estimated reading time"] || ''
+                    authorName: post?._embedded?.author?.[0]?.name || "",
+                    tags,
+                    categories,
+                    featured_media: post?._embedded?.["wp:featuredmedia"]?.[0] || null,
+                    title: post?.title?.rendered || "",
+                    content: post?.content?.rendered || "",
+                    date: post?.date || "",
+                    ogTitle: post?.yoast_head_json?.og_title || "",
+                    ogDescription: post?.yoast_head_json?.og_description || "",
+                    ogImage: post?.yoast_head_json?.og_image?.[0] || null,
+                    metaDescription: post?.yoast_head_json?.description || "",
+                    locale: post?.yoast_head_json?.og_locale || "",
+                    published_time: post?.yoast_head_json?.article_published_time || "",
+                    modified: post?.modified || "",
+                    readingTime: post?.yoast_head_json?.twitter_misc?.["Estimated reading time"] || "",
                 },
-                morePosts: morePosts.filter(p => p.id !== post.id)
-            }
+                morePosts: morePosts.filter((p) => p.id !== post.id),
+            },
+            revalidate: 60,
         };
     } catch (error) {
-        console.error('Error fetching blog detail:', error);
-        return { notFound: true };
+        console.error("Error fetching blog detail:", error);
+
+        return {
+            notFound: true,
+        };
     }
 }
 

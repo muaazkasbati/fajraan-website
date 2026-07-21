@@ -211,14 +211,78 @@ export default function Blogs({ posts, totalPages, currentPage }) {
 //         };
 //     }
 // }
-export async function getServerSideProps(context) {
-    const page = parseInt(context.query.page || 1, 10);
-    const timestamp = Date.now(); // prevents cached responses
+// export async function getServerSideProps(context) {
+//     const page = parseInt(context.query.page || 1, 10);
+//     const timestamp = Date.now(); // prevents cached responses
+
+//     try {
+//         const response = await fetch(
+//             `https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}&_=${timestamp}`,
+//             { cache: 'no-store' } // tells Next.js not to cache this request
+//         );
+
+//         if (!response.ok) {
+//             return {
+//                 props: {
+//                     posts: [],
+//                     totalPages: 1,
+//                     currentPage: page,
+//                 },
+//             };
+//         }
+
+//         const data = await response.json();
+//         const totalPages = parseInt(response.headers.get('X-WP-TotalPages')) || 1;
+
+//         return {
+//             props: {
+//                 posts: data,
+//                 totalPages,
+//                 currentPage: page,
+//             },
+//         };
+//     } catch (error) {
+//         console.error('SSR fetch error:', error);
+//         return {
+//             props: {
+//                 posts: [],
+//                 totalPages: 1,
+//                 currentPage: page,
+//             },
+//         };
+//     }
+// }
+
+export async function getStaticPaths() {
+    try {
+        const response = await fetch(
+            "https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18"
+        );
+
+        const totalPages = parseInt(response.headers.get("X-WP-TotalPages")) || 1;
+
+        return {
+            paths: Array.from({ length: totalPages }, (_, i) => ({
+                params: { page: String(i + 1) },
+            })),
+            fallback: "blocking",
+        };
+    } catch (error) {
+        console.error("Blog pagination paths error:", error);
+
+        return {
+            paths: [],
+            fallback: "blocking",
+        };
+    }
+}
+
+export async function getStaticProps({ params }) {
+    const page = parseInt(params?.page || "1", 10);
 
     try {
         const response = await fetch(
-            `https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}&_=${timestamp}`,
-            { cache: 'no-store' } // tells Next.js not to cache this request
+            `https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}`
         );
 
         if (!response.ok) {
@@ -231,25 +295,27 @@ export async function getServerSideProps(context) {
             };
         }
 
-        const data = await response.json();
-        const totalPages = parseInt(response.headers.get('X-WP-TotalPages')) || 1;
+        const posts = await response.json();
+        const totalPages = parseInt(response.headers.get("X-WP-TotalPages")) || 1;
 
         return {
             props: {
-                posts: data,
+                posts,
                 totalPages,
                 currentPage: page,
             },
+            revalidate: 60,
         };
     } catch (error) {
-        console.error('SSR fetch error:', error);
+        console.error("Blog fetch error:", error);
+
         return {
             props: {
                 posts: [],
                 totalPages: 1,
                 currentPage: page,
             },
+            revalidate: 60,
         };
     }
 }
-

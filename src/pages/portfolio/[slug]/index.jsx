@@ -8,45 +8,121 @@ import { motion } from 'framer-motion';
 import Button from '@/components/Button'
 import formatDate from '@/utils/formatDate'
 
-export async function getServerSideProps({ params }) {
+// export async function getServerSideProps({ params }) {
+//   const { slug } = params;
+
+//   try {
+//     const res = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?slug=${slug}&_embed&_=${Date.now()}`);
+//     if (!res.ok) return { notFound: true };
+
+//     const result = await res.json();
+//     if (!result || result.length === 0) return { notFound: true };
+
+//     const item = result[0];
+//     const terms = item?._embedded?.['wp:term']?.flat() || [];
+//     const categories = terms.filter(term => term.taxonomy === 'portfolio_category').map(term => term.name);
+
+//     const data = {
+//       id: item.id,
+//       title: item.title?.rendered || '',
+//       slug: item.slug,
+//       date: item.date,
+//       modified: item.modified,
+//       content: item.content?.rendered || '',
+//       excerpt: item.excerpt?.rendered || '',
+//       year: item.meta?.year || null,
+//       client: item.meta?.client || null,
+//       service: item.meta?.service || null,
+//       stack: item.meta?.stack || null,
+//       externalLink: item.meta?.custom_link || null,
+//       category: item._embedded?.['wp:term']?.[0]?.[0]?.name || null,
+//       image: item._embedded?.['wp:featuredmedia']?.[0]?.source_url || null,
+//       yoast: item.yoast_head_json || null,
+//       categories: categories
+//     };
+
+//     return {
+//       props: { data },
+//     };
+//   } catch (error) {
+//     console.error('Portfolio detail page error:', error);
+//     return { notFound: true };
+//   }
+// }
+
+export async function getStaticPaths() {
+  try {
+    const res = await fetch("https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?per_page=100");
+    const items = await res.json();
+
+    const paths = items.map((item) => ({
+      params: { slug: item.slug },
+    }));
+
+    return {
+      paths,
+      fallback: "blocking",
+    };
+  } catch (error) {
+    console.error("Portfolio paths error:", error);
+
+    return {
+      paths: [],
+      fallback: "blocking",
+    };
+  }
+}
+
+export async function getStaticProps({ params }) {
   const { slug } = params;
 
   try {
-    const res = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?slug=${slug}&_embed&_=${Date.now()}`);
+    const res = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?slug=${slug}&_embed`);
+
     if (!res.ok) return { notFound: true };
 
     const result = await res.json();
-    if (!result || result.length === 0) return { notFound: true };
+
+    if (!result || result.length === 0) {
+      return { notFound: true };
+    }
 
     const item = result[0];
-    const terms = item?._embedded?.['wp:term']?.flat() || [];
-    const categories = terms.filter(term => term.taxonomy === 'portfolio_category').map(term => term.name);
+    const terms = item?._embedded?.["wp:term"]?.flat() || [];
+
+    const categories = terms
+      .filter((term) => term.taxonomy === "portfolio_category")
+      .map((term) => term.name);
 
     const data = {
       id: item.id,
-      title: item.title?.rendered || '',
+      title: item.title?.rendered || "",
       slug: item.slug,
       date: item.date,
       modified: item.modified,
-      content: item.content?.rendered || '',
-      excerpt: item.excerpt?.rendered || '',
+      content: item.content?.rendered || "",
+      excerpt: item.excerpt?.rendered || "",
       year: item.meta?.year || null,
       client: item.meta?.client || null,
       service: item.meta?.service || null,
       stack: item.meta?.stack || null,
       externalLink: item.meta?.custom_link || null,
-      category: item._embedded?.['wp:term']?.[0]?.[0]?.name || null,
-      image: item._embedded?.['wp:featuredmedia']?.[0]?.source_url || null,
+      category: item._embedded?.["wp:term"]?.[0]?.[0]?.name || null,
+      image: item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null,
       yoast: item.yoast_head_json || null,
-      categories: categories
+      categories,
     };
 
     return {
       props: { data },
+      revalidate: 60, // regenerate page every 60 seconds
     };
   } catch (error) {
-    console.error('Portfolio detail page error:', error);
-    return { notFound: true };
+    console.error("Portfolio detail page error:", error);
+
+    return {
+      notFound: true,
+    };
   }
 }
 
