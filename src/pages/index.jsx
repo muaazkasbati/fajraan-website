@@ -18,7 +18,7 @@ export async function getStaticProps() {
     const BASE = "https://blog.devsolsystems.co.uk/wp-json/wp/v2";
 
     const [postsRes, portfolioRes] = await Promise.all([
-      fetch(`${BASE}/posts?per_page=3&_=${Date.now()}`),
+      fetch(`${BASE}/posts?per_page=3&orderby=date&order=desc&_=${Date.now()}`),
       fetch(`${BASE}/portfolio?_embed&per_page=20&_=${Date.now()}`)
     ]);
 
