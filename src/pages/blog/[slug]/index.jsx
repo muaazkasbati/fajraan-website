@@ -102,7 +102,7 @@ export async function getStaticProps({ params }) {
             .map((term) => term.name);
 
         const morePostsResponse = await fetch(
-            "https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=3&page=1"
+            `https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=10&page=1&orderby=date&order=desc&_=${Date.now()}`
         );
 
         const morePosts = await morePostsResponse.json();
@@ -126,7 +126,7 @@ export async function getStaticProps({ params }) {
                     modified: post?.modified || "",
                     readingTime: post?.yoast_head_json?.twitter_misc?.["Estimated reading time"] || "",
                 },
-                morePosts: morePosts.filter((p) => p.id !== post.id),
+                morePosts: morePosts.filter((p) => p.id !== post.id).splice(0, 3), // Limit to 3 more posts
             },
             revalidate: 60,
         };
