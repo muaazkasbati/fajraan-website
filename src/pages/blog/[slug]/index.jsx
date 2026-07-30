@@ -285,7 +285,7 @@ export default function BlogDetail({ data, morePosts }) {
                                     {formatDate(data?.date)}
                                 </li>
                                 <li className="pr-6 border-r border-1">{data?.categories?.join(', ')}</li>
-                                <li>by Fajraan Tech</li>
+                                <li>By Fajraan Tech</li>
                             </ul>
                         </div>
                         <motion.div
@@ -327,7 +327,7 @@ export default function BlogDetail({ data, morePosts }) {
                                     dangerouslySetInnerHTML={{ __html: data?.content }}
                                 />
 
-                                <ul className="flex gap-2 flex-wrap text-[20px]">
+                                <ul className="flex gap-2 flex-wrap text-[20px] capitalize">
                                     {data?.tags?.map(item => (
                                         <li>#{item}</li>
                                     ))}

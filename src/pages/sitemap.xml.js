@@ -21,7 +21,7 @@ const staticRoutes = [
   // { path: 'services/ai-automation', changefreq: 'monthly', priority: 0.7 },
   // { path: 'services/cybersecurity-it-support', changefreq: 'monthly', priority: 0.7 },
   { path: 'blog', changefreq: 'daily', priority: 0.8 },
-  { path: 'api/sitemap/blog', changefreq: 'daily', priority: 0.8 },
+  { path: 'api/sitemap/blog.xml', changefreq: 'daily', priority: 0.8 },
 ];
 
 
