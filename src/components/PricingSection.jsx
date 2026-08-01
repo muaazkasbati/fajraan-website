@@ -148,7 +148,7 @@ const PricingSection = () => {
                                     </p>
 
                                     <h3 className="mb-3.75 text-[40px] text-secondary transition-all duration-300 md:mb-5 lg:mb-8 lg:text-[66px] leading-none font-semibold">
-                                        $ {plan.price}
+                                        {plan.price}
                                     </h3>
 
                                     <ul className="mb-5 space-y-2.5 text-[19px]">
