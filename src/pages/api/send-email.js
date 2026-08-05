@@ -26,7 +26,7 @@ export default async function handler(req, res) {
     const mailOptions = {
       from: {
         name: process.env.SMTP_FROM_NAME,
-        address: process.env.SMTP_FROM_EMAIL,
+        address: process.env.SMTP_USER,
       },
       to: "info@fajraan.com",
       subject: `${leadForm ? 'Lead Form' : 'Contact Form'} Submission - ${subject || 'No Subject'}`,

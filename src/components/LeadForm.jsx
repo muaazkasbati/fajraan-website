@@ -17,7 +17,7 @@ export default function LeadForm() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ ...data, }),
+                body: JSON.stringify({ ...data, leadForm: true }), // Include leadForm flag
             });
 
             // Check response status
