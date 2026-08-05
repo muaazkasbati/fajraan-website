@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ message: 'Method Not Allowed' });
 
-  const { name, email, phone, company, message, subject, plan } = req.body;
+  const { name, email, phone, company, message, subject, plan, fleetSize, bookingMethod, leadForm = false } = req.body;
 
   if (!name || !email) {
     return res.status(400).json({ message: 'Name and email are required' });
@@ -14,34 +14,38 @@ export default async function handler(req, res) {
 
     // Setup email transport
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      host: "smtp.gmail.com",
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: true, // Port 465 uses SSL
       auth: {
-        user: 'muaazkasbati@gmail.com',
-        pass: 'hfuy jvtl lnjj skve'
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
     const mailOptions = {
       from: {
-        name: "Fajraan Tech",
-        address: "info@fajraan.com",
+        name: process.env.SMTP_FROM_NAME,
+        address: process.env.SMTP_FROM_EMAIL,
       },
       to: "info@fajraan.com",
-      subject: `Contact Form Submission - ${subject || 'No Subject'}`,
+      subject: `${leadForm ? 'Lead Form' : 'Contact Form'} Submission - ${subject || 'No Subject'}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px;">
-          <h2 style="color: #333; text-align: center;">Contact Form Submission</h2>
-          <p style="color: #555; font-size: 16px;">Thank you for reaching out to Fajraan Tech! Below are the details you submitted:</p>
+          <h2 style="color: #333; text-align: center;">${leadForm ? 'Lead Form' : 'Contact Form'} Submission</h2>
           <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+          ${name ? `
             <tr>
               <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e0e0e0;">Name:</td>
               <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${name}</td>
             </tr>
+          ` : ''}
+          ${email ? `
             <tr>
               <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e0e0e0;">Email:</td>
               <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${email}</td>
             </tr>
+            ` : ''}
             ${phone ? `
             <tr>
               <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e0e0e0;">Phone:</td>
@@ -66,14 +70,25 @@ export default async function handler(req, res) {
               <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${plan}</td>
             </tr>
             ` : ''}
+            ${fleetSize ? `
+            <tr>
+              <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e0e0e0;">Fleet Size:</td>
+              <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${fleetSize}</td>
+            </tr>
+            ` : ''}
+            ${bookingMethod ? `
+            <tr>
+              <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e0e0e0;">Booking Method:</td>
+              <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${bookingMethod}</td>
+            </tr>
+            ` : ''}
+            ${message ? `
             <tr>
               <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e0e0e0;">Message:</td>
               <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${message || 'No message provided'}</td>
-1976
             </tr>
+            ` : ''}
           </table>
-          <p style="color: #555; font-size: 16px; text-align: center;">We will get back to you soon!</p>
-          <p style="color: #999; font-size: 14px; text-align: center;">&copy; ${new Date().getFullYear()} Fajraan Tech. All rights reserved.</p>
         </div>
       `,
     };
@@ -81,9 +96,9 @@ export default async function handler(req, res) {
     // Send email
     await transporter.sendMail(mailOptions);
 
-    res.status(201).json({ message: 'Customer created, setup link sent to email' });
+    res.status(201).json({ message: 'Email sent successfully' });
   } catch (error) {
-    console.error('Error creating user:', error);
+    console.error('Error sending email:', error);
     res.status(500).json({ message: 'Server error' });
   }
 }

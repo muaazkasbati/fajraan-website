@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Input from './Input';
 import Button from './Button';
 import Select from './Select';
 
 export default function LeadForm() {
+    const [message, setMessage] = useState('');
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -22,8 +23,12 @@ export default function LeadForm() {
             // Check response status
             if (!response.ok) {
                 const errorData = await response.json();
+                setMessage(`Error submitting form: ${errorData.message}`);
                 console.error('Error submitting form:', errorData.message);
                 return;
+            } else {
+                setMessage('Your message has been sent successfully!');
+                e.target.reset(); // Reset the form fields
             }
 
         } catch (error) {
@@ -91,7 +96,11 @@ export default function LeadForm() {
                     placeholder="Current Booking Method"
                     options={bookingMethodOptions}
                 />
-
+                {message && (
+                    <p className={`text-center text-sm ${message.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}>
+                        {message}
+                    </p>
+                )}
                 <div className="w-full mt-5">
                     <Button variant="primary" id="submit-form" ariaLabel="Submit" type="submit">
                         Submit
