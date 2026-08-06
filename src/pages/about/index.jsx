@@ -224,7 +224,7 @@ export default function About() {
                                     transition={{ duration: 0.8, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                 >
-                                    <img alt="about-thumb" loading="lazy" className="h-140.75 object-cover" src="/images/about/about-img-1.webp" />
+                                    <img alt="about-thumb" loading="lazy" className="h-140.75 object-cover" src="/images/about/about-sec-img-1.webp" />
                                 </motion.div>
                             </div>
 
@@ -272,7 +272,7 @@ export default function About() {
                                             height="350"
                                             className="w-100 object-cover"
                                             style={{ aspectRatio: "1.08" }}
-                                            src="/images/about/about-img-2.webp"
+                                            src="/images/about/about-sec-img-2.webp"
                                         />
                                     </motion.div>
                                 </figure>
@@ -286,7 +286,7 @@ export default function About() {
                                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                 >
-                                    <img alt="about-thumb" loading="lazy" className="w-100 h-73.75 object-cover" src="/images/about/about-img-3.webp" />
+                                    <img alt="about-thumb" loading="lazy" className="w-100 h-73.75 object-cover" src="/images/about/about-sec-img-3.webp" />
                                 </motion.div>
                             </div>
                         </div>

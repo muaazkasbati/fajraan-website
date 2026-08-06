@@ -7,7 +7,7 @@ const teamData = [
     {
         name: 'Muaaz Kasbati',
         role: 'CEO & Founder',
-        image: '/images/team/team-1.webp',
+        image: '/images/team/team-img-1.webp',
         'twitter': 'http://www.twitter.com/muaazkasbati',
         'facebook': 'https://www.facebook.com/muaazkasbati',
         'instagram': 'https://www.instagram.com/muaazkasbati',
@@ -25,7 +25,7 @@ const teamData = [
     {
         name: 'Talha Ahmed',
         role: 'Co-Founder',
-        image: '/images/team/team-3.webp',
+        image: '/images/team/team-img-2.webp',
         // 'twitter': 'http://www.twitter.com/',
         // 'facebook': 'http://www.facebook.com/',
         // 'instagram': 'http://www.instagram.com/',
