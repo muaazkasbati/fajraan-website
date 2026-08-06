@@ -281,9 +281,7 @@ export async function getStaticProps({ params }) {
     const page = parseInt(params?.page || "1", 10);
 
     try {
-        const response = await fetch(
-            `https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}`
-        );
+        const response = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}`);
 
         if (!response.ok) {
             return {

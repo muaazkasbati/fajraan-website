@@ -6,6 +6,7 @@ import React from 'react'
 import PricingSection from '@/components/PricingSection'
 import FaqsSection from '@/components/FaqsSection'
 import VideoAreaSection from '@/components/VideoAreaSection'
+import { faqData } from '@/utils/data'
 
 export default function Pricing() {
 
@@ -83,6 +84,24 @@ export default function Pricing() {
                                     item: "https://www.fajraan.tech/pricing",
                                 },
                             ],
+                        }),
+                    }}
+                />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'FAQPage',
+                            mainEntity: faqData.map(faq => ({
+                                '@type': 'Question',
+                                name: faq.question,
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: faq.answer,
+                                },
+                            })),
                         }),
                     }}
                 />

@@ -28,7 +28,7 @@ const solutionGroups = [
     {
         title: 'Multi-Role Access System',
         points: [
-            'Master Admin, Admin, Dispatcher (with granular per-module permissions), Driver, and Customer roles — each with tailored access and functionality',
+            'Master Admin, Admin, Dispatcher (with granular per-module permissions), Driver, and Customer roles, each with tailored access and functionality',
         ],
     },
     {
@@ -109,6 +109,25 @@ const outcomes = [
     'Faster booking-to-dispatch turnaround with live status updates',
 ]
 
+const faqs = [
+    {
+        question: 'What technology stack was used to build the Empire Chauffeurs platform?',
+        answer: 'The platform was built with Node.js and Next.js on the backend and frontend, MongoDB for data storage, Stripe for payments, and Socket.IO for real-time dispatch and availability updates.',
+    },
+    {
+        question: 'What problem did this platform solve for Empire Chauffeurs Australia?',
+        answer: 'It replaced manual phone and email bookings, manual driver dispatch, and manual payout calculations with a single system covering bookings, pricing, driver management, payments, payouts, and reporting.',
+    },
+    {
+        question: 'Does the platform handle driver payouts automatically?',
+        answer: 'Yes. The system calculates driver payouts and vendor commissions automatically and generates ABA bank files for finance and admin teams, removing the need for manual payout calculations.',
+    },
+    {
+        question: 'Can Fajraan Tech build a similar system for a smaller chauffeur or fleet business?',
+        answer: 'Yes. Fajraan Tech has built this type of platform for chauffeur operators in Australia and Canada, and can scope a full custom build or a faster, lower-cost version suited to a smaller fleet.',
+    },
+]
+
 const fadeInUp = {
     initial: { opacity: 0, y: 40 },
     whileInView: { opacity: 1, y: 0 },
@@ -122,7 +141,7 @@ export default function EmpireChauffeursCaseStudy() {
             <Head>
                 <title>Empire Chauffeurs Australia | Fleet Management & Booking Platform Case Study | Fajraan Tech</title>
 
-                <meta name="description" content="How Fajraan Tech built a complete fleet management, booking, and driver payout platform for Empire Chauffeurs Australia — covering dispatch, pricing, payments, and reporting." />
+                <meta name="description" content="How Fajraan Tech built a complete fleet management, booking, and driver payout platform for Empire Chauffeurs Australia, covering dispatch, pricing, payments, and reporting." />
                 <meta name="keywords" content="Empire Chauffeurs Australia, chauffeur booking platform case study, fleet management software case study, driver payout system, chauffeur dispatch software" />
 
                 <link rel="canonical" href="https://www.fajraan.tech/case-studies/empire-chauffeurs-australia" />
@@ -131,7 +150,7 @@ export default function EmpireChauffeursCaseStudy() {
                 <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/case-studies/empire-chauffeurs-australia" />
 
                 <meta property="og:title" content="Empire Chauffeurs Australia | Fleet Management & Booking Platform Case Study | Fajraan Tech" />
-                <meta property="og:description" content="A full-stack chauffeur dispatch and operations system covering bookings, driver management, payments, payouts, and reporting — built to run an entire fleet digitally." />
+                <meta property="og:description" content="A full-stack chauffeur dispatch and operations system covering bookings, driver management, payments, payouts, and reporting, built to run an entire fleet digitally." />
                 <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
@@ -153,7 +172,7 @@ export default function EmpireChauffeursCaseStudy() {
                         __html: JSON.stringify({
                             '@context': 'https://schema.org',
                             '@type': 'CreativeWork',
-                            name: 'Empire Chauffeurs Australia — Fleet Management & Booking Platform',
+                            name: 'Empire Chauffeurs Australia: Fleet Management & Booking Platform',
                             description:
                                 'A full-stack chauffeur dispatch and operations system covering bookings, driver management, payments, payouts, and reporting.',
                             url: 'https://www.fajraan.tech/case-studies/empire-chauffeurs-australia',
@@ -181,6 +200,25 @@ export default function EmpireChauffeursCaseStudy() {
                         }),
                     }}
                 />
+
+                {/* FAQPage schema for AEO / GEO */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'FAQPage',
+                            mainEntity: faqs.map(faq => ({
+                                '@type': 'Question',
+                                name: faq.question,
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: faq.answer,
+                                },
+                            })),
+                        }),
+                    }}
+                />
             </Head>
             <Header />
             <main>
@@ -189,7 +227,7 @@ export default function EmpireChauffeursCaseStudy() {
                 <section className="pb-15">
                     <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
                         <motion.p className="text-[20px] w-full xl:w-8/12" {...fadeInUp}>
-                            A full-stack chauffeur dispatch and operations system covering bookings, driver management, payments, payouts, and reporting — built to run an entire fleet digitally.
+                            A full-stack chauffeur dispatch and operations system covering bookings, driver management, payments, payouts, and reporting, built to run an entire fleet digitally.
                         </motion.p>
                     </div>
                 </section>
@@ -242,7 +280,7 @@ export default function EmpireChauffeursCaseStudy() {
                         </div>
 
                         <motion.p className="text-[20px] mt-10 xl:w-8/12" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.5 }}>
-                            They needed a system that could handle the full complexity of a real chauffeur operation — not a generic booking widget.
+                            They needed a system that could handle the full complexity of a real chauffeur operation, not a generic booking widget.
                         </motion.p>
                     </div>
                 </section>
@@ -294,7 +332,7 @@ export default function EmpireChauffeursCaseStudy() {
                             The Outcome
                         </motion.h3>
                         <motion.p className="text-[20px] mt-6 xl:w-8/12" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.1 }}>
-                            Empire Chauffeurs Australia now runs their entire fleet operation on a single, unified platform — from the moment a customer books a ride to the moment a driver gets paid.
+                            Empire Chauffeurs Australia now runs their entire fleet operation on a single, unified platform, from the moment a customer books a ride to the moment a driver gets paid.
                         </motion.p>
 
                         <div className="grid gap-5 pt-10 md:grid-cols-2">
@@ -328,6 +366,33 @@ export default function EmpireChauffeursCaseStudy() {
                     </div>
                 </section>
 
+                {/* FAQ */}
+                <section className="lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
+                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+                        <motion.h3
+                            className="text-[30px] md:text-[40px] leading-[116.667%] tracking-[-1.5px] font-semibold text-primary mb-8 xl:w-8/12"
+                            {...fadeInUp}
+                        >
+                            Frequently Asked Questions
+                        </motion.h3>
+                        <div className="space-y-4 xl:w-8/12">
+                            {faqs.map((faq, i) => (
+                                <motion.div
+                                    key={i}
+                                    className="border-t border-1 pt-6"
+                                    {...fadeInUp}
+                                    transition={{ ...fadeInUp.transition, delay: 0.1 * i }}
+                                >
+                                    <h6 className="text-[20px] md:text-[22px] leading-[141.667%] tracking-[-0.24px] font-semibold mb-2">
+                                        {faq.question}
+                                    </h6>
+                                    <p className="text-[19px]">{faq.answer}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* CLOSING CTA */}
                 <section className="lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
                     <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
@@ -336,7 +401,7 @@ export default function EmpireChauffeursCaseStudy() {
                                 Looking for something similar for your fleet?
                             </h3>
                             <p className="text-[20px] text-white mt-6 xl:w-7/12 mx-auto">
-                                We&apos;ve built this exact type of platform for chauffeur operators in Australia and Canada, and we can build it for you — whether that&apos;s a full custom platform or a faster, lower-cost version for a smaller fleet.
+                                We&apos;ve built this exact type of platform for chauffeur operators in Australia and Canada, and we can build it for you, whether that&apos;s a full custom platform or a faster, lower-cost version for a smaller fleet.
                             </p>
                             <div className="flex flex-wrap items-center justify-center gap-6 mt-10">
                                 <Button

@@ -17,7 +17,7 @@ import {
 import LeadForm from '@/components/LeadForm'
 
 const problems = [
-    'Bookings coming in through phone calls, email, and third-party platforms — with no single source of truth',
+    'Bookings coming in through phone calls, email, and third-party platforms, with no single source of truth',
     'Dispatching drivers manually over WhatsApp, with no real-time visibility into who\u2019s available',
     'No clear picture of driver payouts, vendor commissions, or monthly performance until you dig through spreadsheets',
     'Customers left guessing about driver ETA, flight delays, or booking status',
@@ -28,19 +28,19 @@ const features = [
         icon: CalendarClock,
         title: 'Booking Engine',
         description:
-            'Multi-step booking flow for airport transfers, hourly hire, and one-off rides — with flight tracking, meet & greet options, recurring bookings, and bulk CSV upload for existing schedules. Full lifecycle tracking from pending to completed.',
+            'Multi-step booking flow for airport transfers, hourly hire, and one-off rides, with flight tracking, meet & greet options, recurring bookings, and bulk CSV upload for existing schedules. Full lifecycle tracking from pending to completed.',
     },
     {
         icon: Users,
         title: 'Driver & Fleet Management',
         description:
-            'Driver onboarding and approval workflows, vehicle assignment, live availability and location tracking, and automated driver payouts — including bank-ready ABA file exports for finance teams.',
+            'Driver onboarding and approval workflows, vehicle assignment, live availability and location tracking, and automated driver payouts, including bank-ready ABA file exports for finance teams.',
     },
     {
         icon: CreditCard,
         title: 'Pricing & Payments',
         description:
-            'Configurable pricing by zone, distance, or suburb — with tolls, surcharges, waiting charges, and after-hours pricing built in. Stripe-powered payments, automated invoicing, and vendor commission tracking.',
+            'Configurable pricing by zone, distance, or suburb, with tolls, surcharges, waiting charges, and after-hours pricing built in. Stripe-powered payments, automated invoicing, and vendor commission tracking.',
     },
     {
         icon: Radio,
@@ -52,13 +52,13 @@ const features = [
         icon: MessageCircle,
         title: 'Notifications',
         description:
-            'Automated SMS, email, and WhatsApp updates for drivers and customers — booking confirmations, reminders, and status changes, without manual follow-up.',
+            'Automated SMS, email, and WhatsApp updates for drivers and customers, including booking confirmations, reminders, and status changes, without manual follow-up.',
     },
     {
         icon: BarChart3,
         title: 'Reporting & Admin Tools',
         description:
-            'Full visibility into bookings, driver jobs, payouts, vendor performance, and customer activity — so owners and dispatchers always know what\u2019s happening across the fleet.',
+            'Full visibility into bookings, driver jobs, payouts, vendor performance, and customer activity, so owners and dispatchers always know what\u2019s happening across the fleet.',
     },
 ]
 
@@ -66,21 +66,44 @@ const packages = [
     {
         title: 'Custom Platform Build',
         description:
-            'A fully bespoke system built around exactly how your business operates — like the platform we built for Empire Chauffeurs Australia.',
+            'A fully bespoke system built around exactly how your business operates, like the platform we built for Empire Chauffeurs Australia.',
     },
     {
         title: 'Fast-Track Deployment',
         description:
-            'A faster, lower-cost option for smaller fleets, built on our existing proven system architecture — live in weeks, not months.',
+            'A faster, lower-cost option for smaller fleets, built on our existing proven system architecture, live in weeks, not months.',
     },
     {
         title: 'Ongoing Support & Feature Development',
         description:
-            'Your business keeps evolving — new payment methods, new reporting needs, new integrations. We stay on as your technical partner, not a one-off vendor.',
+            'Your business keeps evolving, with new payment methods, new reporting needs, and new integrations. We stay on as your technical partner, not a one-off vendor.',
     },
 ]
 
 const techStack = ['Node.js', 'Express', 'MongoDB', 'Next.js', 'React', 'Stripe', 'Socket.IO', 'Twilio', 'Google Maps']
+
+const faqs = [
+    {
+        question: 'What is chauffeur dispatch software?',
+        answer: 'Chauffeur dispatch software is a platform that manages bookings, assigns drivers in real time, tracks vehicle availability and location, and handles pricing and payments for chauffeur and limousine operators, replacing manual phone and WhatsApp based dispatch.',
+    },
+    {
+        question: 'How is this different from a generic booking platform?',
+        answer: 'Generic booking widgets only capture a reservation. This platform covers the full operation: multi-role admin and dispatcher access, live driver dispatch, zone and surcharge based pricing, Stripe payments, automated driver payouts with bank-ready file exports, and full reporting.',
+    },
+    {
+        question: 'Can the platform calculate and pay drivers automatically?',
+        answer: 'Yes. Driver payouts and vendor commissions are calculated automatically, and the system generates ABA bank files so finance teams can process payouts without manual spreadsheet work.',
+    },
+    {
+        question: 'How long does it take to launch a chauffeur booking platform?',
+        answer: 'A fully custom platform, like the one built for Empire Chauffeurs Australia, is scoped around your exact operations. A Fast-Track Deployment for smaller fleets, built on our existing proven architecture, can go live in weeks rather than months.',
+    },
+    {
+        question: 'Do you offer a lower-cost option for smaller chauffeur or fleet businesses?',
+        answer: 'Yes. Alongside a fully custom build, Fajraan Tech offers a faster, lower-cost deployment option for smaller fleets, plus ongoing support and feature development once the platform is live.',
+    },
+]
 
 const fadeInUp = {
     initial: { opacity: 0, y: 40 },
@@ -95,7 +118,7 @@ export default function ChauffeurSoftware() {
             <Head>
                 <title>Chauffeur & Limousine Booking, Dispatch & Fleet Management Software | Fajraan Tech</title>
 
-                <meta name="description" content="Replace spreadsheets, WhatsApp groups, and disconnected booking tools with one platform built for chauffeur and limousine operators — bookings, dispatch, driver payouts, and reporting, all in one place." />
+                <meta name="description" content="Replace spreadsheets, WhatsApp groups, and disconnected booking tools with one platform built for chauffeur and limousine operators: bookings, dispatch, driver payouts, and reporting, all in one place." />
                 <meta name="keywords" content="chauffeur booking software, limousine dispatch software, fleet management platform, chauffeur software Australia, driver payout software, chauffeur app development" />
 
                 <link rel="canonical" href="https://www.fajraan.tech/chauffeur-software" />
@@ -104,7 +127,7 @@ export default function ChauffeurSoftware() {
                 <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/chauffeur-software" />
 
                 <meta property="og:title" content="Chauffeur & Limousine Booking, Dispatch & Fleet Management Software | Fajraan Tech" />
-                <meta property="og:description" content="One platform for chauffeur and limousine operators — bookings, dispatch, driver payouts, and reporting, replacing spreadsheets and WhatsApp groups." />
+                <meta property="og:description" content="One platform for chauffeur and limousine operators: bookings, dispatch, driver payouts, and reporting, replacing spreadsheets and WhatsApp groups." />
                 <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
@@ -116,7 +139,7 @@ export default function ChauffeurSoftware() {
                 <meta name="twitter:site" content="@FajraanTech" />
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="Chauffeur & Limousine Booking, Dispatch & Fleet Management Software | Fajraan Tech" />
-                <meta name="twitter:description" content="Bookings, dispatch, driver payouts, and reporting — one platform built for how chauffeur operations actually run." />
+                <meta name="twitter:description" content="Bookings, dispatch, driver payouts, and reporting: one platform built for how chauffeur operations actually run." />
                 <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="Fajraan Tech Chauffeur Software" />
 
@@ -159,6 +182,25 @@ export default function ChauffeurSoftware() {
                         }),
                     }}
                 />
+
+                {/* FAQPage schema for AEO / GEO */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'FAQPage',
+                            mainEntity: faqs.map(faq => ({
+                                '@type': 'Question',
+                                name: faq.question,
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: faq.answer,
+                                },
+                            })),
+                        }),
+                    }}
+                />
             </Head>
             <Header />
             <main>
@@ -168,7 +210,7 @@ export default function ChauffeurSoftware() {
                     <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
                         <motion.div className="w-full xl:w-8/12" {...fadeInUp}>
                             <p className="text-[20px] mb-6">
-                                Replace spreadsheets, WhatsApp groups, and disconnected booking tools with one system built for how chauffeur operations actually run — bookings, dispatch, driver payouts, and reporting, all in one platform.
+                                Replace spreadsheets, WhatsApp groups, and disconnected booking tools with one system built for how chauffeur operations actually run: bookings, dispatch, driver payouts, and reporting, all in one platform.
                             </p>
                             <div className="flex flex-wrap items-center gap-6">
                                 <Button variant="text" link ariaLabel="See the platform in action" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}case-studies/empire-chauffeurs-australia`}>
@@ -182,7 +224,7 @@ export default function ChauffeurSoftware() {
                     </div>
                 </section>
 
-                <VideoAreaSection imageUrl="/images/service/image-custom-dashboard.webp" scrollDownId="chauffeur-problem" />
+                <VideoAreaSection imageUrl="/images/service/chauffeur-software-img.webp" scrollDownId="chauffeur-problem" />
 
                 {/* PROBLEM */}
                 <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden bg-2" id="chauffeur-problem">
@@ -208,7 +250,7 @@ export default function ChauffeurSoftware() {
                         </div>
 
                         <motion.p className="text-[20px] mt-10 xl:w-8/12" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.4 }}>
-                            If this sounds familiar, you&apos;re not alone — most chauffeur companies outgrow generic booking tools long before they can justify building custom software. That&apos;s where we come in.
+                            If this sounds familiar, you&apos;re not alone. Most chauffeur companies outgrow generic booking tools long before they can justify building custom software. That&apos;s where we come in.
                         </motion.p>
                     </div>
                 </section>
@@ -255,10 +297,10 @@ export default function ChauffeurSoftware() {
                         <div className="grid md:grid-cols-12 gap-6">
                             <motion.div className="md:col-span-6" {...fadeInUp}>
                                 <h3 className="text-[40px] md:text-[50px] lg:text-[60px] leading-[112.5%] tracking-[-2px] font-semibold text-primary">
-                                    Built for real chauffeur operators — not a template
+                                    Built for real chauffeur operators, not a template
                                 </h3>
                                 <p className="text-[20px] mt-6">
-                                    We designed and built the full booking, dispatch, and payout platform running Empire Chauffeurs Australia&apos;s entire fleet operation — from customer bookings to driver payouts to business reporting. We&apos;ve delivered a similar system for a chauffeur company in Canada.
+                                    We designed and built the full booking, dispatch, and payout platform running Empire Chauffeurs Australia&apos;s entire fleet operation, from customer bookings to driver payouts to business reporting. We&apos;ve delivered a similar system for a chauffeur company in Canada.
                                 </p>
                                 <div className="mt-8">
                                     <Button variant="text" link ariaLabel="Read the full case study" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}case-studies/empire-chauffeurs-australia`}>
@@ -333,6 +375,33 @@ export default function ChauffeurSoftware() {
                     </div>
                 </section>
 
+                {/* FAQ */}
+                <section className="lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
+                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+                        <motion.h3
+                            className="text-[30px] md:text-[40px] leading-[116.667%] tracking-[-1.5px] font-semibold text-primary mb-8 xl:w-8/12"
+                            {...fadeInUp}
+                        >
+                            Frequently Asked Questions
+                        </motion.h3>
+                        <div className="space-y-4 xl:w-8/12">
+                            {faqs.map((faq, i) => (
+                                <motion.div
+                                    key={i}
+                                    className="border-t border-1 pt-6"
+                                    {...fadeInUp}
+                                    transition={{ ...fadeInUp.transition, delay: 0.1 * i }}
+                                >
+                                    <h6 className="text-[20px] md:text-[22px] leading-[141.667%] tracking-[-0.24px] font-semibold mb-2">
+                                        {faq.question}
+                                    </h6>
+                                    <p className="text-[19px]">{faq.answer}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* FINAL CTA / LEAD FORM */}
                 <section className="lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
                     <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
@@ -347,7 +416,6 @@ export default function ChauffeurSoftware() {
                             </motion.div>
                             <motion.div
                                 className="md:col-span-6 md:col-start-7"
-                                // className="md:col-span-6 md:col-start-7 bg-2/20 p-6.25 sm:p-7.5 md:p-10"
                                 {...fadeInUp}
                                 transition={{ ...fadeInUp.transition, delay: 0.2 }}
                             >

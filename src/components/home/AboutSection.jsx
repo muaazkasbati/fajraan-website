@@ -28,7 +28,7 @@ const AboutSection = () => {
             >
               <div className="mt-15 max-w-163 ml-auto">
                 <p className="text-[20px] mb-4">
-                  From web and mobile development to AI-powered automation, we handle every project with care, technical depth, and full focus on quality results — wherever in the world our clients are.
+                  From web and mobile development to AI-powered automation, we handle every project with care, technical depth, and full focus on quality results, wherever in the world our clients are.
                 </p>
                 <Button variant="text" link ariaLabel="Follow to about" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}about`}>
                   More about us

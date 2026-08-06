@@ -55,7 +55,7 @@ export default function About() {
             <Head>
                 <title>About Us | Fajraan Tech – Global Software Development Company</title>
 
-                <meta name="description" content="Learn about Fajraan Tech — a global software development company building custom web, mobile, and desktop applications, along with AI automation and chatbot solutions, for businesses worldwide." />
+                <meta name="description" content="Learn about Fajraan Tech: a global software development company building custom web, mobile, and desktop applications, along with AI automation and chatbot solutions, for businesses worldwide." />
                 <meta name="keywords" content="about Fajraan Tech, software development company, who we are, tech company, web development agency, mobile app developers, AI automation company, AI chatbot developers, global digital agency" />
 
                 <link rel="canonical" href="https://www.fajraan.tech/about" />
@@ -64,7 +64,7 @@ export default function About() {
                 <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/about" />
 
                 <meta property="og:title" content="About Us | Fajraan Tech – Global Software Development Company" />
-                <meta property="og:description" content="Meet the team behind Fajraan Tech — building scalable custom web, mobile, and desktop solutions with UI/UX design, SEO, and data services for businesses around the world." />
+                <meta property="og:description" content="Meet the team behind Fajraan Tech: building scalable custom web, mobile, and desktop solutions with UI/UX design, SEO, and data services for businesses around the world." />
                 <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="600" />
@@ -75,7 +75,7 @@ export default function About() {
                 <meta name="twitter:site" content="@FajraanTech" />
                 <meta name="twitter:creator" content="@FajraanTech" />
                 <meta name="twitter:title" content="About Us | Fajraan Tech – Global Software Development Company" />
-                <meta name="twitter:description" content="Meet the people behind Fajraan Tech — a global team delivering custom web, mobile & desktop apps, UI/UX design, SEO, and data services worldwide." />
+                <meta name="twitter:description" content="Meet the people behind Fajraan Tech: a global team delivering custom web, mobile & desktop apps, UI/UX design, SEO, and data services worldwide." />
                 <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
                 <meta name="twitter:image:alt" content="The Fajraan Tech team – Global Software Development Company" />
 
@@ -224,7 +224,7 @@ export default function About() {
                                     transition={{ duration: 0.8, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                 >
-                                    <img alt="about-thumb" loading="lazy" className="h-140.75 object-cover" src="/images/about/about-img-5.webp" />
+                                    <img alt="about-thumb" loading="lazy" className="h-140.75 object-cover" src="/images/about/about-img-1.webp" />
                                 </motion.div>
                             </div>
 
@@ -237,7 +237,7 @@ export default function About() {
                                     className="mb-7"
                                 >
                                     <p className="text-[20px]">
-                                        At Fajraan Tech, we blend creativity with technology to craft digital solutions that make an impact. We deliberately focus on a small set of services we do exceptionally well — web development, mobile & desktop applications, and AI automation & chatbots — rather than spreading thin across everything.
+                                        At Fajraan Tech, we blend creativity with technology to craft digital solutions that make an impact. We deliberately focus on a small set of services we do exceptionally well: web development, mobile and desktop applications, and AI automation and chatbots, rather than spreading thin across everything.
                                     </p>
                                 </motion.div>
 
@@ -286,7 +286,7 @@ export default function About() {
                                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                 >
-                                    <img alt="about-thumb" loading="lazy" className="w-100 h-73.75 object-cover" src="/images/about/about-img-1.webp" />
+                                    <img alt="about-thumb" loading="lazy" className="w-100 h-73.75 object-cover" src="/images/about/about-img-3.webp" />
                                 </motion.div>
                             </div>
                         </div>

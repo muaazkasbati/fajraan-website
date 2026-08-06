@@ -6,6 +6,7 @@ import Head from 'next/head'
 import React from 'react'
 import { motion } from "framer-motion";
 import VideoAreaSection from '@/components/VideoAreaSection'
+import { faqData } from '@/utils/data'
 
 export default function Faqs() {
     return (
@@ -84,6 +85,24 @@ export default function Faqs() {
                                 }
                             ]
                         })
+                    }}
+                />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'FAQPage',
+                            mainEntity: faqData.map(faq => ({
+                                '@type': 'Question',
+                                name: faq.question,
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: faq.answer,
+                                },
+                            })),
+                        }),
                     }}
                 />
             </Head>

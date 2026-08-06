@@ -126,7 +126,7 @@ export default function Contact() {
                                 >
                                     <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] mb-7 text-primary font-semibold">Let's build something amazing together!</h3>
                                     <p className="text-[20px]">
-                                        At Fajraan Tech, we're always ready to discuss your next digital project — whether it's a website, app, AI automation, or chatbot. Reach out to our team and let's turn your vision into reality.
+                                        At Fajraan Tech, we're always ready to discuss your next digital project, whether it's a website, app, AI automation, or chatbot. Reach out to our team and let's turn your vision into reality.
                                     </p>
 
                                     <div className="mt-12 mb-8">

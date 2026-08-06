@@ -90,10 +90,6 @@ const pricingData = [
     },
 ];
 
-// Note: AI Automation & AI Chatbot work is priced as a custom, scoped add-on
-// (not a fixed tier) since scope varies widely — from a simple support chatbot
-// to a full multi-step automation system. Quote separately per project after discovery.
-
 const PricingSection = () => {
     return (
         <section className="lg:py-32.5 md:py-20 py-16.25 bg-2">

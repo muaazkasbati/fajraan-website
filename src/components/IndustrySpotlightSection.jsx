@@ -18,7 +18,7 @@ const IndustrySpotlightSection = () => {
                             alt="Chauffeur & fleet management software dashboard"
                             loading="lazy"
                             className="w-full h-100 md:h-110 lg:h-125 object-cover"
-                            src="/images/service/image-custom-dashboard.webp"
+                            src="/images/service/chauffeur-software-img.webp"
                         />
                     </motion.div>
 

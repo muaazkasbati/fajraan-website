@@ -17,25 +17,25 @@ export default function TestimonialSection({ aboutPage = false }) {
   const [textController, setTextController] = useState(null);
   const testimonials = [
     {
-      text: `"Working with Fajraan Tech was a game-changer. They delivered a sleek, animated website that not only elevated our brand presence but also made our online experience more engaging for customers. The team was professional, fast, and exceeded our expectations."`,
+      text: "Working with Fajraan Tech was a game-changer. They delivered a sleek, animated website that not only elevated our brand presence but also made our online experience more engaging for customers. The team was professional, fast, and exceeded our expectations.",
       author: "Maaz Khawaja",
       role: "Founder at Meem Products",
       image: "images/testimonial/Testimonial-1.webp",
     },
     {
-      text: `"This was a complex project involving booking management, payment integration, and multiple advanced features—and Fajraan Tech nailed it. They built a powerful, user-friendly platform that streamlined our operations and impressed our clients. Truly reliable and skilled."`,
+      text: "This was a complex project involving booking management, payment integration, and multiple advanced features, and Fajraan Tech nailed it. They built a powerful, user-friendly platform that streamlined our operations and impressed our clients. Truly reliable and skilled.",
       author: "James Anderson",
       role: "Founder at AB Limousine",
       image: "images/testimonial/Testimonial-2.webp",
     },
     {
-      text: `"Fajraan Tech developed a stunning animated website for us that perfectly captured our brand’s personality. The creativity, smooth functionality, and attention to detail were outstanding. We couldn’t be happier with the results."`,
+      text: "Fajraan Tech developed a stunning animated website for us that perfectly captured our brand’s personality. The creativity, smooth functionality, and attention to detail were outstanding. We couldn’t be happier with the results.",
       author: "Sophia Bennett",
       role: "Founder at TheForCollective",
       image: "images/testimonial/Testimonial-3.webp",
     },
     {
-      text: `"Fajraan Tech transformed the way we manage our chauffeur business. They delivered a complete booking and fleet management platform with real-time dispatching, driver management, Stripe payments, reporting, and countless custom features tailored to our operations. The attention to detail, technical expertise, and ongoing support have been exceptional. They truly became a trusted technology partner for our business."`,
+      text: "Fajraan Tech transformed the way we manage our chauffeur business. They delivered a complete booking and fleet management platform with real-time dispatching, driver management, Stripe payments, reporting, and countless custom features tailored to our operations. The attention to detail, technical expertise, and ongoing support have been exceptional. They truly became a trusted technology partner for our business.",
       author: "Hass Gill",
       role: "Co-Founder at Empire Chauffeurs Australia",
       image: "images/testimonial/Testimonial-4.webp",

@@ -28,7 +28,7 @@ const HeroSection = () => {
           <div className="lg:max-w-95 lg:absolute -right-4 bottom-0 sm:mt-0 mt-4">
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut", delay: 1 }}>
               <p className="text-[20px]">
-                Fajraan Tech is your digital partner for web development, mobile & desktop apps, and AI automation solutions — built for businesses worldwide.
+                Fajraan Tech is your digital partner for web development, mobile and desktop apps, and AI automation solutions, built for businesses worldwide.
               </p>
             </motion.div>
 
@@ -46,9 +46,9 @@ const HeroSection = () => {
 
               <div className="sm:text-left text-center">
                 <p className="text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold">
-                  <span>9</span>+ Satisfied Clients
+                  <span>11</span>+ Satisfied Clients
                 </p>
-                <p className="text-[18px] leading-relaxed">Trusted Web, App & AI Development Agency — Serving Clients Worldwide</p>
+                <p className="text-[18px] leading-relaxed">Trusted Web, App and AI Development Agency: Serving Clients Worldwide</p>
               </div>
             </motion.div>
           </div>

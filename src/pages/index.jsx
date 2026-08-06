@@ -47,7 +47,7 @@ export async function getStaticProps() {
         posts: postsData,
         portfolio: mappedPortfolio,
       },
-      revalidate: 3600, // Re-fetch every hour — no need for 60s on static content
+      revalidate: 3600,
     };
   } catch (error) {
     console.error('Error fetching data:', error);

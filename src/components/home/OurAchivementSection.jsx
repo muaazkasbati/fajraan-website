@@ -3,9 +3,9 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 export default function OurAchievementSection() {
   const achievements = [
-    { id: 1, value: 3, suffix: "+", label: "Years of work experience" },
-    { id: 2, value: 8, suffix: "+", label: "Projects completed successfully" },
-    { id: 3, value: 10, suffix: "+", label: "Team members worldwide" },
+    { id: 1, value: 4, suffix: "+", label: "Years of work experience" },
+    { id: 2, value: 11, suffix: "+", label: "Projects completed successfully" },
+    { id: 3, value: 4, suffix: "+", label: "Team members worldwide" },
     { id: 4, value: 95, suffix: "%", label: "Happy clients & repeat rate" },
   ];
 

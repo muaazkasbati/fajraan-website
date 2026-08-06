@@ -1,311 +1,377 @@
 [
-    {
-        "icon": "/images/service/service-icon-1.svg",
-        "title": "Web Development",
-        "slug": "web-development",
-        "seoTitle": "Web Development Services | Custom Websites & Web Apps - Fajraan Tech",
-        "seoDescription": "Fajraan Tech offers expert web development services including custom web applications, e-commerce stores, WordPress websites, landing pages, API integration, and performance optimization.",
-        "seoKeywords": [
-            "web development",
-            "custom web applications",
-            "ecommerce website",
-            "wordpress development",
-            "landing page design",
-            "api integration",
-            "website optimization",
-            "Fajraan Tech"
-        ],
-        "category": "Development",
-        "description": "Professional web development services to build high-performing, scalable, and user-friendly websites tailored to your business needs.",
-        "subServices": [
-            {
-                "title": "Custom Web Applications",
-                "description": "Tailored web applications built to meet your specific business requirements with scalability and performance in mind.",
-                "icon": "/assets/img/icons/icon-web-app.svg"
-            },
-            {
-                "title": "WordPress Website Development",
-                "description": "Custom WordPress websites designed for ease of use, SEO optimization, and seamless content management.",
-                "icon": "/assets/img/icons/icon-wordpress.svg"
-            },
-            {
-                "title": "Shopify & E-commerce Store Development",
-                "description": "Fully functional e-commerce stores with secure payment gateways and user-friendly shopping experiences.",
-                "icon": "/assets/img/icons/icon-ecommerce.svg"
-            },
-            {
-                "title": "Landing Page Design & Development",
-                "description": "High-converting landing pages optimized for lead generation and marketing campaigns.",
-                "icon": "/assets/img/icons/icon-landing-page.svg"
-            },
-            {
-                "title": "API Integration & Backend Development",
-                "description": "Robust backend systems with seamless API integrations for enhanced functionality and connectivity.",
-                "icon": "/assets/img/icons/icon-api.svg"
-            },
-            {
-                "title": "Web App Performance Optimization",
-                "description": "Optimizing web applications for speed, scalability, and a smooth user experience.",
-                "icon": "/assets/img/icons/icon-performance.svg"
-            }
-        ],
-        "content": {
-            "breadcrumb": "Web Development Service",
-            "hero": {
-                "image": "/images/service/web-development-service-img.webp",
-                "title": "Web Development for",
-                "highlight": "modern",
-                "subtitle": "business solutions",
-                "description": [
-                    "Web development is the backbone of your online presence, ensuring your business is accessible, fast, and scalable across devices.",
-                    "At Fajraan Tech, we specialize in building responsive, secure, and high-performing websites tailored to your business goals."
-                ]
-            },
-            "sections": [
-                {
-                    "title": "1/ Frontend Development:",
-                    "points": [
-                        "We create pixel-perfect, responsive, and user-friendly interfaces using React.js, Next.js, and Tailwind CSS.",
-                        "Our focus is on performance, accessibility, and delivering a seamless experience for your customers.",
-                        "Key aspects include layouts, animations, cross-browser compatibility, and mobile-first design."
-                    ]
-                },
-                {
-                    "title": "2/ Backend Development:",
-                    "points": [
-                        "We build robust, secure, and scalable backend systems with Node.js, Express.js, and modern APIs.",
-                        "Our team ensures smooth integration with databases, third-party tools, and custom business logic.",
-                        "Key aspects include API development, authentication, data management, and security."
-                    ]
-                }
-            ],
-            "approach": {
-                "title": "Our Approach",
-                "description": "We follow a proven methodology to deliver web development projects that are fast, reliable, and business-focused:",
-                "steps": [
-                    {
-                        "icon": "/assets/img/icons/icon-black-search.svg",
-                        "title": "Discovery & Planning:",
-                        "points": [
-                            "Understanding your business requirements, target audience, and technical needs to define project goals."
-                        ]
-                    },
-                    {
-                        "icon": "/assets/img/icons/icon-black-edit.svg",
-                        "title": "Design & Development:",
-                        "points": [
-                            "Crafting responsive UI/UX and coding backend logic with a focus on scalability, security, and performance."
-                        ]
-                    },
-                    {
-                        "icon": "/assets/img/icons/icon-black-rocket.svg",
-                        "title": "Launch & Growth:",
-                        "points": [
-                            "Deploying your website, monitoring performance, and providing ongoing support with iterative improvements."
-                        ]
-                    }
-                ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img.webp"
-            }
+  {
+    "icon": "/images/service/service-icon-1.svg",
+    "title": "Web Development",
+    "slug": "web-development",
+    "seoTitle": "Web Development Services | Custom Websites & Web Apps - Fajraan Tech",
+    "seoDescription": "Fajraan Tech offers expert web development services including custom web applications, e-commerce stores, WordPress websites, landing pages, API integration, and performance optimization.",
+    "seoKeywords": [
+      "web development",
+      "custom web applications",
+      "ecommerce website",
+      "wordpress development",
+      "landing page design",
+      "api integration",
+      "website optimization",
+      "Fajraan Tech"
+    ],
+    "category": "Development",
+    "description": "Professional web development services to build high-performing, scalable, and user-friendly websites tailored to your business needs.",
+    "subServices": [
+      {
+        "title": "Custom Web Applications",
+        "description": "Tailored web applications built to meet your specific business requirements with scalability and performance in mind.",
+        "icon": "/assets/img/icons/icon-web-app.svg"
+      },
+      {
+        "title": "WordPress Website Development",
+        "description": "Custom WordPress websites designed for ease of use, SEO optimization, and seamless content management.",
+        "icon": "/assets/img/icons/icon-wordpress.svg"
+      },
+      {
+        "title": "Shopify & E-commerce Store Development",
+        "description": "Fully functional e-commerce stores with secure payment gateways and user-friendly shopping experiences.",
+        "icon": "/assets/img/icons/icon-ecommerce.svg"
+      },
+      {
+        "title": "Landing Page Design & Development",
+        "description": "High-converting landing pages optimized for lead generation and marketing campaigns.",
+        "icon": "/assets/img/icons/icon-landing-page.svg"
+      },
+      {
+        "title": "API Integration & Backend Development",
+        "description": "Robust backend systems with seamless API integrations for enhanced functionality and connectivity.",
+        "icon": "/assets/img/icons/icon-api.svg"
+      },
+      {
+        "title": "Web App Performance Optimization",
+        "description": "Optimizing web applications for speed, scalability, and a smooth user experience.",
+        "icon": "/assets/img/icons/icon-performance.svg"
+      }
+    ],
+    "content": {
+      "breadcrumb": "Web Development Service",
+      "hero": {
+        "image": "/images/service/web-development-service-img.webp",
+        "title": "Web Development for",
+        "highlight": "modern",
+        "subtitle": "business solutions",
+        "description": [
+          "Web development is the backbone of your online presence, ensuring your business is accessible, fast, and scalable across devices.",
+          "At Fajraan Tech, we specialize in building responsive, secure, and high-performing websites tailored to your business goals."
+        ]
+      },
+      "sections": [
+        {
+          "title": "1/ Frontend Development:",
+          "points": [
+            "We create pixel-perfect, responsive, and user-friendly interfaces using React.js, Next.js, and Tailwind CSS.",
+            "Our focus is on performance, accessibility, and delivering a seamless experience for your customers.",
+            "Key aspects include layouts, animations, cross-browser compatibility, and mobile-first design."
+          ]
+        },
+        {
+          "title": "2/ Backend Development:",
+          "points": [
+            "We build robust, secure, and scalable backend systems with Node.js, Express.js, and modern APIs.",
+            "Our team ensures smooth integration with databases, third-party tools, and custom business logic.",
+            "Key aspects include API development, authentication, data management, and security."
+          ]
         }
-    },
-    {
-        "icon": "/images/service/service-icon-2.svg",
-        "title": "Mobile & Desktop Applications",
-        "slug": "mobile-desktop-applications",
-        "seoTitle": "Mobile & Desktop App Development | Custom Apps - Fajraan Tech",
-        "seoDescription": "Fajraan Tech delivers high-performance mobile and desktop applications with seamless user experiences for iOS, Android, Windows, macOS, and Linux.",
-        "seoKeywords": [
-            "mobile app development",
-            "desktop app development",
-            "cross-platform apps",
-            "flutter development",
-            "react native development",
-            "app ui ux design",
-            "Fajraan Tech"
+      ],
+      "approach": {
+        "title": "Our Approach",
+        "description": "We follow a proven methodology to deliver web development projects that are fast, reliable, and business-focused:",
+        "steps": [
+          {
+            "icon": "/assets/img/icons/icon-black-search.svg",
+            "title": "Discovery & Planning:",
+            "points": [
+              "Understanding your business requirements, target audience, and technical needs to define project goals."
+            ]
+          },
+          {
+            "icon": "/assets/img/icons/icon-black-edit.svg",
+            "title": "Design & Development:",
+            "points": [
+              "Crafting responsive UI/UX and coding backend logic with a focus on scalability, security, and performance."
+            ]
+          },
+          {
+            "icon": "/assets/img/icons/icon-black-rocket.svg",
+            "title": "Launch & Growth:",
+            "points": [
+              "Deploying your website, monitoring performance, and providing ongoing support with iterative improvements."
+            ]
+          }
         ],
-        "category": "Development",
-        "description": "High-performance mobile and desktop apps designed for seamless user experiences.",
-        "subServices": [
-            {
-                "title": "iOS & Android App Development (Native & Cross-Platform)",
-                "description": "Building native and cross-platform mobile apps for iOS and Android with optimal performance.",
-                "icon": "/assets/img/icons/icon-mobile-app.svg"
-            },
-            {
-                "title": "Flutter & React Native Development",
-                "description": "Cross-platform app development using Flutter and React Native for cost-effective solutions.",
-                "icon": "/assets/img/icons/icon-flutter-react.svg"
-            },
-            {
-                "title": "Desktop Application Development (Windows/macOS/Linux)",
-                "description": "Custom desktop applications tailored for Windows, macOS, and Linux environments.",
-                "icon": "/assets/img/icons/icon-desktop-app.svg"
-            },
-            {
-                "title": "App UI/UX Design",
-                "description": "Creating intuitive and visually appealing UI/UX designs for mobile and desktop apps.",
-                "icon": "/assets/img/icons/icon-ui-ux.svg"
-            }
-        ],
-        "content": {
-            "breadcrumb": "Mobile & Desktop Application Development",
-            "hero": {
-                "image": "/images/service/mobile-desktop-application-development-service.webp",
-                "title": "Mobile & Desktop Apps for",
-                "highlight": "seamless",
-                "subtitle": "user experiences",
-                "description": [
-                    "Our mobile and desktop app development services create intuitive, high-performing applications tailored to your business needs.",
-                    "At Fajraan Tech, we focus on delivering cross-platform solutions that work flawlessly across devices and operating systems."
-                ]
-            },
-            "sections": [
-                {
-                    "title": "1/ Mobile App Development:",
-                    "points": [
-                        "We develop native and cross-platform apps using Flutter, React Native, and native SDKs for iOS and Android.",
-                        "Our apps prioritize performance, intuitive design, and seamless integration with backend systems.",
-                        "Key aspects include responsive UI, push notifications, and offline functionality."
-                    ]
-                },
-                {
-                    "title": "2/ Desktop App Development:",
-                    "points": [
-                        "We build robust desktop applications for Windows, macOS, and Linux using modern frameworks.",
-                        "Our solutions ensure compatibility, performance, and integration with enterprise systems.",
-                        "Key aspects include user-friendly interfaces, system resource optimization, and security."
-                    ]
-                }
-            ],
-            "approach": {
-                "title": "Our Approach",
-                "description": "We follow a structured process to deliver mobile and desktop apps that align with your business objectives:",
-                "steps": [
-                    {
-                        "icon": "/assets/img/icons/icon-black-search.svg",
-                        "title": "Discovery & Planning:",
-                        "points": [
-                            "Analyzing your business needs, user requirements, and technical specifications to define app goals."
-                        ]
-                    },
-                    {
-                        "icon": "/assets/img/icons/icon-black-edit.svg",
-                        "title": "Design & Development:",
-                        "points": [
-                            "Creating intuitive UI/UX designs and coding robust app logic for performance and scalability."
-                        ]
-                    },
-                    {
-                        "icon": "/assets/img/icons/icon-black-rocket.svg",
-                        "title": "Launch & Support:",
-                        "points": [
-                            "Deploying your app, testing functionality, and providing ongoing maintenance and updates."
-                        ]
-                    }
-                ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img-mobile.webp"
-            }
+        "sideImage": "/assets/img/images/th-1/service-details-inner-img.webp"
+      },
+      "faqs": [
+        {
+          "question": "What does a web development company do?",
+          "answer": "A web development company designs, builds, and maintains websites and web applications, covering frontend interfaces, backend logic, database integration, and performance optimization. Fajraan Tech handles the full process from planning to launch and ongoing support."
+        },
+        {
+          "question": "How long does it take to build a custom website?",
+          "answer": "Most custom websites take between 3 and 8 weeks depending on complexity, number of pages, and required integrations. Simple landing pages can launch in under 2 weeks, while custom web applications or e-commerce stores may take longer."
+        },
+        {
+          "question": "What is the difference between a website and a web application?",
+          "answer": "A website mainly presents information to visitors, while a web application allows users to interact with data, log in, and perform actions like placing orders or managing accounts. Fajraan Tech builds both, depending on what a business needs."
+        },
+        {
+          "question": "Does Fajraan Tech build WordPress and Shopify websites?",
+          "answer": "Yes. Fajraan Tech develops WordPress websites for content-driven businesses and Shopify or custom e-commerce stores for businesses that sell products online, including secure payment gateway setup."
+        },
+        {
+          "question": "What technologies does Fajraan Tech use for web development?",
+          "answer": "Fajraan Tech builds frontends with React.js, Next.js, and Tailwind CSS, and backends with Node.js and Express.js, along with modern API integrations for scalable, secure web solutions."
         }
-    },
-    {
-        "icon": "/images/service/service-icon-3.svg",
-        "title": "AI Automation & AI Chatbot",
-        "slug": "ai-automation-ai-chatbot",
-        "seoTitle": "AI Automation & AI Chatbot Development Services - Fajraan Tech",
-        "seoDescription": "Fajraan Tech builds custom AI chatbots, AI-powered customer support systems, and business process automation using modern LLMs and automation tools to help businesses save time and scale faster.",
-        "seoKeywords": [
-            "AI automation",
-            "AI chatbot development",
-            "business process automation",
-            "AI customer support",
-            "workflow automation",
-            "LLM integration",
-            "conversational AI",
-            "Fajraan Tech"
-        ],
-        "category": "AI & Automation",
-        "description": "Custom AI automation and chatbot solutions that streamline operations, cut manual work, and give your business round-the-clock intelligent support.",
-        "subServices": [
-            {
-                "title": "AI Chatbot Development",
-                "description": "Custom AI chatbots for websites, apps, and messaging platforms, built on modern LLMs to handle support, FAQs, and lead capture around the clock.",
-                "icon": "/assets/img/icons/icon-ai-chatbot.svg"
-            },
-            {
-                "title": "Business Process Automation",
-                "description": "Automating repetitive workflows and connecting your tools and systems so your team spends less time on manual, repetitive tasks.",
-                "icon": "/assets/img/icons/icon-automation.svg"
-            },
-            {
-                "title": "AI-Powered Customer Support Systems",
-                "description": "Intelligent support systems that triage tickets, answer common questions instantly, and escalate complex issues to your team.",
-                "icon": "/assets/img/icons/icon-ai-support.svg"
-            },
-            {
-                "title": "Custom AI & LLM Integrations",
-                "description": "Integrating AI models and APIs into your existing website, app, or internal tools to add smart, data-driven features.",
-                "icon": "/assets/img/icons/icon-ai-integration.svg"
-            }
-        ],
-        "content": {
-            "breadcrumb": "AI Automation & AI Chatbot Service",
-            "hero": {
-                "image": "/images/service/ai-automation-service-img.webp",
-                "title": "AI Automation & Chatbots for",
-                "highlight": "intelligent",
-                "subtitle": "business growth",
-                "description": [
-                    "AI automation and chatbots help your business respond faster, work smarter, and cut down on repetitive manual tasks.",
-                    "At Fajraan Tech, we design and build custom AI solutions that plug directly into how your business already operates."
-                ]
-            },
-            "sections": [
-                {
-                    "title": "1/ AI Chatbot Development:",
-                    "points": [
-                        "We build custom chatbots powered by modern LLMs, trained on your business data to give accurate, on-brand answers.",
-                        "Our chatbots handle customer support, lead qualification, and FAQs across web, mobile, and messaging channels.",
-                        "Key aspects include natural conversation flow, handoff to human agents, and continuous improvement based on real usage."
-                    ]
-                },
-                {
-                    "title": "2/ Workflow & Process Automation:",
-                    "points": [
-                        "We map out your repetitive, manual processes and automate them using modern automation tools and custom scripts.",
-                        "Our team connects your existing apps, CRMs, and internal tools so data flows automatically between them.",
-                        "Key aspects include reduced manual effort, fewer errors, and faster turnaround on routine business tasks."
-                    ]
-                }
-            ],
-            "approach": {
-                "title": "Our Approach",
-                "description": "We follow a focused process to deliver AI automation and chatbot solutions that create real, measurable impact:",
-                "steps": [
-                    {
-                        "icon": "/assets/img/icons/icon-black-search.svg",
-                        "title": "Discovery & Planning:",
-                        "points": [
-                            "Identifying the repetitive tasks, support bottlenecks, and business processes best suited for AI and automation."
-                        ]
-                    },
-                    {
-                        "icon": "/assets/img/icons/icon-black-edit.svg",
-                        "title": "Design & Development:",
-                        "points": [
-                            "Building and training your chatbot or automation workflow, then testing it against real business scenarios."
-                        ]
-                    },
-                    {
-                        "icon": "/assets/img/icons/icon-black-rocket.svg",
-                        "title": "Launch & Optimization:",
-                        "points": [
-                            "Deploying your AI solution, monitoring performance, and refining it based on real usage and feedback."
-                        ]
-                    }
-                ],
-                "sideImage": "/assets/img/images/th-1/service-details-inner-img-ai.webp"
-            }
-        }
+      ]
     }
+  },
+  {
+    "icon": "/images/service/service-icon-2.svg",
+    "title": "Mobile & Desktop Applications",
+    "slug": "mobile-desktop-applications",
+    "seoTitle": "Mobile & Desktop App Development | Custom Apps - Fajraan Tech",
+    "seoDescription": "Fajraan Tech delivers high-performance mobile and desktop applications with seamless user experiences for iOS, Android, Windows, macOS, and Linux.",
+    "seoKeywords": [
+      "mobile app development",
+      "desktop app development",
+      "cross-platform apps",
+      "flutter development",
+      "react native development",
+      "app ui ux design",
+      "Fajraan Tech"
+    ],
+    "category": "Development",
+    "description": "High-performance mobile and desktop apps designed for seamless user experiences.",
+    "subServices": [
+      {
+        "title": "iOS & Android App Development (Native & Cross-Platform)",
+        "description": "Building native and cross-platform mobile apps for iOS and Android with optimal performance.",
+        "icon": "/assets/img/icons/icon-mobile-app.svg"
+      },
+      {
+        "title": "Flutter & React Native Development",
+        "description": "Cross-platform app development using Flutter and React Native for cost-effective solutions.",
+        "icon": "/assets/img/icons/icon-flutter-react.svg"
+      },
+      {
+        "title": "Desktop Application Development (Windows/macOS/Linux)",
+        "description": "Custom desktop applications tailored for Windows, macOS, and Linux environments.",
+        "icon": "/assets/img/icons/icon-desktop-app.svg"
+      },
+      {
+        "title": "App UI/UX Design",
+        "description": "Creating intuitive and visually appealing UI/UX designs for mobile and desktop apps.",
+        "icon": "/assets/img/icons/icon-ui-ux.svg"
+      }
+    ],
+    "content": {
+      "breadcrumb": "Mobile & Desktop Application Development",
+      "hero": {
+        "image": "/images/service/mobile-desktop-application-development-service.webp",
+        "title": "Mobile & Desktop Apps for",
+        "highlight": "seamless",
+        "subtitle": "user experiences",
+        "description": [
+          "Our mobile and desktop app development services create intuitive, high-performing applications tailored to your business needs.",
+          "At Fajraan Tech, we focus on delivering cross-platform solutions that work flawlessly across devices and operating systems."
+        ]
+      },
+      "sections": [
+        {
+          "title": "1/ Mobile App Development:",
+          "points": [
+            "We develop native and cross-platform apps using Flutter, React Native, and native SDKs for iOS and Android.",
+            "Our apps prioritize performance, intuitive design, and seamless integration with backend systems.",
+            "Key aspects include responsive UI, push notifications, and offline functionality."
+          ]
+        },
+        {
+          "title": "2/ Desktop App Development:",
+          "points": [
+            "We build robust desktop applications for Windows, macOS, and Linux using modern frameworks.",
+            "Our solutions ensure compatibility, performance, and integration with enterprise systems.",
+            "Key aspects include user-friendly interfaces, system resource optimization, and security."
+          ]
+        }
+      ],
+      "approach": {
+        "title": "Our Approach",
+        "description": "We follow a structured process to deliver mobile and desktop apps that align with your business objectives:",
+        "steps": [
+          {
+            "icon": "/assets/img/icons/icon-black-search.svg",
+            "title": "Discovery & Planning:",
+            "points": [
+              "Analyzing your business needs, user requirements, and technical specifications to define app goals."
+            ]
+          },
+          {
+            "icon": "/assets/img/icons/icon-black-edit.svg",
+            "title": "Design & Development:",
+            "points": [
+              "Creating intuitive UI/UX designs and coding robust app logic for performance and scalability."
+            ]
+          },
+          {
+            "icon": "/assets/img/icons/icon-black-rocket.svg",
+            "title": "Launch & Support:",
+            "points": [
+              "Deploying your app, testing functionality, and providing ongoing maintenance and updates."
+            ]
+          }
+        ],
+        "sideImage": "/assets/img/images/th-1/service-details-inner-img-mobile.webp"
+      },
+      "faqs": [
+        {
+          "question": "What is the difference between native and cross-platform apps?",
+          "answer": "Native apps are built separately for iOS and Android using platform-specific code, offering the best performance, while cross-platform apps share one codebase across both platforms, reducing cost and development time. Fajraan Tech builds both depending on the project's goals."
+        },
+        {
+          "question": "Should I build my app with Flutter or React Native?",
+          "answer": "Flutter and React Native both allow a single codebase to run on iOS and Android. Flutter tends to offer more consistent UI across platforms, while React Native integrates well with existing JavaScript teams. Fajraan Tech recommends the right framework based on your app's requirements and team skillset."
+        },
+        {
+          "question": "Can Fajraan Tech build desktop apps for Windows, macOS, and Linux?",
+          "answer": "Yes. Fajraan Tech develops custom desktop applications for Windows, macOS, and Linux using modern frameworks, with a focus on performance, security, and integration with enterprise systems."
+        },
+        {
+          "question": "How long does it take to build a mobile app?",
+          "answer": "A typical mobile app takes 6 to 12 weeks to build, depending on features, platforms, and backend complexity. Simpler apps can launch faster, while apps with custom backends and integrations take longer."
+        },
+        {
+          "question": "Does Fajraan Tech provide app maintenance after launch?",
+          "answer": "Yes. Fajraan Tech provides ongoing maintenance, bug fixes, and updates after launch to keep mobile and desktop applications running smoothly across operating system versions."
+        }
+      ]
+    }
+  },
+  {
+    "icon": "/images/service/service-icon-3.svg",
+    "title": "AI Automation & AI Chatbot",
+    "slug": "ai-automation-ai-chatbot",
+    "seoTitle": "AI Automation & AI Chatbot Development Services - Fajraan Tech",
+    "seoDescription": "Fajraan Tech builds custom AI chatbots, AI powered customer support systems, and business process automation using modern LLMs and automation tools to help businesses save time and scale faster.",
+    "seoKeywords": [
+      "AI automation",
+      "AI chatbot development",
+      "business process automation",
+      "AI customer support",
+      "workflow automation",
+      "LLM integration",
+      "conversational AI",
+      "Fajraan Tech"
+    ],
+    "category": "AI & Automation",
+    "description": "Custom AI automation and chatbot solutions that streamline operations, cut manual work, and give your business round-the-clock intelligent support.",
+    "subServices": [
+      {
+        "title": "AI Chatbot Development",
+        "description": "Custom AI chatbots for websites, apps, and messaging platforms, built on modern LLMs to handle support, FAQs, and lead capture around the clock.",
+        "icon": "/assets/img/icons/icon-ai-chatbot.svg"
+      },
+      {
+        "title": "Business Process Automation",
+        "description": "Automating repetitive workflows and connecting your tools and systems so your team spends less time on manual, repetitive tasks.",
+        "icon": "/assets/img/icons/icon-automation.svg"
+      },
+      {
+        "title": "AI Powered Customer Support Systems",
+        "description": "Intelligent support systems that triage tickets, answer common questions instantly, and escalate complex issues to your team.",
+        "icon": "/assets/img/icons/icon-ai-support.svg"
+      },
+      {
+        "title": "Custom AI & LLM Integrations",
+        "description": "Integrating AI models and APIs into your existing website, app, or internal tools to add smart, data-driven features.",
+        "icon": "/assets/img/icons/icon-ai-integration.svg"
+      }
+    ],
+    "content": {
+      "breadcrumb": "AI Automation & AI Chatbot Service",
+      "hero": {
+        "image": "/images/service/ai-automation-service-img.webp",
+        "title": "AI Automation & Chatbots for",
+        "highlight": "intelligent",
+        "subtitle": "business growth",
+        "description": [
+          "AI automation and chatbots help your business respond faster, work smarter, and cut down on repetitive manual tasks.",
+          "At Fajraan Tech, we design and build custom AI solutions that plug directly into how your business already operates."
+        ]
+      },
+      "sections": [
+        {
+          "title": "1/ AI Chatbot Development:",
+          "points": [
+            "We build custom chatbots powered by modern LLMs, trained on your business data to give accurate, on-brand answers.",
+            "Our chatbots handle customer support, lead qualification, and FAQs across web, mobile, and messaging channels.",
+            "Key aspects include natural conversation flow, handoff to human agents, and continuous improvement based on real usage."
+          ]
+        },
+        {
+          "title": "2/ Workflow & Process Automation:",
+          "points": [
+            "We map out your repetitive, manual processes and automate them using modern automation tools and custom scripts.",
+            "Our team connects your existing apps, CRMs, and internal tools so data flows automatically between them.",
+            "Key aspects include reduced manual effort, fewer errors, and faster turnaround on routine business tasks."
+          ]
+        }
+      ],
+      "approach": {
+        "title": "Our Approach",
+        "description": "We follow a focused process to deliver AI automation and chatbot solutions that create real, measurable impact:",
+        "steps": [
+          {
+            "icon": "/assets/img/icons/icon-black-search.svg",
+            "title": "Discovery & Planning:",
+            "points": [
+              "Identifying the repetitive tasks, support bottlenecks, and business processes best suited for AI and automation."
+            ]
+          },
+          {
+            "icon": "/assets/img/icons/icon-black-edit.svg",
+            "title": "Design & Development:",
+            "points": [
+              "Building and training your chatbot or automation workflow, then testing it against real business scenarios."
+            ]
+          },
+          {
+            "icon": "/assets/img/icons/icon-black-rocket.svg",
+            "title": "Launch & Optimization:",
+            "points": [
+              "Deploying your AI solution, monitoring performance, and refining it based on real usage and feedback."
+            ]
+          }
+        ],
+        "sideImage": "/assets/img/images/th-1/service-details-inner-img-ai.webp"
+      },
+      "faqs": [
+        {
+          "question": "What is AI automation for business?",
+          "answer": "AI automation uses artificial intelligence and workflow tools to handle repetitive business tasks, such as data entry, ticket routing, and follow-ups, automatically and without constant human input. Fajraan Tech builds custom automation that connects directly with your existing apps and systems."
+        },
+        {
+          "question": "How does an AI chatbot help with customer support?",
+          "answer": "An AI chatbot answers common customer questions instantly, qualifies leads, and handles support around the clock, only escalating complex issues to a human agent. This reduces response times and frees up your support team for higher-value work."
+        },
+        {
+          "question": "Can an AI chatbot be trained on my company's own data?",
+          "answer": "Yes. Fajraan Tech builds chatbots powered by modern LLMs that are trained on your business data, so responses stay accurate, on-brand, and specific to your products or services rather than generic answers."
+        },
+        {
+          "question": "What business tasks can be automated with AI?",
+          "answer": "Common tasks that can be automated include customer support replies, lead qualification, data entry between systems, ticket triage, appointment scheduling, and syncing information across CRMs and internal tools."
+        },
+        {
+          "question": "Is AI automation affordable for small businesses?",
+          "answer": "AI automation can be scoped to fit different budgets, from a single chatbot handling FAQs to full workflow automation across multiple tools. Fajraan Tech designs solutions based on which tasks offer the most time savings first, so small businesses can start small and scale up."
+        }
+      ]
+    }
+  }
 ]

@@ -17,7 +17,7 @@ export default function Services() {
     <>
       <Head>
         <title>Our Services | Fajraan Tech – Web, Mobile & AI Automation Solutions</title>
-        <meta name="description" content="Explore Fajraan Tech's core services — custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
+        <meta name="description" content="Explore Fajraan Tech's core services: custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
         <meta name="keywords" content="web development services, mobile app development services, desktop application development, AI automation services, AI chatbot development, software development agency, digital solutions company" />
 
         <link rel="canonical" href="https://www.fajraan.tech/services" />
@@ -26,7 +26,7 @@ export default function Services() {
         <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/services" />
 
         <meta property="og:title" content="Our Services | Fajraan Tech – Web, Mobile & AI Automation Solutions" />
-        <meta property="og:description" content="Explore Fajraan Tech's core services — custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
+        <meta property="og:description" content="Explore Fajraan Tech's core services: custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
         <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="600" />
@@ -37,7 +37,7 @@ export default function Services() {
         <meta name="twitter:site" content="@FajraanTech" />
         <meta name="twitter:creator" content="@FajraanTech" />
         <meta name="twitter:title" content="Our Services | Fajraan Tech – Web, Mobile & AI Automation Solutions" />
-        <meta name="twitter:description" content="Explore Fajraan Tech's core services — custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
+        <meta name="twitter:description" content="Explore Fajraan Tech's core services: custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
         <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta name="twitter:image:alt" content="Fajraan Tech Services – Web, Mobile & Digital Solutions" />
 
@@ -49,7 +49,7 @@ export default function Services() {
               "@type": "WebPage",
               name: "Our Services – Fajraan Tech",
               url: "https://www.fajraan.tech/services",
-              description: "Explore Fajraan Tech's core services — custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide.",
+              description: "Explore Fajraan Tech's core services: custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide.",
               provider: {
                 "@type": "Organization",
                 name: "Fajraan Tech",
@@ -134,7 +134,7 @@ export default function Services() {
         <VideoAreaSection imageUrl="/images/service/service-detail-img.webp" scrollDownId="service-section" />
         <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden" id="service-section">
           <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-            <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
+            <div className="flex flex-col gap-5 xl:flex-row xl:justify-between">
               <div className="w-full xl:w-5/12">
                 <motion.div
                   initial={{ opacity: 0, rotateX: -80 }}
@@ -149,7 +149,7 @@ export default function Services() {
               </div>
 
               <div className="w-full xl:w-6/12">
-                <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-x-5 sm:gap-y-16 gap-y-5 md:grid-cols-2">
                   {services.slice(0, 8).map((service, index) => (
                     <motion.div
                       key={index}

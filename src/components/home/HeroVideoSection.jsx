@@ -159,8 +159,8 @@ export default function HeroVideoSection() {
             className="w-full h-full object-cover"
             aria-hidden="true"
           >
-            <source src="/videos/hero-video.webm" type="video/webm" />
-            <source src="/videos/hero-video.mp4" type="video/mp4" />
+            <source src="/videos/hero-video-1.webm" type="video/webm" />
+            <source src="/videos/hero-video-1.mp4" type="video/mp4" />
           </video>
         </div>
       </div>

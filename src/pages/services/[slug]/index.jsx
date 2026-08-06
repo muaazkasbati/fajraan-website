@@ -33,6 +33,8 @@ export async function getStaticProps({ params }) {
 
 
 export default function ServiceDetail({ serviceData }) {
+  const faqs = serviceData.content?.faqs || [];
+
   return (
     <>
       <Head>
@@ -113,6 +115,27 @@ export default function ServiceDetail({ serviceData }) {
             })
           }}
         />
+
+
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: faqs.map(faq => ({
+                  "@type": "Question",
+                  name: faq.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer
+                  }
+                }))
+              })
+            }}
+          />
+        )}
       </Head>
       <Header />
       <main>
@@ -228,6 +251,46 @@ export default function ServiceDetail({ serviceData }) {
             </motion.div>
           </div>
         </section>
+
+        {faqs.length > 0 && (
+          <section className="pb-15 lg:pb-32.5 md:pb-20" id="service-faqs">
+            <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+              <motion.div
+                className="w-full xl:w-8/12 mx-auto"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <motion.h4
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="text-[30px] md:text-[40px] mb-4 leading-[116.667%] tracking-[-1.5px] font-semibold"
+                >
+                  Frequently Asked Questions
+                </motion.h4>
+                <div className="space-y-4">
+                  {faqs.map((faq, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1 * i }}
+                      viewport={{ once: true }}
+                      className="border-b border-gray-200 pb-4"
+                    >
+                      <h6 className="text-[20px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold mb-2">
+                        {faq.question}
+                      </h6>
+                      <p className="text-[20px]">{faq.answer}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </>

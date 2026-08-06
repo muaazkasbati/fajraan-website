@@ -1,73 +1,49 @@
-export const slides = [
-  {
-    img: "assets/img/new/image-Full-Stack-Web-Development.webp",
-    title: "Full-Stack Web Development",
-    description:
-      "Building scalable web applications using the MERN stack with clean code architecture and dynamic functionality.",
-  },
-  {
-    img: "assets/img/new/image-UI-UX-Design.webp",
-    title: "UI/UX Design to Code",
-    description:
-      "Converting Figma designs into pixel-perfect, responsive React interfaces with modern UI/UX practices.",
-  },
-  {
-    img: "assets/img/new/image-Multilingual-Platforms.webp",
-    title: "Multilingual Platforms",
-    description:
-      "Developing systems with dynamic content translation and localization for global reach and user accessibility.",
-  },
-  {
-    img: "assets/img/new/image-custom-dashboard.webp",
-    title: "Custom Dashboards & Admin Panels",
-    description:
-      "Creating robust admin panels, user dashboards, and CMS tools tailored for startups, vendors, and content creators.",
-  },
-  {
-    img: "assets/img/new/image-cloud-integration.webp",
-    title: "Cloud Integration & APIs",
-    description:
-      "Integrating with Cloudinary, Firebase, Stripe, and third-party APIs to supercharge your apps and workflows.",
-  },
-  {
-    img: "assets/img/new/image-ecommerce.webp",
-    title: "E-commerce & Booking Systems",
-    description:
-      "Building custom multi-vendor shops, booking systems, and payment-enabled platforms optimized for conversions.",
-  },
-];
-
-
-export const accordionData = [
-  {
-    title: "01/ Discovery & Strategy",
-    content:
-      "Every project begins with understanding your vision. We analyze your business goals, target audience, and industry landscape to define a clear digital strategy tailored to your needs.",
-  },
-  {
-    title: "02/ Design & Architecture",
-    content:
-      "Our team crafts wireframes, prototypes, or adapts your Figma designs into intuitive, responsive interfaces. At the same time, we architect a scalable and secure backend foundation.",
-  },
-  {
-    title: "03/ Development & Integration",
-    content:
-      "Leveraging the MERN stack and modern cloud technologies, we build robust, modular applications. From APIs to dashboards and third-party integrations — everything works seamlessly together.",
-  },
-  {
-    title: "04/ Quality Assurance & Feedback",
-    content:
-      "We perform thorough testing across devices, browsers, and use cases. Security, performance, and design consistency are refined based on iterative feedback to ensure excellence.",
-  },
-  {
-    title: "05/ Launch & Growth Support",
-    content:
-      "Once approved, we launch with optimized CI/CD workflows for smooth deployment. You receive full access, onboarding support, and scalable growth options to keep your business moving forward.",
-  },
-];
 
 export const toWebP = (url = "") => {
   if (!url || typeof url !== "string") return url;
 
   return url.replace(/\.(jpg|jpeg|png)$/i, ".webp");
 };
+
+export const faqData = [
+  {
+    question: "What happens after I approve the design or proposal?",
+    answer: "Once you approve the design or proposal, our development team begins implementation, setting up the project structure, creating components, and integrating functionality. You’ll receive regular progress updates until launch.",
+  },
+  {
+    question: "Can you work with my existing website, app, or design files?",
+    answer: "Yes. Whether you already have wireframes, Figma designs, or a live website, we can improve, rebuild, or scale it. We often take over incomplete projects or outdated systems and modernize them using modern tech stacks.",
+  },
+  {
+    question: "Do you charge for revisions or updates?",
+    answer: "Minor revisions during the development phase are included. Major scope changes or additional features requested after approval may involve extra cost, but we always confirm before proceeding.",
+  },
+  {
+    question: "Can agencies or startups outsource their work to Fajraan Tech?",
+    answer: "Absolutely. We regularly partner with agencies, startups, and businesses needing a reliable tech team for white-label or outsourced projects. We maintain full confidentiality and deliver under your brand if required.",
+  },
+  {
+    question: "What do I need to provide before the project starts?",
+    answer: "We’ll need your brand assets (logo, colors, content), goals, and feature requirements. For larger projects, we conduct a short discovery call to clarify the scope, timeline, and deliverables before signing off.",
+  },
+  {
+    question: "How long does a typical project take?",
+    answer: "Timelines vary by scope. Basic websites take 3–4 weeks, custom apps or platforms may take 2–4 months, and AI automation or chatbot projects typically take 2–6 weeks depending on complexity. We provide a detailed timeline and milestones before starting development.",
+  },
+  {
+    question: "Do you handle ongoing maintenance and updates?",
+    answer: "Yes. We offer monthly maintenance and support retainers covering updates, security, performance, and AI/chatbot fine-tuning, ensuring your website, app, or automation stays optimized and up to date.",
+  },
+  {
+    question: "What technologies does Fajraan Tech specialize in?",
+    answer: "We utilize modern full-stack web and mobile frameworks, cloud infrastructure, and scalable databases tailored for high performance. For AI automation and chatbots, we work with advanced AI models and integration tools to build custom, production-ready solutions.",
+  },
+  {
+    question: "Do you build AI chatbots or automation for existing businesses, or only new projects?",
+    answer: "Both. We can build a chatbot or automation workflow from scratch, or integrate AI into your existing website, app, or internal tools, connecting it to the systems and data you already use.",
+  },
+  {
+    question: "Do you have experience with chauffeur or fleet management software?",
+    answer: "Yes, it's actually one of our specialties. We've built dedicated chauffeur and fleet management software for real clients, and we have a case study available covering that work. Reach out if you're building something in this space.",
+  },
+];
