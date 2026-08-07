@@ -19,7 +19,7 @@ export async function getStaticProps() {
 
     const [postsRes, portfolioRes] = await Promise.all([
       fetch(`${BASE}/posts?per_page=3&orderby=date&order=desc&_=${Date.now()}`),
-      fetch(`${BASE}/portfolio?_embed&per_page=20&_=${Date.now()}`)
+      fetch(`${BASE}/portfolio?_embed=1&per_page=4&orderby=date&order=desc&_=${Date.now()}`)
     ]);
 
     if (!postsRes.ok || !portfolioRes.ok) {
