@@ -22,16 +22,20 @@
 }
 
 @layer components {
+  .blog-body h2 {
+    @apply text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold mb-1;
+  }
+
   .blog-body h3 {
     @apply text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold mb-1;
   }
 
   .blog-body p {
-    @apply text-[20px] mb-7
+    @apply text-[20px] mb-7;
   }
 
   .blog-body hr {
-    @apply border-1 my-4
+    @apply border-1 my-4;
   }
 
   .blog-body ul {
