@@ -5,6 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import IndustrySpotlightSection from "@/components/IndustrySpotlightSection";
+import { toWebP } from "@/utils/data";
+import formatDate from "@/utils/formatDate";
+import { decodeHtml } from "@/utils/decodeHtml";
 
 const AboutSection = dynamic(() => import("@/components/home/AboutSection"));
 const OurAchivementSection = dynamic(() => import("@/components/home/OurAchivementSection"), { ssr: false });
@@ -42,9 +45,17 @@ export async function getStaticProps() {
       image: item?._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/default.webp',
     }));
 
+    const mappedPosts = postsData?.map((post) => ({
+      id: post?.id,
+      title: decodeHtml(post?.title?.rendered),
+      slug: post?.slug,
+      date: formatDate(post?.date),
+      image: toWebP(post?.yoast_head_json?.og_image?.[0]?.url ? post?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268"),
+    }));
+    
     return {
       props: {
-        posts: postsData,
+        posts: mappedPosts,
         portfolio: mappedPortfolio,
       },
       revalidate: 3600,

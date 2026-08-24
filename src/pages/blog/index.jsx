@@ -6,6 +6,56 @@ import { useRouter } from 'next/router'
 import HeroSec from '@/components/HeroSec'
 import BlogCard from '@/components/BlogCard'
 import { ArrowRight } from 'lucide-react';
+import { decodeHtml } from '@/utils/decodeHtml';
+import formatDate from '@/utils/formatDate';
+import { toWebP } from '@/utils/data';
+
+export async function getServerSideProps(context) {
+    const page = parseInt(context.query?.page || "1", 10);
+
+    try {
+        const response = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}`);
+
+        if (!response.ok) {
+            return {
+                props: {
+                    posts: [],
+                    totalPages: 1,
+                    currentPage: page,
+                },
+            };
+        }
+
+        const posts = await response.json();
+        const totalPages = parseInt(response.headers.get("X-WP-TotalPages")) || 1;
+
+        const mappedPosts = posts?.map((post) => ({
+            id: post?.id,
+            title: decodeHtml(post?.title?.rendered),
+            slug: post?.slug,
+            date: formatDate(post?.date),
+            image: toWebP(post?.yoast_head_json?.og_image?.[0]?.url ? post?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268"),
+        }));
+
+        return {
+            props: {
+                posts: mappedPosts,
+                totalPages,
+                currentPage: page,
+            },
+        };
+    } catch (error) {
+        console.error("Blog fetch error:", error);
+
+        return {
+            props: {
+                posts: [],
+                totalPages: 1,
+                currentPage: page,
+            },
+        };
+    }
+}
 
 export default function Blogs({ posts, totalPages, currentPage }) {
     const router = useRouter();
@@ -125,195 +175,43 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                             ))}
                         </motion.div>
 
-                        {/* {posts?.length > 18 &&
-                            <div className="grid row-padding-top">
-                                <div className="w-full">
-                                    <div className="blog-pagination">
-                                        <nav aria-label="Page navigation example">
-                                            <ul className="flex flex-wrap justify-end items-center custom-ul gap-2">
-                                                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                                                    <li
-                                                        key={page}
-                                                        className={`${page === currentPage ? 'active' : ''}`}
-                                                    >
-                                                        <span
-                                                            className="inline-flex px-3 py-2 text-sm leading-tight rounded-md"
-                                                            onClick={(e) => {
-                                                                e.preventDefault();
-                                                                handlePageChange(page);
-                                                            }}
-                                                        >
-                                                            {page}
-                                                        </span>
-                                                    </li>
-                                                ))}
+                        {totalPages > 1 && (
+                            <div className="pt-15">
+                                <ul className="flex flex-wrap justify-end items-center gap-3">
+                                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                                        <li key={page} className="flex items-center justify-center">
+                                            <span
+                                                className={`border border-1 rounded-full w-17.5 h-17.5 flex items-center justify-center text-[18px] font-semibold hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer ${page === currentPage ? 'bg-primary text-white' : ''}`}
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    handlePageChange(page);
+                                                }}
+                                            >
+                                                {page}
+                                            </span>
+                                        </li>
+                                    ))}
 
-                                                {currentPage < totalPages && (
-                                                    <li className="inline-block">
-                                                        <span
-                                                            className="inline-flex px-3 py-2 text-sm leading-tight rounded-md next"
-                                                            onClick={(e) => {
-                                                                e.preventDefault();
-                                                                handlePageChange(currentPage + 1);
-                                                            }}
-                                                        >
-                                                            Next <ArrowRight size={18} />
-                                                        </span>
-                                                    </li>
-                                                )}
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
+                                    {currentPage < totalPages && (
+                                        <li className="flex items-center justify-center">
+                                            <span
+                                                className="inline-flex items-center gap-2 px-3 py-2 text-[18px] font-semibold leading-tight next cursor-pointer hover:text-primary transition-all duration-300"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    handlePageChange(currentPage + 1);
+                                                }}
+                                            >
+                                                Next <ArrowRight size={18} />
+                                            </span>
+                                        </li>
+                                    )}
+                                </ul>
                             </div>
-                        } */}
+                        )}
                     </div>
                 </section>
             </main>
             <Footer />
         </>
     )
-}
-
-// export async function getServerSideProps(context) {
-//     const page = parseInt(context.query.page || 1, 10);
-
-//     try {
-//         const response = await fetch(`http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}`);
-//         if (!response.ok) {
-//             return {
-//                 props: {
-//                     posts: [],
-//                     totalPages: 1,
-//                     currentPage: page,
-//                 },
-//             };
-//         }
-
-//         const data = await response.json();
-//         const totalPages = parseInt(response.headers.get('X-WP-TotalPages')) || 1;
-
-//         return {
-//             props: {
-//                 posts: data,
-//                 totalPages,
-//                 currentPage: page,
-//             },
-//         };
-//     } catch (error) {
-//         console.error('SSR fetch error:', error);
-//         return {
-//             props: {
-//                 posts: [],
-//                 totalPages: 1,
-//                 currentPage: page,
-//             },
-//         };
-//     }
-// }
-// export async function getServerSideProps(context) {
-//     const page = parseInt(context.query.page || 1, 10);
-//     const timestamp = Date.now(); // prevents cached responses
-
-//     try {
-//         const response = await fetch(
-//             `https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}&_=${timestamp}`,
-//             { cache: 'no-store' } // tells Next.js not to cache this request
-//         );
-
-//         if (!response.ok) {
-//             return {
-//                 props: {
-//                     posts: [],
-//                     totalPages: 1,
-//                     currentPage: page,
-//                 },
-//             };
-//         }
-
-//         const data = await response.json();
-//         const totalPages = parseInt(response.headers.get('X-WP-TotalPages')) || 1;
-
-//         return {
-//             props: {
-//                 posts: data,
-//                 totalPages,
-//                 currentPage: page,
-//             },
-//         };
-//     } catch (error) {
-//         console.error('SSR fetch error:', error);
-//         return {
-//             props: {
-//                 posts: [],
-//                 totalPages: 1,
-//                 currentPage: page,
-//             },
-//         };
-//     }
-// }
-
-// export async function getStaticPaths() {
-//     try {
-//         const response = await fetch(
-//             "https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18"
-//         );
-
-//         const totalPages = parseInt(response.headers.get("X-WP-TotalPages")) || 1;
-
-//         return {
-//             paths: Array.from({ length: totalPages }, (_, i) => ({
-//                 params: { page: String(i + 1) },
-//             })),
-//             fallback: "blocking",
-//         };
-//     } catch (error) {
-//         console.error("Blog pagination paths error:", error);
-
-//         return {
-//             paths: [],
-//             fallback: "blocking",
-//         };
-//     }
-// }
-
-export async function getStaticProps({ params }) {
-    const page = parseInt(params?.page || "1", 10);
-
-    try {
-        const response = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}`);
-
-        if (!response.ok) {
-            return {
-                props: {
-                    posts: [],
-                    totalPages: 1,
-                    currentPage: page,
-                },
-            };
-        }
-
-        const posts = await response.json();
-        const totalPages = parseInt(response.headers.get("X-WP-TotalPages")) || 1;
-
-        return {
-            props: {
-                posts,
-                totalPages,
-                currentPage: page,
-            },
-            revalidate: 60,
-        };
-    } catch (error) {
-        console.error("Blog fetch error:", error);
-
-        return {
-            props: {
-                posts: [],
-                totalPages: 1,
-                currentPage: page,
-            },
-            revalidate: 60,
-        };
-    }
 }

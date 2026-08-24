@@ -6,6 +6,8 @@ import React from 'react'
 import { motion } from "framer-motion";
 import BlogCard from '@/components/BlogCard';
 import formatDate from '@/utils/formatDate';
+import { decodeHtml } from '@/utils/decodeHtml';
+import { toWebP } from '@/utils/data';
 
 export async function getStaticPaths() {
     try {
@@ -50,14 +52,22 @@ export async function getStaticProps({ params }) {
         const morePostsResponse = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=10&page=1&orderby=date&order=desc&_=${Date.now()}`);
         const morePosts = await morePostsResponse.json();
 
+        const mappedPosts = morePosts?.map((post) => ({
+            id: post?.id,
+            title: decodeHtml(post?.title?.rendered),
+            slug: post?.slug,
+            date: formatDate(post?.date),
+            image: toWebP(post?.yoast_head_json?.og_image?.[0]?.url ? post?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268"),
+        }));
+
         return {
             props: {
                 data: {
                     authorName: post?._embedded?.author?.[0]?.name || "",
                     tags,
-                    categories,
+                    categories: categories.map((category) => decodeHtml(category)),
                     featured_media: post?._embedded?.["wp:featuredmedia"]?.[0] || null,
-                    title: post?.title?.rendered || "",
+                    title: decodeHtml(post?.title?.rendered) || "",
                     content: post?.content?.rendered || "",
                     date: post?.date || "",
                     ogTitle: post?.yoast_head_json?.og_title || "",
@@ -69,7 +79,7 @@ export async function getStaticProps({ params }) {
                     modified: post?.modified || "",
                     readingTime: post?.yoast_head_json?.twitter_misc?.["Estimated reading time"] || "",
                 },
-                morePosts: morePosts.filter((p) => p.id !== post.id).splice(0, 3), // Limit to 3 more posts
+                morePosts: mappedPosts.filter((p) => p.id !== post.id).splice(0, 3), // Limit to 3 more posts
             },
             revalidate: 60,
         };
@@ -97,18 +107,9 @@ export default function BlogDetail({ data, morePosts }) {
     };
 
     function extractFAQ(html) {
-        return [...html.matchAll(
-            /<strong>\s*Q:\s*(.*?)\s*<\/strong>\s*<br\s*\/?>\s*A:\s*([\s\S]*?)<\/p>/gi
-        )].map(([, question, answer]) => ({
-            question: question
-                .replace(/&#8217;/g, "'")
-                .replace(/&amp;/g, "&")
-                .trim(),
-            answer: answer
-                .replace(/<[^>]+>/g, "")
-                .replace(/&#8217;/g, "'")
-                .replace(/&amp;/g, "&")
-                .trim()
+        return [...html.matchAll(/<strong>\s*Q:\s*(.*?)\s*<\/strong>\s*<br\s*\/?>\s*A:\s*([\s\S]*?)<\/p>/gi)].map(([, question, answer]) => ({
+            question: question.replace(/&#8217;/g, "'").replace(/&amp;/g, "&").trim(),
+            answer: answer.replace(/<[^>]+>/g, "").replace(/&#8217;/g, "'").replace(/&amp;/g, "&").trim()
         }));
     }
     const faqs = extractFAQ(data.content);
@@ -306,8 +307,8 @@ export default function BlogDetail({ data, morePosts }) {
                                 />
 
                                 <ul className="flex gap-2 flex-wrap text-[20px] capitalize">
-                                    {data?.tags?.map(item => (
-                                        <li>#{item}</li>
+                                    {data?.tags?.map((item, i) => (
+                                        <li key={i}>#{item}</li>
                                     ))}
                                 </ul>
                             </div>
