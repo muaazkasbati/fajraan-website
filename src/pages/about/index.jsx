@@ -315,7 +315,7 @@ export default function About() {
 
                     </motion.div>
                 </section>
-                <TeamSection />
+                {/* <TeamSection /> */}
                 <TestimonialSection aboutPage />
             </main>
             <Footer />
