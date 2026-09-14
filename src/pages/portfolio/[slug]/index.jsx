@@ -50,30 +50,30 @@ import formatDate from '@/utils/formatDate'
 //   }
 // }
 
-export async function getStaticPaths() {
-  try {
-    const res = await fetch("https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?per_page=100");
-    const items = await res.json();
+// export async function getStaticPaths() {
+//   try {
+//     const res = await fetch("https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?per_page=100");
+//     const items = await res.json();
 
-    const paths = items.map((item) => ({
-      params: { slug: item.slug },
-    }));
+//     const paths = items.map((item) => ({
+//       params: { slug: item.slug },
+//     }));
 
-    return {
-      paths,
-      fallback: "blocking",
-    };
-  } catch (error) {
-    console.error("Portfolio paths error:", error);
+//     return {
+//       paths,
+//       fallback: "blocking",
+//     };
+//   } catch (error) {
+//     console.error("Portfolio paths error:", error);
 
-    return {
-      paths: [],
-      fallback: "blocking",
-    };
-  }
-}
+//     return {
+//       paths: [],
+//       fallback: "blocking",
+//     };
+//   }
+// }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { slug } = params;
 
   try {
