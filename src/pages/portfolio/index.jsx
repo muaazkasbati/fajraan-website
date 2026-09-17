@@ -7,19 +7,18 @@ import React from 'react'
 
 export async function getStaticProps() {
     try {
-        const res = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?_embed&per_page=20&_=${Date.now()}`);
+        const res = await fetch(`https://cms-backend.fajraan.com/api/posts/projects?limit=50&page=1`);
         if (!res.ok) throw new Error('Failed to fetch portfolio');
         const data = await res.json();
 
-        const mapped = data.map((item) => ({
-            id: item.id,
-            title: item.title.rendered,
-            slug: item.slug,
-            link: item.link,
-            year: item.meta?.year || '—',
-            link: item?.meta?.custom_link || '#',
-            category: item._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
-            image: item._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/default.webp',
+        const mapped = data?.data.map((item) => ({
+            id: item._id,
+            title: item?.dynamicFields?.title,
+            slug: item?.dynamicFields?.slug || '',
+            link: item?.dynamicFields?.link || '#',
+            year: item?.dynamicFields?.year || '—',
+            category: item?.categories?.[0]?.name || 'Uncategorized',
+            image: item?.dynamicFields?.image || '/images/default.webp',
         }));
 
         return {

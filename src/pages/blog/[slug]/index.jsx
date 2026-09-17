@@ -6,17 +6,15 @@ import React from 'react'
 import { motion } from "framer-motion";
 import BlogCard from '@/components/BlogCard';
 import formatDate from '@/utils/formatDate';
-import { decodeHtml } from '@/utils/decodeHtml';
-import { toWebP } from '@/utils/data';
 
 export async function getStaticPaths() {
     try {
-        const response = await fetch("https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=100");
+        const response = await fetch("https://cms-backend.fajraan.com/api/posts/blogs?limit=100");
         const posts = await response.json();
 
         return {
-            paths: posts.map((post) => ({
-                params: { slug: post.slug },
+            paths: posts.data.map((post) => ({
+                params: { slug: post.dynamicFields.slug },
             })),
             fallback: "blocking",
         };
@@ -34,52 +32,53 @@ export async function getStaticProps({ params }) {
     const { slug } = params;
 
     try {
-        const response = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?_embed&slug=${slug}`);
+        const response = await fetch(`https://cms-backend.fajraan.com/api/posts/blogs/${slug}`);
 
         if (!response.ok) return { notFound: true };
 
         const data = await response.json();
 
-        if (!data || data.length === 0) {
+        if (!data?.data) {
             return { notFound: true };
         }
 
-        const post = data[0];
-        const terms = post?._embedded?.["wp:term"]?.flat() || [];
-        const categories = terms.filter((term) => term.taxonomy === "category").map((term) => term.name);
-        const tags = terms.filter((term) => term.taxonomy === "post_tag").map((term) => term.name);
-
-        const morePostsResponse = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=10&page=1&orderby=date&order=desc&_=${Date.now()}`);
+        const post = data?.data;
+        const fields = post.dynamicFields || {};
+        const seo = post.seo || {};
+        const canonicalUrl = seo.canonical || `${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${fields.slug}`;
+        const morePostsResponse = await fetch("https://cms-backend.fajraan.com/api/posts/blogs?limit=10&page=1");
         const morePosts = await morePostsResponse.json();
 
-        const mappedPosts = morePosts?.map((post) => ({
-            id: post?.id,
-            title: decodeHtml(post?.title?.rendered),
-            slug: post?.slug,
-            date: formatDate(post?.date),
-            image: toWebP(post?.yoast_head_json?.og_image?.[0]?.url ? post?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268"),
+        const mappedPosts = morePosts?.data?.map((relatedPost) => ({
+            id: relatedPost?._id,
+            title: relatedPost?.dynamicFields?.title,
+            slug: relatedPost?.dynamicFields?.slug,
+            date: formatDate(relatedPost?.publishDate),
+            image: relatedPost?.dynamicFields?.featured_image,
         }));
 
         return {
             props: {
                 data: {
-                    authorName: post?._embedded?.author?.[0]?.name || "",
-                    tags,
-                    categories: categories.map((category) => decodeHtml(category)),
-                    featured_media: post?._embedded?.["wp:featuredmedia"]?.[0] || null,
-                    title: decodeHtml(post?.title?.rendered) || "",
-                    content: post?.content?.rendered || "",
-                    date: post?.date || "",
-                    ogTitle: post?.yoast_head_json?.og_title || "",
-                    ogDescription: post?.yoast_head_json?.og_description || "",
-                    ogImage: post?.yoast_head_json?.og_image?.[0] || null,
-                    metaDescription: post?.yoast_head_json?.description || "",
-                    locale: post?.yoast_head_json?.og_locale || "",
-                    published_time: post?.yoast_head_json?.article_published_time || "",
-                    modified: post?.modified || "",
-                    readingTime: post?.yoast_head_json?.twitter_misc?.["Estimated reading time"] || "",
+                    ...post,
+                    ...fields,
+                    seo,
+                    title: fields.title || "",
+                    content: fields.content || "",
+                    date: post.publishDate || post.createdAt || "",
+                    authorName: post.author?.fullName || "",
+                    categories: post.categories?.map((category) => category.name) || [],
+                    tags: post.tags?.map((tag) => tag.name) || [],
+                    image: fields.featured_image || "",
+                    canonicalUrl,
+                    metaTitle: seo.metaTitle || fields.metaTitle || fields.title || "",
+                    metaDescription: seo.metaDescription || fields.metaDescription || "",
+                    seoKeywords: seo.metaKeywords || [],
+                    published_time: post.publishDate || "",
+                    modified: post.updatedAt || post.publishDate || "",
+                    readingTime: fields.read_time || "",
                 },
-                morePosts: mappedPosts.filter((p) => p.id !== post.id).splice(0, 3), // Limit to 3 more posts
+                morePosts: (mappedPosts || []).filter((relatedPost) => relatedPost.id !== post._id).slice(0, 3),
             },
             revalidate: 60,
         };
@@ -117,47 +116,47 @@ export default function BlogDetail({ data, morePosts }) {
     return (
         <>
             <Head>
-                <title>{data?.ogTitle}</title>
+                <title>{data?.metaTitle}</title>
 
                 <meta name="description" content={data?.metaDescription} />
                 <meta name="keywords" content={data?.seoKeywords?.join(", ") || data?.tags?.join(", ")} />
                 <meta name="author" content={data?.authorName || "Fajraan Tech"} />
 
-                <link rel="canonical" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`} />
+                <link rel="canonical" href={data?.canonicalUrl} />
 
-                <link rel="alternate" hrefLang="en" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`} />
-                <link rel="alternate" hrefLang="x-default" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`} />
+                <link rel="alternate" hrefLang="en" href={data?.canonicalUrl} />
+                <link rel="alternate" hrefLang="x-default" href={data?.canonicalUrl} />
 
-                <meta property="og:locale" content={data?.locale} />
+                <meta property="og:locale" content="en_US" />
                 <meta property="og:type" content="article" />
-                <meta property="og:title" content={data?.ogTitle} />
-                <meta property="og:description" content={data?.ogDescription} />
-                <meta property="og:url" content={`${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`} />
+                <meta property="og:title" content={data?.metaTitle} />
+                <meta property="og:description" content={data?.metaDescription} />
+                <meta property="og:url" content={data?.canonicalUrl} />
                 <meta property="og:site_name" content="Fajraan Tech" />
 
                 <meta property="article:published_time" content={data?.published_time} />
                 <meta property="article:modified_time" content={data?.modified} />
                 <meta property="article:author" content={data?.authorName} />
 
-                <meta property="og:image" content={data?.ogImage?.url} />
-                <meta property="og:image:width" content={data?.ogImage?.width || 1200} />
-                <meta property="og:image:height" content={data?.ogImage?.height || 630} />
-                <meta property="og:image:alt" content={data?.ogTitle} />
+                <meta property="og:image" content={data?.image} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:image:alt" content={data?.title} />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@FajraanTech" />
                 <meta name="twitter:creator" content="@FajraanTech" />
-                <meta name="twitter:title" content={data?.ogTitle} />
-                <meta name="twitter:description" content={data?.ogDescription} />
-                <meta name="twitter:image" content={data?.ogImage?.url} />
-                <meta name="twitter:image:alt" content={data?.ogTitle} />
+                <meta name="twitter:title" content={data?.metaTitle} />
+                <meta name="twitter:description" content={data?.metaDescription} />
+                <meta name="twitter:image" content={data?.image} />
+                <meta name="twitter:image:alt" content={data?.title} />
 
                 <meta name="twitter:label1" content="Written by" />
                 <meta name="twitter:data1" content={data?.authorName} />
                 <meta name="twitter:label2" content="Reading time" />
                 <meta name="twitter:data2" content={data?.readingTime} />
 
-                <meta name="DC.title" content={data?.ogTitle} />
+                <meta name="DC.title" content={data?.metaTitle} />
                 <meta name="DC.creator" content={data?.authorName} />
                 <meta name="DC.description" content={data?.metaDescription} />
                 <meta name="DC.publisher" content="Fajraan Tech" />
@@ -169,9 +168,9 @@ export default function BlogDetail({ data, morePosts }) {
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "Article",
-                            headline: data?.ogTitle,
+                            headline: data?.title,
                             description: data?.metaDescription,
-                            image: [data?.ogImage?.url],
+                            image: [data?.image],
                             author: {
                                 "@type": "Person",
                                 name: data?.authorName
@@ -217,7 +216,7 @@ export default function BlogDetail({ data, morePosts }) {
                                     "@type": "ListItem",
                                     position: 3,
                                     name: data?.title || data?.ogTitle,
-                                    item: `${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${slug}`
+                                    item: data?.canonicalUrl
                                 }
                             ]
                         })
@@ -275,10 +274,10 @@ export default function BlogDetail({ data, morePosts }) {
                             viewport={{ once: true }}
                         >
                             <img
-                                alt="blog"
+                                alt={data?.title}
                                 className="w-full block"
                                 style={{ height: '722px', objectFit: 'cover' }}
-                                src={data?.featured_media?.source_url_webp || data?.featured_media?.source_url || data?.featured_media?.link}
+                                src={data?.image}
                             />
                         </motion.div>
                         <motion.div

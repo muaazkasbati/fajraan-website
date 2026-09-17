@@ -14,7 +14,7 @@ export async function getServerSideProps(context) {
     const page = parseInt(context.query?.page || "1", 10);
 
     try {
-        const response = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=18&page=${page}`);
+        const response = await fetch(`https://cms-backend.fajraan.com/api/posts/blogs?limit=18&page=${page}`);
 
         if (!response.ok) {
             return {
@@ -27,14 +27,14 @@ export async function getServerSideProps(context) {
         }
 
         const posts = await response.json();
-        const totalPages = parseInt(response.headers.get("X-WP-TotalPages")) || 1;
+        const totalPages = posts?.pagination?.pages || 1;
 
-        const mappedPosts = posts?.map((post) => ({
-            id: post?.id,
-            title: decodeHtml(post?.title?.rendered),
-            slug: post?.slug,
-            date: formatDate(post?.date),
-            image: toWebP(post?.yoast_head_json?.og_image?.[0]?.url ? post?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268"),
+        const mappedPosts = posts?.data?.map((post) => ({
+            id: post?._id,
+            title: post?.dynamicFields?.title,
+            slug: post?.dynamicFields?.slug,
+            date: formatDate(post?.publishDate),
+            image: post?.dynamicFields?.featured_image,
         }));
 
         return {
@@ -168,7 +168,7 @@ export default function Blogs({ posts, totalPages, currentPage }) {
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="show"
-                            viewport={{ once: true, amount: 0.2 }}
+                            // viewport={{ once: true, amount: 0.2 }}
                         >
                             {posts?.map((data, index) => (
                                 <BlogCard data={data} key={index} />

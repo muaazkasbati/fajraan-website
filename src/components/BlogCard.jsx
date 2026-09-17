@@ -1,8 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import Link from 'next/link';
-import { toWebP } from '@/utils/data';
-import formatDate from '@/utils/formatDate';
 
 export default function BlogCard({ data }) {
     const cardVariants = {

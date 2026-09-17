@@ -18,11 +18,11 @@ const BlogSection = dynamic(() => import("@/components/home/BlogSection"), { ssr
 
 export async function getStaticProps() {
   try {
-    const BASE = "https://blog.devsolsystems.co.uk/wp-json/wp/v2";
+    const BASE = "https://cms-backend.fajraan.com/api/posts";
 
     const [postsRes, portfolioRes] = await Promise.all([
-      fetch(`${BASE}/posts?per_page=3&orderby=date&order=desc&_=${Date.now()}`),
-      fetch(`${BASE}/portfolio?_embed=1&per_page=4&orderby=date&order=desc&_=${Date.now()}`)
+      fetch(`${BASE}/blogs?limit=3&page=1`),
+      fetch(`${BASE}/projects?limit=4&page=1`)
     ]);
 
     if (!postsRes.ok || !portfolioRes.ok) {
@@ -34,23 +34,22 @@ export async function getStaticProps() {
       portfolioRes.json()
     ]);
 
-    const mappedPortfolio = portfolioData?.map((item) => ({
-      id: item?.id,
-      title: item?.title?.rendered,
-      slug: item?.slug,
-      link: item?.link,
-      year: item?.meta?.year || '—',
-      link: item?.meta?.custom_link || '#',
-      category: item?._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
-      image: item?._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/default.webp',
+    const mappedPortfolio = portfolioData?.data?.map((item) => ({
+      id: item?._id,
+      title: item?.dynamicFields?.title,
+      slug: item?.dynamicFields?.slug || '',
+      link: item?.dynamicFields?.link || '#',
+      year: item?.dynamicFields?.year || '—',
+      category: item?.categories?.[0]?.name || 'Uncategorized',
+      image: item?.dynamicFields?.image || '/images/default.webp',
     }));
 
-    const mappedPosts = postsData?.map((post) => ({
-      id: post?.id,
-      title: decodeHtml(post?.title?.rendered),
-      slug: post?.slug,
-      date: formatDate(post?.date),
-      image: toWebP(post?.yoast_head_json?.og_image?.[0]?.url ? post?.yoast_head_json.og_image[0].url : "https://via.placeholder.com/415x268"),
+    const mappedPosts = postsData?.data?.map((post) => ({
+      id: post?._id,
+      title: post?.dynamicFields?.title,
+      slug: post?.dynamicFields?.slug || '',
+      date: formatDate(post?.publishDate),
+      image: post?.dynamicFields?.featured_image || '/images/default.webp',
     }));
     
     return {

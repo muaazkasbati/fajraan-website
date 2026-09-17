@@ -8,129 +8,81 @@ import { motion } from 'framer-motion';
 import Button from '@/components/Button'
 import formatDate from '@/utils/formatDate'
 
-// export async function getServerSideProps({ params }) {
-//   const { slug } = params;
-
-//   try {
-//     const res = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?slug=${slug}&_embed&_=${Date.now()}`);
-//     if (!res.ok) return { notFound: true };
-
-//     const result = await res.json();
-//     if (!result || result.length === 0) return { notFound: true };
-
-//     const item = result[0];
-//     const terms = item?._embedded?.['wp:term']?.flat() || [];
-//     const categories = terms.filter(term => term.taxonomy === 'portfolio_category').map(term => term.name);
-
-//     const data = {
-//       id: item.id,
-//       title: item.title?.rendered || '',
-//       slug: item.slug,
-//       date: item.date,
-//       modified: item.modified,
-//       content: item.content?.rendered || '',
-//       excerpt: item.excerpt?.rendered || '',
-//       year: item.meta?.year || null,
-//       client: item.meta?.client || null,
-//       service: item.meta?.service || null,
-//       stack: item.meta?.stack || null,
-//       externalLink: item.meta?.custom_link || null,
-//       category: item._embedded?.['wp:term']?.[0]?.[0]?.name || null,
-//       image: item._embedded?.['wp:featuredmedia']?.[0]?.source_url || null,
-//       yoast: item.yoast_head_json || null,
-//       categories: categories
-//     };
-
-//     return {
-//       props: { data },
-//     };
-//   } catch (error) {
-//     console.error('Portfolio detail page error:', error);
-//     return { notFound: true };
-//   }
-// }
-
-// export async function getStaticPaths() {
-//   try {
-//     const res = await fetch("https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?per_page=100");
-//     const items = await res.json();
-
-//     const paths = items.map((item) => ({
-//       params: { slug: item.slug },
-//     }));
-
-//     return {
-//       paths,
-//       fallback: "blocking",
-//     };
-//   } catch (error) {
-//     console.error("Portfolio paths error:", error);
-
-//     return {
-//       paths: [],
-//       fallback: "blocking",
-//     };
-//   }
-// }
-
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const { slug } = params;
 
   try {
-    const res = await fetch(`https://blog.devsolsystems.co.uk/wp-json/wp/v2/portfolio?slug=${slug}&_embed`);
-
+    const res = await fetch(`https://cms-backend.fajraan.com/api/posts/projects/${slug}`);
     if (!res.ok) return { notFound: true };
 
     const result = await res.json();
+    if (!result?.data) return { notFound: true };
 
-    if (!result || result.length === 0) {
-      return { notFound: true };
-    }
-
-    const item = result[0];
-    const terms = item?._embedded?.["wp:term"]?.flat() || [];
-
-    const categories = terms
-      .filter((term) => term.taxonomy === "portfolio_category")
-      .map((term) => term.name);
+    const item = result?.data;
+    const fields = item.dynamicFields || {};
+    const seo = item.seo || {};
+    const getAssetUrl = (value) => value?.match(/\((https?:\/\/[^)]+)\)/)?.[1] || value || null;
 
     const data = {
-      id: item.id,
-      title: item.title?.rendered || "",
-      slug: item.slug,
-      date: item.date,
-      modified: item.modified,
-      content: item.content?.rendered || "",
-      excerpt: item.excerpt?.rendered || "",
-      year: item.meta?.year || null,
-      client: item.meta?.client || null,
-      service: item.meta?.service || null,
-      stack: item.meta?.stack || null,
-      externalLink: item.meta?.custom_link || null,
-      category: item._embedded?.["wp:term"]?.[0]?.[0]?.name || null,
-      image: item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null,
-      yoast: item.yoast_head_json || null,
-      categories,
+      ...item,
+      ...fields,
+      id: item._id,
+      title: fields.title || '',
+      slug: fields.slug || slug,
+      date: item.publishDate || item.createdAt || '',
+      modified: item.updatedAt || item.publishDate || '',
+      content: fields.content || '',
+      excerpt: fields.excerpt || '',
+      year: fields.year || null,
+      client: fields.client || null,
+      service: fields.service || null,
+      stack: fields.stack || null,
+      externalLink: getAssetUrl(fields.externalLink),
+      image: getAssetUrl(fields.image),
+      seo,
+      categories: item.categories?.map((category) => category.name) || [],
+      tags: item.tags?.map((tag) => tag.name) || [],
+      authorName: item.author?.fullName || '',
+      canonicalUrl: seo.canonical || `${process.env.NEXT_PUBLIC_APPFRONTURL}portfolio/${fields.slug || slug}`,
     };
 
     return {
       props: { data },
-      revalidate: 60, // regenerate page every 60 seconds
     };
   } catch (error) {
-    console.error("Portfolio detail page error:", error);
+    console.error('Portfolio detail page error:', error);
+    return { notFound: true };
+  }
+}
+
+export async function getStaticPaths() {
+  try {
+    const res = await fetch("https://cms-backend.fajraan.com/api/posts/projects?limit=100&page=1");
+    const result = await res.json();
+
+    const paths = (result?.data || []).map((item) => ({
+      params: { slug: item?.dynamicFields?.slug },
+    }));
 
     return {
-      notFound: true,
+      paths,
+      fallback: "blocking",
+    };
+  } catch (error) {
+    console.error("Portfolio paths error:", error);
+
+    return {
+      paths: [],
+      fallback: "blocking",
     };
   }
 }
 
 export default function PortfolioDetail({ data }) {
-  const seoTitle = data?.yoast?.og_title || data?.title || 'Portfolio | Fajraan Tech';
-  const seoDescription = data?.yoast?.description || data?.yoast?.og_description || data?.excerpt?.replace(/<[^>]*>/g, '') || '';
-  const ogImage = data?.yoast?.og_image?.[0]?.url || data?.image || `${process.env.NEXT_PUBLIC_APPFRONTURL}images/og/og-image.webp`;
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_APPFRONTURL}portfolio/${data?.slug}`;
+  const seoTitle = data?.seo?.metaTitle || data?.title || 'Portfolio | Fajraan Tech';
+  const seoDescription = data?.seo?.metaDescription || data?.excerpt || '';
+  const ogImage = data?.image || `${process.env.NEXT_PUBLIC_APPFRONTURL}images/og/og-image.webp`;
+  const canonicalUrl = data?.canonicalUrl;
 
   const images = [
     'https://quanto-next.vercel.app/images/portfolio-details/portfolio-details-fig-1.png',
@@ -141,7 +93,7 @@ export default function PortfolioDetail({ data }) {
   const details = [
     { title: 'Category', value: data?.categories?.join(", ") },
     { title: 'Service', value: data?.service },
-    { title: 'Date', value: formatDate(data?.date) },
+    { title: 'Year', value: data?.year || formatDate(data?.date) },
     { title: 'Client', value: data?.client },
     { title: 'Stack', value: data?.stack },
   ];
@@ -152,21 +104,26 @@ export default function PortfolioDetail({ data }) {
         <title>{seoTitle}</title>
 
         <meta name="description" content={seoDescription} />
+        <meta name="keywords" content={data?.seo?.metaKeywords?.join(', ')} />
+        <meta name="author" content={data?.authorName || 'Fajraan Tech'} />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href={canonicalUrl} />
 
         <link rel="alternate" hrefLang="en" href={canonicalUrl} />
         <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 
-        <meta property="og:type" content={data?.yoast?.og_type || 'website'} />
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:image:width" content={data?.yoast?.og_image?.[0]?.width || 1200} />
-        <meta property="og:image:height" content={data?.yoast?.og_image?.[0]?.height || 630} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content={seoTitle} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="Fajraan Tech" />
+        <meta property="article:published_time" content={data?.date} />
+        <meta property="article:modified_time" content={data?.modified} />
+        <meta property="article:author" content={data?.authorName || 'Fajraan Tech'} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FajraanTech" />
@@ -188,6 +145,11 @@ export default function PortfolioDetail({ data }) {
               image: ogImage,
               dateCreated: data?.date,
               dateModified: data?.modified,
+              datePublished: data?.date,
+              author: {
+                "@type": "Person",
+                name: data?.authorName || "Fajraan Tech",
+              },
               creator: {
                 "@type": "Organization",
                 name: "Fajraan Tech",
@@ -247,7 +209,7 @@ export default function PortfolioDetail({ data }) {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.3, }}
               >
-                <h2 className="text-[60px] md:text-[70px] lg:text-[90px] xl:text-[100px] leading-[110%] font-semibold">
+                <h2 className="text-[60px] md:text-[70px] lg:text-[90px] xl:text-[100px] leading-[110%] font-semibold text-primary">
                   Project Overview
                 </h2>
               </motion.div>
@@ -259,7 +221,8 @@ export default function PortfolioDetail({ data }) {
                   whileInView={{ opacity: 1, rotateX: 0, transformPerspective: 400, transformOrigin: "center top", }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, ease: "easeOut", delay: 0.3, }}
-                  className="text-[20px] space-y-4"
+                  // className="text-[20px] space-y-4"
+                  className="blog-body"
                   dangerouslySetInnerHTML={{ __html: data?.content }}
                 />
                 <motion.div

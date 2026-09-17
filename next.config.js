@@ -20,7 +20,7 @@ module.exports = withBundleAnalyzer({
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'blog.devsolsystems.co.uk',
+        hostname: 'res.cloudinary.com',
       },
     ],
   },
