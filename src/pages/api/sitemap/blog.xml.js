@@ -3,7 +3,7 @@
 export default async function handler(req, res) {
   try {
     const siteUrl = process.env.NEXT_PUBLIC_APPFRONTURL || 'https://www.fajraan.com';
-    const WP_API = 'http://blog.devsolsystems.co.uk/wp-json/wp/v2/posts?per_page=100';
+    const WP_API = 'https://cms-backend.fajraan.com/api/posts/blogs?limit=100&page=1';
 
     // Fetch latest posts
     const response = await fetch(WP_API);
@@ -18,8 +18,8 @@ export default async function handler(req, res) {
     xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
     posts.forEach((post) => {
-      const slug = post.slug;
-      const lastmod = post.modified || new Date().toISOString();
+      const slug = post.dynamicFields.slug;
+      const lastmod = post?.publishDate || new Date().toISOString();
 
       xml += `  <url>\n`;
       xml += `    <loc>${siteUrl}blog/${slug}</loc>\n`;
