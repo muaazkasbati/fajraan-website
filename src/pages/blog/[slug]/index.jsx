@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
         return {
             paths: posts.data.map((post) => ({
-                params: { slug: post.dynamicFields.slug },
+                params: { slug: post?.dynamicFields?.slug },
             })),
             fallback: "blocking",
         };
@@ -107,11 +107,11 @@ export default function BlogDetail({ data, morePosts }) {
 
     function extractFAQ(html) {
         return [...html.matchAll(/<strong>\s*Q:\s*(.*?)\s*<\/strong>\s*<br\s*\/?>\s*A:\s*([\s\S]*?)<\/p>/gi)].map(([, question, answer]) => ({
-            question: question.replace(/&#8217;/g, "'").replace(/&amp;/g, "&").trim(),
-            answer: answer.replace(/<[^>]+>/g, "").replace(/&#8217;/g, "'").replace(/&amp;/g, "&").trim()
+            question: question?.replace(/&#8217;/g, "'").replace(/&amp;/g, "&").trim(),
+            answer: answer?.replace(/<[^>]+>/g, "").replace(/&#8217;/g, "'").replace(/&amp;/g, "&").trim()
         }));
     }
-    const faqs = extractFAQ(data.content);
+    const faqs = extractFAQ(data?.content);
 
     return (
         <>
@@ -229,12 +229,12 @@ export default function BlogDetail({ data, morePosts }) {
                             __html: JSON.stringify({
                                 "@context": "https://schema.org",
                                 "@type": "FAQPage",
-                                mainEntity: faqs.map(faq => ({
+                                mainEntity: faqs?.map(faq => ({
                                     "@type": "Question",
-                                    name: faq.question,
+                                    name: faq?.question,
                                     acceptedAnswer: {
                                         "@type": "Answer",
-                                        text: faq.answer
+                                        text: faq?.answer
                                     }
                                 }))
                             })
@@ -336,7 +336,7 @@ export default function BlogDetail({ data, morePosts }) {
                                 whileInView="show"
                                 viewport={{ once: true, amount: 0.2 }}
                             >
-                                {morePosts.map((data, index) => (
+                                {morePosts?.map((data, index) => (
                                     <BlogCard data={data} key={index} />
                                 ))}
                             </motion.div>
