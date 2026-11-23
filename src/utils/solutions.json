@@ -1,0 +1,537 @@
+[
+  {
+    "slug": "erp-system",
+    "name": "ERP System",
+    "short": "Inventory, purchasing, sales, accounting and HR in one place.",
+    "title": "ERP software that fits how your business runs",
+    "intro": "One system for stock, purchasing, sales, accounting and people, so every team works from the same numbers instead of separate spreadsheets.",
+    "audience": [
+      "Trading and distribution companies",
+      "Manufacturers and workshops",
+      "Multi-branch retail and wholesale",
+      "Service businesses outgrowing spreadsheets"
+    ],
+    "modules": [
+      {
+        "title": "Inventory & warehouses",
+        "text": "Stock across locations, batches and serials, transfers, reorder alerts and stock valuation."
+      },
+      {
+        "title": "Purchasing",
+        "text": "Purchase requests, approvals, supplier quotes, POs and goods received notes."
+      },
+      {
+        "title": "Sales & invoicing",
+        "text": "Quotations, sales orders, delivery notes, invoices and customer statements."
+      },
+      {
+        "title": "Accounting",
+        "text": "Chart of accounts, journals, receivables, payables, VAT/tax and financial reports."
+      },
+      {
+        "title": "HR & payroll",
+        "text": "Employees, attendance, leave and monthly payroll linked to accounting."
+      },
+      {
+        "title": "Reports & dashboards",
+        "text": "Live sales, margin, stock and cash-flow dashboards for owners and managers."
+      }
+    ],
+    "integrations": [
+      "Bank statement import",
+      "E-commerce stores",
+      "POS terminals",
+      "Barcode scanners",
+      "Email & WhatsApp",
+      "Excel import/export"
+    ],
+    "faqs": [
+      {
+        "question": "Can we start with only some modules?",
+        "answer": "Yes. Most clients start with inventory and sales, then switch on purchasing, accounting and HR as their team settles in."
+      },
+      {
+        "question": "Can you move our data from spreadsheets or old software?",
+        "answer": "Yes. We import products, customers, suppliers, opening stock and balances as part of the setup."
+      },
+      {
+        "question": "Does it support multiple branches and currencies?",
+        "answer": "Yes, with per-branch stock and users, and multi-currency invoicing."
+      }
+    ]
+  },
+  {
+    "slug": "school-management-system",
+    "name": "School Management System",
+    "short": "Admissions, attendance, fees, exams and parent portals.",
+    "title": "School management software for the whole campus",
+    "intro": "Run admissions, classes, attendance, fees, exams and parent communication from one system, with apps for teachers, students and parents.",
+    "audience": [
+      "Private schools and school groups",
+      "Colleges and training institutes",
+      "Academies and coaching centres",
+      "Madrasas and Quran academies"
+    ],
+    "modules": [
+      {
+        "title": "Admissions & student records",
+        "text": "Online applications, enrolment, documents and complete student profiles."
+      },
+      {
+        "title": "Attendance",
+        "text": "Daily and period-wise attendance for students and staff, with automatic absence alerts to parents."
+      },
+      {
+        "title": "Fees & finance",
+        "text": "Fee structures, discounts, invoices, online payments, receipts and defaulter reports."
+      },
+      {
+        "title": "Exams & report cards",
+        "text": "Exam schedules, marks entry, grading rules and printable report cards."
+      },
+      {
+        "title": "Timetable & classes",
+        "text": "Classes, sections, subjects, teacher allocation and timetables."
+      },
+      {
+        "title": "Parent & student portal",
+        "text": "Mobile app with homework, results, fees, notices and messages."
+      }
+    ],
+    "integrations": [
+      "Online payment gateways",
+      "SMS & WhatsApp",
+      "Biometric attendance devices",
+      "Google Classroom / Zoom",
+      "Accounting export"
+    ],
+    "faqs": [
+      {
+        "question": "Is there a mobile app for parents?",
+        "answer": "Yes. Parents can see attendance, homework, results and fee status, and pay fees online from their phone."
+      },
+      {
+        "question": "Can it handle multiple campuses?",
+        "answer": "Yes. Each campus has its own data and staff, with consolidated reports for the head office."
+      },
+      {
+        "question": "Can we use our own school branding?",
+        "answer": "Yes. The portal and apps carry your school's name, logo and colours."
+      }
+    ]
+  },
+  {
+    "slug": "courier-management-system",
+    "name": "Courier & Delivery Management",
+    "short": "Bookings, dispatch, rider apps, live tracking and COD.",
+    "title": "Courier and delivery management software",
+    "intro": "Take bookings, assign riders, track every parcel live and settle cash-on-delivery, with apps for your riders and a tracking page for your customers.",
+    "audience": [
+      "Courier and parcel companies",
+      "Last-mile delivery startups",
+      "E-commerce brands running their own fleet",
+      "Restaurants and grocery delivery"
+    ],
+    "modules": [
+      {
+        "title": "Booking & order intake",
+        "text": "Manual, bulk CSV and API bookings, with automatic rates by zone and weight."
+      },
+      {
+        "title": "Dispatch & routing",
+        "text": "Assign riders manually or automatically, with optimised multi-stop routes."
+      },
+      {
+        "title": "Rider app",
+        "text": "Pickups, deliveries, proof of delivery with photo and signature, and failed-attempt reasons."
+      },
+      {
+        "title": "Live tracking",
+        "text": "Real-time rider location for dispatchers and a branded tracking link for customers."
+      },
+      {
+        "title": "COD & settlements",
+        "text": "Cash collection, rider cash reconciliation and merchant payouts."
+      },
+      {
+        "title": "Merchant portal",
+        "text": "Shippers create orders, print labels and download reports themselves."
+      }
+    ],
+    "integrations": [
+      "Shopify / WooCommerce",
+      "Google Maps",
+      "SMS & WhatsApp notifications",
+      "Label printers",
+      "Payment gateways"
+    ],
+    "faqs": [
+      {
+        "question": "Do riders need a special device?",
+        "answer": "No. The rider app runs on ordinary Android and iPhone devices."
+      },
+      {
+        "question": "Can our e-commerce clients send orders automatically?",
+        "answer": "Yes, through store plugins or our API, so orders arrive without manual entry."
+      },
+      {
+        "question": "Does it handle cash on delivery?",
+        "answer": "Yes. Collected cash is tracked per rider and reconciled into merchant payouts."
+      }
+    ]
+  },
+  {
+    "slug": "crm-system",
+    "name": "CRM & Sales Pipeline",
+    "short": "Leads, deals, follow-ups and sales reporting.",
+    "title": "A CRM your sales team will actually use",
+    "intro": "Capture every lead, track every deal and automate follow-ups, in a CRM shaped around your own sales process instead of a generic one.",
+    "audience": [
+      "Sales teams of 2 to 200",
+      "Agencies and consultancies",
+      "Real estate and automotive dealers",
+      "B2B service companies"
+    ],
+    "modules": [
+      {
+        "title": "Lead capture",
+        "text": "Leads from website forms, WhatsApp, ads and email land in one inbox automatically."
+      },
+      {
+        "title": "Pipeline & deals",
+        "text": "Visual pipelines with stages, values and expected close dates."
+      },
+      {
+        "title": "Follow-up automation",
+        "text": "Reminders, sequences and tasks so no lead goes cold."
+      },
+      {
+        "title": "Quotes & proposals",
+        "text": "Branded quotes generated from deal data and sent for e-signature."
+      },
+      {
+        "title": "Team & targets",
+        "text": "Assignments, round-robin routing, targets and leaderboards."
+      },
+      {
+        "title": "Sales reports",
+        "text": "Conversion, source and revenue reports in real time."
+      }
+    ],
+    "integrations": [
+      "Website & ad forms",
+      "WhatsApp Business",
+      "Gmail / Outlook",
+      "Calendars",
+      "Accounting & invoicing"
+    ],
+    "faqs": [
+      {
+        "question": "Can you import our existing contacts?",
+        "answer": "Yes, from spreadsheets or other CRMs, including deal history where available."
+      },
+      {
+        "question": "Can AI help our sales team?",
+        "answer": "Yes. We can add AI lead scoring, call and email summaries, and suggested next steps."
+      },
+      {
+        "question": "Will it work on mobile?",
+        "answer": "Yes, the CRM is fully usable on phones for teams in the field."
+      }
+    ]
+  },
+  {
+    "slug": "hr-payroll-system",
+    "name": "HR & Payroll",
+    "short": "Employee records, leave, attendance and payroll runs.",
+    "title": "HR and payroll software without the paperwork",
+    "intro": "Keep employee records, attendance, leave and payroll in one system, with a self-service app so staff stop emailing HR for every request.",
+    "audience": [
+      "Companies with 10 to 1,000 employees",
+      "Multi-site businesses",
+      "Outsourcing and staffing firms"
+    ],
+    "modules": [
+      {
+        "title": "Employee records",
+        "text": "Profiles, contracts, documents and expiry alerts for visas and IDs."
+      },
+      {
+        "title": "Attendance & shifts",
+        "text": "Shift planning, biometric or mobile check-in, overtime and late tracking."
+      },
+      {
+        "title": "Leave management",
+        "text": "Leave policies, balances and approval workflows."
+      },
+      {
+        "title": "Payroll",
+        "text": "Salary structures, allowances, deductions, loans and payslips."
+      },
+      {
+        "title": "Employee self-service",
+        "text": "App for leave requests, payslips, documents and announcements."
+      },
+      {
+        "title": "HR reports",
+        "text": "Headcount, cost, turnover and attendance reports."
+      }
+    ],
+    "integrations": [
+      "Biometric devices",
+      "Bank salary files (WPS)",
+      "Accounting systems",
+      "Email & WhatsApp"
+    ],
+    "faqs": [
+      {
+        "question": "Does it support local labour rules?",
+        "answer": "We configure leave, overtime, end-of-service and payroll rules to match your country and policies."
+      },
+      {
+        "question": "Can employees check in from their phones?",
+        "answer": "Yes, with optional location checks for field and remote staff."
+      },
+      {
+        "question": "Can payroll post to our accounts automatically?",
+        "answer": "Yes, payroll journals can sync to your accounting system."
+      }
+    ]
+  },
+  {
+    "slug": "inventory-pos-system",
+    "name": "Inventory & POS",
+    "short": "Multi-branch stock, point of sale and suppliers.",
+    "title": "Inventory and POS for shops and multi-branch retail",
+    "intro": "Sell in-store and online from the same stock, with fast checkout, barcode support and live inventory across every branch.",
+    "audience": [
+      "Retail shops and chains",
+      "Pharmacies and grocery stores",
+      "Restaurants and cafés",
+      "Wholesalers with a counter"
+    ],
+    "modules": [
+      {
+        "title": "Point of sale",
+        "text": "Fast checkout with barcode scanning, discounts, split payments and receipts, even offline."
+      },
+      {
+        "title": "Inventory",
+        "text": "Real-time stock per branch, transfers, adjustments and low-stock alerts."
+      },
+      {
+        "title": "Purchasing & suppliers",
+        "text": "Purchase orders, supplier balances and goods receiving."
+      },
+      {
+        "title": "Customers & loyalty",
+        "text": "Customer accounts, credit sales and loyalty points."
+      },
+      {
+        "title": "Online store sync",
+        "text": "Stock and orders synced with your e-commerce store."
+      },
+      {
+        "title": "Sales reports",
+        "text": "Daily sales, best sellers, margins and cashier reports."
+      }
+    ],
+    "integrations": [
+      "Barcode scanners & printers",
+      "Card terminals",
+      "Shopify / WooCommerce",
+      "Accounting systems"
+    ],
+    "faqs": [
+      {
+        "question": "Does the POS work if the internet drops?",
+        "answer": "Yes. Sales continue offline and sync when the connection is back."
+      },
+      {
+        "question": "Can each branch have its own stock and prices?",
+        "answer": "Yes, with central control from head office."
+      },
+      {
+        "question": "Which hardware do we need?",
+        "answer": "A tablet or PC, plus optional barcode scanner, receipt printer and cash drawer. We help you choose."
+      }
+    ]
+  },
+  {
+    "slug": "clinic-management-system",
+    "name": "Clinic & Appointment Management",
+    "short": "Bookings, patient records, billing and reminders.",
+    "title": "Clinic management and online appointment booking",
+    "intro": "Online booking, patient records, prescriptions and billing in one place, with automatic reminders that cut no-shows.",
+    "audience": [
+      "Clinics and polyclinics",
+      "Dental and physiotherapy practices",
+      "Salons, spas and wellness centres",
+      "Consultants who work by appointment"
+    ],
+    "modules": [
+      {
+        "title": "Online booking",
+        "text": "Patients book from your website or WhatsApp based on real doctor availability."
+      },
+      {
+        "title": "Reminders",
+        "text": "Automatic SMS and WhatsApp reminders and easy rescheduling."
+      },
+      {
+        "title": "Patient records",
+        "text": "Visit history, notes, prescriptions, files and lab results."
+      },
+      {
+        "title": "Billing & insurance",
+        "text": "Invoices, packages, payments and insurance claims."
+      },
+      {
+        "title": "Staff schedules",
+        "text": "Doctor and staff rosters across rooms and branches."
+      },
+      {
+        "title": "Reports",
+        "text": "Appointments, revenue, no-shows and doctor performance."
+      }
+    ],
+    "integrations": [
+      "WhatsApp & SMS",
+      "Online payments",
+      "Video consultations",
+      "Lab and pharmacy systems"
+    ],
+    "faqs": [
+      {
+        "question": "Is patient data kept private?",
+        "answer": "Access is role-based, data is encrypted, and the system can be hosted in your preferred region."
+      },
+      {
+        "question": "Can patients pay online when booking?",
+        "answer": "Yes, deposits or full payments can be taken at booking."
+      },
+      {
+        "question": "Does it work for non-medical businesses?",
+        "answer": "Yes. Salons, spas and consultants use the same booking and reminders without the medical modules."
+      }
+    ]
+  },
+  {
+    "slug": "property-management-system",
+    "name": "Property Management",
+    "short": "Units, tenants, leases, rent collection and maintenance.",
+    "title": "Property management software for landlords and agencies",
+    "intro": "Track every unit, tenant and lease, collect rent on time and handle maintenance requests, with a portal for tenants and owners.",
+    "audience": [
+      "Property management companies",
+      "Landlords with growing portfolios",
+      "Real estate agencies",
+      "Co-living and serviced apartments"
+    ],
+    "modules": [
+      {
+        "title": "Properties & units",
+        "text": "Buildings, units, amenities and occupancy at a glance."
+      },
+      {
+        "title": "Tenants & leases",
+        "text": "Contracts, renewals, deposits and document storage with expiry alerts."
+      },
+      {
+        "title": "Rent collection",
+        "text": "Automatic invoices, reminders, online payments and arrears tracking."
+      },
+      {
+        "title": "Maintenance",
+        "text": "Tenants raise requests, vendors are assigned and costs tracked."
+      },
+      {
+        "title": "Owner statements",
+        "text": "Monthly statements and payouts for property owners."
+      },
+      {
+        "title": "Listings & leads",
+        "text": "Vacant units published with enquiries flowing into the system."
+      }
+    ],
+    "integrations": [
+      "Online payments",
+      "WhatsApp & email",
+      "Accounting systems",
+      "Listing portals"
+    ],
+    "faqs": [
+      {
+        "question": "Can tenants pay rent online?",
+        "answer": "Yes, through the tenant portal, with automatic receipts."
+      },
+      {
+        "question": "Can owners see their own properties?",
+        "answer": "Yes, owners get a portal with statements, occupancy and maintenance history."
+      },
+      {
+        "question": "Does it handle short-term rentals?",
+        "answer": "Core lease management is built for long-term rentals; short-term booking can be added as a custom module."
+      }
+    ]
+  },
+  {
+    "slug": "learning-management-system",
+    "name": "Learning Management System (LMS)",
+    "short": "Online courses, quizzes, certificates and payments.",
+    "title": "Your own online learning platform",
+    "intro": "Sell and deliver courses under your own brand, with video lessons, quizzes, certificates and payments, instead of paying commission to marketplaces.",
+    "audience": [
+      "Coaches and course creators",
+      "Training companies",
+      "Corporate training teams",
+      "Schools adding online learning"
+    ],
+    "modules": [
+      {
+        "title": "Courses & lessons",
+        "text": "Video, PDF and live-session lessons organised into courses and modules."
+      },
+      {
+        "title": "Quizzes & assignments",
+        "text": "Auto-graded quizzes, assignments and progress tracking."
+      },
+      {
+        "title": "Certificates",
+        "text": "Branded certificates issued automatically on completion."
+      },
+      {
+        "title": "Payments & subscriptions",
+        "text": "One-off purchases, subscriptions, coupons and bundles."
+      },
+      {
+        "title": "Student app",
+        "text": "Learners study on web and mobile with offline-friendly video."
+      },
+      {
+        "title": "Instructor & admin dashboards",
+        "text": "Enrolments, revenue, completion and engagement reports."
+      }
+    ],
+    "integrations": [
+      "Stripe & local gateways",
+      "Zoom / Google Meet",
+      "Video hosting",
+      "Email marketing tools"
+    ],
+    "faqs": [
+      {
+        "question": "Can we protect videos from being downloaded?",
+        "answer": "Yes, with secure streaming and watermarking options."
+      },
+      {
+        "question": "Can we run corporate training with private groups?",
+        "answer": "Yes. Companies can get private groups, assigned courses and progress reports."
+      },
+      {
+        "question": "Do you charge a commission on our sales?",
+        "answer": "No. You pay for setup and hosting; course revenue is yours."
+      }
+    ]
+  }
+]

@@ -1,51 +1,54 @@
 import React from "react";
-import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 import Button from "./Button";
 
-const IndustrySpotlightSection = () => {
+const points = [
+    "Booking, dispatch and driver apps",
+    "Stripe payments and invoicing",
+    "Fleet, reporting and admin dashboards",
+];
+
+const IndustrySpotlightSection = ({ index = "04" }) => {
     return (
-        <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden bg-2">
-            <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                <div className="grid items-center gap-12 md:grid-cols-2">
-                    <motion.div
-                        className="order-2 md:order-1"
-                        initial={{ opacity: 0, x: -100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                    >
+        <section className="section bg-primary text-white" id="chauffeur">
+            <div className="wrap grid items-center gap-12 lg:grid-cols-12">
+                <Reveal className="lg:col-span-6">
+                    <p className="t-eyebrow !text-white/60">
+                        <span className="t-num">{index}</span>
+                        <span aria-hidden="true" className="opacity-40">/</span>
+                        Industry focus
+                    </p>
+                    <h2 className="t-h2 mt-5">A niche we know well: chauffeur &amp; fleet software.</h2>
+                    <p className="mt-6 max-w-lg text-white/70">
+                        Alongside our core services we&apos;ve built real, in-production software for chauffeur and fleet operators. That means fewer surprises when we build yours.
+                    </p>
+                    <ul className="mt-8 space-y-3 border-t border-white/10 pt-6 text-[16px]">
+                        {points.map((p) => (
+                            <li key={p} className="flex gap-3">
+                                <span aria-hidden="true" className="mt-[9px] h-1.5 w-1.5 shrink-0 bg-secondary" />
+                                {p}
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="mt-10 flex flex-wrap gap-3">
+                        <Button link variant="accent" href="/chauffeur-software">Chauffeur software</Button>
+                        <Button link variant="outline-light" href="/case-studies/empire-chauffeurs-australia">Read the case study</Button>
+                    </div>
+                </Reveal>
+
+                <Reveal delay={120} className="lg:col-span-6">
+                    <div className="overflow-hidden bg-white/5">
                         <img
-                            alt="Chauffeur & fleet management software dashboard"
+                            alt="Chauffeur and fleet management software dashboard"
                             loading="lazy"
-                            className="w-full h-100 md:h-110 lg:h-125 object-cover"
+                            decoding="async"
+                            width={1200}
+                            height={900}
+                            className="aspect-[4/3] w-full object-cover"
                             src="/images/service/chauffeur-software-img.webp"
                         />
-                    </motion.div>
-
-                    <motion.div
-                        className="order-1 md:order-2"
-                        initial={{ opacity: 0, x: 100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                    >
-                        <h3 className="text-[40px] md:text-[50px] lg:text-[60px] xl:text-[65px] leading-[112.5%] tracking-[-2px] font-semibold text-primary">
-                            A Niche We Know Well: Chauffeur & Fleet Software
-                        </h3>
-                        <p className="text-[20px] mt-6">
-                            Alongside our core services, we&apos;ve built deep, hands-on experience developing software for the chauffeur and fleet management industry. See our dedicated solutions and case study on our Chauffeur Software page.
-                        </p>
-                        <div className="mt-8">
-                            <Button
-                                link
-                                ariaLabel="Explore Chauffeur & Fleet Software"
-                                href={`${process.env.NEXT_PUBLIC_APPFRONTURL}chauffeur-software`}
-                            >
-                                Explore Chauffeur & Fleet Software
-                            </Button>
-                        </div>
-                    </motion.div>
-                </div>
+                    </div>
+                </Reveal>
             </div>
         </section>
     );

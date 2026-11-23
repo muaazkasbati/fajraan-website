@@ -1,11 +1,13 @@
 // src/pages/llms.txt.js
+import services from "@/utils/servicesNew.json";
+import solutions from "@/utils/solutions.json";
 
 export const getServerSideProps = async ({ res }) => {
   const content = `# Fajraan Tech
 
-> Fajraan Tech is a global software development company. We focus deeply on three services — Web Development, Mobile & Desktop Applications, and AI Automation & AI Chatbot solutions — rather than spreading across many. We also specialize in chauffeur & fleet management software. Headquartered in Kalispell, Montana, USA, we work with clients worldwide.
+> Fajraan Tech is a global software company that builds products from scratch fast — a live MVP in as little as 10 days — and develops AI agents, LLM applications and business automation systems. We also set up ready-to-launch business platforms (ERP, school management, courier management, CRM, HR & payroll, inventory & POS, clinic, property management and LMS) under our clients' brands. Headquartered in Kalispell, Montana, USA, we work with clients worldwide.
 
-Fajraan Tech builds custom, production-ready digital products for startups, growing businesses, and enterprises. Our core services are Web Development (custom web apps, WordPress, e-commerce, landing pages, API/backend work), Mobile & Desktop Applications (iOS, Android, Flutter, React Native, and desktop apps for Windows/macOS/Linux), and AI Automation & AI Chatbot (custom chatbots, business process automation, AI customer support, and LLM integrations). We also have hands-on, project-backed experience building chauffeur and fleet management software, documented in a dedicated case study.
+Underneath these offerings sit our engineering services: web development and mobile & desktop applications. We also have production experience building chauffeur and fleet management software, documented in a case study.
 
 ## Company
 - [About Us](https://www.fajraan.tech/about): Company background, team, and approach.
@@ -14,9 +16,11 @@ Fajraan Tech builds custom, production-ready digital products for startups, grow
 - [FAQs](https://www.fajraan.tech/faqs): Answers about our process, timelines, technology stack, and specialties.
 
 ## Services
-- [Web Development](https://www.fajraan.tech/services/web-development): Custom web applications, WordPress sites, e-commerce stores, landing pages, API integration, and performance optimization.
-- [Mobile & Desktop Applications](https://www.fajraan.tech/services/mobile-desktop-applications): Native and cross-platform mobile apps (Flutter, React Native) and desktop applications for Windows, macOS, and Linux.
-- [AI Automation & AI Chatbot](https://www.fajraan.tech/services/ai-automation-ai-chatbot): Custom AI chatbots, business process automation, AI-powered customer support systems, and LLM integrations.
+${services.map((x) => `- [${x.title}](https://www.fajraan.tech/services/${x.slug}): ${x.description}`).join("\n")}
+
+## Ready-to-launch platforms
+- [All platforms](https://www.fajraan.tech/solutions): Business software customised, branded and launched in about 10 days for a standard setup.
+${solutions.map((x) => `- [${x.name}](https://www.fajraan.tech/solutions/${x.slug}): ${x.short}`).join("\n")}
 
 ## Industry Specialty
 - [Chauffeur & Fleet Software](https://www.fajraan.tech/chauffeur-software): Dedicated landing page for our chauffeur and fleet management software work, including a case study of completed client projects.

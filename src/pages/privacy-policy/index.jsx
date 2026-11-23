@@ -3,8 +3,7 @@ import Header from '@/components/Header'
 import HeroSec from '@/components/HeroSec'
 import Head from 'next/head'
 import React from 'react'
-import { motion } from "framer-motion";
-
+import Reveal from "@/components/Reveal";
 export default function PrivacyPolicy() {
     return (
         <>
@@ -86,23 +85,13 @@ export default function PrivacyPolicy() {
             </Head>
 
             <Header />
-            <main>
-                <HeroSec title="Privacy Policy" />
-                <section className="pb-15 overflow-hidden">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <motion.div
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <motion.div
-                                className="blog-body"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                viewport={{ once: true }}
-                            >
+            <main id="main">
+                <HeroSec crumbs={[{ label: "Privacy policy" }]} title="Privacy Policy" />
+                <section className="pb-20 md:pb-28">
+                    <div className="wrap">
+                        <div className="max-w-3xl border-t border-line pt-12">
+                        <Reveal>
+                            <Reveal className="blog-body">
                                 <p>
                                     At Fajraan Tech, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or use our services.
                                 </p>
@@ -141,8 +130,9 @@ export default function PrivacyPolicy() {
                                     <br />
                                     <strong>Email:</strong> info@fajraan.com
                                 </p>
-                            </motion.div>
-                        </motion.div>
+                            </Reveal>
+                        </Reveal>
+                        </div>
                     </div>
                 </section>
             </main>

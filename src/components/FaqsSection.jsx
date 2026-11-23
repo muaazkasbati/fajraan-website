@@ -1,68 +1,39 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import { faqData } from "@/utils/data";
+import Reveal from "./Reveal";
+import SectionHead from "./SectionHead";
 
-
-
-const FaqsSection = () => {
-    const [openIndex, setOpenIndex] = useState(0);
-
-    const toggleAccordion = (index) => {
-        setOpenIndex((prev) => (prev === index ? null : index));
-    };
+/** Native <details> accordion: works without JS and is accessible by default. */
+const FaqsSection = ({ index = "01", items = faqData }) => {
     return (
-        <section className="bg-white overflow-hidden lg:py-32.5 md:py-20 py-16.25">
-            <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                <div className="flex flex-wrap gap-4 justify-between">
-                    <motion.div
-                        className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
-                        <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-primary">Frequently Asked Questions</h3>
-                        <p className="text-[20px] text-3 mt-2">
-                            Everything you need to know about working with Fajraan Tech, from project flow to support.
-                        </p>
-                    </motion.div>
-
-                    <div className="w-full md:w-1/2 lg:w-7/12 xl:w-7/12">
-                        <div className="">
-                            {faqData.map((item, index) => {
-                                const isOpen = openIndex === index;
-
-                                return (
-                                    <motion.div
-                                        key={index}
-                                        className="border-t border-1"
-                                        initial={{ opacity: 0, y: 30 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                                        viewport={{ once: true }}
-                                    >
-                                        <h6 className="text-[20px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold">
-                                            <button
-                                                aria-label={item.question}
-                                                type="button"
-                                                aria-expanded={isOpen}
-                                                onClick={() => toggleAccordion(index)}
-                                                className={`pt-9 pb-4 w-full text-left cursor-pointer ${isOpen ? "" : "collapsed"}`}
-                                            >
-                                                {item.question}
-                                            </button>
-                                        </h6>
-
-                                        <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
-                                            <div className="pb-8">
-                                                {item.answer}
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                );
-                            })}
-                        </div>
+        <section className="section" id="faqs">
+            <div className="wrap grid gap-12 lg:grid-cols-12">
+                <div className="lg:col-span-4">
+                    <div className="lg:sticky lg:top-28">
+                        <SectionHead index={index} eyebrow="FAQs" title="Questions we get asked a lot." className="!block" />
+                        <Reveal delay={80}>
+                            <p className="mt-6 max-w-sm text-muted">
+                                Can&apos;t find what you need? <a href="/contact" className="font-semibold text-primary underline decoration-secondary underline-offset-4">Ask us directly.</a>
+                            </p>
+                        </Reveal>
                     </div>
+                </div>
+
+                <div className="lg:col-span-7 lg:col-start-6">
+                    {items.map((item, i) => (
+                        <Reveal key={item.question} delay={Math.min(i, 5) * 40}>
+                            <details className="group border-t border-line last:border-b" open={i === 0}>
+                                <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 [&::-webkit-details-marker]:hidden">
+                                    <h3 className="t-h4 text-primary">{item.question}</h3>
+                                    <span aria-hidden="true" className="relative mt-1.5 h-4 w-4 shrink-0 text-primary">
+                                        <span className="absolute left-0 top-1/2 h-[1.5px] w-4 -translate-y-1/2 bg-current" />
+                                        <span className="absolute left-1/2 top-0 h-4 w-[1.5px] -translate-x-1/2 bg-current transition-transform duration-300 group-open:rotate-90 group-open:opacity-0" />
+                                    </span>
+                                </summary>
+                                <p className="max-w-2xl pb-7 text-muted">{item.answer}</p>
+                            </details>
+                        </Reveal>
+                    ))}
                 </div>
             </div>
         </section>

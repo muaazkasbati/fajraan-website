@@ -1,36 +1,24 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import HeroSec from '@/components/HeroSec'
-import PortfolioSection from '@/components/home/PortfolioSection'
+import { ProjectCard } from '@/components/home/PortfolioSection'
+import { cmsFetchSafe } from '@/utils/cms'
 import Head from 'next/head'
 import React from 'react'
 
 export async function getStaticProps() {
-    try {
-        const res = await fetch(`https://cms-backend.fajraan.com/api/posts/projects?limit=50&page=1`);
-        if (!res.ok) throw new Error('Failed to fetch portfolio');
-        const data = await res.json();
+    const json = await cmsFetchSafe("/projects?limit=50&page=1", null);
+    const projects = (json?.data || []).map((item) => ({
+        id: item?._id || null,
+        title: item?.dynamicFields?.title || "",
+        slug: item?.dynamicFields?.slug || "",
+        year: item?.dynamicFields?.year || "",
+        category: item?.categories?.[0]?.name || "",
+        image: item?.dynamicFields?.image || null,
+    })).filter((p) => p.slug);
 
-        const mapped = data?.data.map((item) => ({
-            id: item._id,
-            title: item?.dynamicFields?.title,
-            slug: item?.dynamicFields?.slug || '',
-            link: item?.dynamicFields?.link || '#',
-            year: item?.dynamicFields?.year || '—',
-            category: item?.categories?.[0]?.name || 'Uncategorized',
-            image: item?.dynamicFields?.image || '/images/default.webp',
-        }));
-
-        return {
-            props: { projects: mapped },
-            revalidate: 60, // re-fetch every 60 seconds
-        };
-    } catch (error) {
-        console.error('Portfolio page error:', error);
-        return { props: { projects: [] }, revalidate: 60 };
-    }
+    return { props: { projects }, revalidate: json ? 600 : 120 };
 }
-
 
 export default function Portfolio({ projects }) {
     return (
@@ -112,9 +100,25 @@ export default function Portfolio({ projects }) {
                 />
             </Head>
             <Header />
-            <main>
-                <HeroSec title="Creating unforgettable digital impressions" />
-                <PortfolioSection theme='light' projects={projects} />
+            <main id="main">
+                <HeroSec
+                    crumbs={[{ label: "Work" }]}
+                    title="Creating unforgettable digital impressions."
+                    intro="A selection of platforms, apps and websites we've designed and built for clients."
+                />
+                <section className="pb-20 md:pb-28">
+                    <div className="wrap">
+                        {projects.length ? (
+                            <div className="grid gap-x-8 gap-y-14 border-t border-line pt-14 md:grid-cols-2">
+                                {projects.map((proj, i) => (
+                                    <ProjectCard key={proj.id || i} proj={proj} index={i} />
+                                ))}
+                            </div>
+                        ) : (
+                            <p className="border-t border-line pt-14 text-muted">Projects are temporarily unavailable. Please check back shortly.</p>
+                        )}
+                    </div>
+                </section>
             </main>
             <Footer />
         </>

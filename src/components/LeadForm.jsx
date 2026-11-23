@@ -1,112 +1,42 @@
-import React, { useState } from 'react'
-import Input from './Input';
-import Button from './Button';
-import Select from './Select';
+import React from "react";
+import Input from "./Input";
+import Select from "./Select";
+import Button from "./Button";
+import FormStatus, { Honeypot } from "./FormStatus";
+import useFormSubmit from "@/hooks/useFormSubmit";
+
+const fleetSizeOptions = [
+    { value: "1-10", label: "1–10 vehicles" },
+    { value: "10-50", label: "10–50 vehicles" },
+    { value: "50+", label: "50+ vehicles" },
+];
+
+const bookingMethodOptions = [
+    { value: "Spreadsheets", label: "Spreadsheets" },
+    { value: "WhatsApp/phone", label: "WhatsApp / phone" },
+    { value: "Third-party software", label: "Third-party software" },
+    { value: "Other", label: "Other" },
+];
 
 export default function LeadForm() {
-    const [message, setMessage] = useState('');
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const { status, message, onSubmit } = useFormSubmit({ leadForm: true, subject: "Chauffeur software enquiry" });
 
-        try {
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData.entries());
-            // Send form data to API
-            const response = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ ...data, leadForm: true }), // Include leadForm flag
-            });
-
-            // Check response status
-            if (!response.ok) {
-                const errorData = await response.json();
-                setMessage(`Error submitting form: ${errorData.message}`);
-                console.error('Error submitting form:', errorData.message);
-                return;
-            } else {
-                setMessage('Your message has been sent successfully!');
-                e.target.reset(); // Reset the form fields
-            }
-
-        } catch (error) {
-            console.error('Error submitting form:', error);
-        }
-    };
-
-    const fleetSizeOptions = [
-        { value: "1-10", label: "1-10" },
-        { value: "10-50", label: "10-50" },
-        { value: "50+", label: "50+" }
-    ];
-
-    const bookingMethodOptions = [
-        { value: "Spreadsheets", label: "Spreadsheets" },
-        { value: "WhatsApp/phone", label: "WhatsApp/phone" },
-        { value: "Third-party software", label: "Third-party software" },
-        { value: "Other", label: "Other" }
-    ];
     return (
-        <>
-            <form autoComplete="off" id="contact-form"
-                onSubmit={handleSubmit}
-                className="space-y-4">
-
-                <Input
-                    placeholder="Name"
-                    required
-                    pattern="[A-Za-z\s]+"
-                    title="Please enter only alphabets and spaces"
-                    type="text"
-                    name="name"
-                    id="name"
-                />
-
-                <Input
-                    placeholder="Company Name"
-                    type="text"
-                    name="company"
-                    id="company"
-                />
-
-                <Input
-                    placeholder="Email Address"
-                    required
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                    title="Please enter a valid email address"
-                    type="email"
-                    id="email"
-                    name="email"
-                />
-
-                <Select
-                    id="fleetSize"
-                    name="fleetSize"
-                    required
-                    placeholder="Fleet Size"
-                    options={fleetSizeOptions}
-                />
-
-                <Select
-                    id="bookingMethod"
-                    name="bookingMethod"
-                    required
-                    placeholder="Current Booking Method"
-                    options={bookingMethodOptions}
-                />
-                {message && (
-                    <p className={`text-center text-sm ${message.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}>
-                        {message}
-                    </p>
-                )}
-                <div className="w-full mt-5">
-                    <Button variant="primary" id="submit-form" ariaLabel="Submit" type="submit">
-                        Submit
-                    </Button>
-                </div>
-            </form>
-        </>
-    )
+        <form id="lead-form" onSubmit={onSubmit} className="relative grid gap-7">
+            <Honeypot />
+            <div className="grid gap-7 sm:grid-cols-2">
+                <Input label="Name" name="name" id="lead-name" required autoComplete="name" maxLength={120} />
+                <Input label="Company" name="company" id="lead-company" autoComplete="organization" maxLength={160} />
+            </div>
+            <Input label="Email" type="email" name="email" id="lead-email" required autoComplete="email" maxLength={200} />
+            <div className="grid gap-7 sm:grid-cols-2">
+                <Select label="Fleet size" id="fleetSize" name="fleetSize" required placeholder="Choose one" options={fleetSizeOptions} />
+                <Select label="Current booking method" id="bookingMethod" name="bookingMethod" required placeholder="Choose one" options={bookingMethodOptions} />
+            </div>
+            <div className="flex flex-wrap items-center gap-5">
+                <Button type="submit" loading={status === "sending"}>Request a demo</Button>
+                <FormStatus status={status} message={message} />
+            </div>
+        </form>
+    );
 }

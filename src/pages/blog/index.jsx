@@ -1,84 +1,39 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import { motion } from "framer-motion";
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
+import Button from '@/components/Button'
+import { cmsFetchSafe } from '@/utils/cms'
 import HeroSec from '@/components/HeroSec'
 import BlogCard from '@/components/BlogCard'
-import { ArrowRight } from 'lucide-react';
-import { decodeHtml } from '@/utils/decodeHtml';
 import formatDate from '@/utils/formatDate';
-import { toWebP } from '@/utils/data';
 
-export async function getServerSideProps(context) {
-    const page = parseInt(context.query?.page || "1", 10);
+export async function getServerSideProps({ query, res }) {
+    const page = Math.max(1, parseInt(query?.page || "1", 10) || 1);
+    // Cache at the CDN: fast repeat visits, and the last good page keeps
+    // being served while the CMS is slow or down.
+    res.setHeader("Cache-Control", "public, s-maxage=600, stale-while-revalidate=86400");
 
-    try {
-        const response = await fetch(`https://cms-backend.fajraan.com/api/posts/blogs?limit=18&page=${page}`);
+    const json = await cmsFetchSafe(`/blogs?limit=18&page=${page}`, null);
+    const posts = (json?.data || []).map((post) => ({
+        id: post?._id || null,
+        title: post?.dynamicFields?.title || "",
+        slug: post?.dynamicFields?.slug || "",
+        date: post?.publishDate ? formatDate(post.publishDate) : "",
+        image: post?.dynamicFields?.featured_image || null,
+    })).filter((p) => p.slug);
 
-        if (!response.ok) {
-            return {
-                props: {
-                    posts: [],
-                    totalPages: 1,
-                    currentPage: page,
-                },
-            };
-        }
-
-        const posts = await response.json();
-        const totalPages = posts?.pagination?.pages || 1;
-
-        const mappedPosts = posts?.data?.map((post) => ({
-            id: post?._id,
-            title: post?.dynamicFields?.title,
-            slug: post?.dynamicFields?.slug,
-            date: formatDate(post?.publishDate),
-            image: post?.dynamicFields?.featured_image,
-        }));
-
-        return {
-            props: {
-                posts: mappedPosts,
-                totalPages,
-                currentPage: page,
-            },
-        };
-    } catch (error) {
-        console.error("Blog fetch error:", error);
-
-        return {
-            props: {
-                posts: [],
-                totalPages: 1,
-                currentPage: page,
-            },
-        };
-    }
-}
-
-export default function Blogs({ posts, totalPages, currentPage }) {
-    const router = useRouter();
-
-    const handlePageChange = (page) => {
-        if (page < 1 || page > totalPages) return;
-        router.push({
-            pathname: router.pathname,
-            query: { ...router.query, page },
-        });
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
-    const containerVariants = {
-        hidden: {},
-        show: {
-            transition: {
-                staggerChildren: 0.25,
-                delayChildren: 0.1,
-            },
+    return {
+        props: {
+            posts,
+            totalPages: json?.pagination?.pages || 1,
+            currentPage: page,
+            failed: !json,
         },
     };
+}
 
+export default function Blogs({ posts, totalPages, currentPage, failed }) {
     return (
         <>
             <Head>
@@ -159,54 +114,45 @@ export default function Blogs({ posts, totalPages, currentPage }) {
             </Head>
 
             <Header />
-            <main>
-                <HeroSec title="Explore latest news and insights" />
-                <section className="lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <motion.div
-                            className="grid md:grid-cols-3 gap-6"
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="show"
-                            // viewport={{ once: true, amount: 0.2 }}
-                        >
-                            {posts?.map((data, index) => (
-                                <BlogCard data={data} key={index} />
-                            ))}
-                        </motion.div>
+            <main id="main">
+                <HeroSec
+                    crumbs={[{ label: "Blog" }]}
+                    title="Notes on building better software."
+                    intro="Practical writing on web, mobile and AI automation, from the team doing the work."
+                />
+                <section className="pb-20 md:pb-28">
+                    <div className="wrap">
+                        {posts.length ? (
+                            <div className="grid gap-x-8 gap-y-14 border-t border-line pt-14 md:grid-cols-2 lg:grid-cols-3">
+                                {posts.map((data, i) => (
+                                    <BlogCard data={data} index={i} key={data.id || i} />
+                                ))}
+                            </div>
+                        ) : (
+                            <p className="border-t border-line pt-14 text-muted">
+                                {failed ? "Articles are temporarily unavailable. Please check back in a few minutes." : "No articles yet."}
+                            </p>
+                        )}
 
                         {totalPages > 1 && (
-                            <div className="pt-15">
-                                <ul className="flex flex-wrap justify-end items-center gap-3">
-                                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                                        <li key={page} className="flex items-center justify-center">
-                                            <span
-                                                className={`border border-1 rounded-full w-17.5 h-17.5 flex items-center justify-center text-[18px] font-semibold hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer ${page === currentPage ? 'bg-primary text-white' : ''}`}
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    handlePageChange(page);
-                                                }}
+                            <nav aria-label="Blog pages" className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-8">
+                                <ul className="flex flex-wrap items-center gap-2">
+                                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                                        <li key={page}>
+                                            <Link
+                                                href={page === 1 ? "/blog" : `/blog?page=${page}`}
+                                                aria-current={page === currentPage ? "page" : undefined}
+                                                className={`t-num grid h-11 w-11 place-items-center rounded-full border text-[15px] font-semibold transition-colors ${page === currentPage ? "border-primary bg-primary text-white" : "border-line text-primary hover:border-primary"}`}
                                             >
                                                 {page}
-                                            </span>
+                                            </Link>
                                         </li>
                                     ))}
-
-                                    {currentPage < totalPages && (
-                                        <li className="flex items-center justify-center">
-                                            <span
-                                                className="inline-flex items-center gap-2 px-3 py-2 text-[18px] font-semibold leading-tight next cursor-pointer hover:text-primary transition-all duration-300"
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    handlePageChange(currentPage + 1);
-                                                }}
-                                            >
-                                                Next <ArrowRight size={18} />
-                                            </span>
-                                        </li>
-                                    )}
                                 </ul>
-                            </div>
+                                {currentPage < totalPages && (
+                                    <Button variant="text" link href={`/blog?page=${currentPage + 1}`}>Next page</Button>
+                                )}
+                            </nav>
                         )}
                     </div>
                 </section>

@@ -3,21 +3,19 @@ import Header from '@/components/Header'
 import HeroSec from '@/components/HeroSec'
 import Head from 'next/head'
 import React from 'react'
-import { motion } from "framer-motion";
 import PricingSection from '@/components/PricingSection'
-import services from "@/utils/servicesNew.json";
-import Link from 'next/link'
 import VideoAreaSection from '@/components/VideoAreaSection'
-import { ArrowRight } from 'lucide-react'
 import Button from '@/components/Button'
 import IndustrySpotlightSection from '@/components/IndustrySpotlightSection'
+import ServiceSection from '@/components/home/ServiceSection'
+import SolutionsSection from '@/components/SolutionsSection'
 
 export default function Services() {
   return (
     <>
       <Head>
-        <title>Our Services | Fajraan Tech – Web, Mobile & AI Automation Solutions</title>
-        <meta name="description" content="Explore Fajraan Tech's core services: custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
+        <title>Services | 10-Day MVPs, AI Agents, Automation & Business Platforms – Fajraan Tech</title>
+        <meta name="description" content="Fajraan Tech builds products from scratch with a live MVP in as little as 10 days, develops AI agents and LLM apps, automates business operations, and sets up ERP, school, courier and other business platforms, plus web and mobile development." />
         <meta name="keywords" content="web development services, mobile app development services, desktop application development, AI automation services, AI chatbot development, software development agency, digital solutions company" />
 
         <link rel="canonical" href="https://www.fajraan.tech/services" />
@@ -25,8 +23,8 @@ export default function Services() {
         <link rel="alternate" hrefLang="en" href="https://www.fajraan.tech/services" />
         <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/services" />
 
-        <meta property="og:title" content="Our Services | Fajraan Tech – Web, Mobile & AI Automation Solutions" />
-        <meta property="og:description" content="Explore Fajraan Tech's core services: custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
+        <meta property="og:title" content="Services | 10-Day MVPs, AI Agents, Automation & Business Platforms – Fajraan Tech" />
+        <meta property="og:description" content="Fajraan Tech builds products from scratch with a live MVP in as little as 10 days, develops AI agents and LLM apps, automates business operations, and sets up ERP, school, courier and other business platforms, plus web and mobile development." />
         <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="600" />
@@ -36,8 +34,8 @@ export default function Services() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FajraanTech" />
         <meta name="twitter:creator" content="@FajraanTech" />
-        <meta name="twitter:title" content="Our Services | Fajraan Tech – Web, Mobile & AI Automation Solutions" />
-        <meta name="twitter:description" content="Explore Fajraan Tech's core services: custom web development, mobile & desktop application development, and AI automation & AI chatbot solutions for businesses worldwide." />
+        <meta name="twitter:title" content="Services | 10-Day MVPs, AI Agents, Automation & Business Platforms – Fajraan Tech" />
+        <meta name="twitter:description" content="Fajraan Tech builds products from scratch with a live MVP in as little as 10 days, develops AI agents and LLM apps, automates business operations, and sets up ERP, school, courier and other business platforms, plus web and mobile development." />
         <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta name="twitter:image:alt" content="Fajraan Tech Services – Web, Mobile & Digital Solutions" />
 
@@ -129,61 +127,21 @@ export default function Services() {
         />
       </Head>
       <Header />
-      <main>
-        <HeroSec title="Inspiring leadership through design" />
-        <VideoAreaSection imageUrl="/images/service/service-detail-img.webp" scrollDownId="service-section" />
-        <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden" id="service-section">
-          <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-            <div className="flex flex-col gap-5 xl:flex-row xl:justify-between">
-              <div className="w-full xl:w-5/12">
-                <motion.div
-                  initial={{ opacity: 0, rotateX: -80 }}
-                  whileInView={{ opacity: 1, rotateX: 0 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  viewport={{ once: true }}
-                  style={{ transformOrigin: "top center" }}
-                  className="sm:text-left text-center mb-3"
-                >
-                  <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-primary">We help you to build digital business</h3>
-                </motion.div>
-              </div>
-
-              <div className="w-full xl:w-6/12">
-                <div className="grid grid-cols-1 gap-x-5 sm:gap-y-16 gap-y-5 md:grid-cols-2">
-                  {services.slice(0, 8).map((service, index) => (
-                    <motion.div
-                      key={index}
-                      className="w-full border-l border-1 sm:pl-10 pl-8"
-                      initial={{ opacity: 0, x: 100 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.7,
-                        delay: index * 0.2,
-                        ease: "easeOut",
-                      }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="sm:mb-15 mb-5">
-                        <img src={service.icon} alt="service-icon" loading="lazy" width="52" height="52" />
-                      </div>
-                      <div>
-                        <div className="sm:mb-22.5 mb-3">
-                          <h5 className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold">{service.title}</h5>
-                          <p className="text-[20px]">{service.description}</p>
-                        </div>
-                        <Button variant="text" link ariaLabel={`Follow to ${service.title}`} href={`${process.env.NEXT_PUBLIC_APPFRONTURL}services/${service.slug}`}>
-                          View details
-                        </Button>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
+      <main id="main">
+        <HeroSec
+          crumbs={[{ label: "Services" }]}
+          title="Fast products, working AI and software that fits."
+          intro="Launch a new product in 10 days, put AI agents and automation to work, or get a proven business platform set up under your brand."
+        >
+          <div className="mt-6">
+            <Button link href="/contact">Discuss your project</Button>
           </div>
-        </section>
-        <IndustrySpotlightSection />
-        <PricingSection />
+        </HeroSec>
+        <VideoAreaSection imageUrl="/images/service/service-detail-img.webp" />
+        <ServiceSection index="01" title="Seven services, one team." showAll={false} />
+        <SolutionsSection index="02" />
+        <IndustrySpotlightSection index="03" />
+        <PricingSection index="04" />
       </main>
       <Footer />
     </>

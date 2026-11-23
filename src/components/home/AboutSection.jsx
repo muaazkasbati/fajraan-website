@@ -1,41 +1,35 @@
-
 import React from "react";
-import { motion } from "framer-motion";
+import Reveal from "../Reveal";
 import Button from "../Button";
 
 const AboutSection = () => {
   return (
-    <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden min-h-135">
-      <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-        <div className="flex justify-end">
-          <div className="w-full md:w-10/12 lg:w-9/12 xl:w-10/12">
-            <motion.div
-              initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
-              whileInView={{ opacity: 1, rotateX: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-            >
-              <p className="text-[30px] md:text-[38px] lg:text-[42px] xl:text-[44px] leading-[116.667%] tracking-[-1.5px] font-semibold">
-                We build smart digital strategies and creative designs that help startups, growing businesses, and enterprises scale. Our aim is to give every client a focused, high-quality result rather than a scattered list of services.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
-              whileInView={{ opacity: 1, rotateX: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-            >
-              <div className="mt-15 max-w-163 ml-auto">
-                <p className="text-[20px] mb-4">
-                  From web and mobile development to AI-powered automation, we handle every project with care, technical depth, and full focus on quality results, wherever in the world our clients are.
-                </p>
-                <Button variant="text" link ariaLabel="Follow to about" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}about`}>
-                  More about us
-                </Button>
-              </div>
-            </motion.div>
-          </div>
+    <section className="section !pt-10 md:!pt-16">
+      <div className="wrap grid gap-10 lg:grid-cols-12">
+        <Reveal className="lg:col-span-3">
+          <p className="t-eyebrow">
+            <span className="t-num">01</span>
+            <span aria-hidden="true" className="opacity-40">/</span>
+            Who we are
+          </p>
+        </Reveal>
+        <div className="lg:col-span-9">
+          <Reveal delay={60}>
+            <p className="text-[26px] font-medium leading-[1.25] tracking-[-0.02em] text-primary md:text-[36px] lg:text-[42px]">
+              Businesses don&apos;t need another agency that takes six months.{" "}
+              <span className="text-muted">
+                They need a working product, smart automation and software that fits, delivered fast.
+              </span>
+            </p>
+          </Reveal>
+          <Reveal delay={140} className="mt-10 grid gap-6 md:grid-cols-2">
+            <p className="text-muted">
+              We build new products in short sprints, put AI agents and automation to work on real operations, and set up proven platforms like ERP, school and courier management under your brand. Web and mobile engineering sits underneath all of it.
+            </p>
+            <div className="md:justify-self-end">
+              <Button variant="text" link href="/about">More about us</Button>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

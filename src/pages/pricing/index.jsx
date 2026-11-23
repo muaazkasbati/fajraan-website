@@ -107,11 +107,11 @@ export default function Pricing() {
                 />
             </Head>
             <Header />
-            <main>
-                <HeroSec title="Clear Plans. Fair Pricing. Built for Your Growth." />
+            <main id="main">
+                <HeroSec crumbs={[{ label: "Pricing" }]} title="Clear plans. Fair pricing. Built for your growth." intro="Three starting points for most projects. Every build is scoped with you before any work begins." />
                 <VideoAreaSection imageUrl="/images/hero/pricing-hero-banner.webp" />
-                <PricingSection />
-                <FaqsSection />
+                <PricingSection index="01" />
+                <FaqsSection index="02" />
             </main>
             <Footer />
         </>

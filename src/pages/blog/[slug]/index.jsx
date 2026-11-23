@@ -3,107 +3,81 @@ import Header from '@/components/Header'
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react'
-import { motion } from "framer-motion";
 import BlogCard from '@/components/BlogCard';
+import Link from 'next/link';
+import Button from '@/components/Button';
+import SectionHead from '@/components/SectionHead';
+import { cloudinaryUrl, cmsSrcSet } from '@/utils/image';
 import formatDate from '@/utils/formatDate';
+import Reveal from "@/components/Reveal";
+import { cmsDetail, cmsFetchSafe } from "@/utils/cms";
+
+const SITE = process.env.NEXT_PUBLIC_APPFRONTURL || "https://www.fajraan.tech/";
 
 export async function getStaticPaths() {
-    try {
-        const response = await fetch("https://cms-backend.fajraan.com/api/posts/blogs?limit=100");
-        const posts = await response.json();
-
-        return {
-            paths: posts.data.map((post) => ({
-                params: { slug: post?.dynamicFields?.slug },
-            })),
-            fallback: "blocking",
-        };
-    } catch (error) {
-        console.error("Error fetching blog paths:", error);
-
-        return {
-            paths: [],
-            fallback: "blocking",
-        };
-    }
+    const json = await cmsFetchSafe("/blogs?limit=100", { data: [] });
+    return {
+        paths: (json?.data || [])
+            .map((post) => post?.dynamicFields?.slug)
+            .filter(Boolean)
+            .map((slug) => ({ params: { slug } })),
+        fallback: "blocking",
+    };
 }
 
 export async function getStaticProps({ params }) {
     const { slug } = params;
+    const result = await cmsDetail(`/blogs/${encodeURIComponent(slug)}`);
+    if (!result.data) return result;
 
-    try {
-        const response = await fetch(`https://cms-backend.fajraan.com/api/posts/blogs/${slug}`);
+    const post = result.data;
+    const fields = post.dynamicFields || {};
+    const seo = post.seo || {};
+    const canonicalUrl = seo.canonical || `${SITE}blog/${fields.slug || slug}`;
 
-        if (!response.ok) return { notFound: true };
-
-        const data = await response.json();
-
-        if (!data?.data) {
-            return { notFound: true };
-        }
-
-        const post = data?.data;
-        const fields = post.dynamicFields || {};
-        const seo = post.seo || {};
-        const canonicalUrl = seo.canonical || `${process.env.NEXT_PUBLIC_APPFRONTURL}blog/${fields.slug}`;
-        const morePostsResponse = await fetch("https://cms-backend.fajraan.com/api/posts/blogs?limit=10&page=1");
-        const morePosts = await morePostsResponse.json();
-
-        const mappedPosts = morePosts?.data?.map((relatedPost) => ({
-            id: relatedPost?._id,
-            title: relatedPost?.dynamicFields?.title,
-            slug: relatedPost?.dynamicFields?.slug,
-            date: formatDate(relatedPost?.publishDate),
-            image: relatedPost?.dynamicFields?.featured_image,
+    const more = await cmsFetchSafe("/blogs?limit=4&page=1", { data: [] }, { timeout: 5000, retries: 0 });
+    const morePosts = (more?.data || [])
+        .filter((p) => p?._id !== post._id && p?.dynamicFields?.slug)
+        .slice(0, 3)
+        .map((p) => ({
+            id: p._id || null,
+            title: p.dynamicFields?.title || "",
+            slug: p.dynamicFields.slug,
+            date: p.publishDate ? formatDate(p.publishDate) : "",
+            image: p.dynamicFields?.featured_image || null,
         }));
 
-        return {
-            props: {
-                data: {
-                    ...post,
-                    ...fields,
-                    seo,
-                    title: fields.title || "",
-                    content: fields.content || "",
-                    date: post.publishDate || post.createdAt || "",
-                    authorName: post.author?.fullName || "",
-                    categories: post.categories?.map((category) => category.name) || [],
-                    tags: post.tags?.map((tag) => tag.name) || [],
-                    image: fields.featured_image || "",
-                    canonicalUrl,
-                    metaTitle: seo.metaTitle || fields.metaTitle || fields.title || "",
-                    metaDescription: seo.metaDescription || fields.metaDescription || "",
-                    seoKeywords: seo.metaKeywords || [],
-                    published_time: post.publishDate || "",
-                    modified: post.updatedAt || post.publishDate || "",
-                    readingTime: fields.read_time || "",
-                },
-                morePosts: (mappedPosts || []).filter((relatedPost) => relatedPost.id !== post._id).slice(0, 3),
-            },
-            revalidate: 60,
-        };
-    } catch (error) {
-        console.error("Error fetching blog detail:", error);
-
-        return {
-            notFound: true,
-        };
-    }
+    return {
+        props: {
+            data: JSON.parse(JSON.stringify({
+                ...post,
+                ...fields,
+                seo,
+                title: fields.title || "",
+                content: fields.content || "",
+                date: post.publishDate || post.createdAt || "",
+                authorName: post.author?.fullName || "",
+                categories: post.categories?.map((category) => category.name) || [],
+                tags: post.tags?.map((tag) => tag.name) || [],
+                image: fields.featured_image || "",
+                canonicalUrl,
+                metaTitle: seo.metaTitle || fields.metaTitle || fields.title || "",
+                metaDescription: seo.metaDescription || fields.metaDescription || "",
+                seoKeywords: seo.metaKeywords || [],
+                published_time: post.publishDate || "",
+                modified: post.updatedAt || post.publishDate || "",
+                readingTime: fields.read_time || "",
+            })),
+            morePosts,
+        },
+        revalidate: 300,
+    };
 }
 
 export default function BlogDetail({ data, morePosts }) {
     const router = useRouter();
     const { slug } = router.query;
 
-    const containerVariants = {
-        hidden: {},
-        show: {
-            transition: {
-                staggerChildren: 0.25,
-                delayChildren: 0.1,
-            },
-        },
-    };
 
     function extractFAQ(html) {
         return [...html.matchAll(/<strong>\s*Q:\s*(.*?)\s*<\/strong>\s*<br\s*\/?>\s*A:\s*([\s\S]*?)<\/p>/gi)].map(([, question, answer]) => ({
@@ -180,7 +154,7 @@ export default function BlogDetail({ data, morePosts }) {
                                 name: "Fajraan Tech",
                                 logo: {
                                     "@type": "ImageObject",
-                                    url: `${process.env.NEXT_PUBLIC_APPFRONTURL}/images/logo.webp`
+                                    url: `${SITE}images/logo.webp`
                                 }
                             },
                             datePublished: data?.published_time,
@@ -243,103 +217,72 @@ export default function BlogDetail({ data, morePosts }) {
                 )}
             </Head>
             <Header />
-            <main>
-                <section className="lg:pt-50 md:pt-32.5 pt-28 lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <div className="w-full xl:w-9/12 2xl:w-9/12 mx-auto">
-                            <motion.div
-                                initial={{ opacity: 0, rotateX: -80, transformOrigin: "top center" }}
-                                whileInView={{ opacity: 1, rotateX: 0 }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
-                                viewport={{ once: true }}
-                            >
-                                <h2 className="text-[60px] md:text-[70px] lg:text-[90px] xl:text-[100px] leading-[110%] font-semibold text-primary">
-                                    {data?.title}
-                                </h2>
-                            </motion.div>
-
-                            <ul className="text-[20px] flex gap-4 flex-wrap mt-6">
-                                <li className="pr-6 border-r border-1">
-                                    {formatDate(data?.date)}
-                                </li>
-                                <li className="pr-6 border-r border-1">{data?.categories?.join(', ')}</li>
-                                <li>By Fajraan Tech</li>
-                            </ul>
-                        </div>
-                        <motion.div
-                            className="overflow-hidden mt-22.5"
-                            initial={{ opacity: 0, y: 60 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                            viewport={{ once: true }}
-                        >
-                            <img
-                                alt={data?.title}
-                                className="w-full block"
-                                style={{ height: '722px', objectFit: 'cover' }}
-                                src={data?.image}
-                            />
-                        </motion.div>
-                        <motion.div
-                            className="pt-15"
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                            variants={{
-                                hidden: { opacity: 0, y: 40 },
-                                show: {
-                                    opacity: 1,
-                                    y: 0,
-                                    transition: {
-                                        duration: 0.7,
-                                        ease: "easeOut",
-                                        staggerChildren: 0.15,
-                                    },
-                                },
-                            }}
-                        >
-                            <div className="w-full xl:w-9/12 2xl:w-8/12 mx-auto">
-                                <motion.div
-                                    className="blog-body"
-                                    variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } }}
-                                    dangerouslySetInnerHTML={{ __html: data?.content }}
-                                />
-
-                                <ul className="flex gap-2 flex-wrap text-[20px] capitalize">
-                                    {data?.tags?.map((item, i) => (
-                                        <li key={i}>#{item}</li>
-                                    ))}
+            <main id="main">
+                <article>
+                    <header className="pt-32 pb-12 md:pt-40 md:pb-16 lg:pt-48">
+                        <div className="wrap">
+                            <div className="mx-auto max-w-4xl">
+                                <nav aria-label="Breadcrumb" className="t-eyebrow">
+                                    <ol className="flex flex-wrap items-center gap-2">
+                                        <li><Link href="/" className="hover:text-primary">Home</Link></li>
+                                        <li aria-hidden="true">/</li>
+                                        <li><Link href="/blog" className="hover:text-primary">Blog</Link></li>
+                                    </ol>
+                                </nav>
+                                <Reveal>
+                                    <h1 className="t-h1 mt-6 !text-[clamp(36px,5vw,68px)] text-primary">{data?.title}</h1>
+                                </Reveal>
+                                <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-6 text-[15px] text-muted">
+                                    {data?.date && <li><time dateTime={data.date}>{formatDate(data.date)}</time></li>}
+                                    {data?.categories?.length > 0 && <li>{data.categories.join(", ")}</li>}
+                                    {data?.readingTime && <li>{data.readingTime}</li>}
+                                    <li>By {data?.authorName || "Fajraan Tech"}</li>
                                 </ul>
                             </div>
-                        </motion.div>
-                    </div>
-                </section>
-                {morePosts?.length > 0 && (
-                    <section className="lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
-                        <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                            <div className="text-center md:text-left pb-15">
-                                <motion.h3
-                                    className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold"
-                                    initial={{ opacity: 0, x: -100 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.7, ease: "easeOut" }}
-                                    viewport={{ once: true }}
-                                >
-                                    More articles
-                                </motion.h3>
-                            </div>
+                        </div>
+                    </header>
 
-                            <motion.div
-                                className="grid sm:grid-cols-3 gap-6"
-                                variants={containerVariants}
-                                initial="hidden"
-                                whileInView="show"
-                                viewport={{ once: true, amount: 0.2 }}
-                            >
-                                {morePosts?.map((data, index) => (
-                                    <BlogCard data={data} key={index} />
+                    {data?.image && (
+                        <div className="wrap">
+                            <div className="overflow-hidden bg-paper">
+                                <img
+                                    alt=""
+                                    src={cloudinaryUrl(data.image, 1600)}
+                                    srcSet={cmsSrcSet(data.image)}
+                                    sizes="(max-width: 1320px) 100vw, 1320px"
+                                    width={1600}
+                                    height={800}
+                                    fetchPriority="high"
+                                    decoding="async"
+                                    className="block aspect-[16/9] w-full object-cover lg:aspect-[2/1]"
+                                />
+                            </div>
+                        </div>
+                    )}
+
+                    <div className="wrap pt-14 pb-20 md:pt-20 md:pb-28">
+                        <div className="mx-auto max-w-[720px]">
+                            <div className="blog-body" dangerouslySetInnerHTML={{ __html: data?.content }} />
+                            {data?.tags?.length > 0 && (
+                                <ul className="mt-12 flex flex-wrap gap-2 border-t border-line pt-8">
+                                    {data.tags.map((tag) => (
+                                        <li key={tag} className="rounded-full border border-line px-3 py-1 text-[14px] text-muted">#{tag}</li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    </div>
+                </article>
+
+                {morePosts?.length > 0 && (
+                    <section className="section bg-paper">
+                        <div className="wrap">
+                            <SectionHead eyebrow="Keep reading" title="More articles" aside={<Button variant="text" link href="/blog">All articles</Button>} />
+                            <div className="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+                                {morePosts.map((post, i) => (
+                                    <BlogCard data={post} index={i} key={post.id || i} />
                                 ))}
-                            </motion.div>
+                            </div>
                         </div>
                     </section>
                 )}

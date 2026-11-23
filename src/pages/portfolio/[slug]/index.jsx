@@ -4,21 +4,18 @@ import HeroSec from '@/components/HeroSec'
 import VideoAreaSection from '@/components/VideoAreaSection'
 import Head from 'next/head'
 import React from 'react'
-import { motion } from 'framer-motion';
 import Button from '@/components/Button'
 import formatDate from '@/utils/formatDate'
+import Reveal from "@/components/Reveal";
+import { cmsDetail, cmsFetchSafe } from "@/utils/cms";
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  try {
-    const res = await fetch(`https://cms-backend.fajraan.com/api/posts/projects/${slug}`);
-    if (!res.ok) return { notFound: true };
-
-    const result = await res.json();
-    if (!result?.data) return { notFound: true };
-
-    const item = result?.data;
+  const result = await cmsDetail(`/projects/${encodeURIComponent(slug)}`);
+  if (!result.data) return result;
+  {
+    const item = result.data;
     const fields = item.dynamicFields || {};
     const seo = item.seo || {};
     const getAssetUrl = (value) => value?.match(/\((https?:\/\/[^)]+)\)/)?.[1] || value || null;
@@ -47,35 +44,21 @@ export async function getStaticProps({ params }) {
     };
 
     return {
-      props: { data },
+      props: { data: JSON.parse(JSON.stringify(data)) },
+      revalidate: 600,
     };
-  } catch (error) {
-    console.error('Portfolio detail page error:', error);
-    return { notFound: true };
   }
 }
 
 export async function getStaticPaths() {
-  try {
-    const res = await fetch("https://cms-backend.fajraan.com/api/posts/projects?limit=100&page=1");
-    const result = await res.json();
-
-    const paths = (result?.data || []).map((item) => ({
-      params: { slug: item?.dynamicFields?.slug },
-    }));
-
-    return {
-      paths,
-      fallback: "blocking",
-    };
-  } catch (error) {
-    console.error("Portfolio paths error:", error);
-
-    return {
-      paths: [],
-      fallback: "blocking",
-    };
-  }
+  const json = await cmsFetchSafe("/projects?limit=100&page=1", { data: [] });
+  return {
+    paths: (json?.data || [])
+      .map((item) => item?.dynamicFields?.slug)
+      .filter(Boolean)
+      .map((slug) => ({ params: { slug } })),
+    fallback: "blocking",
+  };
 }
 
 export default function PortfolioDetail({ data }) {
@@ -84,11 +67,6 @@ export default function PortfolioDetail({ data }) {
   const ogImage = data?.image || `${process.env.NEXT_PUBLIC_APPFRONTURL}images/og/og-image.webp`;
   const canonicalUrl = data?.canonicalUrl;
 
-  const images = [
-    'https://quanto-next.vercel.app/images/portfolio-details/portfolio-details-fig-1.png',
-    'https://quanto-next.vercel.app/images/portfolio-details/portfolio-details-fig-2.png',
-    'https://quanto-next.vercel.app/images/portfolio-details/portfolio-details-fig-3.png',
-  ];
 
   const details = [
     { title: 'Category', value: data?.categories?.join(", ") },
@@ -96,7 +74,7 @@ export default function PortfolioDetail({ data }) {
     { title: 'Year', value: data?.year || formatDate(data?.date) },
     { title: 'Client', value: data?.client },
     { title: 'Stack', value: data?.stack },
-  ];
+  ].filter((d) => d.value);
 
   return (
     <>
@@ -197,120 +175,42 @@ export default function PortfolioDetail({ data }) {
         />
       </Head>
       <Header />
-      <main>
-        <HeroSec title={data?.title} />
-        <VideoAreaSection imageUrl={data?.image} scrollDownId="service-section" fullImage />
-        <section className="py-24">
-          <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-            <div className="grid sm:grid-cols-2">
-              <motion.div
-                initial={{ opacity: 0, rotateX: -80, transformPerspective: 400, transformOrigin: "center top", }}
-                whileInView={{ opacity: 1, rotateX: 0, transformPerspective: 400, transformOrigin: "center top", }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1, ease: "easeOut", delay: 0.3, }}
-              >
-                <h2 className="text-[60px] md:text-[70px] lg:text-[90px] xl:text-[100px] leading-[110%] font-semibold text-primary">
-                  Project Overview
-                </h2>
-              </motion.div>
-
-              <div className="space-y-8">
-                <motion.div
-                  key={data?.id}
-                  initial={{ opacity: 0, rotateX: -80, transformPerspective: 400, transformOrigin: "center top", }}
-                  whileInView={{ opacity: 1, rotateX: 0, transformPerspective: 400, transformOrigin: "center top", }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, ease: "easeOut", delay: 0.3, }}
-                  // className="text-[20px] space-y-4"
-                  className="blog-body"
-                  dangerouslySetInnerHTML={{ __html: data?.content }}
-                />
-                <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                  <Button variant="text" link href={data?.externalLink} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer">
-                    Visit Live Website
-                  </Button>
-                </motion.div>
-
-                <motion.div
-                  className="grid gap-5 pt-10 sm:grid-cols-2"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.3 }}
-                >
-                  {details.map((item, index) => (
-                    <motion.div
-                      key={item.title}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: index * 0.12, ease: [0.22, 1, 0.36, 1], }}
-                      className="space-y-1"
-                    >
-                      <span className="text-[18px] leading-[144.444%]">
-                        {item.title}
-                      </span>
-
-                      <p className="text-[20px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold">
-                        {item.value}
-                      </p>
-                    </motion.div>
+      <main id="main">
+        <HeroSec
+          crumbs={[{ label: "Work", href: "/portfolio" }, { label: data?.title }]}
+          title={data?.title}
+          intro={data?.excerpt || undefined}
+        />
+        <VideoAreaSection imageUrl={data?.image} alt={data?.title} fullImage />
+        <section className="section">
+          <div className="wrap grid gap-12 lg:grid-cols-12">
+            <aside className="lg:col-span-4">
+              <div className="lg:sticky lg:top-28">
+                <p className="t-eyebrow">Project details</p>
+                <dl className="mt-6 divide-y divide-line border-y border-line">
+                  {details.map((item) => (
+                    <div key={item.title} className="flex justify-between gap-6 py-4">
+                      <dt className="text-[15px] text-muted">{item.title}</dt>
+                      <dd className="text-right text-[15px] font-semibold text-primary">{item.value}</dd>
+                    </div>
                   ))}
-                </motion.div>
+                </dl>
+                {data?.externalLink && (
+                  <div className="mt-8">
+                    <Button link href={data.externalLink} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer">
+                      Visit live website
+                    </Button>
+                  </div>
+                )}
               </div>
+            </aside>
+            <div className="lg:col-span-7 lg:col-start-6">
+              <h2 className="t-h2 text-primary">Project overview</h2>
+              <div className="blog-body mt-8" dangerouslySetInnerHTML={{ __html: data?.content }} />
             </div>
-
-            {/* <div className="mt-24 grid gap-6 sm:grid-cols-2">
-              {images.slice(0, 2).map((src, index) => (
-                <motion.div
-                  key={src}
-                  initial={{ opacity: 0, y: 50, scale: 0.96 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, amount: 0.25 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.15,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="group overflow-hidden"
-                >
-                  <img
-                    src={src}
-                    alt="Portfolio"
-                    width={900}
-                    height={700}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </motion.div>
-              ))}
-
-              <motion.div
-                initial={{ opacity: 0, y: 60, scale: 0.97 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.9,
-                  delay: 0.2,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="overflow-hidden sm:col-span-2"
-              >
-                <img
-                  src={images[2]}
-                  alt="Portfolio"
-                  width={1600}
-                  height={900}
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </motion.div>
-            </div> */}
           </div>
         </section>
-      </main >
+      </main>
       <Footer />
     </>
   )

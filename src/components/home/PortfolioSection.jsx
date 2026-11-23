@@ -1,89 +1,58 @@
 import React from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import { toWebP } from "@/utils/data";
+import { cloudinaryUrl, cmsSrcSet } from "@/utils/image";
+import Reveal from "../Reveal";
+import SectionHead from "../SectionHead";
 import Button from "../Button";
 
-const PortfolioSection = ({ theme = "dark", projects = [] }) => {
-    const imageAnim = {
-        initial: { opacity: 0, x: -300 },
-        whileInView: { opacity: 1, x: 0 },
-        viewport: { once: true },
-        transition: { duration: 0.8, ease: "easeOut" },
-    };
-
-    const PortfolioCard = ({ proj, index, second = false }) => {
-        return (
-            <>
-                <div className={`w-full ${second ? "md:w-10/12 mx-auto" : ""} lg:mb-37.5 md:mb-20 mb-15`}>
-                    <div className="overflow-hidden">
-                        <motion.div
-                            className="w-full aspect-573/458 relative overflow-hidden"
-                            {...imageAnim}
-                            transition={{ ...imageAnim.transition, delay: 0.2 * index }}
-                        >
-                            <Image
-                                src={toWebP(proj?.image)}
-                                alt={proj.title}
-                                fill
-                                sizes="(max-width: 768px) 100vw, 33vw"
-                                className="object-cover block"
-                            />
-                        </motion.div>
-                        <div className="mt-5">
-                            {/* <p className={`text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold ${theme === "dark" ? "text-white" : "text-primary"} line-clamp-1`}>
-                                <span>{proj?.title}</span>
-                            </p> */}
-                            <p className={`text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold ${theme === "dark" ? "text-white" : "text-primary"} line-clamp-1`}>
-                                <Link
-                                    href={`${process.env.NEXT_PUBLIC_APPFRONTURL}portfolio/${proj?.slug}`}
-                                    // href={proj.link}
-                                    // target="_blank"
-                                    // rel="noopener noreferrer"
-                                    // referrerPolicy="no-referrer"
-                                    className="transition-all duration-300 hover:opacity-70 hover:underline underline-offset-4"
-                                >
-                                    {proj?.title}
-                                </Link>
-                            </p>
-                            <span className={`text-[20px] ${theme === "dark" ? "text-white" : ""}`}>
-                                {proj?.year} - {proj?.category}
-                            </span>
-                        </div>
-                    </div>
+export function ProjectCard({ proj, index = 0, sizes = "(max-width: 768px) 100vw, 50vw" }) {
+    const href = `/portfolio/${proj?.slug}`;
+    return (
+        <Reveal as="article" delay={(index % 2) * 80} className="group">
+            <Link href={href} className="block overflow-hidden bg-paper" tabIndex={-1} aria-hidden="true">
+                <div className="relative aspect-[5/4] w-full">
+                    {proj?.image && (
+                        <img
+                            src={cloudinaryUrl(proj.image, 1200)}
+                            srcSet={cmsSrcSet(proj.image)}
+                            sizes={sizes}
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                        />
+                    )}
                 </div>
-            </>
-        )
-    }
+            </Link>
+            <div className="mt-5 flex items-start justify-between gap-6">
+                <h3 className="t-h3 text-primary">
+                    <Link href={href} className="link-u">{proj?.title}</Link>
+                </h3>
+                <p className="t-num shrink-0 pt-1 text-[14px] text-muted">{proj?.year}</p>
+            </div>
+            {proj?.category && <p className="mt-1 text-[15px] text-muted">{proj.category}</p>}
+        </Reveal>
+    );
+}
+
+const PortfolioSection = ({ projects = [], index = "03" }) => {
+    if (!projects?.length) return null;
 
     return (
-        <section className={`lg:py-32.5 md:py-20 py-16.25 ${theme === "dark" ? "bg-primary" : ""} overflow-hidden`}>
-            <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                <div className="flex flex-wrap gap-x-0 gap-y-4 md:gap-y-0 justify-between">
-                    <div className="w-full md:w-5/12 order-1 md:order-0">
-                        <div className="flex flex-wrap gap-0">
-                            {projects.slice(0, Math.ceil(projects.length / 2)).map((proj, index) => (
-                                <PortfolioCard key={index} index={index} proj={proj} />
-                            ))}
+        <section className="section" id="work">
+            <div className="wrap">
+                <SectionHead
+                    index={index}
+                    eyebrow="Selected work"
+                    title="Recent projects we've shipped."
+                    aside={<Button variant="text" link href="/portfolio">View all work</Button>}
+                />
+                <div className="mt-14 grid gap-x-8 gap-y-14 md:mt-20 md:grid-cols-2">
+                    {projects.slice(0, 4).map((proj, i) => (
+                        <div key={proj.id || i} className={i % 2 ? "md:mt-24" : ""}>
+                            <ProjectCard proj={proj} index={i} />
                         </div>
-                    </div>
-
-                    <div className="w-full md:w-6/12 order-0 md:order-1">
-                        <div className="flex flex-wrap">
-                            <div className="w-full">
-                                <div className="mb-22.5 text-center md:text-right">
-                                    <Button variant={theme === "dark" ? "white-text" : "text"} link ariaLabel="Follow to Portfolio" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}portfolio`}>
-                                        View more works
-                                    </Button>
-                                </div>
-                            </div>
-
-                            {projects.slice(Math.ceil(projects.length / 2)).map((proj, index) => (
-                                <PortfolioCard key={index} proj={proj} second />
-                            ))}
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

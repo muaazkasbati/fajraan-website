@@ -6,8 +6,8 @@ import Button from '@/components/Button'
 import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
-import { motion } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
+import Reveal from "@/components/Reveal";
 
 const quickFacts = [
     { label: 'Industry', value: 'Chauffeur & Limousine Transport' },
@@ -221,92 +221,71 @@ export default function EmpireChauffeursCaseStudy() {
                 />
             </Head>
             <Header />
-            <main>
+            <main id="main">
                 <HeroSec title="How We Built a Complete Fleet Management & Booking Platform for Empire Chauffeurs Australia" />
 
                 <section className="pb-15">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <motion.p className="text-[20px] w-full xl:w-8/12" {...fadeInUp}>
+                    <div className="wrap">
+                        <Reveal as="p" className="w-full xl:w-8/12">
                             A full-stack chauffeur dispatch and operations system covering bookings, driver management, payments, payouts, and reporting, built to run an entire fleet digitally.
-                        </motion.p>
+                        </Reveal>
                     </div>
                 </section>
 
-                <VideoAreaSection imageUrl="/images/case-studies-ec.jpg" scrollDownId="case-study-challenge" />
+                <VideoAreaSection imageUrl="/images/case-studies-ec.webp" scrollDownId="case-study-challenge" />
 
                 {/* QUICK FACTS */}
-                <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
+                <section className="section overflow-hidden">
+                    <div className="wrap">
                         <div className="grid sm:grid-cols-4 items-start gap-5">
                             {quickFacts.map((fact, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="sm:border-l border-1 sm:pl-7"
-                                    {...fadeInUp}
-                                    transition={{ ...fadeInUp.transition, delay: 0.1 * i }}
-                                >
+                                <Reveal key={i} className="sm:border-l border-1 sm:pl-7">
                                     <p className="text-[16px] uppercase tracking-[0.5px] text-3 mb-2">{fact.label}</p>
-                                    <p className="text-[20px] font-semibold text-primary">{fact.value}</p>
-                                </motion.div>
+                                    <p className="font-semibold text-primary">{fact.value}</p>
+                                </Reveal>
                             ))}
                         </div>
                     </div>
                 </section>
 
                 {/* CHALLENGE */}
-                <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden bg-2" id="case-study-challenge">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <motion.h3
-                            className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-primary w-full lg:w-9/12 xl:w-8/12"
-                            {...fadeInUp}
-                        >
+                <section className="section overflow-hidden bg-2" id="case-study-challenge">
+                    <div className="wrap">
+                        <Reveal as="h3" className="t-h2 text-primary w-full lg:w-9/12 xl:w-8/12">
                             The Problem
-                        </motion.h3>
-                        <motion.p className="text-[20px] mt-6 xl:w-8/12" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.1 }}>
+                        </Reveal>
+                        <Reveal as="p" className="mt-6 xl:w-8/12">
                             Empire Chauffeurs Australia needed to move their entire fleet operation off manual processes and disconnected tools. Before this platform, running the business meant:
-                        </motion.p>
+                        </Reveal>
 
                         <div className="grid gap-5 pt-10 md:grid-cols-2">
                             {challenges.map((point, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="bg-white w-full p-8"
-                                    {...fadeInUp}
-                                    transition={{ ...fadeInUp.transition, delay: 0.1 * i }}
-                                >
-                                    <p className="text-[20px]">{point}</p>
-                                </motion.div>
+                                <Reveal key={i} className="bg-white w-full p-8">
+                                    <p className="">{point}</p>
+                                </Reveal>
                             ))}
                         </div>
 
-                        <motion.p className="text-[20px] mt-10 xl:w-8/12" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.5 }}>
+                        <Reveal as="p" className="mt-10 xl:w-8/12">
                             They needed a system that could handle the full complexity of a real chauffeur operation, not a generic booking widget.
-                        </motion.p>
+                        </Reveal>
                     </div>
                 </section>
 
                 {/* SOLUTION */}
-                <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <motion.h3
-                            className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-primary"
-                            {...fadeInUp}
-                        >
+                <section className="section overflow-hidden">
+                    <div className="wrap">
+                        <Reveal as="h3" className="t-h2 text-primary">
                             What We Built
-                        </motion.h3>
-                        <motion.p className="text-[20px] mt-6 xl:w-8/12" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.1 }}>
+                        </Reveal>
+                        <Reveal as="p" className="mt-6 xl:w-8/12">
                             We designed and built a full-stack chauffeur/limousine fleet management and booking platform, covering every part of the business:
-                        </motion.p>
+                        </Reveal>
 
                         <div className="mt-15 space-y-4">
                             {solutionGroups.map((group, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="border-t border-1 pt-9 pb-4"
-                                    {...fadeInUp}
-                                    transition={{ ...fadeInUp.transition, delay: 0.05 * i }}
-                                >
-                                    <h6 className="text-[20px] md:text-[22px] lg:text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold mb-3">
+                                <Reveal key={i} className="border-t border-1 pt-9 pb-4">
+                                    <h6 className="t-h4 mb-3">
                                         {group.title}
                                     </h6>
                                     <ul className="text-[19px] list-disc list-inside space-y-1.5">
@@ -314,7 +293,7 @@ export default function EmpireChauffeursCaseStudy() {
                                             <li key={idx}>{p}</li>
                                         ))}
                                     </ul>
-                                </motion.div>
+                                </Reveal>
                             ))}
                         </div>
                     </div>
@@ -323,84 +302,68 @@ export default function EmpireChauffeursCaseStudy() {
                 <VideoAreaSection video videoUrl="https://videos.pexels.com/video-files/8345157/8345157-uhd_2560_1440_25fps.mp4" />
 
                 {/* RESULT */}
-                <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden bg-2">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <motion.h3
-                            className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] font-semibold text-primary w-full lg:w-9/12 xl:w-8/12"
-                            {...fadeInUp}
-                        >
+                <section className="section overflow-hidden bg-2">
+                    <div className="wrap">
+                        <Reveal as="h3" className="t-h2 text-primary w-full lg:w-9/12 xl:w-8/12">
                             The Outcome
-                        </motion.h3>
-                        <motion.p className="text-[20px] mt-6 xl:w-8/12" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.1 }}>
+                        </Reveal>
+                        <Reveal as="p" className="mt-6 xl:w-8/12">
                             Empire Chauffeurs Australia now runs their entire fleet operation on a single, unified platform, from the moment a customer books a ride to the moment a driver gets paid.
-                        </motion.p>
+                        </Reveal>
 
                         <div className="grid gap-5 pt-10 md:grid-cols-2">
                             {outcomes.map((item, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="flex items-start gap-3 bg-white w-full p-6"
-                                    {...fadeInUp}
-                                    transition={{ ...fadeInUp.transition, delay: 0.1 * i }}
-                                >
+                                <Reveal key={i} className="flex items-start gap-3 bg-white w-full p-6">
                                     <CheckCircle2 className="text-secondary shrink-0 mt-1" size={24} />
-                                    <p className="text-[20px]">{item}</p>
-                                </motion.div>
+                                    <p className="">{item}</p>
+                                </Reveal>
                             ))}
                         </div>
                     </div>
                 </section>
 
                 {/* TESTIMONIAL */}
-                <section className="lg:py-32.5 md:py-20 py-16.25 overflow-hidden">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <motion.div className="bg-2 p-8 md:p-12 xl:p-15 xl:w-9/12 mx-auto" {...fadeInUp}>
+                <section className="section overflow-hidden">
+                    <div className="wrap">
+                        <Reveal className="bg-2 p-8 md:p-12 xl:p-15 xl:w-9/12 mx-auto">
                             <p className="font-normal leading-[133.333%] tracking-[-0.36px] text-primary text-[22px] md:text-[25px]">
                                     &quot;Fajraan Tech transformed the way we manage our chauffeur business. They delivered a complete booking and fleet management platform with real-time dispatching, driver management, Stripe payments, reporting, and countless custom features tailored to our operations. The attention to detail, technical expertise, and ongoing support have been exceptional. They truly became a trusted technology partner for our business.&quot;
                             </p>
                             <div className="mt-8">
-                                <p className="text-[20px] font-semibold text-black">Hass Gill</p>
+                                <p className="font-semibold text-black">Hass Gill</p>
                                 <span className="text-[18px] text-primary">Co-Founder at Empire Chauffeurs Australia</span>
                             </div>
-                        </motion.div>
+                        </Reveal>
                     </div>
                 </section>
 
                 {/* FAQ */}
-                <section className="lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <motion.h3
-                            className="text-[30px] md:text-[40px] leading-[116.667%] tracking-[-1.5px] font-semibold text-primary mb-8 xl:w-8/12"
-                            {...fadeInUp}
-                        >
+                <section className="pb-18 md:pb-26 xl:pb-32 overflow-hidden">
+                    <div className="wrap">
+                        <Reveal as="h3" className="t-h2 !text-[clamp(28px,3vw,40px)] text-primary mb-8 xl:w-8/12">
                             Frequently Asked Questions
-                        </motion.h3>
+                        </Reveal>
                         <div className="space-y-4 xl:w-8/12">
                             {faqs.map((faq, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="border-t border-1 pt-6"
-                                    {...fadeInUp}
-                                    transition={{ ...fadeInUp.transition, delay: 0.1 * i }}
-                                >
-                                    <h6 className="text-[20px] md:text-[22px] leading-[141.667%] tracking-[-0.24px] font-semibold mb-2">
+                                <Reveal key={i} className="border-t border-1 pt-6">
+                                    <h6 className="t-h4 mb-2">
                                         {faq.question}
                                     </h6>
                                     <p className="text-[19px]">{faq.answer}</p>
-                                </motion.div>
+                                </Reveal>
                             ))}
                         </div>
                     </div>
                 </section>
 
                 {/* CLOSING CTA */}
-                <section className="lg:pb-32.5 md:pb-20 pb-16.25 overflow-hidden">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <motion.div className="bg-primary text-center p-10 md:p-15 xl:p-20" {...fadeInUp}>
-                            <h3 className="text-[32px] md:text-[45px] lg:text-[55px] leading-[112.5%] tracking-[-2px] font-semibold text-white">
+                <section className="pb-18 md:pb-26 xl:pb-32 overflow-hidden">
+                    <div className="wrap">
+                        <Reveal className="bg-primary text-center p-10 md:p-15 xl:p-20">
+                            <h3 className="t-h2 text-white">
                                 Looking for something similar for your fleet?
                             </h3>
-                            <p className="text-[20px] text-white mt-6 xl:w-7/12 mx-auto">
+                            <p className="text-white mt-6 xl:w-7/12 mx-auto">
                                 We&apos;ve built this exact type of platform for chauffeur operators in Australia and Canada, and we can build it for you, whether that&apos;s a full custom platform or a faster, lower-cost version for a smaller fleet.
                             </p>
                             <div className="flex flex-wrap items-center justify-center gap-6 mt-10">
@@ -408,16 +371,16 @@ export default function EmpireChauffeursCaseStudy() {
                                 variant="white"
                                     link
                                     aria-label="Book a Demo"
-                                    href={`${process.env.NEXT_PUBLIC_APPFRONTURL}contact`}
+                                    href={`/contact`}
                                     className="group inline-flex w-max items-center gap-2 rounded-[40px] border border-white bg-white px-6 py-3.5 text-[18px] font-semibold leading-[144.444%] tracking-[-0.18px] text-primary transition-all duration-500 ease-in-out"
                                 >
                                     Book a Demo
                                 </Button>
-                                <Button variant="white-text" link ariaLabel="See the chauffeur software overview" href={`${process.env.NEXT_PUBLIC_APPFRONTURL}chauffeur-software`}>
+                                <Button variant="white-text" link ariaLabel="See the chauffeur software overview" href={`/chauffeur-software`}>
                                     See the Chauffeur Software Overview
                                 </Button>
                             </div>
-                        </motion.div>
+                        </Reveal>
                     </div>
                 </section>
             </main>

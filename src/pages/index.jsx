@@ -1,83 +1,58 @@
 import Head from "next/head";
-import dynamic from "next/dynamic";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/home/HeroSection";
-import IndustrySpotlightSection from "@/components/IndustrySpotlightSection";
-import { toWebP } from "@/utils/data";
+import OurAchievementSection from "@/components/home/OurAchivementSection";
+import AboutSection from "@/components/home/AboutSection";
+import ServiceSection from "@/components/home/ServiceSection";
+import PortfolioSection from "@/components/home/PortfolioSection";
+import MvpSprintSection from "@/components/home/MvpSprintSection";
+import SolutionsSection from "@/components/SolutionsSection";
+import TestimonialSection from "@/components/home/TextimonialSection";
+import BlogSection from "@/components/home/BlogSection";
 import formatDate from "@/utils/formatDate";
-import { decodeHtml } from "@/utils/decodeHtml";
-
-const AboutSection = dynamic(() => import("@/components/home/AboutSection"));
-const OurAchivementSection = dynamic(() => import("@/components/home/OurAchivementSection"), { ssr: false });
-const PortfolioSection = dynamic(() => import("@/components/home/PortfolioSection"), { ssr: false });
-const ServiceSection = dynamic(() => import("@/components/home/ServiceSection"));
-const TextimonialSection = dynamic(() => import("@/components/home/TextimonialSection"), { ssr: false });
-const BlogSection = dynamic(() => import("@/components/home/BlogSection"), { ssr: false });
+import { cmsFetchSafe } from "@/utils/cms";
 
 export async function getStaticProps() {
-  try {
-    const BASE = "https://cms-backend.fajraan.com/api/posts";
+  const [postsData, portfolioData] = await Promise.all([
+    cmsFetchSafe("/blogs?limit=3&page=1", { data: [] }),
+    cmsFetchSafe("/projects?limit=4&page=1", { data: [] }),
+  ]);
 
-    const [postsRes, portfolioRes] = await Promise.all([
-      fetch(`${BASE}/blogs?limit=3&page=1`),
-      fetch(`${BASE}/projects?limit=4&page=1`)
-    ]);
+  const portfolio = (portfolioData?.data || []).map((item) => ({
+    id: item?._id || null,
+    title: item?.dynamicFields?.title || "",
+    slug: item?.dynamicFields?.slug || "",
+    year: item?.dynamicFields?.year || "",
+    category: item?.categories?.[0]?.name || "",
+    image: item?.dynamicFields?.image || null,
+  })).filter((p) => p.slug);
 
-    if (!postsRes.ok || !portfolioRes.ok) {
-      throw new Error(`API error: posts=${postsRes.status} portfolio=${portfolioRes.status}`);
-    }
+  const posts = (postsData?.data || []).map((post) => ({
+    id: post?._id || null,
+    title: post?.dynamicFields?.title || "",
+    slug: post?.dynamicFields?.slug || "",
+    date: post?.publishDate ? formatDate(post.publishDate) : "",
+    image: post?.dynamicFields?.featured_image || null,
+  })).filter((p) => p.slug);
 
-    const [postsData, portfolioData] = await Promise.all([
-      postsRes.json(),
-      portfolioRes.json()
-    ]);
+  const failed = !postsData?.data?.length && !portfolioData?.data?.length;
 
-    const mappedPortfolio = portfolioData?.data?.map((item) => ({
-      id: item?._id,
-      title: item?.dynamicFields?.title,
-      slug: item?.dynamicFields?.slug || '',
-      link: item?.dynamicFields?.link || '#',
-      year: item?.dynamicFields?.year || '—',
-      category: item?.categories?.[0]?.name || 'Uncategorized',
-      image: item?.dynamicFields?.image || '/images/default.webp',
-    }));
-
-    const mappedPosts = postsData?.data?.map((post) => ({
-      id: post?._id,
-      title: post?.dynamicFields?.title,
-      slug: post?.dynamicFields?.slug || '',
-      date: formatDate(post?.publishDate),
-      image: post?.dynamicFields?.featured_image || '/images/default.webp',
-    }));
-    
-    return {
-      props: {
-        posts: mappedPosts,
-        portfolio: mappedPortfolio,
-      },
-      revalidate: 3600,
-    };
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return {
-      props: {
-        posts: [],
-        portfolio: [],
-      },
-      revalidate: 300, // Retry sooner on error (5 min)
-    };
-  }
+  return {
+    props: { posts, portfolio },
+    // retry sooner if the CMS was unreachable
+    revalidate: failed ? 300 : 3600,
+  };
 }
 
 export default function Home({ posts, portfolio }) {
   return (
     <>
       <Head>
-        <title>Fajraan Tech | Web Development, Mobile Apps & AI Automation Company</title>
+        <title>Fajraan Tech | 10-Day MVPs, AI Agents, Automation & Business Software</title>
 
-        <meta name="description" content="Fajraan Tech is a global software development company building custom web, mobile, and desktop applications, plus AI automation and AI chatbot solutions for businesses worldwide." />
+        <meta name="description" content="Fajraan Tech builds products from scratch with a live MVP in as little as 10 days, develops AI agents and automation systems, and sets up ERP, school, courier and other business platforms for companies worldwide." />
         <meta name="keywords" content="custom web development, mobile app development, AI automation, AI chatbot development, chauffeur software, fleet management software, software development company, app development agency, digital solutions, tech company" />
 
         <link rel="canonical" href="https://www.fajraan.tech/" />
@@ -86,8 +61,8 @@ export default function Home({ posts, portfolio }) {
         <link rel="alternate" hrefLang="x-default" href="https://www.fajraan.tech/" />
 
 
-        <meta property="og:title" content="Fajraan Tech | Web Development, Mobile Apps & AI Automation Company" />
-        <meta property="og:description" content="Fajraan Tech is a global software development company building custom web, mobile, and desktop applications, plus AI automation and AI chatbot solutions for businesses worldwide." />
+        <meta property="og:title" content="Fajraan Tech | 10-Day MVPs, AI Agents, Automation & Business Software" />
+        <meta property="og:description" content="Fajraan Tech builds products from scratch with a live MVP in as little as 10 days, develops AI agents and automation systems, and sets up ERP, school, courier and other business platforms for companies worldwide." />
         <meta property="og:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -97,7 +72,7 @@ export default function Home({ posts, portfolio }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FajraanTech" />
         <meta name="twitter:creator" content="@FajraanTech" />
-        <meta name="twitter:title" content="Fajraan Tech | Web Development, Mobile Apps & AI Automation Company" />
+        <meta name="twitter:title" content="Fajraan Tech | 10-Day MVPs, AI Agents, Automation & Business Software" />
         <meta name="twitter:description" content="Global software development agency delivering custom web, mobile & desktop apps, UI/UX design, SEO, and data services for businesses worldwide." />
         <meta property="twitter:image" content="https://www.fajraan.tech/images/og/og-image.webp" />
         <meta name="twitter:image:alt" content="Fajraan Tech – Global Software Development Company" />
@@ -111,7 +86,7 @@ export default function Home({ posts, portfolio }) {
               name: "Fajraan Tech",
               url: "https://www.fajraan.tech",
               logo: "https://www.fajraan.tech/images/logo.webp",
-              description: "Fajraan Tech is a global software development company building custom web, mobile, and desktop applications, plus AI automation and AI chatbot solutions for businesses worldwide.",
+              description: "Fajraan Tech builds products from scratch with a live MVP in as little as 10 days, develops AI agents and automation systems, and sets up ERP, school, courier and other business platforms for companies worldwide.",
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "customer support",
@@ -129,15 +104,16 @@ export default function Home({ posts, portfolio }) {
         />
       </Head>
       <Header />
-      <main>
+      <main id="main">
         <HeroSection />
+        <OurAchievementSection />
         <AboutSection />
-        <IndustrySpotlightSection />
-        <OurAchivementSection />
-        <PortfolioSection projects={portfolio} />
-        <ServiceSection />
-        <TextimonialSection />
-        <BlogSection posts={posts} />
+        <MvpSprintSection index="02" />
+        <ServiceSection index="03" />
+        <SolutionsSection index="04" />
+        <PortfolioSection projects={portfolio} index="05" />
+        <TestimonialSection index="06" />
+        <BlogSection posts={posts} index="07" />
       </main>
       <Footer />
     </>

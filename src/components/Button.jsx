@@ -1,12 +1,36 @@
-import React from 'react';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import Link from "next/link";
+
+const Arrow = () => (
+    <span aria-hidden="true" className="relative inline-block h-4 w-4 shrink-0 overflow-hidden">
+        <svg viewBox="0 0 16 16" className="absolute inset-0 h-4 w-4 transition-transform duration-300 ease-[cubic-bezier(.4,.1,.1,1)] group-hover:translate-x-4 group-hover:-translate-y-4">
+            <path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+        <svg viewBox="0 0 16 16" className="absolute inset-0 h-4 w-4 -translate-x-4 translate-y-4 transition-transform duration-300 ease-[cubic-bezier(.4,.1,.1,1)] group-hover:translate-x-0 group-hover:translate-y-0">
+            <path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+    </span>
+);
+
+const base =
+    "group inline-flex w-max items-center gap-2.5 font-semibold text-[16px] leading-none tracking-[-0.01em] transition-colors duration-200 cursor-pointer select-none";
+
+const pill = "h-12 rounded-full px-6 border";
+
+const classes = {
+    primary: `${base} ${pill} border-primary bg-primary text-white hover:bg-primary-2 hover:border-primary-2`,
+    accent: `${base} ${pill} border-secondary bg-secondary text-primary hover:bg-white hover:border-white`,
+    white: `${base} ${pill} border-primary/20 bg-white text-primary hover:border-primary`,
+    "outline-light": `${base} ${pill} border-white/30 bg-transparent text-white hover:border-white`,
+    text: `${base} h-auto pb-1.5 border-b border-primary/30 text-primary hover:border-primary`,
+    "white-text": `${base} h-auto pb-1.5 border-b border-white/30 text-white hover:border-secondary`,
+};
 
 const Button = ({
-    variant = "primary", // primary | white | text
+    variant = "primary",
     type = "button",
     href = "",
-    ariaLabel = "",
+    ariaLabel,
     id,
     onClick,
     disabled = false,
@@ -16,35 +40,16 @@ const Button = ({
     link = false,
     target,
     rel,
-    referrerPolicy
+    referrerPolicy,
+    arrow = true,
+    className = "",
 }) => {
-    const classes = {
-        primary: "group inline-flex w-max items-center gap-2 rounded-[40px] border border-primary bg-primary px-5 py-2.5 text-[18px] font-semibold leading-[144.444%] tracking-[-0.18px] text-white transition-all duration-500 ease-in-out md:px-5 md:py-2.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3.5 cursor-pointer",
-        white: "group inline-flex w-max items-center gap-2 rounded-[40px] border border-primary bg-white px-5 py-2.5 text-[18px] font-semibold leading-[144.444%] tracking-[-0.18px] text-primary transition-all duration-500 ease-in-out hover:bg-primary hover:text-white hover:border-white md:px-5 md:py-2.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3.5 cursor-pointer",
-        text: "group inline-flex w-max items-center gap-2 border-b border-primary pb-0 text-[18px] font-semibold leading-[144.444%] tracking-[-0.18px] text-black transition-all duration-500 ease-in-out sm:pb-1 cursor-pointer",
-        "white-text": "group inline-flex w-max items-center gap-2 border-b border-secondary pb-0 text-[18px] font-semibold leading-[144.444%] tracking-[-0.18px] text-white transition-all duration-500 ease-in-out sm:pb-1 cursor-pointer",
-    };
-
-    const arrowColor = variant === "primary" ? "text-white" : variant === "white" ? "text-primary group-hover:text-white" : variant === "white-text" ? "text-secondary" : "text-primary";
+    const cls = `${classes[variant] || classes.primary} ${fullwidth ? "w-full justify-center" : ""} ${className}`;
 
     const content = (
         <>
-            {loading ? (
-                <div className="loading-dots">
-                    <div className="loading-dot"></div>
-                    <div className="loading-dot"></div>
-                    <div className="loading-dot"></div>
-                </div>
-            ) : (
-                <>
-                    {children}
-
-                    <span className={`relative inline-block h-5.5 w-5.5 overflow-hidden ${arrowColor}`}>
-                        <ArrowRight size={22} className="absolute left-0 top-0 -rotate-45 transition-all duration-300 ease-[cubic-bezier(0.37,0.08,0.02,0.93)] group-hover:left-5.5 group-hover:-top-5.5" />
-                        <ArrowRight size={22} className="absolute -left-5.5 top-5.5 -rotate-45 opacity-80 transition-all duration-300 ease-[cubic-bezier(0.37,0.08,0.02,0.93)] group-hover:left-0 group-hover:top-0" />
-                    </span>
-                </>
-            )}
+            <span>{loading ? "Sending…" : children}</span>
+            {arrow && !loading && <Arrow />}
         </>
     );
 
@@ -57,7 +62,7 @@ const Button = ({
                 target={target}
                 rel={rel}
                 referrerPolicy={referrerPolicy}
-                className={`${classes[variant]} ${fullwidth ? "w-full justify-center" : ""}`}
+                className={cls}
             >
                 {content}
             </Link>
@@ -71,7 +76,8 @@ const Button = ({
             onClick={onClick}
             disabled={disabled || loading}
             aria-label={ariaLabel}
-            className={`${classes[variant]} ${fullwidth ? "w-full justify-center" : ""} disabled:cursor-not-allowed disabled:opacity-60`}
+            aria-busy={loading || undefined}
+            className={`${cls} disabled:cursor-not-allowed disabled:opacity-60`}
         >
             {content}
         </button>

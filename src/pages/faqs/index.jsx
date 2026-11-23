@@ -4,9 +4,9 @@ import Header from '@/components/Header'
 import HeroSec from '@/components/HeroSec'
 import Head from 'next/head'
 import React from 'react'
-import { motion } from "framer-motion";
 import VideoAreaSection from '@/components/VideoAreaSection'
 import { faqData } from '@/utils/data'
+import Reveal from "@/components/Reveal";
 
 export default function Faqs() {
     return (
@@ -107,10 +107,10 @@ export default function Faqs() {
                 />
             </Head>
             <Header />
-            <main>
-                <HeroSec title="Quick answers to common questions" />
+            <main id="main">
+                <HeroSec crumbs={[{ label: "FAQs" }]} title="Quick answers to common questions." intro="How projects run, what they cost, how long they take, and what happens after launch." />
                 <VideoAreaSection imageUrl="/images/hero/fag-hero-banner.webp" />
-                <FaqsSection />
+                <FaqsSection index="01" />
             </main>
             <Footer />
         </>

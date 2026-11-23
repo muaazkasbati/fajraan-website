@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import HeroSec from '@/components/HeroSec'
@@ -6,6 +5,8 @@ import Head from 'next/head'
 import React from 'react'
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import { contact } from "@/utils/site";
+import Reveal from "@/components/Reveal";
 
 export default function Contact() {
     return (
@@ -94,77 +95,53 @@ export default function Contact() {
                 />
             </Head>
             <Header />
-            <main>
-                <HeroSec title="We're just a message away to bring your ideas to life" />
-                <section className="overflow-hidden">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180 relative">
-                        <motion.iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.9225075315762!2d-114.31232502374964!3d48.18884454759078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x536650c2d7daf13f%3A0x1ffd14811eec8fbe!2s1001%20S%20Main%20St%20%235965%2C%20Kalispell%2C%20MT%2059901%2C%20USA!5e0!3m2!1sen!2s!4v1784015785330!5m2!1sen!2s"
-                            width="600"
-                            height="400"
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            className="block w-full border-0 h-200"
-                            initial={{ opacity: 0, y: 80 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            viewport={{ once: true }}
-                        />
+            <main id="main">
+                <HeroSec
+                    crumbs={[{ label: "Contact" }]}
+                    title="We're a message away from bringing your idea to life."
+                />
+                <section id="contact-section" className="pb-20 md:pb-28">
+                    <div className="wrap grid gap-12 lg:grid-cols-12">
+                        <Reveal className="lg:col-span-4">
+                            <p className="text-muted">
+                                Whether it&apos;s a website, an app, AI automation or a chatbot, tell us about it. We&apos;ll reply with honest next steps.
+                            </p>
+                            <dl className="mt-10 divide-y divide-line border-y border-line">
+                                <div className="py-5">
+                                    <dt className="text-[13px] font-semibold uppercase tracking-[0.08em] text-muted">Email</dt>
+                                    <dd className="t-h4 mt-1"><a href={`mailto:${contact.email}`} className="text-primary underline decoration-secondary underline-offset-4">{contact.email}</a></dd>
+                                </div>
+                                <div className="py-5">
+                                    <dt className="text-[13px] font-semibold uppercase tracking-[0.08em] text-muted">WhatsApp (UAE)</dt>
+                                    <dd className="mt-1"><a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer" className="link-u text-primary">{contact.whatsappLabel}</a></dd>
+                                </div>
+                                <div className="py-5">
+                                    <dt className="text-[13px] font-semibold uppercase tracking-[0.08em] text-muted">Phone (US)</dt>
+                                    <dd className="mt-1"><a href={contact.phoneHref} className="link-u text-primary">{contact.phoneLabel}</a></dd>
+                                </div>
+                                <div className="py-5">
+                                    <dt className="text-[13px] font-semibold uppercase tracking-[0.08em] text-muted">Headquarters</dt>
+                                    <dd className="mt-1 text-muted">1001 S Main St Ste 5965,<br />Kalispell, MT 59901-1498, USA</dd>
+                                </div>
+                            </dl>
+                        </Reveal>
+
+                        <Reveal delay={100} className="bg-paper p-6 sm:p-10 lg:col-span-7 lg:col-start-6 lg:p-12">
+                            <h2 className="t-h3 mb-8 text-primary">Tell us about your project</h2>
+                            <ContactForm />
+                        </Reveal>
                     </div>
                 </section>
-                <section id="contact-section" className="bg-white lg:py-32.5 md:py-20 py-16.25">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <div className="pr-20">
-                                <motion.div
-                                    className=""
-                                    initial={{ opacity: 0, y: 40 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.8, ease: "easeOut" }}
-                                >
-                                    <h3 className="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px] leading-[112.5%] tracking-[-2px] mb-7 text-primary font-semibold">Let's build something amazing together!</h3>
-                                    <p className="text-[20px]">
-                                        At Fajraan Tech, we're always ready to discuss your next digital project, whether it's a website, app, AI automation, or chatbot. Reach out to our team and let's turn your vision into reality.
-                                    </p>
 
-                                    <div className="mt-12 mb-8">
-                                        <h6 className="text-[20px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-[141.667%] tracking-[-0.24px] font-semibold">Headquarters:</h6>
-                                        <p className="text-[20px]">
-                                            1001 S Main St Ste 5965,<br />Kalispell, MT 59901-1498
-                                        </p>
-                                    </div>
-
-                                    <div className="space-y-1.5">
-                                        <p className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] leading-[135.714%] tracking-[-0.28px] font-semibold">
-                                            <Link aria-label="Contact Us on Email" href="mailto:info@fajraan.com" className="underline underline-offset-3 decoration-2">info@fajraan.com</Link>
-                                        </p>
-                                        <p>
-                                            <Link aria-label="Contact Us on Number" href="tel:+14062299260">
-                                                +1 (406) 229-9260
-                                            </Link>
-                                        </p>
-                                        <p>
-                                            <Link aria-label="Contact Us on WhatsApp" href="https://wa.me/971542259592" target="_blank" rel="noopener noreferrer">
-                                                +971 54 225 9592 (WhatsApp UAE)
-                                            </Link>
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            </div>
-
-                            <div className="">
-                                <motion.div
-                                    initial={{ opacity: 0, y: 60 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-                                >
-                                    <ContactForm />
-                                </motion.div>
-                            </div>
-                        </div>
+                <section aria-label="Map" className="pb-20 md:pb-28">
+                    <div className="wrap">
+                        <iframe
+                            title="Fajraan Tech headquarters on Google Maps"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.9225075315762!2d-114.31232502374964!3d48.18884454759078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x536650c2d7daf13f%3A0x1ffd14811eec8fbe!2s1001%20S%20Main%20St%20%235965%2C%20Kalispell%2C%20MT%2059901%2C%20USA!5e0!3m2!1sen!2s!4v1784015785330!5m2!1sen!2s"
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="block h-[360px] w-full border-0 grayscale md:h-[440px]"
+                        />
                     </div>
                 </section>
             </main>

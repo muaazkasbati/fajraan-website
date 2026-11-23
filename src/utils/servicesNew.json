@@ -1,6 +1,133 @@
 [
   {
     "icon": "/images/service/service-icon-1.svg",
+    "group": "build",
+    "title": "MVP & Product Development",
+    "slug": "mvp-product-development",
+    "seoTitle": "MVP Development in 10 Days | Product Development From Scratch - Fajraan Tech",
+    "seoDescription": "Fajraan Tech turns your idea into a working, launch-ready MVP in as little as 10 days. Product development from scratch: scoping, UX, web and mobile builds, payments, admin panels and launch.",
+    "seoKeywords": [
+      "MVP development",
+      "10 day MVP",
+      "product development from scratch",
+      "startup MVP",
+      "SaaS MVP",
+      "rapid prototyping",
+      "launch a startup",
+      "Fajraan Tech"
+    ],
+    "category": "Product",
+    "description": "From idea to a working, launch-ready product in as little as 10 days. We scope tightly, build what matters first, and put it in front of real users fast.",
+    "subServices": [
+      {
+        "title": "10-Day MVP Sprint",
+        "description": "A fixed-scope sprint that ends with a live product: core user flow, auth, database, admin panel and deployment."
+      },
+      {
+        "title": "Product Discovery & Scoping",
+        "description": "We turn a rough idea into a clear feature list, user flows and a build plan, and cut everything that can wait for v2."
+      },
+      {
+        "title": "UX/UI Design for New Products",
+        "description": "Clickable designs for the core journey, built on a design system so the product can grow without a redesign."
+      },
+      {
+        "title": "SaaS Product Development",
+        "description": "Multi-tenant SaaS with subscriptions, roles and permissions, billing with Stripe, and an admin dashboard."
+      },
+      {
+        "title": "Mobile-First Product Builds",
+        "description": "Cross-platform apps for iOS and Android alongside the web app, sharing one backend."
+      },
+      {
+        "title": "Post-Launch Iteration",
+        "description": "Weekly releases after launch based on real user feedback, analytics and what customers actually pay for."
+      }
+    ],
+    "content": {
+      "breadcrumb": "MVP & Product Development",
+      "hero": {
+        "image": null,
+        "title": "Your product, live in",
+        "highlight": "10 days,",
+        "subtitle": "built from scratch",
+        "description": [
+          "Most first products fail because they take too long, not because the idea is bad. We focus on the one journey your users need, build it properly, and get it live while the opportunity is still there.",
+          "You get a real product on a real domain, with code you own, that can grow into the full platform instead of being thrown away."
+        ]
+      },
+      "sections": [
+        {
+          "title": "What's included in a 10-day sprint",
+          "points": [
+            "One core user journey built end to end, for example sign up, book, pay and get a confirmation.",
+            "Authentication, database, admin panel for your team, and transactional emails.",
+            "Payments with Stripe where the product needs them.",
+            "Deployment to production, analytics, and a handover call walking you through the code."
+          ]
+        },
+        {
+          "title": "What makes 10 days realistic",
+          "points": [
+            "Scope is fixed on day one. Anything that doesn't serve the core journey goes on the v2 list.",
+            "We start from our own tested building blocks for auth, billing, roles and admin, so the time goes into what is unique to your product.",
+            "You get a short check-in every day, so decisions never wait.",
+            "Bigger products are split into back-to-back sprints, each ending with something live."
+          ]
+        }
+      ],
+      "approach": {
+        "title": "How the sprint runs",
+        "description": "Ten working days, with a working build you can click through from day five.",
+        "steps": [
+          {
+            "title": "Days 1–2: Scope & design",
+            "points": [
+              "Workshop, user flows, feature cut-list and clickable designs for the core journey."
+            ]
+          },
+          {
+            "title": "Days 3–7: Build",
+            "points": [
+              "Backend, frontend, admin panel and integrations, deployed to a staging link you can use daily."
+            ]
+          },
+          {
+            "title": "Days 8–9: Test & polish",
+            "points": [
+              "Real-device testing, edge cases, copy and performance fixes."
+            ]
+          },
+          {
+            "title": "Day 10: Launch",
+            "points": [
+              "Production deploy, analytics, handover and a plan for the next sprint."
+            ]
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "question": "Can you really build an MVP in 10 days?",
+          "answer": "Yes, when the scope is one focused product journey. We agree that scope on day one and keep a written v2 list for everything else. Larger platforms are delivered as a series of sprints, each ending with something live."
+        },
+        {
+          "question": "Do I own the code?",
+          "answer": "Yes. The code is in your repository and deployed to accounts you own from day one."
+        },
+        {
+          "question": "What happens after the first 10 days?",
+          "answer": "Most clients continue with follow-up sprints or a monthly retainer, adding features based on what real users do. You can also take the code to your own team."
+        },
+        {
+          "question": "What do you need from me to start?",
+          "answer": "A clear idea of who the product is for and the main problem it solves, plus about 30 minutes a day for quick decisions during the sprint."
+        }
+      ]
+    }
+  },
+  {
+    "icon": "/images/service/service-icon-1.svg",
     "title": "Web Development",
     "slug": "web-development",
     "seoTitle": "Web Development Services | Custom Websites & Web Apps - Fajraan Tech",
@@ -129,7 +256,8 @@
           "answer": "Fajraan Tech builds frontends with React.js, Next.js, and Tailwind CSS, and backends with Node.js and Express.js, along with modern API integrations for scalable, secure web solutions."
         }
       ]
-    }
+    },
+    "group": "build"
   },
   {
     "icon": "/images/service/service-icon-2.svg",
@@ -248,6 +376,256 @@
         {
           "question": "Does Fajraan Tech provide app maintenance after launch?",
           "answer": "Yes. Fajraan Tech provides ongoing maintenance, bug fixes, and updates after launch to keep mobile and desktop applications running smoothly across operating system versions."
+        }
+      ]
+    },
+    "group": "build"
+  },
+  {
+    "icon": "/images/service/service-icon-3.svg",
+    "group": "ai",
+    "title": "AI Agents & LLM Development",
+    "slug": "ai-agents-llm-development",
+    "seoTitle": "AI Agent & LLM Application Development Services - Fajraan Tech",
+    "seoDescription": "Fajraan Tech builds custom LLM applications, AI agents, RAG knowledge assistants and fine-tuned models that connect to your data and systems, with evaluation, guardrails and monitoring built in.",
+    "seoKeywords": [
+      "LLM development",
+      "AI agent development",
+      "RAG development",
+      "custom GPT",
+      "fine-tuning",
+      "AI copilots",
+      "generative AI development",
+      "Fajraan Tech"
+    ],
+    "category": "AI",
+    "description": "Custom LLM products, AI agents and knowledge assistants that work on your own data and take real actions in your systems, not just chat.",
+    "subServices": [
+      {
+        "title": "Custom LLM Applications",
+        "description": "Products built around large language models: copilots, writing and analysis tools, and AI features inside your existing app."
+      },
+      {
+        "title": "AI Agents That Take Action",
+        "description": "Agents that read emails, update your CRM, create tickets, generate quotes or run multi-step workflows, with human approval where it matters."
+      },
+      {
+        "title": "RAG & Knowledge Assistants",
+        "description": "Assistants that answer from your documents, policies and databases with sources, kept up to date automatically."
+      },
+      {
+        "title": "Fine-Tuning & Model Selection",
+        "description": "Choosing between hosted and open-source models, fine-tuning where it pays off, and keeping costs predictable."
+      },
+      {
+        "title": "Private & On-Premise LLMs",
+        "description": "Self-hosted open-source models for teams whose data can't leave their own infrastructure."
+      },
+      {
+        "title": "Evaluation, Guardrails & Monitoring",
+        "description": "Test sets, accuracy tracking, prompt-injection protection and usage dashboards so the AI stays reliable after launch."
+      }
+    ],
+    "content": {
+      "breadcrumb": "AI Agents & LLM Development",
+      "hero": {
+        "image": null,
+        "title": "AI agents and LLM products",
+        "highlight": "that do real work",
+        "subtitle": "",
+        "description": [
+          "A chatbot that answers questions is a start. The real value comes when AI is connected to your data and your tools, and can finish tasks on its own.",
+          "We design, build and run LLM-powered products and agents, with the evaluation and guardrails needed to trust them in production."
+        ]
+      },
+      "sections": [
+        {
+          "title": "What we build",
+          "points": [
+            "Internal copilots that search company knowledge and draft documents, replies and reports.",
+            "Customer-facing AI features: smart search, recommendations, document analysis and assistants inside your app.",
+            "Back-office agents that process invoices, emails, forms and orders and update your systems.",
+            "Voice and WhatsApp agents for bookings, support and lead qualification."
+          ]
+        },
+        {
+          "title": "How we keep it reliable",
+          "points": [
+            "Every agent has a test set of real examples, and we measure accuracy before and after each change.",
+            "Sensitive actions such as payments, refunds or deletions go through human approval.",
+            "Answers cite their sources, and the model is told to say when it doesn't know.",
+            "Cost, latency and usage are tracked per feature, so the AI bill never surprises you."
+          ]
+        }
+      ],
+      "approach": {
+        "title": "From idea to production",
+        "description": "We prove value on real data first, then harden it for production.",
+        "steps": [
+          {
+            "title": "Use-case workshop",
+            "points": [
+              "Pick the task with the clearest payoff and collect real examples."
+            ]
+          },
+          {
+            "title": "Prototype in days",
+            "points": [
+              "A working prototype on your data, measured against the examples."
+            ]
+          },
+          {
+            "title": "Production build",
+            "points": [
+              "Integrations, permissions, guardrails, monitoring and an admin view."
+            ]
+          },
+          {
+            "title": "Run & improve",
+            "points": [
+              "Ongoing evaluation, model updates and new skills for the agent."
+            ]
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "question": "Which models do you work with?",
+          "answer": "We use the model that fits the job: leading hosted models from providers like OpenAI, Anthropic and Google, or open-source models such as Llama and Mistral when data must stay in-house. Products are built so the model can be swapped later."
+        },
+        {
+          "question": "Is our data safe?",
+          "answer": "We use providers and settings that don't train on your data, restrict what each agent can access, and can deploy fully on your own infrastructure when needed."
+        },
+        {
+          "question": "How is this different from your AI chatbot service?",
+          "answer": "Chatbots focus on conversations with customers. This service covers broader LLM products and agents that work with your internal data and take actions across your systems."
+        },
+        {
+          "question": "How fast can we see results?",
+          "answer": "A prototype on your own data usually takes one to two weeks, so you can judge the value before committing to a full build."
+        }
+      ]
+    }
+  },
+  {
+    "icon": "/images/service/service-icon-2.svg",
+    "group": "ai",
+    "title": "Business Automation Systems",
+    "slug": "business-automation-systems",
+    "seoTitle": "Business Process Automation & Workflow Systems - Fajraan Tech",
+    "seoDescription": "Fajraan Tech automates operations end to end: workflow automation, system integrations, AI document processing, automated reporting and custom internal tools that replace spreadsheets and manual work.",
+    "seoKeywords": [
+      "business process automation",
+      "workflow automation",
+      "n8n automation",
+      "system integration",
+      "document processing",
+      "automated reporting",
+      "internal tools",
+      "Fajraan Tech"
+    ],
+    "category": "Automation",
+    "description": "Automated systems that replace spreadsheets, copy-paste and manual follow-ups, connecting your tools so work moves on its own.",
+    "subServices": [
+      {
+        "title": "Workflow Automation",
+        "description": "Approvals, onboarding, order processing and follow-ups that run automatically across your tools, using n8n, Make, Zapier or custom code."
+      },
+      {
+        "title": "System Integrations & APIs",
+        "description": "Connecting CRMs, ERPs, accounting, e-commerce and messaging tools so data is entered once and synced everywhere."
+      },
+      {
+        "title": "AI Document Processing",
+        "description": "Reading invoices, receipts, contracts and forms automatically and pushing the data into the right system."
+      },
+      {
+        "title": "Automated Reporting & Dashboards",
+        "description": "Live dashboards and scheduled reports pulled from all your systems, instead of weekly spreadsheet exports."
+      },
+      {
+        "title": "Custom Internal Tools",
+        "description": "Admin panels and portals built for how your team actually works, replacing shared spreadsheets."
+      },
+      {
+        "title": "WhatsApp & Email Automation",
+        "description": "Automated notifications, reminders and two-way conversations on the channels your customers already use."
+      }
+    ],
+    "content": {
+      "breadcrumb": "Business Automation Systems",
+      "hero": {
+        "image": null,
+        "title": "Automated systems that",
+        "highlight": "run your operations",
+        "subtitle": "for you",
+        "description": [
+          "Most businesses lose hours every day to copying data between tools, chasing approvals and building reports by hand.",
+          "We map those processes, automate them end to end, and give you one place to see what's happening."
+        ]
+      },
+      "sections": [
+        {
+          "title": "Typical things we automate",
+          "points": [
+            "New lead arrives, gets enriched, added to the CRM, assigned and followed up automatically.",
+            "Orders sync from your store to inventory, accounting and delivery without anyone retyping them.",
+            "Invoices and receipts are read by AI, matched and posted to accounting for approval.",
+            "Daily and monthly reports are generated and sent to the right people on schedule."
+          ]
+        },
+        {
+          "title": "Built to be dependable",
+          "points": [
+            "Every automation logs what it did, and failures alert a person instead of failing silently.",
+            "Automations are documented so your team knows what runs, when and why.",
+            "We use low-code tools where they're enough and custom code where reliability or volume requires it."
+          ]
+        }
+      ],
+      "approach": {
+        "title": "How we work",
+        "description": "Quick wins first, then the bigger systems.",
+        "steps": [
+          {
+            "title": "Process audit",
+            "points": [
+              "We map your current workflows and rank them by hours saved."
+            ]
+          },
+          {
+            "title": "First automations",
+            "points": [
+              "The highest-value automations go live first, often within the first week."
+            ]
+          },
+          {
+            "title": "Connect & centralise",
+            "points": [
+              "Integrations, internal tools and dashboards that tie it together."
+            ]
+          },
+          {
+            "title": "Monitor & extend",
+            "points": [
+              "Alerts, maintenance and new automations as the business changes."
+            ]
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "question": "Which tools can you connect?",
+          "answer": "Almost anything with an API or an export: CRMs, ERPs, accounting software, e-commerce platforms, Google Workspace, Microsoft 365, WhatsApp, email and custom databases."
+        },
+        {
+          "question": "Do you use n8n, Make or Zapier, or write custom code?",
+          "answer": "Both. Low-code tools are fast and easy for your team to adjust; custom code is better for high volume, complex logic or sensitive data. We pick per workflow."
+        },
+        {
+          "question": "How quickly will we see time saved?",
+          "answer": "The first automations usually go live within the first week or two, starting with whichever process costs your team the most hours."
         }
       ]
     }
@@ -370,6 +748,129 @@
         {
           "question": "Is AI automation affordable for small businesses?",
           "answer": "AI automation can be scoped to fit different budgets, from a single chatbot handling FAQs to full workflow automation across multiple tools. Fajraan Tech designs solutions based on which tasks offer the most time savings first, so small businesses can start small and scale up."
+        }
+      ]
+    },
+    "group": "ai"
+  },
+  {
+    "icon": "/images/service/service-icon-4.svg",
+    "group": "platforms",
+    "title": "Ready-to-Launch SaaS Platforms",
+    "slug": "saas-platforms",
+    "seoTitle": "Ready-Made ERP, School, Courier & Business Software Setup - Fajraan Tech",
+    "seoDescription": "Fajraan Tech sets up and customises ready-to-launch business software: ERP, school management, courier and delivery management, CRM, HR and payroll, inventory and POS, clinic and property management, under your brand.",
+    "seoKeywords": [
+      "ERP software",
+      "school management system",
+      "courier management software",
+      "white label SaaS",
+      "CRM setup",
+      "HR payroll software",
+      "inventory POS system",
+      "Fajraan Tech"
+    ],
+    "category": "Platforms",
+    "description": "Proven business platforms like ERP, school management and courier management, set up, customised to your workflow and launched under your brand in days, not months.",
+    "subServices": [
+      {
+        "title": "ERP Systems",
+        "description": "Inventory, purchasing, sales, accounting and HR in one system."
+      },
+      {
+        "title": "School Management Systems",
+        "description": "Admissions, attendance, fees, exams and parent portals."
+      },
+      {
+        "title": "Courier & Delivery Management",
+        "description": "Booking, dispatch, rider apps, live tracking and COD settlement."
+      },
+      {
+        "title": "CRM & Sales Pipelines",
+        "description": "Leads, deals, follow-ups and sales reporting."
+      },
+      {
+        "title": "HR & Payroll",
+        "description": "Employee records, leave, attendance and payroll runs."
+      },
+      {
+        "title": "Inventory & POS",
+        "description": "Multi-branch stock, point of sale and supplier management."
+      }
+    ],
+    "content": {
+      "breadcrumb": "Ready-to-Launch SaaS Platforms",
+      "hero": {
+        "image": null,
+        "title": "Business software,",
+        "highlight": "set up in days",
+        "subtitle": "and made yours",
+        "description": [
+          "You don't need to build an ERP or school system from scratch, and you shouldn't have to bend your business around rigid off-the-shelf software either.",
+          "We start from proven platforms, customise them to your workflow, migrate your data, and launch them under your own brand."
+        ]
+      },
+      "sections": [
+        {
+          "title": "What you get",
+          "points": [
+            "A working platform on your domain with your branding.",
+            "Modules configured to your workflow, plus custom features where you need them.",
+            "Data migration from spreadsheets or your old system.",
+            "Staff training, documentation and ongoing support."
+          ]
+        },
+        {
+          "title": "Why this is faster and safer",
+          "points": [
+            "Core modules are already built and tested, so the work goes into fitting them to your business.",
+            "You can start small with the modules you need and switch on more later.",
+            "Hosted in the cloud or on your own servers, with daily backups."
+          ]
+        }
+      ],
+      "approach": {
+        "title": "From demo to go-live",
+        "description": "Most setups follow the same four steps.",
+        "steps": [
+          {
+            "title": "Demo & fit check",
+            "points": [
+              "We demo the platform against your real workflow and note the gaps."
+            ]
+          },
+          {
+            "title": "Configure & customise",
+            "points": [
+              "Branding, roles, modules and any custom features."
+            ]
+          },
+          {
+            "title": "Migrate & train",
+            "points": [
+              "Your data is imported and your team is trained."
+            ]
+          },
+          {
+            "title": "Go live & support",
+            "points": [
+              "Launch, hand-holding in the first weeks and ongoing support."
+            ]
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "question": "How quickly can a platform go live?",
+          "answer": "A standard setup with branding and configuration can be live in about 10 days. Larger customisations or data migrations are scheduled after the first launch."
+        },
+        {
+          "question": "Can it be white-labelled and resold?",
+          "answer": "Yes. Many platforms can run under your brand, and some clients resell them to their own customers."
+        },
+        {
+          "question": "Do we pay per user?",
+          "answer": "It depends on the platform and hosting. We quote a setup fee plus either a flat monthly fee or a one-off licence, and avoid surprise per-seat pricing."
         }
       ]
     }

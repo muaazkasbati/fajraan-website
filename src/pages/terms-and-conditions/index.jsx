@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import HeroSec from '@/components/HeroSec'
 import Head from 'next/head'
 import React from 'react'
+import Reveal from "@/components/Reveal";
 
 export default function TermsAndConditions() {
     return (
@@ -85,23 +85,13 @@ export default function TermsAndConditions() {
                 />
             </Head>
             <Header />
-            <main>
-                <HeroSec title="Terms & Conditions" />
-                <section className="pb-15 overflow-hidden">
-                    <div className="container mx-auto px-4 xl:max-w-350 lg:max-w-242.5 md:max-w-180">
-                        <motion.div
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <motion.div
-                                className="blog-body"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                viewport={{ once: true }}
-                            >
+            <main id="main">
+                <HeroSec crumbs={[{ label: "Terms & conditions" }]} title="Terms & Conditions" />
+                <section className="pb-20 md:pb-28">
+                    <div className="wrap">
+                        <div className="max-w-3xl border-t border-line pt-12">
+                        <Reveal>
+                            <Reveal className="blog-body">
                                 <p>
                                     Welcome to Fajraan Tech. By accessing our website or using our services, you agree to the following terms and conditions. Please read them carefully before proceeding.
                                 </p>
@@ -135,8 +125,9 @@ export default function TermsAndConditions() {
                                 <p>
                                     These Terms & Conditions shall be governed by and construed in accordance with the laws of the State of Wyoming, United States, without regard to its conflict of law principles. Any disputes arising out of or relating to these Terms & Conditions shall be subject to the exclusive jurisdiction of the state and federal courts located in Wyoming.
                                 </p>
-                            </motion.div>
-                        </motion.div>
+                            </Reveal>
+                        </Reveal>
+                        </div>
                     </div>
                 </section>
             </main>
