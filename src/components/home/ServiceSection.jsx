@@ -8,10 +8,10 @@ import Button from "../Button";
 export const serviceGroups = [
     { id: "build", label: "Build new products", note: "From scratch, shipped in sprints" },
     { id: "ai", label: "AI & automation", note: "LLMs, agents and automated systems" },
-    { id: "platforms", label: "Ready-made platforms", note: "ERP, school, courier and more" },
+    { id: "platforms", label: "Ready-made platforms", note: "ERP, school, courier, CMS and more" },
 ];
 
-const badges = { "mvp-product-development": "Live in 10 days", "saas-platforms": "Setup in ~10 days" };
+const badges = { "mvp-product-development": "Live in 10 days", "saas-platforms": "Setup in ~10 days", "headless-cms-api": "Works with static sites" };
 
 const ServiceSection = ({ index = "03", title = "Build fast. Automate the rest.", showAll = true }) => {
     let n = 0;

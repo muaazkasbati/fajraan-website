@@ -874,5 +874,132 @@
         }
       ]
     }
+  },
+  {
+    "icon": "/images/service/service-icon-4.svg",
+    "group": "platforms",
+    "title": "Headless CMS & Content API",
+    "slug": "headless-cms-api",
+    "seoTitle": "Headless CMS with API for Static Websites | Fajraan CMS - Fajraan Tech",
+    "seoDescription": "Add a blog, news, portfolio or product pages to your existing static or custom website with Fajraan CMS: an easy editor for your team and a content API we connect to your site.",
+    "seoKeywords": [
+      "headless CMS",
+      "CMS API",
+      "add blog to static website",
+      "content API",
+      "Next.js CMS",
+      "React CMS",
+      "Fajraan CMS",
+      "Fajraan Tech"
+    ],
+    "category": "Platforms",
+    "description": "Add a blog, news, portfolio or any other content to your existing website without rebuilding it. Your team edits in Fajraan CMS; we connect it to your site through our API.",
+    "subServices": [
+      {
+        "title": "Blog & News for Static Sites",
+        "description": "Publish articles with images, categories, tags and authors from an editor, and they appear on your site automatically."
+      },
+      {
+        "title": "Custom Content Types",
+        "description": "Portfolio items, products, case studies, FAQs, team members or anything else, each with the fields you need."
+      },
+      {
+        "title": "Content API",
+        "description": "A JSON API with list, detail and pagination endpoints that any website or app can read."
+      },
+      {
+        "title": "Built-In SEO Fields",
+        "description": "Meta title, description, keywords and canonical URL on every entry, ready for search engines."
+      },
+      {
+        "title": "Image Hosting & Optimisation",
+        "description": "Uploaded images are hosted on a CDN and served in modern formats at the right size."
+      },
+      {
+        "title": "We Connect It For You",
+        "description": "We wire the API into your Next.js, React, plain HTML or other site, including blog pages, listings and sitemaps."
+      }
+    ],
+    "content": {
+      "breadcrumb": "Headless CMS & Content API",
+      "hero": {
+        "image": null,
+        "title": "Add a blog or any content",
+        "highlight": "to your existing site",
+        "subtitle": "without rebuilding it",
+        "description": [
+          "Many businesses have a fast, good-looking static website but no easy way to publish news, articles or new portfolio items. Every change means calling a developer.",
+          "Fajraan CMS fixes that. Your team writes and publishes in a simple editor, and your website pulls the content through our API. This website's own blog and portfolio run on it."
+        ]
+      },
+      "sections": [
+        {
+          "title": "What you can manage",
+          "points": [
+            "Blog posts and news with featured images, categories, tags, authors and publish dates.",
+            "Portfolio and case studies, products, services, FAQs, team members and testimonials.",
+            "SEO title, description, keywords and canonical URL for every page you publish.",
+            "Any custom content type your site needs, with its own fields."
+          ]
+        },
+        {
+          "title": "How it connects to your site",
+          "points": [
+            "Your site reads content from a JSON API with list, single-item and pagination endpoints.",
+            "We build the blog listing, article pages and category pages in your site's existing design.",
+            "Works with static and server-rendered sites, including Next.js, React, Vue and plain HTML.",
+            "New entries can be added to your sitemap automatically so search engines find them."
+          ]
+        }
+      ],
+      "approach": {
+        "title": "Getting connected",
+        "description": "Most connections take days, not weeks.",
+        "steps": [
+          {
+            "title": "Content review",
+            "points": [
+              "We look at your site and agree which content you want to manage yourself."
+            ]
+          },
+          {
+            "title": "CMS setup",
+            "points": [
+              "Your workspace, content types and fields are created, and existing content is imported."
+            ]
+          },
+          {
+            "title": "Site connection",
+            "points": [
+              "We connect the API and build the pages in your existing design."
+            ]
+          },
+          {
+            "title": "Handover",
+            "points": [
+              "Your team gets a short walkthrough and can publish on their own."
+            ]
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "question": "Do we need to rebuild our website?",
+          "answer": "No. We keep your existing site and add the pages or sections that read from the CMS."
+        },
+        {
+          "question": "Which websites can use the API?",
+          "answer": "Any site or app that can make an HTTP request: Next.js, React, Vue, Astro, plain HTML with JavaScript, and mobile apps."
+        },
+        {
+          "question": "Who can publish content?",
+          "answer": "Your team logs in to the CMS and publishes directly. No developer is needed for day-to-day updates."
+        },
+        {
+          "question": "Is this the same CMS your own website uses?",
+          "answer": "Yes. The blog and portfolio on fajraan.tech are published through Fajraan CMS."
+        }
+      ]
+    }
   }
 ]

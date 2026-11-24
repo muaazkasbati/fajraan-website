@@ -162,7 +162,7 @@ export default function ServiceDetail({ serviceData }) {
         <section className="section" id="service-details">
           <div className="wrap grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <SectionHead index="01" eyebrow="Overview" title={`What ${serviceData.title.toLowerCase()} covers`} className="!block" />
+              <SectionHead index="01" eyebrow="Overview" title={`What ${serviceData.title} covers`} className="!block" />
               <Reveal delay={80} className="mt-8 space-y-5 text-muted">
                 {hero.description?.map((para, i) => <p key={i}>{para}</p>)}
               </Reveal>

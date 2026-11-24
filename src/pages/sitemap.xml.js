@@ -17,6 +17,7 @@ const staticRoutes = [
   { path: 'services/ai-agents-llm-development', changefreq: 'monthly', priority: 0.8 },
   { path: 'services/business-automation-systems', changefreq: 'monthly', priority: 0.8 },
   { path: 'services/saas-platforms', changefreq: 'monthly', priority: 0.8 },
+  { path: 'services/headless-cms-api', changefreq: 'monthly', priority: 0.8 },
   { path: 'solutions', changefreq: 'monthly', priority: 0.8 },
   { path: 'solutions/erp-system', changefreq: 'monthly', priority: 0.7 },
   { path: 'solutions/school-management-system', changefreq: 'monthly', priority: 0.7 },

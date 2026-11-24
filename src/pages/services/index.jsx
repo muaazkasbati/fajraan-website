@@ -138,7 +138,7 @@ export default function Services() {
           </div>
         </HeroSec>
         <VideoAreaSection imageUrl="/images/service/service-detail-img.webp" />
-        <ServiceSection index="01" title="Seven services, one team." showAll={false} />
+        <ServiceSection index="01" title="Eight services, one team." showAll={false} />
         <SolutionsSection index="02" />
         <IndustrySpotlightSection index="03" />
         <PricingSection index="04" />
